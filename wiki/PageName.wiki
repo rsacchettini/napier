@@ -30,7 +30,4 @@ sellers, buyers, estate agents.
   * Contact buyers and sellers
   * When a property is created, assign it to an estate agent
   * Manage properties
-
-
-
-An administrative part for managing the properties in the agency
+  * An administrative part for managing the properties in the agency
