@@ -3,47 +3,33 @@
 = Introduction =
 Project Features
 
----
-
-= Details =
-
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
-
-== Two parts : ==
-A part for the customers interested for the properties :
-users features :
 3 kinds of users :
 sellers, buyers, estate agents.
-Buyers : 
-- view a properties
-- Ask for a visit, appointment
-- Browse and list properties
-- Make an offer
-- Create a user account
-- Manage profile
-- Consult interest list (sum up of the properties the buyer is interested in, like a basket).
-- Notification for concurrent offers for the properties in the interest list(email).
 
-Optional features : 
-- 
+=Buyers= 
+  * Create an user account
+  * Browse properties
+  * View a property
+  * Manage an appointment for a visit
+  * Make an offer
+  * Manage profile
+  * Build an interest list
+  * Notification for concurrent offers for the properties in the interest list(email).
 
-Sellers : 
-- Create a user account
-- Manage profile
-- Advertise a property
-- Edit the properties profiles (description, pictures, dates of availability) 
-- Manage properties
-- Consult the offers made on his properties and must be able to contact the concerned buyers.
+=Sellers= 
+  * Create a user account
+  * Manage profile
+  * Advertise a property
+  * Edit the properties profiles (description, pictures, dates of availability) 
+  * Manage properties
+  * Consult the offers made on his properties and must be able to contact the concerned buyers.
 
-Estate Agents:
-- Verify and validate the added properties
-- Give an agreement for the visits required by the buyers.
-- Contact buyers and sellers
-- When a property is created, it is assigned to the estate agent.
-- Manage properties
+=Estate Agents=
+  * Verify and validate added properties
+  * Give an agreement for the visits required by the buyers
+  * Contact buyers and sellers
+  * When a property is created, assign it to an estate agent
+  * Manage properties
 
 
 
