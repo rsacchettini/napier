@@ -33,8 +33,7 @@
                                 <td valign="top" class="value ${hasErrors(bean:buyer,field:'name','errors')}">
                                     <input type="text" id="name" name="name" value="${fieldValue(bean:buyer,field:'name')}"/>
                                 </td>
-                            </tr> 
-                        
+                            </tr>
                         </tbody>
                     </table>
                 </div>
