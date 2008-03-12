@@ -1,5 +1,5 @@
 <project name="napierestate" default="test">
-ddddddddddddddhhhhhhhhhhhh
+ddddddddddddddhhhhhhhhdddddddddhhhh
     <condition property="grails" value="grails.bat">
         <os family="windows"/>
     </condition>
