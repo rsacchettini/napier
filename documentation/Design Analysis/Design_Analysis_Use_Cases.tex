@@ -16,31 +16,27 @@
 
 
 
-
- 
 \section{Introduction}
 \subsection{Objectives}
 The Napier Estate Agency is a ?rm which deals in the selling of property within the UK. At the moment all sales are made either in person at the branch, or by telephone. The ?rm has both buyers and sellers. Sellers list their properties with the agency who then advertise them on the front window of the branch. Buyers can then see these properties and enter the branch to ?nd out more information or arrange to view the property.
 The client feels that by advertising the properties only on the window of the branch, they are limiting the number of buyers attracted. They wish to reach out to more potential buyers, and make ?nding out information and arranging visits to properties easier for them. The client also wishes to allow sellers to list properties themselves. The group has decided that in order to achieve these goals an online estate agency site should be created.
 The website needs to have several functions. It must allow anyone who wants to buy or sell a property to register on the website and get an account.
-
-
 With this account, the user will be able to add properties, browse and search all the properties ordered, ?nd out more detailed information about each property, and arrange visits to properties.
 The system will also be used by employees of the estate agency. It must allow the estate agents to view all the properties. They will be able to verify properties added by users before they go online, they will then be able to edit and remove a property at any time. The estate agent should be able to see a list of potential buyers for each property and have some method to contact each one.
-
 The website must be consistent throughout each page. As the majority of people using the site are likely to not be technical people the site has to be easy to navigate and intuitive. It is important that searching the properties is easy to do and e?ective.
-
 The website will be created using groovy java. This is a relatively new programming language based on java. Its syntax is similar to that of java, but simpler. There are far fewer rules which will make coding the site relatively easy.
 
 \subsection{Description}
 This document describes all the functional needs and indirectely also the non-functional needs.
- 
+
+
 \section{Use-Case Diagram}
+
 \subsection{Napier Estate Agency Diagram}
 Figure 1 Use-Case Diagram of Napier Estate Agency
 
- 
 \section{Actor Specification}
+
 \subsection{Buyer}
 \subsubsection{Description}
 People who want to buy properties.
@@ -51,8 +47,9 @@ People who manage the whole exchanges of the website.
 \subsubsection{Description}
 People who want to sell their properties.
 
- 
+
 \section{Use-Case Specification}
+
 \subsection{Authenticate}
 \subsubsection{Description}
 The user can log on to the website to benefit of its services which are provided by the website.
@@ -64,7 +61,6 @@ The user can log on to the website to benefit of its services which are provided
 \item The system verifies the logon information. 
 \item The system logs user on to system.
 \end{itemize}
-
 \paragraph{Alternative Flow}
 \begin{itemize}
 \item The system recognizes cookie on user's machine. 
@@ -72,35 +68,28 @@ The user can log on to the website to benefit of its services which are provided
 \item The system does not recognize user's logon information 
 \item Go to step 1 (Main path)
 \end{itemize}
-
 \subsubsection{Pre-Conditions}
-The user has to want to use the services below:
-- Main 
+The user has to want to use a service other than "browse properties", "create an account".
 \subsubsection{Post-Conditions}
 The user will enjoy all the services whose he is allowed to use.
 
-
 \subsection{Browse/Search properties}
 \subsubsection{Description}
-The system should give the whole list of available properties, or the while list of available properties in a postcode area.
+The buyer can search properties by location or postcode and concequentely browse all the referenced properties in the website's database.
 \subsubsection{Flow of Events}
 \paragraph{Basic Flow}
 \begin{itemize}
-\item The user asks for a complete list of availables properties
-\item The system prompt the whole list of available properties
+\item The system shows the list of all properties available.
+\item The buyer enteres in the engine search some filters such as the postcode.
+\item The system provides an reply from the buyer's request in displaying a new list.
 \end{itemize}
-
 \paragraph{Alternative Flow}
 \begin{itemize}
-\item The system prompts the user to enter a post code
-\item The user inputs a postcode
-\item The system check the postcode validity and returns the list of available properties in this postcode area.
+\item The system shows the list of all properties available.
+\item The user can switch the part's list of properties in clicking on directional arrows.
 \end{itemize}
-
-\subsubsection{Pre-Conditions}
-It should have at least one property in the system
 \subsubsection{Post-Conditions}
-
+The buyer finds porperties which match to his searches.
 
 \subsection{Create an account}
 \subsubsection{Description}
@@ -112,50 +101,47 @@ To create a new account object with personal details, including name, contact nu
 \item If the user does not exist previously in the database, and if the data is validated, the sytem add the new record.
 \item The user is logged-on directly on his new account
 \end{itemize}
-
 \paragraph{Alternative Flow}
 \begin{itemize}
 \end{itemize}
-
 \subsubsection{Pre-Conditions}
 \subsubsection{Post-Conditions}
 
-\subsection{Edit/Remove property}
+\subsection{Edit / Remove property}
 \subsubsection{Description}
-To update properties information, and remove the properties after being sold.
+The seller can update properties information if he did some mistakes. He can also remove its properties if the Napier Agency's contract allows him to use this use case.
 \subsubsection{Flow of Events}
 \paragraph{Basic Flow}
 \begin{itemize}
-\item The system display to the user his properties.
-\item The user chooses a property and modify it
-\item The system record it.
+\item The seller changes any information about his property.
+\item The system verifies the data's type entered.
+\item The system processes the modifications on the database.
 \end{itemize}
-
 \paragraph{Alternative Flow}
 \begin{itemize}
-\item The system display to the his properties.
-\item The user chooses a property and delete it.
-\item The system delete the record. 
 \end{itemize}
-
 \subsubsection{Pre-Conditions}
-The userd should have at least one property.
+The seller must be log on the system.
 \subsubsection{Post-Conditions}
+The modifications wanted by the seller are done.
 
 \subsection{Maintain personal details}
 \subsubsection{Description}
-To maintain personal details online either edit or remove information.
+The seller and the buyer maintain their personal details online either edit or remove information.
 \subsubsection{Flow of Events}
 \paragraph{Basic Flow}
 \begin{itemize}
+\item The seller or the buyer change any information about his personal details.
+\item The system verifies the data's type entered are allowed.
+\item The system processes the modifications on the database.
 \end{itemize}
-
 \paragraph{Alternative Flow}
 \begin{itemize}
 \end{itemize}
-
 \subsubsection{Pre-Conditions}
+The seller and the buyer must be log on the system.
 \subsubsection{Post-Conditions}
+The personal information are modified and saved in the system.
 
 \subsection{Manage added properties}
 \subsubsection{Description}
@@ -169,13 +155,11 @@ Allows us to check, confirm and refuse all the added properties.
 \item The user chooses to validate the property
 \item The property is marked as validated.
 \end{itemize}
-
 \paragraph{Alternative Flow}
 \begin{itemize}
 \item The user chooses to not validate the property
 \item The property is deleted
 \end{itemize}
-
 \subsubsection{Pre-Conditions}
 \subsubsection{Post-Conditions}
 
@@ -186,11 +170,9 @@ Any user can change his credential, or delete his own account.
 \paragraph{Basic Flow}
 \begin{itemize}
 \end{itemize}
-
 \paragraph{Alternative Flow}
 \begin{itemize}
 \end{itemize}
-
 \subsubsection{Pre-Conditions}
 \subsubsection{Post-Conditions}
 
@@ -201,11 +183,9 @@ Allows us to arrange appointments for people who want visit properties.
 \paragraph{Basic Flow}
 \begin{itemize}
 \end{itemize}
-
 \paragraph{Alternative Flow}
 \begin{itemize}
 \end{itemize}
-
 \subsubsection{Pre-Conditions}
 \subsubsection{Post-Conditions}
 
@@ -216,11 +196,9 @@ To makes an offer online and wait for result/notice from agent after deadline.
 \paragraph{Basic Flow}
 \begin{itemize}
 \end{itemize}
-
 \paragraph{Alternative Flow}
 \begin{itemize}
 \end{itemize}
-
 \subsubsection{Pre-Conditions}
 \subsubsection{Post-Conditions}
 
@@ -231,11 +209,9 @@ To create a new property object, upload relative information, including pictures
 \paragraph{Basic Flow}
 \begin{itemize}
 \end{itemize}
-
 \paragraph{Alternative Flow}
 \begin{itemize}
 \end{itemize}
-
 \subsubsection{Pre-Conditions}
 \subsubsection{Post-Conditions}
 
@@ -246,11 +222,9 @@ Remove a property from the basket if a buyer is not interested by one added prop
 \paragraph{Basic Flow}
 \begin{itemize}
 \end{itemize}
-
 \paragraph{Alternative Flow}
 \begin{itemize}
 \end{itemize}
-
 \subsubsection{Pre-Conditions}
 \subsubsection{Post-Conditions}
 
@@ -261,46 +235,43 @@ To save interested properties in basket in order to check back his favours next 
 \paragraph{Basic Flow}
 \begin{itemize}
 \end{itemize}
-
 \paragraph{Alternative Flow}
 \begin{itemize}
 \end{itemize}
-
 \subsubsection{Pre-Conditions}
+The buyer must be log on the system.
 \subsubsection{Post-Conditions}
 
 \subsection{Review properties list}
 \subsubsection{Description}
-To obtain current properties list in user's account
+The seller see his added properties list.
 \subsubsection{Flow of Events}
 \paragraph{Basic Flow}
 \begin{itemize}
 \end{itemize}
-
 \paragraph{Alternative Flow}
 \begin{itemize}
 \end{itemize}
-
 \subsubsection{Pre-Conditions}
+The seller must be log on the system.
 \subsubsection{Post-Conditions}
 
 \subsection{See status properties}
 \subsubsection{Description}
-Allows us to see who are interested by the properties and who are their owners.
+The estate agent see who are interested by properties and also the name of owners.
 \subsubsection{Flow of Events}
 \paragraph{Basic Flow}
 \begin{itemize}
+\item The system shows the list of all buyer who are interested by properties.
+\item The estate agent get more details in clicking on the properties.
+\item The system displayes all the details (buyer, property, seller).
 \end{itemize}
-
 \paragraph{Alternative Flow}
 \begin{itemize}
 \end{itemize}
-
 \subsubsection{Pre-Conditions}
+The estate agent must be log on the system.
 \subsubsection{Post-Conditions}
-
- 
 
 
 \end{document}
-
