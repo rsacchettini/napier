@@ -23,5 +23,12 @@ class Seller {
           hashCode = 29 * (hashCode + ( !id ? 0 : id ^ (id >>> 32)))
       }
     
-
+/* ---------- Attributes ---------- */
+    String surName
+    String foreName
+    String userName
+    String password
+    String email
+    Long telephoneNo
+    String adresse
 }
