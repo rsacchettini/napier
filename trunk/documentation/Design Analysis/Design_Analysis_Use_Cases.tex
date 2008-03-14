@@ -23,9 +23,13 @@
 The Napier Estate Agency is a ?rm which deals in the selling of property within the UK. At the moment all sales are made either in person at the branch, or by telephone. The ?rm has both buyers and sellers. Sellers list their properties with the agency who then advertise them on the front window of the branch. Buyers can then see these properties and enter the branch to ?nd out more information or arrange to view the property.
 The client feels that by advertising the properties only on the window of the branch, they are limiting the number of buyers attracted. They wish to reach out to more potential buyers, and make ?nding out information and arranging visits to properties easier for them. The client also wishes to allow sellers to list properties themselves. The group has decided that in order to achieve these goals an online estate agency site should be created.
 The website needs to have several functions. It must allow anyone who wants to buy or sell a property to register on the website and get an account.
-With this account, the user will be able to add properties, browse and search all the properties o?ered, ?nd out more detailed information about each property, and arrange visits to properties.
+
+
+With this account, the user will be able to add properties, browse and search all the properties ordered, ?nd out more detailed information about each property, and arrange visits to properties.
 The system will also be used by employees of the estate agency. It must allow the estate agents to view all the properties. They will be able to verify properties added by users before they go online, they will then be able to edit and remove a property at any time. The estate agent should be able to see a list of potential buyers for each property and have some method to contact each one.
+
 The website must be consistent throughout each page. As the majority of people using the site are likely to not be technical people the site has to be easy to navigate and intuitive. It is important that searching the properties is easy to do and e?ective.
+
 The website will be created using groovy java. This is a relatively new programming language based on java. Its syntax is similar to that of java, but simpler. There are far fewer rules which will make coding the site relatively easy.
 
 \subsection{Description}
@@ -78,18 +82,25 @@ The user will enjoy all the services whose he is allowed to use.
 
 \subsection{Browse/Search properties}
 \subsubsection{Description}
-To search properties by location or postcode.
+The system should give the whole list of available properties, or the while list of available properties in a postcode area.
 \subsubsection{Flow of Events}
 \paragraph{Basic Flow}
 \begin{itemize}
+\item The user asks for a complete list of availables properties
+\item The system prompt the whole list of available properties
 \end{itemize}
 
 \paragraph{Alternative Flow}
 \begin{itemize}
+\item The system prompts the user to enter a post code
+\item The user inputs a postcode
+\item The system check the postcode validity and returns the list of available properties in this postcode area.
 \end{itemize}
 
 \subsubsection{Pre-Conditions}
+It should have at least one property in the system
 \subsubsection{Post-Conditions}
+
 
 \subsection{Create an account}
 \subsubsection{Description}
@@ -97,6 +108,9 @@ To create a new account object with personal details, including name, contact nu
 \subsubsection{Flow of Events}
 \paragraph{Basic Flow}
 \begin{itemize}
+\item The system prompts the user for his forename, surname, his contact number, and his address.
+\item If the user does not exist previously in the database, and if the data is validated, the sytem add the new record.
+\item The user is logged-on directly on his new account
 \end{itemize}
 
 \paragraph{Alternative Flow}
@@ -106,19 +120,26 @@ To create a new account object with personal details, including name, contact nu
 \subsubsection{Pre-Conditions}
 \subsubsection{Post-Conditions}
 
-\subsection{Edit / Remove property}
+\subsection{Edit/Remove property}
 \subsubsection{Description}
 To update properties information, and remove the properties after being sold.
 \subsubsection{Flow of Events}
 \paragraph{Basic Flow}
 \begin{itemize}
+\item The system display to the user his properties.
+\item The user chooses a property and modify it
+\item The system record it.
 \end{itemize}
 
 \paragraph{Alternative Flow}
 \begin{itemize}
+\item The system display to the his properties.
+\item The user chooses a property and delete it.
+\item The system delete the record. 
 \end{itemize}
 
 \subsubsection{Pre-Conditions}
+The userd should have at least one property.
 \subsubsection{Post-Conditions}
 
 \subsection{Maintain personal details}
@@ -142,19 +163,25 @@ Allows us to check, confirm and refuse all the added properties.
 \subsubsection{Flow of Events}
 \paragraph{Basic Flow}
 \begin{itemize}
+\item The system prompts a list of properties to be validated
+\item The user chooses a property to validate
+\item The system prompts the property details and ask for a confirmation
+\item The user chooses to validate the property
+\item The property is marked as validated.
 \end{itemize}
 
 \paragraph{Alternative Flow}
 \begin{itemize}
+\item The user chooses to not validate the property
+\item The property is deleted
 \end{itemize}
 
 \subsubsection{Pre-Conditions}
 \subsubsection{Post-Conditions}
 
-\subsection{Manage any information}
+\subsection{Manage any user information}
 \subsubsection{Description}
-We can update/create/delete any information. It will be used to manage all the data in the database.
-For example we can change the phone number of a client (Buyer and Seller).
+Any user can change his credential, or delete his own account.
 \subsubsection{Flow of Events}
 \paragraph{Basic Flow}
 \begin{itemize}
