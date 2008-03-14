@@ -64,9 +64,9 @@ The user can log on to the website to benefit of its services which are provided
 \paragraph{Alternative Flow}
 \begin{itemize}
 \item The system recognizes cookie on user's machine. 
-\item Go to step 4 (Main path)
-\item The system does not recognize user's logon information 
-\item Go to step 1 (Main path)
+\item Go to step 4 (Basic Flow).
+\item The system does not recognize user's logon information.
+\item Go to step 1 (Basic Flow).
 \end{itemize}
 \subsubsection{Pre-Conditions}
 The user has to want to use a service other than "browse properties", "create an account".
@@ -145,15 +145,15 @@ The personal information are modified and saved in the system.
 
 \subsection{Manage added properties}
 \subsubsection{Description}
-Allows us to check, confirm and refuse all the added properties.
+The estate agent checks, confirms and refuses all the added properties by the sellers. By this way he still keeps the control in order to obtain consitent data.
 \subsubsection{Flow of Events}
 \paragraph{Basic Flow}
 \begin{itemize}
 \item The system prompts a list of properties to be validated
-\item The user chooses a property to validate
+\item The estate agent chooses a property to validate
 \item The system prompts the property details and ask for a confirmation
-\item The user chooses to validate the property
-\item The property is marked as validated.
+\item The estate agent chooses to validate the property
+\item The system markes the property as validated.
 \end{itemize}
 \paragraph{Alternative Flow}
 \begin{itemize}
@@ -161,7 +161,9 @@ Allows us to check, confirm and refuse all the added properties.
 \item The property is deleted
 \end{itemize}
 \subsubsection{Pre-Conditions}
+The estate agent must be log on the system.
 \subsubsection{Post-Conditions}
+
 
 \subsection{Manage any user information}
 \subsubsection{Description}
@@ -217,7 +219,7 @@ To create a new property object, upload relative information, including pictures
 
 \subsection{Remove property from list}
 \subsubsection{Description}
-Remove a property from the basket if a buyer is not interested by one added property.
+The buyer removes a property from the basket if he is not interested by one added property.
 \subsubsection{Flow of Events}
 \paragraph{Basic Flow}
 \begin{itemize}
@@ -230,7 +232,7 @@ Remove a property from the basket if a buyer is not interested by one added prop
 
 \subsection{Review interest list}
 \subsubsection{Description}
-To save interested properties in basket in order to check back his favours next sign in.
+The buyer see the interested properties in his basket in order to check back his favours next sign in.
 \subsubsection{Flow of Events}
 \paragraph{Basic Flow}
 \begin{itemize}
@@ -242,12 +244,14 @@ To save interested properties in basket in order to check back his favours next 
 The buyer must be log on the system.
 \subsubsection{Post-Conditions}
 
+
 \subsection{Review properties list}
 \subsubsection{Description}
 The seller see his added properties list.
 \subsubsection{Flow of Events}
 \paragraph{Basic Flow}
 \begin{itemize}
+\item The system displayes the list of all properties belong to his owners.
 \end{itemize}
 \paragraph{Alternative Flow}
 \begin{itemize}
@@ -255,14 +259,15 @@ The seller see his added properties list.
 \subsubsection{Pre-Conditions}
 The seller must be log on the system.
 \subsubsection{Post-Conditions}
+The seller see the inventorie of his properties.
 
 \subsection{See status properties}
 \subsubsection{Description}
-The estate agent see who are interested by properties and also the name of owners.
+The estate agent see who are interested by properties and also the name of its owners.
 \subsubsection{Flow of Events}
 \paragraph{Basic Flow}
 \begin{itemize}
-\item The system shows the list of all buyer who are interested by properties.
+\item The system displayes the list of all buyer who are interested by properties.
 \item The estate agent get more details in clicking on the properties.
 \item The system displayes all the details (buyer, property, seller).
 \end{itemize}
@@ -272,6 +277,6 @@ The estate agent see who are interested by properties and also the name of owner
 \subsubsection{Pre-Conditions}
 The estate agent must be log on the system.
 \subsubsection{Post-Conditions}
-
+The estate agent see the dossier of each property which has been selected by buyers.
 
 \end{document}
