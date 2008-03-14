@@ -2616,12 +2616,12 @@ For example we can change the phone number of a client (Buyer and Seller).</XPD:
 <XPD:REF name="DiagramOwner">PiAfbU9A/EGbI6gDq0t1cwAA</XPD:REF>
 <XPD:OBJ name="DiagramView" type="UMLClassDiagramView" guid="fMuXaQeyD0Gz/IDk1s5gjwAA">
 <XPD:REF name="Diagram">5QiqdQbU/E2myAmNNAKGAgAA</XPD:REF>
-<XPD:ATTR name="#OwnedViews" type="integer">11</XPD:ATTR>
+<XPD:ATTR name="#OwnedViews" type="integer">15</XPD:ATTR>
 <XPD:OBJ name="OwnedViews[0]" type="UMLClassView" guid="ouPvoBwjREKcXsIM23sKHQAA">
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
-<XPD:ATTR name="Left" type="integer">28</XPD:ATTR>
-<XPD:ATTR name="Top" type="integer">440</XPD:ATTR>
+<XPD:ATTR name="Left" type="integer">40</XPD:ATTR>
+<XPD:ATTR name="Top" type="integer">192</XPD:ATTR>
 <XPD:ATTR name="Width" type="integer">155</XPD:ATTR>
 <XPD:ATTR name="Height" type="integer">209</XPD:ATTR>
 <XPD:REF name="Model">uQv038JliESqUrApkN1yzAAA</XPD:REF>
@@ -2651,8 +2651,8 @@ For example we can change the phone number of a client (Buyer and Seller).</XPD:
 <XPD:OBJ name="OwnedViews[1]" type="UMLClassView" guid="kjHFnrLJ8USEHiS2LFoyIAAA">
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
-<XPD:ATTR name="Left" type="integer">328</XPD:ATTR>
-<XPD:ATTR name="Top" type="integer">12</XPD:ATTR>
+<XPD:ATTR name="Left" type="integer">836</XPD:ATTR>
+<XPD:ATTR name="Top" type="integer">204</XPD:ATTR>
 <XPD:ATTR name="Width" type="integer">123</XPD:ATTR>
 <XPD:ATTR name="Height" type="integer">199</XPD:ATTR>
 <XPD:REF name="Model">eVap0uIckEm7P5YfsqCsowAA</XPD:REF>
@@ -2682,8 +2682,8 @@ For example we can change the phone number of a client (Buyer and Seller).</XPD:
 <XPD:OBJ name="OwnedViews[2]" type="UMLClassView" guid="cydP5SLurUaJMOup/w5K8QAA">
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
-<XPD:ATTR name="Left" type="integer">632</XPD:ATTR>
-<XPD:ATTR name="Top" type="integer">444</XPD:ATTR>
+<XPD:ATTR name="Left" type="integer">596</XPD:ATTR>
+<XPD:ATTR name="Top" type="integer">204</XPD:ATTR>
 <XPD:ATTR name="Width" type="integer">129</XPD:ATTR>
 <XPD:ATTR name="Height" type="integer">212</XPD:ATTR>
 <XPD:REF name="Model">XrWXZdID4kq4E9tNtzfyGAAA</XPD:REF>
@@ -2713,8 +2713,8 @@ For example we can change the phone number of a client (Buyer and Seller).</XPD:
 <XPD:OBJ name="OwnedViews[3]" type="UMLClassView" guid="A6uurkvgsUiv2ds0Z6NVVQAA">
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
-<XPD:ATTR name="Left" type="integer">340</XPD:ATTR>
-<XPD:ATTR name="Top" type="integer">284</XPD:ATTR>
+<XPD:ATTR name="Left" type="integer">396</XPD:ATTR>
+<XPD:ATTR name="Top" type="integer">464</XPD:ATTR>
 <XPD:ATTR name="Width" type="integer">129</XPD:ATTR>
 <XPD:ATTR name="Height" type="integer">160</XPD:ATTR>
 <XPD:REF name="Model">mapEvN7sAkWqNX+Hr358RgAA</XPD:REF>
@@ -2744,8 +2744,7 @@ For example we can change the phone number of a client (Buyer and Seller).</XPD:
 <XPD:OBJ name="OwnedViews[4]" type="UMLAssociationView" guid="tCmbt3HiKE2Mu/o8uS5ffwAA">
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
-<XPD:ATTR name="LineStyle" type="LineStyleKind">lsRectilinear</XPD:ATTR>
-<XPD:ATTR name="Points" type="Points">388,210;388,284</XPD:ATTR>
+<XPD:ATTR name="Points" type="Points">897,402;896,540;524,543</XPD:ATTR>
 <XPD:REF name="Model">7rqqtTtGGk67ClKKEUR8gAAA</XPD:REF>
 <XPD:REF name="Head">A6uurkvgsUiv2ds0Z6NVVQAA</XPD:REF>
 <XPD:REF name="Tail">kjHFnrLJ8USEHiS2LFoyIAAA</XPD:REF>
@@ -2768,13 +2767,15 @@ For example we can change the phone number of a client (Buyer and Seller).</XPD:
 <XPD:REF name="Model">7rqqtTtGGk67ClKKEUR8gAAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="HeadRoleNameLabel" type="EdgeLabelView" guid="tFlO7XpuYk+F8W1d8sY2BwAA">
-<XPD:ATTR name="Alpha" type="real">-0.969974092282535</XPD:ATTR>
-<XPD:ATTR name="Distance" type="real">18.0277563773199</XPD:ATTR>
+<XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
+<XPD:ATTR name="Alpha" type="real">-0.457823819155048</XPD:ATTR>
+<XPD:ATTR name="Distance" type="real">32.2024843762092</XPD:ATTR>
 <XPD:ATTR name="EdgePosition" type="EdgePositionKind">epHead</XPD:ATTR>
 <XPD:ATTR name="Text" type="string">+isSold</XPD:ATTR>
 <XPD:REF name="Model">Df+uvkGBTkO2CkcfyMFW8wAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="TailRoleNameLabel" type="EdgeLabelView" guid="4nLNY20840Wg4EspWdWzgQAA">
+<XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
 <XPD:ATTR name="Alpha" type="real">1.06446954893956</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">16.1245154965971</XPD:ATTR>
 <XPD:ATTR name="EdgePosition" type="EdgePositionKind">epTail</XPD:ATTR>
@@ -2829,8 +2830,7 @@ For example we can change the phone number of a client (Buyer and Seller).</XPD:
 <XPD:OBJ name="OwnedViews[5]" type="UMLAssociationView" guid="kAByAk9bWUqTNyj0cQLL2AAA">
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
-<XPD:ATTR name="LineStyle" type="LineStyleKind">lsRectilinear</XPD:ATTR>
-<XPD:ATTR name="Points" type="Points">104,440;104,360;340,360</XPD:ATTR>
+<XPD:ATTR name="Points" type="Points">117,400;116,540;396,542</XPD:ATTR>
 <XPD:REF name="Model">Immi30wal0mv150wlZOqtAAA</XPD:REF>
 <XPD:REF name="Head">A6uurkvgsUiv2ds0Z6NVVQAA</XPD:REF>
 <XPD:REF name="Tail">ouPvoBwjREKcXsIM23sKHQAA</XPD:REF>
@@ -2853,6 +2853,7 @@ For example we can change the phone number of a client (Buyer and Seller).</XPD:
 <XPD:REF name="Model">Immi30wal0mv150wlZOqtAAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="HeadRoleNameLabel" type="EdgeLabelView" guid="0v+FCuebokGDT6nN6CHtuwAA">
+<XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
 <XPD:ATTR name="Alpha" type="real">-0.523598775598299</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">30</XPD:ATTR>
 <XPD:ATTR name="EdgePosition" type="EdgePositionKind">epHead</XPD:ATTR>
@@ -2860,6 +2861,7 @@ For example we can change the phone number of a client (Buyer and Seller).</XPD:
 <XPD:REF name="Model">BOSTW5nTZECThdGaoMZIvwAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="TailRoleNameLabel" type="EdgeLabelView" guid="D6uG67zi2UOq7uWGUj9M2AAA">
+<XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
 <XPD:ATTR name="Alpha" type="real">-5.17603595365289</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">31.3049516849971</XPD:ATTR>
 <XPD:ATTR name="EdgePosition" type="EdgePositionKind">epTail</XPD:ATTR>
@@ -2914,8 +2916,7 @@ For example we can change the phone number of a client (Buyer and Seller).</XPD:
 <XPD:OBJ name="OwnedViews[6]" type="UMLAssociationView" guid="m5qu8nBBR0iCyVzt/29UvAAA">
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
-<XPD:ATTR name="LineStyle" type="LineStyleKind">lsRectilinear</XPD:ATTR>
-<XPD:ATTR name="Points" type="Points">468,357;696,357;696,444</XPD:ATTR>
+<XPD:ATTR name="Points" type="Points">524,468;596,384</XPD:ATTR>
 <XPD:REF name="Model">0UMhzm7qQ0aRcO0S7J+7EQAA</XPD:REF>
 <XPD:REF name="Head">cydP5SLurUaJMOup/w5K8QAA</XPD:REF>
 <XPD:REF name="Tail">A6uurkvgsUiv2ds0Z6NVVQAA</XPD:REF>
@@ -2952,8 +2953,8 @@ For example we can change the phone number of a client (Buyer and Seller).</XPD:
 <XPD:REF name="Model">2/aYzCK3306thbakgNc6qAAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="HeadMultiplicityLabel" type="EdgeLabelView" guid="T97+Qj/clk2DNObkiNKLQAAA">
-<XPD:ATTR name="Alpha" type="real">0.725654416697795</XPD:ATTR>
-<XPD:ATTR name="Distance" type="real">19.1049731745428</XPD:ATTR>
+<XPD:ATTR name="Alpha" type="real">0.224148686610787</XPD:ATTR>
+<XPD:ATTR name="Distance" type="real">21.4709105535839</XPD:ATTR>
 <XPD:ATTR name="EdgePosition" type="EdgePositionKind">epHead</XPD:ATTR>
 <XPD:ATTR name="Text" type="string">1</XPD:ATTR>
 <XPD:REF name="Model">n/2aEWzl5kK85cYNxo44fgAA</XPD:REF>
@@ -2999,8 +3000,8 @@ For example we can change the phone number of a client (Buyer and Seller).</XPD:
 <XPD:OBJ name="OwnedViews[7]" type="UMLClassView" guid="FfqbHQCGvkygZu5IyKJ8ZAAA">
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
-<XPD:ATTR name="Left" type="integer">328</XPD:ATTR>
-<XPD:ATTR name="Top" type="integer">516</XPD:ATTR>
+<XPD:ATTR name="Left" type="integer">260</XPD:ATTR>
+<XPD:ATTR name="Top" type="integer">112</XPD:ATTR>
 <XPD:ATTR name="Width" type="integer">152</XPD:ATTR>
 <XPD:ATTR name="Height" type="integer">112</XPD:ATTR>
 <XPD:REF name="Model">6D6cTWqEfE6e5xZoM1N3RAAA</XPD:REF>
@@ -3030,8 +3031,7 @@ For example we can change the phone number of a client (Buyer and Seller).</XPD:
 <XPD:OBJ name="OwnedViews[8]" type="UMLAssociationView" guid="3nPowD1EFUaULxDFq+9gWAAA">
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
-<XPD:ATTR name="LineStyle" type="LineStyleKind">lsRectilinear</XPD:ATTR>
-<XPD:ATTR name="Points" type="Points">479,564;632,564</XPD:ATTR>
+<XPD:ATTR name="Points" type="Points">411,168;484,168;596,258</XPD:ATTR>
 <XPD:REF name="Model">7ehvzSl3zU6N+aB1+l3GXAAA</XPD:REF>
 <XPD:REF name="Head">cydP5SLurUaJMOup/w5K8QAA</XPD:REF>
 <XPD:REF name="Tail">FfqbHQCGvkygZu5IyKJ8ZAAA</XPD:REF>
@@ -3054,15 +3054,17 @@ For example we can change the phone number of a client (Buyer and Seller).</XPD:
 <XPD:REF name="Model">7ehvzSl3zU6N+aB1+l3GXAAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="HeadRoleNameLabel" type="EdgeLabelView" guid="eb2DF0HEG0mtig0AxRu//AAA">
-<XPD:ATTR name="Alpha" type="real">-0.523598775598299</XPD:ATTR>
-<XPD:ATTR name="Distance" type="real">30</XPD:ATTR>
+<XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
+<XPD:ATTR name="Alpha" type="real">0.225601215204882</XPD:ATTR>
+<XPD:ATTR name="Distance" type="real">60.3738353924943</XPD:ATTR>
 <XPD:ATTR name="EdgePosition" type="EdgePositionKind">epHead</XPD:ATTR>
 <XPD:ATTR name="Text" type="string">+Manage</XPD:ATTR>
 <XPD:REF name="Model">F4C2ZD1tF0q0CxsTRdvlKQAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="TailRoleNameLabel" type="EdgeLabelView" guid="CWvUV4isuEOUSkSRzCCmMwAA">
-<XPD:ATTR name="Alpha" type="real">0.523598775598299</XPD:ATTR>
-<XPD:ATTR name="Distance" type="real">30</XPD:ATTR>
+<XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
+<XPD:ATTR name="Alpha" type="real">0.524795657542246</XPD:ATTR>
+<XPD:ATTR name="Distance" type="real">43.9089968002003</XPD:ATTR>
 <XPD:ATTR name="EdgePosition" type="EdgePositionKind">epTail</XPD:ATTR>
 <XPD:ATTR name="Text" type="string">+isManaged</XPD:ATTR>
 <XPD:REF name="Model">X8tqVPO3rk+AQ1VIIAgHVgAA</XPD:REF>
@@ -3115,8 +3117,7 @@ For example we can change the phone number of a client (Buyer and Seller).</XPD:
 <XPD:OBJ name="OwnedViews[9]" type="UMLAssociationView" guid="jmGHTKTWJku250AxFl0kkQAA">
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
-<XPD:ATTR name="LineStyle" type="LineStyleKind">lsRectilinear</XPD:ATTR>
-<XPD:ATTR name="Points" type="Points">393,443;393,516</XPD:ATTR>
+<XPD:ATTR name="Points" type="Points">434,464;354,223</XPD:ATTR>
 <XPD:REF name="Model">uu3oMxQ3kky6njC644wOkAAA</XPD:REF>
 <XPD:REF name="Head">FfqbHQCGvkygZu5IyKJ8ZAAA</XPD:REF>
 <XPD:REF name="Tail">A6uurkvgsUiv2ds0Z6NVVQAA</XPD:REF>
@@ -3150,11 +3151,12 @@ For example we can change the phone number of a client (Buyer and Seller).</XPD:
 <XPD:ATTR name="Alpha" type="real">0.523598775598299</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">30</XPD:ATTR>
 <XPD:ATTR name="EdgePosition" type="EdgePositionKind">epTail</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">+is</XPD:ATTR>
 <XPD:REF name="Model">bSAWgawG1USevQFvHEO7wQAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="HeadMultiplicityLabel" type="EdgeLabelView" guid="/wchls89B0iorvxm8cEkhgAA">
-<XPD:ATTR name="Alpha" type="real">0.878521918646618</XPD:ATTR>
-<XPD:ATTR name="Distance" type="real">18.0277563773199</XPD:ATTR>
+<XPD:ATTR name="Alpha" type="real">0.46541775931032</XPD:ATTR>
+<XPD:ATTR name="Distance" type="real">20.2484567313166</XPD:ATTR>
 <XPD:ATTR name="EdgePosition" type="EdgePositionKind">epHead</XPD:ATTR>
 <XPD:ATTR name="Text" type="string">0..*</XPD:ATTR>
 <XPD:REF name="Model">A3sbzR+SUUunJzUpKCeuBgAA</XPD:REF>
@@ -3200,8 +3202,7 @@ For example we can change the phone number of a client (Buyer and Seller).</XPD:
 <XPD:OBJ name="OwnedViews[10]" type="UMLAssociationView" guid="AUD7OnDrd0SNTvOcTr3wJwAA">
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
-<XPD:ATTR name="LineStyle" type="LineStyleKind">lsRectilinear</XPD:ATTR>
-<XPD:ATTR name="Points" type="Points">182,564;328,564</XPD:ATTR>
+<XPD:ATTR name="Points" type="Points">194,250;260,211</XPD:ATTR>
 <XPD:REF name="Model">WG9kZvOyQUCCBlurmuAvOwAA</XPD:REF>
 <XPD:REF name="Head">FfqbHQCGvkygZu5IyKJ8ZAAA</XPD:REF>
 <XPD:REF name="Tail">ouPvoBwjREKcXsIM23sKHQAA</XPD:REF>
@@ -3231,10 +3232,11 @@ For example we can change the phone number of a client (Buyer and Seller).</XPD:
 <XPD:REF name="Model">qP11XEe7dECm4iqExik1vAAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="TailRoleNameLabel" type="EdgeLabelView" guid="0LT0OFyFXUaQx9kKl9zKQgAA">
-<XPD:ATTR name="Alpha" type="real">0.523598775598299</XPD:ATTR>
-<XPD:ATTR name="Distance" type="real">30</XPD:ATTR>
+<XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
+<XPD:ATTR name="Alpha" type="real">0.434800643179491</XPD:ATTR>
+<XPD:ATTR name="Distance" type="real">38.8329756778952</XPD:ATTR>
 <XPD:ATTR name="EdgePosition" type="EdgePositionKind">epTail</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">+Participe</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">+takePartOf</XPD:ATTR>
 <XPD:REF name="Model">j4zGiQpqCk6/UDmD4g65ngAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="HeadMultiplicityLabel" type="EdgeLabelView" guid="jULkHcgxvUa8c0Y2uds//wAA">
@@ -3282,9 +3284,118 @@ For example we can change the phone number of a client (Buyer and Seller).</XPD:
 <XPD:REF name="Model">j4zGiQpqCk6/UDmD4g65ngAA</XPD:REF>
 </XPD:OBJ>
 </XPD:OBJ>
+<XPD:OBJ name="OwnedViews[11]" type="UMLClassView" guid="PIASVGTDtk+R9wYchxRT4AAA">
+<XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
+<XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
+<XPD:ATTR name="Left" type="integer">500</XPD:ATTR>
+<XPD:ATTR name="Top" type="integer">4</XPD:ATTR>
+<XPD:ATTR name="Width" type="integer">119</XPD:ATTR>
+<XPD:ATTR name="Height" type="integer">147</XPD:ATTR>
+<XPD:REF name="Model">/zn905+0ukGcNFd0FZ2KHAAA</XPD:REF>
+<XPD:OBJ name="NameCompartment" type="UMLNameCompartmentView" guid="5OLB7G0eeU6XUa4ZKX6BwgAA">
+<XPD:OBJ name="NameLabel" type="LabelView" guid="q3M+hUcfg0GIM8MuagvoJwAA">
+<XPD:ATTR name="FontStyle" type="integer">1</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">User</XPD:ATTR>
+</XPD:OBJ>
+<XPD:OBJ name="StereotypeLabel" type="LabelView" guid="AZJH76syfUWkcb4N4QKJXgAA">
+<XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
+</XPD:OBJ>
+<XPD:OBJ name="PropertyLabel" type="LabelView" guid="QapPAXDKTUerKWQukPl3WQAA">
+<XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
 </XPD:OBJ>
 </XPD:OBJ>
-<XPD:ATTR name="#OwnedElements" type="integer">15</XPD:ATTR>
+<XPD:OBJ name="AttributeCompartment" type="UMLAttributeCompartmentView" guid="I55Mj7fkl06gQESDSRXP1gAA">
+<XPD:REF name="Model">/zn905+0ukGcNFd0FZ2KHAAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="OperationCompartment" type="UMLOperationCompartmentView" guid="gyyoksokS0WbhbKiluE8UwAA">
+<XPD:REF name="Model">/zn905+0ukGcNFd0FZ2KHAAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="TemplateParameterCompartment" type="UMLTemplateParameterCompartmentView" guid="0/W755MvzUabMJW1PMJ2jAAA">
+<XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
+<XPD:REF name="Model">/zn905+0ukGcNFd0FZ2KHAAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="OwnedViews[12]" type="UMLGeneralizationView" guid="ItEJWq1nxE2FLdmRQOn2YgAA">
+<XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
+<XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
+<XPD:ATTR name="Points" type="Points">897,204;896,76;618,77</XPD:ATTR>
+<XPD:REF name="Model">GcvlvWPrdEG7t4WCgT7O1wAA</XPD:REF>
+<XPD:REF name="Head">PIASVGTDtk+R9wYchxRT4AAA</XPD:REF>
+<XPD:REF name="Tail">kjHFnrLJ8USEHiS2LFoyIAAA</XPD:REF>
+<XPD:OBJ name="NameLabel" type="EdgeLabelView" guid="XoAvtKG9dka2xdqnGhUSdwAA">
+<XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
+<XPD:ATTR name="Alpha" type="real">1.5707963267949</XPD:ATTR>
+<XPD:ATTR name="Distance" type="real">15</XPD:ATTR>
+<XPD:REF name="Model">GcvlvWPrdEG7t4WCgT7O1wAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="StereotypeLabel" type="EdgeLabelView" guid="YncVYe5kNEGVQhsgtDtALwAA">
+<XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
+<XPD:ATTR name="Alpha" type="real">1.5707963267949</XPD:ATTR>
+<XPD:ATTR name="Distance" type="real">30</XPD:ATTR>
+<XPD:REF name="Model">GcvlvWPrdEG7t4WCgT7O1wAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="PropertyLabel" type="EdgeLabelView" guid="kmDcuauoBEuXfTbkI82wBgAA">
+<XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
+<XPD:ATTR name="Alpha" type="real">-1.5707963267949</XPD:ATTR>
+<XPD:ATTR name="Distance" type="real">15</XPD:ATTR>
+<XPD:REF name="Model">GcvlvWPrdEG7t4WCgT7O1wAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="OwnedViews[13]" type="UMLGeneralizationView" guid="7zFrc0t6EUWXY/vZIRmuwAAA">
+<XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
+<XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
+<XPD:ATTR name="Points" type="Points">614,204;591,150</XPD:ATTR>
+<XPD:REF name="Model">ntjJneGA60SSa4JLsQlh9wAA</XPD:REF>
+<XPD:REF name="Head">PIASVGTDtk+R9wYchxRT4AAA</XPD:REF>
+<XPD:REF name="Tail">cydP5SLurUaJMOup/w5K8QAA</XPD:REF>
+<XPD:OBJ name="NameLabel" type="EdgeLabelView" guid="+ha3bRD5ZE2X3p3/QmkESQAA">
+<XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
+<XPD:ATTR name="Alpha" type="real">1.5707963267949</XPD:ATTR>
+<XPD:ATTR name="Distance" type="real">15</XPD:ATTR>
+<XPD:REF name="Model">ntjJneGA60SSa4JLsQlh9wAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="StereotypeLabel" type="EdgeLabelView" guid="3gm9jO9cZ0WaGBOhU1hHewAA">
+<XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
+<XPD:ATTR name="Alpha" type="real">1.5707963267949</XPD:ATTR>
+<XPD:ATTR name="Distance" type="real">30</XPD:ATTR>
+<XPD:REF name="Model">ntjJneGA60SSa4JLsQlh9wAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="PropertyLabel" type="EdgeLabelView" guid="yvJpyf3vgkOhcBvoIOGYwQAA">
+<XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
+<XPD:ATTR name="Alpha" type="real">-1.5707963267949</XPD:ATTR>
+<XPD:ATTR name="Distance" type="real">15</XPD:ATTR>
+<XPD:REF name="Model">ntjJneGA60SSa4JLsQlh9wAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="OwnedViews[14]" type="UMLGeneralizationView" guid="WpKaXFoQqEWcjM2HShQs2QAA">
+<XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
+<XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
+<XPD:ATTR name="Points" type="Points">117,192;116,76;500,77</XPD:ATTR>
+<XPD:REF name="Model">QoYVUuL14kSbdz3vXF1ewwAA</XPD:REF>
+<XPD:REF name="Head">PIASVGTDtk+R9wYchxRT4AAA</XPD:REF>
+<XPD:REF name="Tail">ouPvoBwjREKcXsIM23sKHQAA</XPD:REF>
+<XPD:OBJ name="NameLabel" type="EdgeLabelView" guid="fmZvxEudZ0GA75RMB9VC6AAA">
+<XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
+<XPD:ATTR name="Alpha" type="real">1.5707963267949</XPD:ATTR>
+<XPD:ATTR name="Distance" type="real">15</XPD:ATTR>
+<XPD:REF name="Model">QoYVUuL14kSbdz3vXF1ewwAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="StereotypeLabel" type="EdgeLabelView" guid="77ChxYlFIEWtV8L2zQhmgAAA">
+<XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
+<XPD:ATTR name="Alpha" type="real">1.5707963267949</XPD:ATTR>
+<XPD:ATTR name="Distance" type="real">30</XPD:ATTR>
+<XPD:REF name="Model">QoYVUuL14kSbdz3vXF1ewwAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="PropertyLabel" type="EdgeLabelView" guid="97kpjaMfLU6iZ+udJIfozwAA">
+<XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
+<XPD:ATTR name="Alpha" type="real">-1.5707963267949</XPD:ATTR>
+<XPD:ATTR name="Distance" type="real">15</XPD:ATTR>
+<XPD:REF name="Model">QoYVUuL14kSbdz3vXF1ewwAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:ATTR name="#OwnedElements" type="integer">20</XPD:ATTR>
 <XPD:OBJ name="OwnedElements[0]" type="UMLClass" guid="uQv038JliESqUrApkN1yzAAA">
 <XPD:ATTR name="Name" type="string">Buyer</XPD:ATTR>
 <XPD:REF name="Namespace">PiAfbU9A/EGbI6gDq0t1cwAA</XPD:REF>
@@ -3293,6 +3404,8 @@ For example we can change the phone number of a client (Buyer and Seller).</XPD:
 <XPD:REF name="Views[1]">PdLX1BAzGUG7LpMZbvgI8wAA</XPD:REF>
 <XPD:REF name="Views[2]">GysQdXJyB0+6k+VyMVDFjwAA</XPD:REF>
 <XPD:REF name="Views[3]">xR3sacSSlk+KpoK6kHg02wAA</XPD:REF>
+<XPD:ATTR name="#Generalizations" type="integer">1</XPD:ATTR>
+<XPD:REF name="Generalizations[0]">QoYVUuL14kSbdz3vXF1ewwAA</XPD:REF>
 <XPD:ATTR name="#Operations" type="integer">5</XPD:ATTR>
 <XPD:OBJ name="Operations[0]" type="UMLOperation" guid="Fxkw55P6Tk2qKCg0O5zbOwAA">
 <XPD:ATTR name="Name" type="string">editPersonalDetails</XPD:ATTR>
@@ -3318,37 +3431,6 @@ For example we can change the phone number of a client (Buyer and Seller).</XPD:
 <XPD:REF name="Associations[0]">9aGJAigrJEKcAjmSBpsX0gAA</XPD:REF>
 <XPD:REF name="Associations[1]">7J/9ZtOZTEGTakSGU5gZ3QAA</XPD:REF>
 <XPD:REF name="Associations[2]">j4zGiQpqCk6/UDmD4g65ngAA</XPD:REF>
-<XPD:ATTR name="#Attributes" type="integer">6</XPD:ATTR>
-<XPD:OBJ name="Attributes[0]" type="UMLAttribute" guid="j307T7ygw02h1jMHlPJ2tQAA">
-<XPD:ATTR name="Name" type="string">mySurname</XPD:ATTR>
-<XPD:ATTR name="Visibility" type="UMLVisibilityKind">vkPrivate</XPD:ATTR>
-<XPD:REF name="Owner">uQv038JliESqUrApkN1yzAAA</XPD:REF>
-</XPD:OBJ>
-<XPD:OBJ name="Attributes[1]" type="UMLAttribute" guid="U+q7GpG++0ekJ8J0HvNf1gAA">
-<XPD:ATTR name="Name" type="string">myForename</XPD:ATTR>
-<XPD:ATTR name="Visibility" type="UMLVisibilityKind">vkPrivate</XPD:ATTR>
-<XPD:REF name="Owner">uQv038JliESqUrApkN1yzAAA</XPD:REF>
-</XPD:OBJ>
-<XPD:OBJ name="Attributes[2]" type="UMLAttribute" guid="0kN45+ldKU+9QORYQYvHpgAA">
-<XPD:ATTR name="Name" type="string">myUsername</XPD:ATTR>
-<XPD:ATTR name="Visibility" type="UMLVisibilityKind">vkPrivate</XPD:ATTR>
-<XPD:REF name="Owner">uQv038JliESqUrApkN1yzAAA</XPD:REF>
-</XPD:OBJ>
-<XPD:OBJ name="Attributes[3]" type="UMLAttribute" guid="jjo9O8xtck6PSr9Kx/YI9gAA">
-<XPD:ATTR name="Name" type="string">myPassword</XPD:ATTR>
-<XPD:ATTR name="Visibility" type="UMLVisibilityKind">vkPrivate</XPD:ATTR>
-<XPD:REF name="Owner">uQv038JliESqUrApkN1yzAAA</XPD:REF>
-</XPD:OBJ>
-<XPD:OBJ name="Attributes[4]" type="UMLAttribute" guid="MAnX8IRshU6sbJhgfAq4NwAA">
-<XPD:ATTR name="Name" type="string">myTelephoneNo</XPD:ATTR>
-<XPD:ATTR name="Visibility" type="UMLVisibilityKind">vkPrivate</XPD:ATTR>
-<XPD:REF name="Owner">uQv038JliESqUrApkN1yzAAA</XPD:REF>
-</XPD:OBJ>
-<XPD:OBJ name="Attributes[5]" type="UMLAttribute" guid="PaV82De+50SWpqp2bOGGnwAA">
-<XPD:ATTR name="Name" type="string">myEmail</XPD:ATTR>
-<XPD:ATTR name="Visibility" type="UMLVisibilityKind">vkPrivate</XPD:ATTR>
-<XPD:REF name="Owner">uQv038JliESqUrApkN1yzAAA</XPD:REF>
-</XPD:OBJ>
 </XPD:OBJ>
 <XPD:OBJ name="OwnedElements[1]" type="UMLClass" guid="eVap0uIckEm7P5YfsqCsowAA">
 <XPD:ATTR name="Name" type="string">Seller</XPD:ATTR>
@@ -3359,6 +3441,11 @@ For example we can change the phone number of a client (Buyer and Seller).</XPD:
 <XPD:REF name="Views[1]">L6cZ/68WIE6TX5azoGpFPwAA</XPD:REF>
 <XPD:REF name="Views[2]">JPTePdmAO0uHLaiY3/lIPAAA</XPD:REF>
 <XPD:REF name="Views[3]">xVPZuYOKGUW0VE93XrMPkgAA</XPD:REF>
+<XPD:ATTR name="#Generalizations" type="integer">2</XPD:ATTR>
+<XPD:REF name="Generalizations[0]">BPrI8LCrnkelAAE4vpmPSAAA</XPD:REF>
+<XPD:REF name="Generalizations[1]">GcvlvWPrdEG7t4WCgT7O1wAA</XPD:REF>
+<XPD:ATTR name="#Specializations" type="integer">1</XPD:ATTR>
+<XPD:REF name="Specializations[0]">BPrI8LCrnkelAAE4vpmPSAAA</XPD:REF>
 <XPD:ATTR name="#Operations" type="integer">5</XPD:ATTR>
 <XPD:OBJ name="Operations[0]" type="UMLOperation" guid="/A37HAiNQ02U2Gsrnhaf+AAA">
 <XPD:ATTR name="Name" type="string">addProperty</XPD:ATTR>
@@ -3382,38 +3469,8 @@ For example we can change the phone number of a client (Buyer and Seller).</XPD:
 </XPD:OBJ>
 <XPD:ATTR name="#Associations" type="integer">1</XPD:ATTR>
 <XPD:REF name="Associations[0]">S1XRN4WdZ0+Al4Q/84HXTAAA</XPD:REF>
-<XPD:ATTR name="#Attributes" type="integer">7</XPD:ATTR>
-<XPD:OBJ name="Attributes[0]" type="UMLAttribute" guid="Amm3jdr8fEmrev5oUceljQAA">
-<XPD:ATTR name="Name" type="string">mySurname</XPD:ATTR>
-<XPD:ATTR name="Visibility" type="UMLVisibilityKind">vkPrivate</XPD:ATTR>
-<XPD:REF name="Owner">eVap0uIckEm7P5YfsqCsowAA</XPD:REF>
-</XPD:OBJ>
-<XPD:OBJ name="Attributes[1]" type="UMLAttribute" guid="zznbAJ/LKkqAzcfx+K2BAAAA">
-<XPD:ATTR name="Name" type="string">myForename</XPD:ATTR>
-<XPD:ATTR name="Visibility" type="UMLVisibilityKind">vkPrivate</XPD:ATTR>
-<XPD:REF name="Owner">eVap0uIckEm7P5YfsqCsowAA</XPD:REF>
-</XPD:OBJ>
-<XPD:OBJ name="Attributes[2]" type="UMLAttribute" guid="6miTA2264kSFkgB6XyHSKgAA">
-<XPD:ATTR name="Name" type="string">myUsername</XPD:ATTR>
-<XPD:ATTR name="Visibility" type="UMLVisibilityKind">vkPrivate</XPD:ATTR>
-<XPD:REF name="Owner">eVap0uIckEm7P5YfsqCsowAA</XPD:REF>
-</XPD:OBJ>
-<XPD:OBJ name="Attributes[3]" type="UMLAttribute" guid="FrOcGlIspkiZcN388OQIpQAA">
-<XPD:ATTR name="Name" type="string">myPassword</XPD:ATTR>
-<XPD:ATTR name="Visibility" type="UMLVisibilityKind">vkPrivate</XPD:ATTR>
-<XPD:REF name="Owner">eVap0uIckEm7P5YfsqCsowAA</XPD:REF>
-</XPD:OBJ>
-<XPD:OBJ name="Attributes[4]" type="UMLAttribute" guid="jSc5glFtak2mf0CW7O41cQAA">
-<XPD:ATTR name="Name" type="string">myEmail</XPD:ATTR>
-<XPD:ATTR name="Visibility" type="UMLVisibilityKind">vkPrivate</XPD:ATTR>
-<XPD:REF name="Owner">eVap0uIckEm7P5YfsqCsowAA</XPD:REF>
-</XPD:OBJ>
-<XPD:OBJ name="Attributes[5]" type="UMLAttribute" guid="ojzNFyDAMEuRA8dLt2sOggAA">
-<XPD:ATTR name="Name" type="string">myTelephoneNo</XPD:ATTR>
-<XPD:ATTR name="Visibility" type="UMLVisibilityKind">vkPrivate</XPD:ATTR>
-<XPD:REF name="Owner">eVap0uIckEm7P5YfsqCsowAA</XPD:REF>
-</XPD:OBJ>
-<XPD:OBJ name="Attributes[6]" type="UMLAttribute" guid="D1EcVMdM9E2NoEkci/a7VgAA">
+<XPD:ATTR name="#Attributes" type="integer">1</XPD:ATTR>
+<XPD:OBJ name="Attributes[0]" type="UMLAttribute" guid="D1EcVMdM9E2NoEkci/a7VgAA">
 <XPD:ATTR name="Name" type="string">myAddress</XPD:ATTR>
 <XPD:ATTR name="Visibility" type="UMLVisibilityKind">vkPrivate</XPD:ATTR>
 <XPD:REF name="Owner">eVap0uIckEm7P5YfsqCsowAA</XPD:REF>
@@ -3427,6 +3484,8 @@ For example we can change the phone number of a client (Buyer and Seller).</XPD:
 <XPD:REF name="Views[1]">wJR1Gvv7wkWXREcdQmFHdAAA</XPD:REF>
 <XPD:REF name="Views[2]">U5H2PwYFlU+r5XEkv6FvBAAA</XPD:REF>
 <XPD:REF name="Views[3]">mUCMOsmSY0KnRLLPMqPPpQAA</XPD:REF>
+<XPD:ATTR name="#Generalizations" type="integer">1</XPD:ATTR>
+<XPD:REF name="Generalizations[0]">ntjJneGA60SSa4JLsQlh9wAA</XPD:REF>
 <XPD:ATTR name="#Operations" type="integer">9</XPD:ATTR>
 <XPD:OBJ name="Operations[0]" type="UMLOperation" guid="jG8Ss2/HXEWgfwPeyxoewQAA">
 <XPD:ATTR name="Name" type="string">listSellerProperty</XPD:ATTR>
@@ -3473,27 +3532,6 @@ For example we can change the phone number of a client (Buyer and Seller).</XPD:
 <XPD:REF name="Associations[5]">FsQpRTVL90qHdNpxxnKgYQAA</XPD:REF>
 <XPD:REF name="Associations[6]">n/2aEWzl5kK85cYNxo44fgAA</XPD:REF>
 <XPD:REF name="Associations[7]">F4C2ZD1tF0q0CxsTRdvlKQAA</XPD:REF>
-<XPD:ATTR name="#Attributes" type="integer">4</XPD:ATTR>
-<XPD:OBJ name="Attributes[0]" type="UMLAttribute" guid="pODFIEYqH0u0yx7j8w2LEgAA">
-<XPD:ATTR name="Name" type="string">mySurname</XPD:ATTR>
-<XPD:ATTR name="Visibility" type="UMLVisibilityKind">vkPrivate</XPD:ATTR>
-<XPD:REF name="Owner">XrWXZdID4kq4E9tNtzfyGAAA</XPD:REF>
-</XPD:OBJ>
-<XPD:OBJ name="Attributes[1]" type="UMLAttribute" guid="PQwFzaVcKku+b0vKT9PiRwAA">
-<XPD:ATTR name="Name" type="string">myForename</XPD:ATTR>
-<XPD:ATTR name="Visibility" type="UMLVisibilityKind">vkPrivate</XPD:ATTR>
-<XPD:REF name="Owner">XrWXZdID4kq4E9tNtzfyGAAA</XPD:REF>
-</XPD:OBJ>
-<XPD:OBJ name="Attributes[2]" type="UMLAttribute" guid="WozvzYNTL0CauN7hc2h9FgAA">
-<XPD:ATTR name="Name" type="string">myPassword</XPD:ATTR>
-<XPD:ATTR name="Visibility" type="UMLVisibilityKind">vkPrivate</XPD:ATTR>
-<XPD:REF name="Owner">XrWXZdID4kq4E9tNtzfyGAAA</XPD:REF>
-</XPD:OBJ>
-<XPD:OBJ name="Attributes[3]" type="UMLAttribute" guid="PDWbK9XdrUiUYdVde2e9CQAA">
-<XPD:ATTR name="Name" type="string">myTelephoneNo</XPD:ATTR>
-<XPD:ATTR name="Visibility" type="UMLVisibilityKind">vkPrivate</XPD:ATTR>
-<XPD:REF name="Owner">XrWXZdID4kq4E9tNtzfyGAAA</XPD:REF>
-</XPD:OBJ>
 </XPD:OBJ>
 <XPD:OBJ name="OwnedElements[3]" type="UMLClass" guid="mapEvN7sAkWqNX+Hr358RgAA">
 <XPD:ATTR name="Name" type="string">Property</XPD:ATTR>
@@ -3521,7 +3559,7 @@ For example we can change the phone number of a client (Buyer and Seller).</XPD:
 <XPD:REF name="Owner">mapEvN7sAkWqNX+Hr358RgAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="Attributes[2]" type="UMLAttribute" guid="5fpsfwLGOEaT3R20Aq/UYAAA">
-<XPD:ATTR name="Name" type="string">myaddress</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">myAddress</XPD:ATTR>
 <XPD:ATTR name="Visibility" type="UMLVisibilityKind">vkPrivate</XPD:ATTR>
 <XPD:REF name="Owner">mapEvN7sAkWqNX+Hr358RgAA</XPD:REF>
 </XPD:OBJ>
@@ -3615,7 +3653,6 @@ For example we can change the phone number of a client (Buyer and Seller).</XPD:
 <XPD:REF name="Views[3]">TFC4y4b9YkelJujtAvvmNAAA</XPD:REF>
 <XPD:ATTR name="#Connections" type="integer">2</XPD:ATTR>
 <XPD:OBJ name="Connections[0]" type="UMLAssociationEnd" guid="S1XRN4WdZ0+Al4Q/84HXTAAA">
-<XPD:ATTR name="Name" type="string">sell</XPD:ATTR>
 <XPD:ATTR name="IsNavigable" type="boolean">False</XPD:ATTR>
 <XPD:ATTR name="Multiplicity" type="string">1</XPD:ATTR>
 <XPD:REF name="Association">7rqqtTtGGk67ClKKEUR8gAAA</XPD:REF>
@@ -3627,7 +3664,6 @@ For example we can change the phone number of a client (Buyer and Seller).</XPD:
 <XPD:REF name="Views[3]">yDira++x3k2ykrPAE3IpAAAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="Connections[1]" type="UMLAssociationEnd" guid="Df+uvkGBTkO2CkcfyMFW8wAA">
-<XPD:ATTR name="Name" type="string">isSold</XPD:ATTR>
 <XPD:ATTR name="Multiplicity" type="string">1..*</XPD:ATTR>
 <XPD:REF name="Association">7rqqtTtGGk67ClKKEUR8gAAA</XPD:REF>
 <XPD:REF name="Participant">mapEvN7sAkWqNX+Hr358RgAA</XPD:REF>
@@ -3647,7 +3683,6 @@ For example we can change the phone number of a client (Buyer and Seller).</XPD:
 <XPD:REF name="Views[3]">nBYkwir/8Uawx4v8j9rZQAAA</XPD:REF>
 <XPD:ATTR name="#Connections" type="integer">2</XPD:ATTR>
 <XPD:OBJ name="Connections[0]" type="UMLAssociationEnd" guid="7J/9ZtOZTEGTakSGU5gZ3QAA">
-<XPD:ATTR name="Name" type="string">interested</XPD:ATTR>
 <XPD:ATTR name="IsNavigable" type="boolean">False</XPD:ATTR>
 <XPD:ATTR name="Multiplicity" type="string">0..*</XPD:ATTR>
 <XPD:REF name="Association">Immi30wal0mv150wlZOqtAAA</XPD:REF>
@@ -3659,7 +3694,6 @@ For example we can change the phone number of a client (Buyer and Seller).</XPD:
 <XPD:REF name="Views[3]">k+ZRUq1eyES3C1HaB6zMoAAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="Connections[1]" type="UMLAssociationEnd" guid="BOSTW5nTZECThdGaoMZIvwAA">
-<XPD:ATTR name="Name" type="string">available</XPD:ATTR>
 <XPD:ATTR name="Multiplicity" type="string">0..*</XPD:ATTR>
 <XPD:REF name="Association">Immi30wal0mv150wlZOqtAAA</XPD:REF>
 <XPD:REF name="Participant">mapEvN7sAkWqNX+Hr358RgAA</XPD:REF>
@@ -3728,7 +3762,6 @@ For example we can change the phone number of a client (Buyer and Seller).</XPD:
 <XPD:REF name="Views[3]">8vN9f05wXkyAP4Uz5R2FRAAA</XPD:REF>
 <XPD:ATTR name="#Connections" type="integer">2</XPD:ATTR>
 <XPD:OBJ name="Connections[0]" type="UMLAssociationEnd" guid="X8tqVPO3rk+AQ1VIIAgHVgAA">
-<XPD:ATTR name="Name" type="string">isManaged</XPD:ATTR>
 <XPD:ATTR name="Multiplicity" type="string">0..*</XPD:ATTR>
 <XPD:REF name="Association">7ehvzSl3zU6N+aB1+l3GXAAA</XPD:REF>
 <XPD:REF name="Participant">6D6cTWqEfE6e5xZoM1N3RAAA</XPD:REF>
@@ -3739,7 +3772,6 @@ For example we can change the phone number of a client (Buyer and Seller).</XPD:
 <XPD:REF name="Views[3]">t0i8K8M28k+vPoOzTfgcrQAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="Connections[1]" type="UMLAssociationEnd" guid="F4C2ZD1tF0q0CxsTRdvlKQAA">
-<XPD:ATTR name="Name" type="string">Manage</XPD:ATTR>
 <XPD:ATTR name="IsNavigable" type="boolean">False</XPD:ATTR>
 <XPD:ATTR name="Multiplicity" type="string">1</XPD:ATTR>
 <XPD:REF name="Association">7ehvzSl3zU6N+aB1+l3GXAAA</XPD:REF>
@@ -3789,7 +3821,6 @@ For example we can change the phone number of a client (Buyer and Seller).</XPD:
 <XPD:REF name="Views[3]">EZQnnWVl4kSyvG3/vbtpXQAA</XPD:REF>
 <XPD:ATTR name="#Connections" type="integer">2</XPD:ATTR>
 <XPD:OBJ name="Connections[0]" type="UMLAssociationEnd" guid="j4zGiQpqCk6/UDmD4g65ngAA">
-<XPD:ATTR name="Name" type="string">Participe</XPD:ATTR>
 <XPD:ATTR name="IsNavigable" type="boolean">False</XPD:ATTR>
 <XPD:ATTR name="Multiplicity" type="string">1</XPD:ATTR>
 <XPD:REF name="Association">WG9kZvOyQUCCBlurmuAvOwAA</XPD:REF>
@@ -3810,6 +3841,91 @@ For example we can change the phone number of a client (Buyer and Seller).</XPD:
 <XPD:REF name="Views[2]">ccaGHIaP0UKJ0V6XM7Z3EwAA</XPD:REF>
 <XPD:REF name="Views[3]">M56rt15NlE+R6n+zvfGc+wAA</XPD:REF>
 </XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="OwnedElements[15]" type="UMLClass" guid="/zn905+0ukGcNFd0FZ2KHAAA">
+<XPD:ATTR name="Name" type="string">User</XPD:ATTR>
+<XPD:REF name="Namespace">PiAfbU9A/EGbI6gDq0t1cwAA</XPD:REF>
+<XPD:ATTR name="#Views" type="integer">4</XPD:ATTR>
+<XPD:REF name="Views[0]">PIASVGTDtk+R9wYchxRT4AAA</XPD:REF>
+<XPD:REF name="Views[1]">I55Mj7fkl06gQESDSRXP1gAA</XPD:REF>
+<XPD:REF name="Views[2]">gyyoksokS0WbhbKiluE8UwAA</XPD:REF>
+<XPD:REF name="Views[3]">0/W755MvzUabMJW1PMJ2jAAA</XPD:REF>
+<XPD:ATTR name="#Specializations" type="integer">3</XPD:ATTR>
+<XPD:REF name="Specializations[0]">GcvlvWPrdEG7t4WCgT7O1wAA</XPD:REF>
+<XPD:REF name="Specializations[1]">ntjJneGA60SSa4JLsQlh9wAA</XPD:REF>
+<XPD:REF name="Specializations[2]">QoYVUuL14kSbdz3vXF1ewwAA</XPD:REF>
+<XPD:ATTR name="#Operations" type="integer">2</XPD:ATTR>
+<XPD:OBJ name="Operations[0]" type="UMLOperation" guid="dkCGxa0Iu0OQoVEE6Ije3wAA">
+<XPD:ATTR name="Name" type="string">logon</XPD:ATTR>
+<XPD:REF name="Owner">/zn905+0ukGcNFd0FZ2KHAAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Operations[1]" type="UMLOperation" guid="A/QriPQX5E2DRBfqQ5HJagAA">
+<XPD:ATTR name="Name" type="string">logout</XPD:ATTR>
+<XPD:REF name="Owner">/zn905+0ukGcNFd0FZ2KHAAA</XPD:REF>
+</XPD:OBJ>
+<XPD:ATTR name="#Attributes" type="integer">6</XPD:ATTR>
+<XPD:OBJ name="Attributes[0]" type="UMLAttribute" guid="Y6FaYGKt8kO/UqNgvXTMDwAA">
+<XPD:ATTR name="Name" type="string">mySurname</XPD:ATTR>
+<XPD:ATTR name="Visibility" type="UMLVisibilityKind">vkPrivate</XPD:ATTR>
+<XPD:REF name="Owner">/zn905+0ukGcNFd0FZ2KHAAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Attributes[1]" type="UMLAttribute" guid="OmNKI6/mV0+55/I1iOsR1wAA">
+<XPD:ATTR name="Name" type="string">myForename</XPD:ATTR>
+<XPD:ATTR name="Visibility" type="UMLVisibilityKind">vkPrivate</XPD:ATTR>
+<XPD:REF name="Owner">/zn905+0ukGcNFd0FZ2KHAAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Attributes[2]" type="UMLAttribute" guid="v4STl6XsfkWOhzXvJ68CugAA">
+<XPD:ATTR name="Name" type="string">myUsername</XPD:ATTR>
+<XPD:REF name="Owner">/zn905+0ukGcNFd0FZ2KHAAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Attributes[3]" type="UMLAttribute" guid="TSX7/GJd4U2AaANPt3YhCQAA">
+<XPD:ATTR name="Name" type="string">myPassword</XPD:ATTR>
+<XPD:ATTR name="Visibility" type="UMLVisibilityKind">vkPrivate</XPD:ATTR>
+<XPD:REF name="Owner">/zn905+0ukGcNFd0FZ2KHAAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Attributes[4]" type="UMLAttribute" guid="9RPU1u2X30Otfc7MTg7CEQAA">
+<XPD:ATTR name="Name" type="string">myEmail</XPD:ATTR>
+<XPD:REF name="Owner">/zn905+0ukGcNFd0FZ2KHAAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Attributes[5]" type="UMLAttribute" guid="49dLMNq0p0KjXUcVXUvsfQAA">
+<XPD:ATTR name="Name" type="string">myTelephoneNumber</XPD:ATTR>
+<XPD:REF name="Owner">/zn905+0ukGcNFd0FZ2KHAAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="OwnedElements[16]" type="UMLGeneralization" guid="BPrI8LCrnkelAAE4vpmPSAAA">
+<XPD:REF name="Namespace">PiAfbU9A/EGbI6gDq0t1cwAA</XPD:REF>
+<XPD:REF name="Child">eVap0uIckEm7P5YfsqCsowAA</XPD:REF>
+<XPD:REF name="Parent">eVap0uIckEm7P5YfsqCsowAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="OwnedElements[17]" type="UMLGeneralization" guid="GcvlvWPrdEG7t4WCgT7O1wAA">
+<XPD:REF name="Namespace">PiAfbU9A/EGbI6gDq0t1cwAA</XPD:REF>
+<XPD:REF name="Child">eVap0uIckEm7P5YfsqCsowAA</XPD:REF>
+<XPD:REF name="Parent">/zn905+0ukGcNFd0FZ2KHAAA</XPD:REF>
+<XPD:ATTR name="#Views" type="integer">4</XPD:ATTR>
+<XPD:REF name="Views[0]">ItEJWq1nxE2FLdmRQOn2YgAA</XPD:REF>
+<XPD:REF name="Views[1]">XoAvtKG9dka2xdqnGhUSdwAA</XPD:REF>
+<XPD:REF name="Views[2]">YncVYe5kNEGVQhsgtDtALwAA</XPD:REF>
+<XPD:REF name="Views[3]">kmDcuauoBEuXfTbkI82wBgAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="OwnedElements[18]" type="UMLGeneralization" guid="ntjJneGA60SSa4JLsQlh9wAA">
+<XPD:REF name="Namespace">PiAfbU9A/EGbI6gDq0t1cwAA</XPD:REF>
+<XPD:REF name="Child">XrWXZdID4kq4E9tNtzfyGAAA</XPD:REF>
+<XPD:REF name="Parent">/zn905+0ukGcNFd0FZ2KHAAA</XPD:REF>
+<XPD:ATTR name="#Views" type="integer">4</XPD:ATTR>
+<XPD:REF name="Views[0]">7zFrc0t6EUWXY/vZIRmuwAAA</XPD:REF>
+<XPD:REF name="Views[1]">+ha3bRD5ZE2X3p3/QmkESQAA</XPD:REF>
+<XPD:REF name="Views[2]">3gm9jO9cZ0WaGBOhU1hHewAA</XPD:REF>
+<XPD:REF name="Views[3]">yvJpyf3vgkOhcBvoIOGYwQAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="OwnedElements[19]" type="UMLGeneralization" guid="QoYVUuL14kSbdz3vXF1ewwAA">
+<XPD:REF name="Namespace">PiAfbU9A/EGbI6gDq0t1cwAA</XPD:REF>
+<XPD:REF name="Child">uQv038JliESqUrApkN1yzAAA</XPD:REF>
+<XPD:REF name="Parent">/zn905+0ukGcNFd0FZ2KHAAA</XPD:REF>
+<XPD:ATTR name="#Views" type="integer">4</XPD:ATTR>
+<XPD:REF name="Views[0]">WpKaXFoQqEWcjM2HShQs2QAA</XPD:REF>
+<XPD:REF name="Views[1]">fmZvxEudZ0GA75RMB9VC6AAA</XPD:REF>
+<XPD:REF name="Views[2]">77ChxYlFIEWtV8L2zQhmgAAA</XPD:REF>
+<XPD:REF name="Views[3]">97kpjaMfLU6iZ+udJIfozwAA</XPD:REF>
 </XPD:OBJ>
 </XPD:OBJ>
 </XPD:OBJ>
