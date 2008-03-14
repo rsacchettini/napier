@@ -1,7 +1,12 @@
 class Property {
     
-    Seller _isSoldBy
-    EstateAgent _isManagedBy
+    Seller isSoldBy
+    EstateAgent isManagedBy
+
+    String mySurname
+    String myForename
+    String myUsername
+
     static belongsTo =  [isSoldBy:Seller]
     
     //Note: Since the O.6 version of grails there is no need to specify any collection or Set for the hasMany
