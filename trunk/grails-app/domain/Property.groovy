@@ -13,7 +13,7 @@ class Property {
     //associations. relatesToMany used to require that but is now deprecated so only hasMany must be used
     static hasMany = [interestedBuyers:Buyer, appointements:Appointement]
 
-     String toString() { "${this.class.name} :  $id" }
+     String toString() { return myForename+" "+mySurname }
 
       boolean equals(other) {
           if(other?.is(this))return true
