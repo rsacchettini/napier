@@ -2,6 +2,7 @@ class Property {
     
     Seller _isSoldBy
     EstateAgent _isManagedBy
+    static belongsTo =  [isSoldBy:Seller]
     
     static belongsTo =  [isSoldBy:Seller]
     
