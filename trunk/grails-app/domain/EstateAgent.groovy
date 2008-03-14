@@ -1,8 +1,5 @@
 class EstateAgent {
-    //id and version attributes are relative to the class management inside grails
-    //note that the id field could be also useful for the programmer
-    Long id
-    Long version
+    
 
     //Note: Since the O.6 version of grails there is no need to specify any collection or Set for the hasMany
     //associations. relatesToMany used to require that but is now deprecated so only hasMany must be used
