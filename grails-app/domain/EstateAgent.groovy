@@ -10,7 +10,7 @@ class EstateAgent {
     //associations. relatesToMany used to require that but is now deprecated so only hasMany must be used
     static hasMany = [propertiesToManage:Property, appointementsToManage:Appointement]
 
-       String toString() { return agent }
+       String toString() { return myForename+" "+mySurname }
        
 
       boolean equals(other) {
