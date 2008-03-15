@@ -35,14 +35,17 @@ This document describes all the functional needs and indirectely also the non-fu
 \subsection{Napier Estate Agency Diagram}
 Figure 1 Use-Case Diagram of Napier Estate Agency
 
+
 \section{Actor Specification}
 
 \subsection{Buyer}
 \subsubsection{Description}
 People who want to buy properties.
+
 \subsection{Estate agent}
 \subsubsection{Description}
 People who manage the whole exchanges of the website.
+
 \subsection{Seller}
 \subsubsection{Description}
 People who want to sell their properties.
@@ -99,7 +102,7 @@ To create a new account object with personal details, including name, contact nu
 \begin{itemize}
 \item The system prompts the user for his forename, surname, his contact number, and his address.
 \item If the user does not exist previously in the database, and if the data is validated, the sytem add the new record.
-\item The user is logged-on directly on his new account
+\item The user is logged-on directly on his new account.
 \end{itemize}
 \paragraph{Alternative Flow}
 \begin{itemize}
@@ -149,16 +152,16 @@ The estate agent checks, confirms and refuses all the added properties by the se
 \subsubsection{Flow of Events}
 \paragraph{Basic Flow}
 \begin{itemize}
-\item The system prompts a list of properties to be validated
-\item The estate agent chooses a property to validate
-\item The system prompts the property details and ask for a confirmation
-\item The estate agent chooses to validate the property
+\item The system prompts a list of properties to be validated.
+\item The estate agent chooses a property to validate.
+\item The system prompts the property details and ask for a confirmation.
+\item The estate agent chooses to validate the property.
 \item The system markes the property as validated.
 \end{itemize}
 \paragraph{Alternative Flow}
 \begin{itemize}
-\item The user chooses to not validate the property
-\item The property is deleted
+\item The user chooses to not validate the property.
+\item The property is deleted.
 \end{itemize}
 \subsubsection{Pre-Conditions}
 The estate agent must be log on the system.
@@ -274,7 +277,7 @@ The estate agent see who are interested by properties and also the name of its o
 \begin{itemize}
 \item The system displayes the list of all buyer who are interested by properties.
 \item The estate agent get more details in clicking on the properties.
-\item The system displayes all the details (buyer, property, seller).
+\item The system displayes all the details buyer, property, seller.
 \end{itemize}
 \paragraph{Alternative Flow}
 \begin{itemize}
@@ -283,5 +286,6 @@ The estate agent see who are interested by properties and also the name of its o
 The estate agent must be log on the system.
 \subsubsection{Post-Conditions}
 The estate agent see the dossier of each property which has been selected by buyers.
+
 
 \end{document}
