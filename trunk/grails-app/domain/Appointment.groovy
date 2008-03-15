@@ -1,4 +1,4 @@
-class Appointement {
+class Appointment {
 
     EstateAgent isManagedBy
     Property property
@@ -14,7 +14,7 @@ class Appointement {
 
     boolean equals(other) {
         if (other?.is(this)) return true
-        if (!(other instanceof Appointement)) return false
+        if (!(other instanceof Appointment)) return false
         if (!id || !other?.id || id != other?.id) return false
         return true
     }
