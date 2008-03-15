@@ -189,19 +189,34 @@ The estate agent must be log on the system.
 
 \subsection{Manage the appointments}
 \subsubsection{Description}
-Allows us to arrange appointments for people who want visit properties.
+The estate agent arranges the appointments for people who want visit properties.
 \subsubsection{Flow of Events}
 \paragraph{Basic Flow}
 \begin{itemize}
-\item
+\item The estate agent asks the system to process a new appointment.
+\item The system asks the estate agent for identification.
+\item The estate agent identifies himselve to the system.
+\item The system displays a list of buyers interested by properties to the estate agent.
+\item The estate agent selects the buyer and his interested property into the system.
+\item The system displays the diary with the date available for a visit to the sales assistant.
+\item The estate agent chooses a date.
+\item The system displays the appointment's description created by the estate agent.
+\item The estate agent valids his appointment.
+\item The system records the appointment.
+\item The system removes the choosen date for the appointment from date available.
+\item The system displays the main menu to the estate agent.
 \end{itemize}
 \paragraph{Alternative Flow}
 \begin{itemize}
-\item
+\item The system recognizes cookie on estate agent's machine. 
+\item Go to step 4 (Basic Flow).
+\item The system does not recognize estate agent's logon information.
+\item Go to step 1 (Basic Flow).
 \end{itemize}
 \subsubsection{Pre-Conditions}
-The estate agent must be log on the system.
+The system is displaying the estate agent main menu.
 \subsubsection{Post-Conditions}
+The system is displaying the estate agent main menu.
 
 \subsection{Register interest in a property}
 \subsubsection{Description}
