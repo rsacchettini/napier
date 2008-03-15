@@ -236,19 +236,32 @@ The buyer must be log on the system.
 
 \subsection{Register property details}
 \subsubsection{Description}
-To create a new property object, upload relative information, including pictures, key features, full description, tenure, etc.
+The seller adds a new property in gathering the key features, full description, tenure and in uploading pictures.
 \subsubsection{Flow of Events}
 \paragraph{Basic Flow}
 \begin{itemize}
-\item
+\item The seller asks the system to process a new add property.
+\item The system asks the seller for identification.
+\item The seller identifies himselve to the system.
+\item The system displays a blank dossier of add property to the seller.
+\item The seller fills all the required fields with the features of his property and uploads pictures of his property into the system.
+\item The system displays the description of request's seller to the seller.
+\item The seller valids his add.
+\item The system records the property details.
+\item The system signals to an estate agent that a property of the seller has been added and has to be confirmed.
+\item The system displays the seller main menu to the seller.
 \end{itemize}
 \paragraph{Alternative Flow}
 \begin{itemize}
-\item
+\item The system recognizes cookie on seller's computer. 
+\item Go to step 4 (Basic Flow).
+\item The system does not recognize seller's logon information.
+\item Go to step 1 (Basic Flow).
 \end{itemize}
 \subsubsection{Pre-Conditions}
-The seller must be log on the system.
+The system is displaying the seller main menu.
 \subsubsection{Post-Conditions}
+The system is displaying the seller main menu.
 
 \subsection{Remove property from list}
 \subsubsection{Description}
