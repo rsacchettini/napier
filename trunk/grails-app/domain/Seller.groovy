@@ -1,11 +1,5 @@
-class Seller {
+class Seller extends User {
     /* ---------- Attributes ---------- */
-    String mySurname
-	String myForename
-	String myUsername
-	String myPassword
-	String myEmail
-	String myTelephoneNo
 	String myAddress
 
     //Note: Since the O.6 version of grails there is no need to specify any collection or Set for the hasMany
@@ -14,18 +8,8 @@ class Seller {
 
     static constraints =
     {
-       myForename(blank:false)
-       mySurname(blank:false)
-       myUsername(blank:false, unique:true, length:5..15)
-       myPassword(blank:false, matches:/[\w\d]+/)
-       myEmail(email:true, blank:false)
-       myTelephoneNo(blank:false)
        myAddress(blank:false)
     }
-    
-
-
-    String toString() { "${this.class.name} :  $id" }
 
       boolean equals(other) {
           if(other?.is(this))return true
@@ -34,11 +18,6 @@ class Seller {
           return true
       }
 
-      int hashCode() {
-          int hashCode = 0
-          hashCode = 29 * (hashCode + ( !id ? 0 : id ^ (id >>> 32)))
-      }
-    /*
 
     void addProperty() {
 
@@ -59,7 +38,7 @@ class Seller {
 	void editPersonalDetails() {
 
 	}
-	*/
+	
     
 
 }
