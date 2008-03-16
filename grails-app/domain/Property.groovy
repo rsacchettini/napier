@@ -1,7 +1,17 @@
 class Property {
-
+    /* ---------- Attributes ---------- */
     Seller isSoldBy
     EstateAgent isManagedBy
+    String myReferenceNo
+	String myAvailableFrom
+	String myAddress
+	String myPostCode
+	String myMap
+	double myMinPrice
+	double myMaxPrice
+	String myDescription
+	int myBedroomNumber
+	String myPicture
     
     static belongsTo = [isSoldBy: Seller]
     static hasMany = [interestedBuyers: Buyer, appointements: Appointment]
