@@ -12,12 +12,4 @@ class User {
         return myForename + " " + mySurname
     }
 
-    /* ---------- Methods ---------- */
-	public void logon() {
-
-	}
-
-	public void logout() {
-
-	}
 }
