@@ -19,29 +19,4 @@ class Seller extends User {
         hashCode = 29 * (hashCode + (!id ? 0 : id ^ (id >>> 32)))
     }
     
-    /* ---------- Methods ---------- */
-    Seller (){}
-
-    public void addProperty() {
-
-
-    }
-
-	public void editProperty() {
-
-	}
-    public void removeProperty() {
-
-
-    }
-
-	public void listInterestedBuyers() {
-
-	}
-	
-	public void editPersonalDetails() {
-
-
-    }
-
 }
