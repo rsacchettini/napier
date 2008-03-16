@@ -3471,7 +3471,7 @@ For example we can change the phone number of a client (Buyer and Seller).</XPD:
 <XPD:REF name="Associations[0]">S1XRN4WdZ0+Al4Q/84HXTAAA</XPD:REF>
 <XPD:ATTR name="#Attributes" type="integer">1</XPD:ATTR>
 <XPD:OBJ name="Attributes[0]" type="UMLAttribute" guid="D1EcVMdM9E2NoEkci/a7VgAA">
-<XPD:ATTR name="Name" type="string">myAddress</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">address</XPD:ATTR>
 <XPD:ATTR name="Visibility" type="UMLVisibilityKind">vkPrivate</XPD:ATTR>
 <XPD:REF name="Owner">eVap0uIckEm7P5YfsqCsowAA</XPD:REF>
 </XPD:OBJ>
@@ -3549,47 +3549,47 @@ For example we can change the phone number of a client (Buyer and Seller).</XPD:
 <XPD:REF name="Associations[4]">bSAWgawG1USevQFvHEO7wQAA</XPD:REF>
 <XPD:ATTR name="#Attributes" type="integer">9</XPD:ATTR>
 <XPD:OBJ name="Attributes[0]" type="UMLAttribute" guid="TRH252VOv0iKeoj7y1+eCQAA">
-<XPD:ATTR name="Name" type="string">myReferenceNo</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">referenceNumber</XPD:ATTR>
 <XPD:ATTR name="Visibility" type="UMLVisibilityKind">vkPrivate</XPD:ATTR>
 <XPD:REF name="Owner">mapEvN7sAkWqNX+Hr358RgAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="Attributes[1]" type="UMLAttribute" guid="ufmSQPbDukuKkK/6WUt0IwAA">
-<XPD:ATTR name="Name" type="string">myAvailableFrom</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">availabilityDates</XPD:ATTR>
 <XPD:ATTR name="Visibility" type="UMLVisibilityKind">vkPrivate</XPD:ATTR>
 <XPD:REF name="Owner">mapEvN7sAkWqNX+Hr358RgAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="Attributes[2]" type="UMLAttribute" guid="5fpsfwLGOEaT3R20Aq/UYAAA">
-<XPD:ATTR name="Name" type="string">myAddress</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">streetAddress</XPD:ATTR>
 <XPD:ATTR name="Visibility" type="UMLVisibilityKind">vkPrivate</XPD:ATTR>
 <XPD:REF name="Owner">mapEvN7sAkWqNX+Hr358RgAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="Attributes[3]" type="UMLAttribute" guid="Q02ufycEDEGDNWZm2vuJKQAA">
-<XPD:ATTR name="Name" type="string">myPostCode</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">postcode</XPD:ATTR>
 <XPD:ATTR name="Visibility" type="UMLVisibilityKind">vkPrivate</XPD:ATTR>
 <XPD:REF name="Owner">mapEvN7sAkWqNX+Hr358RgAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="Attributes[4]" type="UMLAttribute" guid="KQyNyPdNqkmoEb+6iHUz0wAA">
-<XPD:ATTR name="Name" type="string">myMinPrice</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">minimumPrice</XPD:ATTR>
 <XPD:ATTR name="Visibility" type="UMLVisibilityKind">vkPrivate</XPD:ATTR>
 <XPD:REF name="Owner">mapEvN7sAkWqNX+Hr358RgAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="Attributes[5]" type="UMLAttribute" guid="b6uyI0vNXU2HDs/LLslZYQAA">
-<XPD:ATTR name="Name" type="string">myMaxPrice</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">maximumPrice</XPD:ATTR>
 <XPD:ATTR name="Visibility" type="UMLVisibilityKind">vkPrivate</XPD:ATTR>
 <XPD:REF name="Owner">mapEvN7sAkWqNX+Hr358RgAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="Attributes[6]" type="UMLAttribute" guid="qi/0iL567Em5rdlE7VbhwgAA">
-<XPD:ATTR name="Name" type="string">myDescription</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">description</XPD:ATTR>
 <XPD:ATTR name="Visibility" type="UMLVisibilityKind">vkPrivate</XPD:ATTR>
 <XPD:REF name="Owner">mapEvN7sAkWqNX+Hr358RgAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="Attributes[7]" type="UMLAttribute" guid="HkIFR1VglEOXrqXfROBcYAAA">
-<XPD:ATTR name="Name" type="string">myBedroomNumber</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">bedroomNumber</XPD:ATTR>
 <XPD:ATTR name="Visibility" type="UMLVisibilityKind">vkPrivate</XPD:ATTR>
 <XPD:REF name="Owner">mapEvN7sAkWqNX+Hr358RgAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="Attributes[8]" type="UMLAttribute" guid="9NHfhqGWlkaHXhm42weF0wAA">
-<XPD:ATTR name="Name" type="string">myPicture</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">picture</XPD:ATTR>
 <XPD:ATTR name="Visibility" type="UMLVisibilityKind">vkPrivate</XPD:ATTR>
 <XPD:REF name="Owner">mapEvN7sAkWqNX+Hr358RgAA</XPD:REF>
 </XPD:OBJ>
@@ -3748,7 +3748,7 @@ For example we can change the phone number of a client (Buyer and Seller).</XPD:
 <XPD:REF name="Associations[2]">qP11XEe7dECm4iqExik1vAAA</XPD:REF>
 <XPD:ATTR name="#Attributes" type="integer">1</XPD:ATTR>
 <XPD:OBJ name="Attributes[0]" type="UMLAttribute" guid="9byamsDnAkGEaWEP+TmUfgAA">
-<XPD:ATTR name="Name" type="string">myDateAndTime</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">dateAndTime</XPD:ATTR>
 <XPD:ATTR name="Visibility" type="UMLVisibilityKind">vkPrivate</XPD:ATTR>
 <XPD:REF name="Owner">6D6cTWqEfE6e5xZoM1N3RAAA</XPD:REF>
 </XPD:OBJ>
@@ -3865,30 +3865,30 @@ For example we can change the phone number of a client (Buyer and Seller).</XPD:
 </XPD:OBJ>
 <XPD:ATTR name="#Attributes" type="integer">6</XPD:ATTR>
 <XPD:OBJ name="Attributes[0]" type="UMLAttribute" guid="Y6FaYGKt8kO/UqNgvXTMDwAA">
-<XPD:ATTR name="Name" type="string">mySurname</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">surname</XPD:ATTR>
 <XPD:ATTR name="Visibility" type="UMLVisibilityKind">vkPrivate</XPD:ATTR>
 <XPD:REF name="Owner">/zn905+0ukGcNFd0FZ2KHAAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="Attributes[1]" type="UMLAttribute" guid="OmNKI6/mV0+55/I1iOsR1wAA">
-<XPD:ATTR name="Name" type="string">myForename</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">forename</XPD:ATTR>
 <XPD:ATTR name="Visibility" type="UMLVisibilityKind">vkPrivate</XPD:ATTR>
 <XPD:REF name="Owner">/zn905+0ukGcNFd0FZ2KHAAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="Attributes[2]" type="UMLAttribute" guid="v4STl6XsfkWOhzXvJ68CugAA">
-<XPD:ATTR name="Name" type="string">myUsername</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">username</XPD:ATTR>
 <XPD:REF name="Owner">/zn905+0ukGcNFd0FZ2KHAAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="Attributes[3]" type="UMLAttribute" guid="TSX7/GJd4U2AaANPt3YhCQAA">
-<XPD:ATTR name="Name" type="string">myPassword</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">password</XPD:ATTR>
 <XPD:ATTR name="Visibility" type="UMLVisibilityKind">vkPrivate</XPD:ATTR>
 <XPD:REF name="Owner">/zn905+0ukGcNFd0FZ2KHAAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="Attributes[4]" type="UMLAttribute" guid="9RPU1u2X30Otfc7MTg7CEQAA">
-<XPD:ATTR name="Name" type="string">myEmail</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">email</XPD:ATTR>
 <XPD:REF name="Owner">/zn905+0ukGcNFd0FZ2KHAAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="Attributes[5]" type="UMLAttribute" guid="49dLMNq0p0KjXUcVXUvsfQAA">
-<XPD:ATTR name="Name" type="string">myTelephoneNumber</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">telephoneNumber</XPD:ATTR>
 <XPD:REF name="Owner">/zn905+0ukGcNFd0FZ2KHAAA</XPD:REF>
 </XPD:OBJ>
 </XPD:OBJ>
