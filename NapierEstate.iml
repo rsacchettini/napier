@@ -35,6 +35,7 @@
     <orderEntry type="library" name="GROOVY" level="application" />
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="com.mysql.jdbc.Driver" level="project" />
     <orderEntryProperties />
   </component>
 </module>
