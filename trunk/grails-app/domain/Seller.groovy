@@ -17,27 +17,6 @@ class Seller extends User {
           if(!id || !other?.id || id!=other?.id) return false
           return true
       }
-
-
-    void addProperty() {
-
-	}
-
-	void editProperty() {
-
-	}
-
-	void removeProperty() {
-
-	}
-
-	void listInterestedBuyers() {
-
-	}
-
-	void editPersonalDetails() {
-
-	}
 	
     
 
