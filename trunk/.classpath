@@ -148,8 +148,8 @@
 
 <classpathentry kind="var" path="GRAILS_HOME/dist/grails-web-1.0.1.jar" />
 
-<classpathentry kind="var" path="GRAILS_HOME/dist/grails-webflow-1.0.1.jar" />
+<classpathentry kind="var" path="D:/DevApps/IdeaProjects/NapierEstate/mysql-connector-java-5.1.5-bin.jar" />
 
 
-	<classpathentry kind="output" path="web-app/WEB-INF/classes"/>
+    <classpathentry kind="output" path="web-app/WEB-INF/classes"/>
 </classpath>
