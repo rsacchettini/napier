@@ -30,10 +30,10 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                    <label for="myDateAndTime">My Date And Time:</label>
+                                    <label for="dateAndTime">Date And Time:</label>
                                 </td>
-                                <td valign="top" class="value ${hasErrors(bean:appointment,field:'myDateAndTime','errors')}">
-                                    <g:datePicker name="myDateAndTime" value="${appointment?.myDateAndTime}" ></g:datePicker>
+                                <td valign="top" class="value ${hasErrors(bean:appointment,field:'dateAndTime','errors')}">
+                                    <g:datePicker name="dateAndTime" value="${appointment?.dateAndTime}" ></g:datePicker>
                                 </td>
                             </tr> 
                         

@@ -23,17 +23,15 @@
                         
                    	        <g:sortableColumn property="id" title="Id" />
                         
-                   	        <g:sortableColumn property="myReferenceNo" title="My Reference No" />
+                   	        <g:sortableColumn property="referenceNo" title="Reference No" />
                         
-                   	        <g:sortableColumn property="myAvailableFrom[0]" title="Start Date" />
-
-                            <g:sortableColumn property="myAvailableFrom[1]" title="End Date" />
-
-                            <g:sortableColumn property="myaddress" title="Myaddress" />
+                   	        <g:sortableColumn property="availableFrom" title="Available From" />
                         
-                   	        <g:sortableColumn property="myPostCode" title="My Post Code" />
+                   	        <g:sortableColumn property="address" title="Address" />
                         
-                   	        <g:sortableColumn property="myMinPrice" title="My Min Price" />
+                   	        <g:sortableColumn property="postCode" title="Post Code" />
+                        
+                   	        <g:sortableColumn property="minPrice" title="Min Price" />
                         
                         </tr>
                     </thead>
@@ -43,17 +41,15 @@
                         
                             <td><g:link action="show" id="${property.id}">${property.id?.encodeAsHTML()}</g:link></td>
                         
-                            <td>${property.myReferenceNo?.encodeAsHTML()}</td>
+                            <td>${property.referenceNo?.encodeAsHTML()}</td>
                         
-                            <td>${property.myAvailableFrom[0]?.encodeAsHTML()}</td>
-
-                            <td>${property.myAvailableFrom[1]?.encodeAsHTML()}</td>
+                            <td>${property.availableFrom?.encodeAsHTML()}</td>
                         
-                            <td>${property.myaddress?.encodeAsHTML()}</td>
+                            <td>${property.address?.encodeAsHTML()}</td>
                         
-                            <td>${property.myPostCode?.encodeAsHTML()}</td>
+                            <td>${property.postCode?.encodeAsHTML()}</td>
                         
-                            <td>${property.myMinPrice?.encodeAsHTML()}</td>
+                            <td>${property.minPrice?.encodeAsHTML()}</td>
                         
                         </tr>
                     </g:each>

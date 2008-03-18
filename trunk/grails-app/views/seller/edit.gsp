@@ -30,64 +30,64 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                    <label for="myForename">My Forename:</label>
+                                    <label for="forename">Forename:</label>
                                 </td>
-                                <td valign="top" class="value ${hasErrors(bean:seller,field:'myForename','errors')}">
-                                    <input type="text" id="myForename" name="myForename" value="${fieldValue(bean:seller,field:'myForename')}"/>
-                                </td>
-                            </tr> 
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                    <label for="mySurname">My Surname:</label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean:seller,field:'mySurname','errors')}">
-                                    <input type="text" id="mySurname" name="mySurname" value="${fieldValue(bean:seller,field:'mySurname')}"/>
+                                <td valign="top" class="value ${hasErrors(bean:seller,field:'forename','errors')}">
+                                    <input type="text" id="forename" name="forename" value="${fieldValue(bean:seller,field:'forename')}"/>
                                 </td>
                             </tr> 
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                    <label for="myUsername">My Username:</label>
+                                    <label for="surname">Surname:</label>
                                 </td>
-                                <td valign="top" class="value ${hasErrors(bean:seller,field:'myUsername','errors')}">
-                                    <input type="text" id="myUsername" name="myUsername" value="${fieldValue(bean:seller,field:'myUsername')}"/>
-                                </td>
-                            </tr> 
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                    <label for="myPassword">My Password:</label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean:seller,field:'myPassword','errors')}">
-                                    <input type="text" id="myPassword" name="myPassword" value="${fieldValue(bean:seller,field:'myPassword')}"/>
+                                <td valign="top" class="value ${hasErrors(bean:seller,field:'surname','errors')}">
+                                    <input type="text" id="surname" name="surname" value="${fieldValue(bean:seller,field:'surname')}"/>
                                 </td>
                             </tr> 
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                    <label for="myEmail">My Email:</label>
+                                    <label for="username">Username:</label>
                                 </td>
-                                <td valign="top" class="value ${hasErrors(bean:seller,field:'myEmail','errors')}">
-                                    <input type="text" id="myEmail" name="myEmail" value="${fieldValue(bean:seller,field:'myEmail')}"/>
-                                </td>
-                            </tr> 
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                    <label for="myTelephoneNo">My Telephone No:</label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean:seller,field:'myTelephoneNo','errors')}">
-                                    <input type="text" id="myTelephoneNo" name="myTelephoneNo" value="${fieldValue(bean:seller,field:'myTelephoneNo')}"/>
+                                <td valign="top" class="value ${hasErrors(bean:seller,field:'username','errors')}">
+                                    <input type="text" id="username" name="username" value="${fieldValue(bean:seller,field:'username')}"/>
                                 </td>
                             </tr> 
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                    <label for="myAddress">My Address:</label>
+                                    <label for="password">Password:</label>
                                 </td>
-                                <td valign="top" class="value ${hasErrors(bean:seller,field:'myAddress','errors')}">
-                                    <input type="text" id="myAddress" name="myAddress" value="${fieldValue(bean:seller,field:'myAddress')}"/>
+                                <td valign="top" class="value ${hasErrors(bean:seller,field:'password','errors')}">
+                                    <input type="text" id="password" name="password" value="${fieldValue(bean:seller,field:'password')}"/>
+                                </td>
+                            </tr> 
+                        
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="email">Email:</label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean:seller,field:'email','errors')}">
+                                    <input type="text" id="email" name="email" value="${fieldValue(bean:seller,field:'email')}"/>
+                                </td>
+                            </tr> 
+                        
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="telephoneNo">Telephone No:</label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean:seller,field:'telephoneNo','errors')}">
+                                    <input type="text" id="telephoneNo" name="telephoneNo" value="${fieldValue(bean:seller,field:'telephoneNo')}"/>
+                                </td>
+                            </tr> 
+                        
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="address">Address:</label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean:seller,field:'address','errors')}">
+                                    <input type="text" id="address" name="address" value="${fieldValue(bean:seller,field:'address')}"/>
                                 </td>
                             </tr> 
                         

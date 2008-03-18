@@ -30,58 +30,51 @@
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name">My Reference No:</td>
+                            <td valign="top" class="name">Reference No:</td>
                             
-                            <td valign="top" class="value">${property.myReferenceNo}</td>
-                            
-                        </tr>
-                    
-                        <tr class="prop">
-                            <td valign="top" class="name">Start Date:</td>
-                            
-                            <td valign="top" class="value">${property.myAvailableFrom[0]}</td>
-                            
-                        </tr>
-
-                        <tr class="prop">
-                            <td valign="top" class="name">End Date:</td>
-
-                            <td valign="top" class="value">${property.myAvailableFrom[1]}</td>
-
-                        </tr>
-                    
-                        <tr class="prop">
-                            <td valign="top" class="name">Myaddress:</td>
-                            
-                            <td valign="top" class="value">${property.myaddress}</td>
+                            <td valign="top" class="value">${property.referenceNo}</td>
                             
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name">My Post Code:</td>
+                            <td valign="top" class="name">Available From:</td>
                             
-                            <td valign="top" class="value">${property.myPostCode}</td>
-                            
-                        </tr>
-                    
-                        <tr class="prop">
-                            <td valign="top" class="name">My Min Price:</td>
-                            
-                            <td valign="top" class="value">${property.myMinPrice}</td>
+                            <td valign="top" class="value">${property.availableFrom}</td>
                             
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name">My Description:</td>
+                            <td valign="top" class="name">Address:</td>
                             
-                            <td valign="top" class="value">${property.myDescription}</td>
+                            <td valign="top" class="value">${property.address}</td>
                             
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name">My Bedroom Number:</td>
+                            <td valign="top" class="name">Post Code:</td>
                             
-                            <td valign="top" class="value">${property.myBedroomNumber}</td>
+                            <td valign="top" class="value">${property.postCode}</td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
+                            <td valign="top" class="name">Min Price:</td>
+                            
+                            <td valign="top" class="value">${property.minPrice}</td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
+                            <td valign="top" class="name">Description:</td>
+                            
+                            <td valign="top" class="value">${property.description}</td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
+                            <td valign="top" class="name">Bedroom Number:</td>
+                            
+                            <td valign="top" class="value">${property.bedroomNumber}</td>
                             
                         </tr>
                     
@@ -120,16 +113,16 @@
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name">My Max Price:</td>
+                            <td valign="top" class="name">Max Price:</td>
                             
-                            <td valign="top" class="value">${property.myMaxPrice}</td>
+                            <td valign="top" class="value">${property.maxPrice}</td>
                             
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name">My Picture:</td>
+                            <td valign="top" class="name">Picture:</td>
                             
-                            <td valign="top" class="value">${property.myPicture}</td>
+                            <td valign="top" class="value">${property.picture}</td>
                             
                         </tr>
                     

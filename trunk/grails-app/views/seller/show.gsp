@@ -30,51 +30,51 @@
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name">My Forename:</td>
+                            <td valign="top" class="name">Forename:</td>
                             
-                            <td valign="top" class="value">${seller.myForename}</td>
-                            
-                        </tr>
-                    
-                        <tr class="prop">
-                            <td valign="top" class="name">My Surname:</td>
-                            
-                            <td valign="top" class="value">${seller.mySurname}</td>
+                            <td valign="top" class="value">${seller.forename}</td>
                             
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name">My Username:</td>
+                            <td valign="top" class="name">Surname:</td>
                             
-                            <td valign="top" class="value">${seller.myUsername}</td>
-                            
-                        </tr>
-                    
-                        <tr class="prop">
-                            <td valign="top" class="name">My Password:</td>
-                            
-                            <td valign="top" class="value">${seller.myPassword}</td>
+                            <td valign="top" class="value">${seller.surname}</td>
                             
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name">My Email:</td>
+                            <td valign="top" class="name">Username:</td>
                             
-                            <td valign="top" class="value">${seller.myEmail}</td>
-                            
-                        </tr>
-                    
-                        <tr class="prop">
-                            <td valign="top" class="name">My Telephone No:</td>
-                            
-                            <td valign="top" class="value">${seller.myTelephoneNo}</td>
+                            <td valign="top" class="value">${seller.username}</td>
                             
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name">My Address:</td>
+                            <td valign="top" class="name">Password:</td>
                             
-                            <td valign="top" class="value">${seller.myAddress}</td>
+                            <td valign="top" class="value">${seller.password}</td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
+                            <td valign="top" class="name">Email:</td>
+                            
+                            <td valign="top" class="value">${seller.email}</td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
+                            <td valign="top" class="name">Telephone No:</td>
+                            
+                            <td valign="top" class="value">${seller.telephoneNo}</td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
+                            <td valign="top" class="name">Address:</td>
+                            
+                            <td valign="top" class="value">${seller.address}</td>
                             
                         </tr>
                     

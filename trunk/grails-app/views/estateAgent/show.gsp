@@ -30,44 +30,44 @@
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name">My Forename:</td>
+                            <td valign="top" class="name">Forename:</td>
                             
-                            <td valign="top" class="value">${estateAgent.myForename}</td>
-                            
-                        </tr>
-                    
-                        <tr class="prop">
-                            <td valign="top" class="name">My Surname:</td>
-                            
-                            <td valign="top" class="value">${estateAgent.mySurname}</td>
+                            <td valign="top" class="value">${estateAgent.forename}</td>
                             
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name">My Username:</td>
+                            <td valign="top" class="name">Surname:</td>
                             
-                            <td valign="top" class="value">${estateAgent.myUsername}</td>
-                            
-                        </tr>
-                    
-                        <tr class="prop">
-                            <td valign="top" class="name">My Password:</td>
-                            
-                            <td valign="top" class="value">${estateAgent.myPassword}</td>
+                            <td valign="top" class="value">${estateAgent.surname}</td>
                             
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name">My Email:</td>
+                            <td valign="top" class="name">Username:</td>
                             
-                            <td valign="top" class="value">${estateAgent.myEmail}</td>
+                            <td valign="top" class="value">${estateAgent.username}</td>
                             
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name">My Telephone No:</td>
+                            <td valign="top" class="name">Password:</td>
                             
-                            <td valign="top" class="value">${estateAgent.myTelephoneNo}</td>
+                            <td valign="top" class="value">${estateAgent.password}</td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
+                            <td valign="top" class="name">Email:</td>
+                            
+                            <td valign="top" class="value">${estateAgent.email}</td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
+                            <td valign="top" class="name">Telephone No:</td>
+                            
+                            <td valign="top" class="value">${estateAgent.telephoneNo}</td>
                             
                         </tr>
                     

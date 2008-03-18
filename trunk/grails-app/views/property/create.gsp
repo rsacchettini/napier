@@ -28,73 +28,74 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                    <label for="myReferenceNo">My Reference No:</label>
+                                    <label for="referenceNo">Reference No:</label>
                                 </td>
-                                <td valign="top" class="value ${hasErrors(bean:property,field:'myReferenceNo','errors')}">
-                                    <input type="text" id="myReferenceNo" name="myReferenceNo" value="${fieldValue(bean:property,field:'myReferenceNo')}"/>
+                                <td valign="top" class="value ${hasErrors(bean:property,field:'referenceNo','errors')}">
+                                    <input type="text" id="referenceNo" name="referenceNo" value="${fieldValue(bean:property,field:'referenceNo')}"/>
                                 </td>
                             </tr> 
-                        
+
+                            <g:set var="listofDates" value="${[]}" scope="page" />
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                    <label for="myAvailableFrom[0]">My Available From:</label>
+                                    <label for="availableFrom1">Available From:</label>
                                 </td>
-                                <td valign="top" class="value ${hasErrors(bean:property,field:'myAvailableFrom','errors')}">
-                                    <input type="text" id="myAvailableFrom[0]" name="End Date" value="${fieldValue(bean:property,field:'myAvailableFrom')}"/>
+                                <td valign="top" class="value ${hasErrors(bean:property,field:'availableFrom','errors')}">
+                                    <input type="text" id="availableFrom1" name="StartDate" value="${listofDates[1]}"/>
                                 </td>
                             </tr>
 
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                    <label for="myAvailableFrom[1]">My Available From:</label>
+                                    <label for="availableFrom2">Available From:</label>
                                 </td>
-                                <td valign="top" class="value ${hasErrors(bean:property,field:'myAvailableFrom','errors')}">
-                                    <input type="text" id="myAvailableFrom[1]" name="End DAte" value="${fieldValue(bean:property,field:'myAvailableFrom')}"/>
+                                <td valign="top" class="value ${hasErrors(bean:property,field:'availableFrom','errors')}">
+                                    <input type="text" id="availableFrom2" name="EndDate" value="${listofDates[2]}"/>
                                 </td>
                             </tr>
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                    <label for="myaddress">Myaddress:</label>
+                                    <label for="address">Address:</label>
                                 </td>
-                                <td valign="top" class="value ${hasErrors(bean:property,field:'myaddress','errors')}">
-                                    <input type="text" id="myaddress" name="myaddress" value="${fieldValue(bean:property,field:'myaddress')}"/>
-                                </td>
-                            </tr> 
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                    <label for="myPostCode">My Post Code:</label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean:property,field:'myPostCode','errors')}">
-                                    <input type="text" id="myPostCode" name="myPostCode" value="${fieldValue(bean:property,field:'myPostCode')}"/>
+                                <td valign="top" class="value ${hasErrors(bean:property,field:'address','errors')}">
+                                    <input type="text" id="address" name="address" value="${fieldValue(bean:property,field:'address')}"/>
                                 </td>
                             </tr> 
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                    <label for="myMinPrice">My Min Price:</label>
+                                    <label for="postCode">Post Code:</label>
                                 </td>
-                                <td valign="top" class="value ${hasErrors(bean:property,field:'myMinPrice','errors')}">
-                                    <input type="text" id="myMinPrice" name="myMinPrice" value="${fieldValue(bean:property,field:'myMinPrice')}" />
-                                </td>
-                            </tr> 
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                    <label for="myDescription">My Description:</label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean:property,field:'myDescription','errors')}">
-                                    <input type="text" id="myDescription" name="myDescription" value="${fieldValue(bean:property,field:'myDescription')}"/>
+                                <td valign="top" class="value ${hasErrors(bean:property,field:'postCode','errors')}">
+                                    <input type="text" id="postCode" name="postCode" value="${fieldValue(bean:property,field:'postCode')}"/>
                                 </td>
                             </tr> 
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                    <label for="myBedroomNumber">My Bedroom Number:</label>
+                                    <label for="minPrice">Min Price:</label>
                                 </td>
-                                <td valign="top" class="value ${hasErrors(bean:property,field:'myBedroomNumber','errors')}">
-                                    <input type="text" id="myBedroomNumber" name="myBedroomNumber" value="${fieldValue(bean:property,field:'myBedroomNumber')}" />
+                                <td valign="top" class="value ${hasErrors(bean:property,field:'minPrice','errors')}">
+                                    <input type="text" id="minPrice" name="minPrice" value="${fieldValue(bean:property,field:'minPrice')}" />
+                                </td>
+                            </tr> 
+                        
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="description">Description:</label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean:property,field:'description','errors')}">
+                                    <input type="text" id="description" name="description" value="${fieldValue(bean:property,field:'description')}"/>
+                                </td>
+                            </tr> 
+                        
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="bedroomNumber">Bedroom Number:</label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean:property,field:'bedroomNumber','errors')}">
+                                    <input type="text" id="bedroomNumber" name="bedroomNumber" value="${fieldValue(bean:property,field:'bedroomNumber')}" />
                                 </td>
                             </tr> 
                         
@@ -118,19 +119,19 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                    <label for="myMaxPrice">My Max Price:</label>
+                                    <label for="maxPrice">Max Price:</label>
                                 </td>
-                                <td valign="top" class="value ${hasErrors(bean:property,field:'myMaxPrice','errors')}">
-                                    <input type="text" id="myMaxPrice" name="myMaxPrice" value="${fieldValue(bean:property,field:'myMaxPrice')}" />
+                                <td valign="top" class="value ${hasErrors(bean:property,field:'maxPrice','errors')}">
+                                    <input type="text" id="maxPrice" name="maxPrice" value="${fieldValue(bean:property,field:'maxPrice')}" />
                                 </td>
                             </tr> 
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                    <label for="myPicture">My Picture:</label>
+                                    <label for="picture">Picture:</label>
                                 </td>
-                                <td valign="top" class="value ${hasErrors(bean:property,field:'myPicture','errors')}">
-                                    <input type="file" id="myPicture" name="myPicture" />
+                                <td valign="top" class="value ${hasErrors(bean:property,field:'picture','errors')}">
+                                    <input type="file" id="picture" name="picture" />
                                 </td>
                             </tr> 
                         

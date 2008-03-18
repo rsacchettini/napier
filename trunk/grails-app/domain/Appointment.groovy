@@ -4,11 +4,11 @@ class Appointment {
     Property property
     Buyer buyer
 
-    Date myDateAndTime
+    Date dateAndTime
 
     static constraints =
     {
-        myDateAndTime(nullable:false)
+        dateAndTime(nullable:false)
     }
 
 

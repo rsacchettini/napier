@@ -23,7 +23,7 @@
                         
                    	        <g:sortableColumn property="id" title="Id" />
                         
-                   	        <g:sortableColumn property="myDateAndTime" title="My Date And Time" />
+                   	        <g:sortableColumn property="dateAndTime" title="Date And Time" />
                         
                    	        <th>Buyer</th>
                    	    
@@ -39,7 +39,7 @@
                         
                             <td><g:link action="show" id="${appointment.id}">${appointment.id?.encodeAsHTML()}</g:link></td>
                         
-                            <td>${appointment.myDateAndTime?.encodeAsHTML()}</td>
+                            <td>${appointment.dateAndTime?.encodeAsHTML()}</td>
                         
                             <td>${appointment.buyer?.encodeAsHTML()}</td>
                         

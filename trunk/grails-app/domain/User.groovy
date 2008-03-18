@@ -1,24 +1,24 @@
 class User {
     /* ---------- Attributes ---------- */
-    String mySurname
-	String myForename
-	String myUsername
-	String myPassword
-	String myEmail
-	String myTelephoneNo
+    String surname
+	String forename
+	String username
+	String password
+	String email
+	String telephoneNo
 
 	static constraints =
     {
-       myForename(blank:false)
-       mySurname(blank:false)
-       myUsername(blank:false, unique:true, length:2..15)
-       myPassword(blank:false, matches:/[\w\d]+/)
-       myEmail(email:true, blank:false)
-       myTelephoneNo(blank:false)
+       forename(blank:false)
+       surname(blank:false)
+       username(blank:false, unique:true, length:2..15)
+       password(blank:false, matches:/[\w\d]+/)
+       email(email:true, blank:false)
+       telephoneNo(blank:false)
     }
 
     //This string will be returned by default in lists views when the selection of an User is required.
-    String toString() { "$myForename $mySurname" }
+    String toString() { "$forename $surname" }
 
     int hashCode() {
           int hashCode = 0
