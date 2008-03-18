@@ -30,9 +30,9 @@
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name">My Date And Time:</td>
+                            <td valign="top" class="name">Date And Time:</td>
                             
-                            <td valign="top" class="value">${appointment.myDateAndTime}</td>
+                            <td valign="top" class="value">${appointment.dateAndTime}</td>
                             
                         </tr>
                     

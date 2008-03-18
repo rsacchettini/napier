@@ -43,7 +43,7 @@ class MapRenderer extends AbstractRenderer {
 			if(attrs?.markers){
 				attrs.markers.each {
 					try {
-						builder.yieldUnescaped "	" + attrs.mapIntegrationVar + ".addMarker(new GLatLng($it.latitude, $it.longitude), $it.draggable, '$it.description');\n"
+						builder.yieldUnescaped "	" + attrs.mapIntegrationVar + ".addMarker(new GLatLng($it.latitude, $it.longitude), $it.draggable, '$it.setDescription');\n"
 					}
 					catch(exception) {
 						println exception

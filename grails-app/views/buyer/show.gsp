@@ -30,44 +30,44 @@
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name">My Forename:</td>
+                            <td valign="top" class="name">Forename:</td>
                             
-                            <td valign="top" class="value">${buyer.myForename}</td>
-                            
-                        </tr>
-                    
-                        <tr class="prop">
-                            <td valign="top" class="name">My Surname:</td>
-                            
-                            <td valign="top" class="value">${buyer.mySurname}</td>
+                            <td valign="top" class="value">${buyer.forename}</td>
                             
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name">My Username:</td>
+                            <td valign="top" class="name">Surname:</td>
                             
-                            <td valign="top" class="value">${buyer.myUsername}</td>
-                            
-                        </tr>
-                    
-                        <tr class="prop">
-                            <td valign="top" class="name">My Password:</td>
-                            
-                            <td valign="top" class="value">${buyer.myPassword}</td>
+                            <td valign="top" class="value">${buyer.surname}</td>
                             
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name">My Email:</td>
+                            <td valign="top" class="name">Username:</td>
                             
-                            <td valign="top" class="value">${buyer.myEmail}</td>
+                            <td valign="top" class="value">${buyer.username}</td>
                             
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name">My Telephone No:</td>
+                            <td valign="top" class="name">Password:</td>
                             
-                            <td valign="top" class="value">${buyer.myTelephoneNo}</td>
+                            <td valign="top" class="value">${buyer.password}</td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
+                            <td valign="top" class="name">Email:</td>
+                            
+                            <td valign="top" class="value">${buyer.email}</td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
+                            <td valign="top" class="name">Telephone No:</td>
+                            
+                            <td valign="top" class="value">${buyer.telephoneNo}</td>
                             
                         </tr>
                     

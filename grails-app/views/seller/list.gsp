@@ -23,15 +23,15 @@
                         
                    	        <g:sortableColumn property="id" title="Id" />
                         
-                   	        <g:sortableColumn property="myForename" title="My Forename" />
+                   	        <g:sortableColumn property="forename" title="Forename" />
                         
-                   	        <g:sortableColumn property="mySurname" title="My Surname" />
+                   	        <g:sortableColumn property="surname" title="Surname" />
                         
-                   	        <g:sortableColumn property="myUsername" title="My Username" />
+                   	        <g:sortableColumn property="username" title="Username" />
                         
-                   	        <g:sortableColumn property="myPassword" title="My Password" />
+                   	        <g:sortableColumn property="password" title="Password" />
                         
-                   	        <g:sortableColumn property="myEmail" title="My Email" />
+                   	        <g:sortableColumn property="email" title="Email" />
                         
                         </tr>
                     </thead>
@@ -41,15 +41,15 @@
                         
                             <td><g:link action="show" id="${seller.id}">${seller.id?.encodeAsHTML()}</g:link></td>
                         
-                            <td>${seller.myForename?.encodeAsHTML()}</td>
+                            <td>${seller.forename?.encodeAsHTML()}</td>
                         
-                            <td>${seller.mySurname?.encodeAsHTML()}</td>
+                            <td>${seller.surname?.encodeAsHTML()}</td>
                         
-                            <td>${seller.myUsername?.encodeAsHTML()}</td>
+                            <td>${seller.username?.encodeAsHTML()}</td>
                         
-                            <td>${seller.myPassword?.encodeAsHTML()}</td>
+                            <td>${seller.password?.encodeAsHTML()}</td>
                         
-                            <td>${seller.myEmail?.encodeAsHTML()}</td>
+                            <td>${seller.email?.encodeAsHTML()}</td>
                         
                         </tr>
                     </g:each>

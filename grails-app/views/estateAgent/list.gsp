@@ -23,15 +23,15 @@
                         
                    	        <g:sortableColumn property="id" title="Id" />
                         
-                   	        <g:sortableColumn property="myForename" title="My Forename" />
+                   	        <g:sortableColumn property="forename" title="Forename" />
                         
-                   	        <g:sortableColumn property="mySurname" title="My Surname" />
+                   	        <g:sortableColumn property="surname" title="Surname" />
                         
-                   	        <g:sortableColumn property="myUsername" title="My Username" />
+                   	        <g:sortableColumn property="username" title="Username" />
                         
-                   	        <g:sortableColumn property="myPassword" title="My Password" />
+                   	        <g:sortableColumn property="password" title="Password" />
                         
-                   	        <g:sortableColumn property="myEmail" title="My Email" />
+                   	        <g:sortableColumn property="email" title="Email" />
                         
                         </tr>
                     </thead>
@@ -41,15 +41,15 @@
                         
                             <td><g:link action="show" id="${estateAgent.id}">${estateAgent.id?.encodeAsHTML()}</g:link></td>
                         
-                            <td>${estateAgent.myForename?.encodeAsHTML()}</td>
+                            <td>${estateAgent.forename?.encodeAsHTML()}</td>
                         
-                            <td>${estateAgent.mySurname?.encodeAsHTML()}</td>
+                            <td>${estateAgent.surname?.encodeAsHTML()}</td>
                         
-                            <td>${estateAgent.myUsername?.encodeAsHTML()}</td>
+                            <td>${estateAgent.username?.encodeAsHTML()}</td>
                         
-                            <td>${estateAgent.myPassword?.encodeAsHTML()}</td>
+                            <td>${estateAgent.password?.encodeAsHTML()}</td>
                         
-                            <td>${estateAgent.myEmail?.encodeAsHTML()}</td>
+                            <td>${estateAgent.email?.encodeAsHTML()}</td>
                         
                         </tr>
                     </g:each>

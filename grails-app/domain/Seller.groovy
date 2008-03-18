@@ -1,6 +1,6 @@
 class Seller extends User {
     /* ---------- Attributes ---------- */
-	String myAddress
+	String address
 
     //Note: Since the O.6 version of grails there is no need to specify any collection or Set for the hasMany
     //associations. relatesToMany used to require that but is now deprecated so only hasMany must be used
@@ -8,7 +8,7 @@ class Seller extends User {
 
     static constraints =
     {
-       myAddress(blank:false)
+       address(blank:false)
     }
 
       boolean equals(other) {
