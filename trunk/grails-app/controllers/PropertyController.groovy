@@ -1,4 +1,3 @@
-            
 class PropertyController {
     
     def index = { redirect(action:list,params:params) }
@@ -66,12 +65,41 @@ class PropertyController {
 
     def create = {
         def property = new Property()
+        def date1 = new Date()
+        def date2 = new Date()
         property.properties = params
         return ['property':property]
     }
 
     def save = {
         def property = new Property(params)
+        def d1 = new String(params.availableFrom1)
+        def d2 = new String(params.availableFrom2)
+        def date1 = new Date(d1)
+        def date2 = new Date(d2)
+        def dates = []
+        /*
+        property.setIsSoldBy(params.isSoldBy)
+         isManagedBy = params.isManagedBy
+         referenceNo = params.referenceNo
+         address = params.address
+         postCode = params.postCode
+         minPrice = params.minPrice
+         maxPrice = params. maxPrice
+         description = params.description
+         bedroomNumber = params.bedroomNumber
+         picture = params.picture
+         */
+
+        //managing the dates
+
+
+
+            dates <<  date1
+            dates <<  date2
+            //property.availableFrom = (Date[]) dates.toArray()
+            property.availableFrom = dates
+        
         if(!property.hasErrors() && property.save()) {
             flash.message = "Property ${property.id} created"
             redirect(action:show,id:property.id)

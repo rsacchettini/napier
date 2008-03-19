@@ -5,6 +5,7 @@ class Property
     EstateAgent isManagedBy
 
     String referenceNo
+	Date[] availableFrom
 	Boolean validated
 	String address
 	String postCode

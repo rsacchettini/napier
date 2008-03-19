@@ -34,6 +34,24 @@
                                     <input type="text" id="referenceNo" name="referenceNo" value="${fieldValue(bean:property,field:'referenceNo')}"/>
                                 </td>
                             </tr> 
+
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="availableFrom1">Available From:</label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean:property,field:'availableFrom','errors')}">
+                                    <input type="text" id="availableFrom1" name="availableFrom1" value=""/>
+                                </td>
+                            </tr>
+
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="availableFrom2">Available From:</label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean:property,field:'availableFrom','errors')}">
+                                    <input type="text" id="availableFrom2" name="availableFrom2"/>
+                                </td>
+                            </tr>
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
