@@ -35,21 +35,21 @@
                                 </td>
                             </tr> 
 
-                            <tr class="prop">
+                           <tr class="prop">
                                 <td valign="top" class="name">
                                     <label for="availableFrom1">Available From:</label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean:property,field:'availableFrom','errors')}">
-                                    <input type="text" id="availableFrom1" name="availableFrom1" value=""/>
+                                    <richui:dateChooser name="availableFrom1" format="dd/MM/yyyy" value="${availableFrom1}" />
                                 </td>
                             </tr>
 
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                    <label for="availableFrom2">Available From:</label>
+                                    <label for="availableFrom2">To:</label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean:property,field:'availableFrom','errors')}">
-                                    <input type="text" id="availableFrom2" name="availableFrom2"/>
+                                    <richui:dateChooser name="availableFrom2" format="dd/MM/yyyy" value="${availableFrom2}" />
                                 </td>
                             </tr>
                         
