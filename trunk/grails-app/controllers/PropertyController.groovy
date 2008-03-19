@@ -67,7 +67,6 @@ class PropertyController {
     def create = {
         def property = new Property()
         property.properties = params
-        property.availableFrom = params.getProperty("listofDates")
         return ['property':property]
     }
 

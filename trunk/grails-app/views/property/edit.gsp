@@ -39,15 +39,6 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                    <label for="availableFrom">Available From:</label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean:property,field:'availableFrom','errors')}">
-                                    
-                                </td>
-                            </tr> 
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
                                     <label for="address">Address:</label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean:property,field:'address','errors')}">
@@ -156,6 +147,15 @@
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean:property,field:'picture','errors')}">
                                     <input type="file" id="picture" name="picture" />
+                                </td>
+                            </tr> 
+                        
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="validated">Validated:</label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean:property,field:'validated','errors')}">
+                                    <g:checkBox name="validated" value="${property?.validated}" ></g:checkBox>
                                 </td>
                             </tr> 
                         

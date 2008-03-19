@@ -25,13 +25,13 @@
                         
                    	        <g:sortableColumn property="referenceNo" title="Reference No" />
                         
-                   	        <g:sortableColumn property="availableFrom" title="Available From" />
-                        
                    	        <g:sortableColumn property="address" title="Address" />
                         
                    	        <g:sortableColumn property="postCode" title="Post Code" />
                         
                    	        <g:sortableColumn property="minPrice" title="Min Price" />
+                        
+                   	        <g:sortableColumn property="description" title="Description" />
                         
                         </tr>
                     </thead>
@@ -43,13 +43,13 @@
                         
                             <td>${property.referenceNo?.encodeAsHTML()}</td>
                         
-                            <td>${property.availableFrom?.encodeAsHTML()}</td>
-                        
                             <td>${property.address?.encodeAsHTML()}</td>
                         
                             <td>${property.postCode?.encodeAsHTML()}</td>
                         
                             <td>${property.minPrice?.encodeAsHTML()}</td>
+                        
+                            <td>${property.description?.encodeAsHTML()}</td>
                         
                         </tr>
                     </g:each>

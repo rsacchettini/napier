@@ -5,7 +5,7 @@ class Property
     EstateAgent isManagedBy
 
     String referenceNo
-	Date[] availableFrom
+	Boolean validated
 	String address
 	String postCode
 	float minPrice
@@ -16,7 +16,6 @@ class Property
 
 	static constraints = {
         referenceNo(blank:false, minLength:1, unique:true)
-        availableFrom(minSize:2)
         address(blank:false, minLength:5)
         postCode(blank:false, matches:/^(GIR 0AA)|([A-PR-UWYZ]((\d(\d|[A-HJKSTUW])?)|([A-HK-Y]\d(\d|[ABEHMNPRV-Y])?)) \d[ABD-HJLNP-UW-Z]{2})$/)
         minPrice(min:1.0f)
