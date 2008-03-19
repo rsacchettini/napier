@@ -34,24 +34,6 @@
                                     <input type="text" id="referenceNo" name="referenceNo" value="${fieldValue(bean:property,field:'referenceNo')}"/>
                                 </td>
                             </tr> 
-
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                    <label for="availableFrom1">Available From:</label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean:property,field:'availableFrom','errors')}">
-                                    <input type="text" id="availableFrom1" name="StartDate" value="${listofDates[1]}"/>
-                                </td>
-                            </tr>
-
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                    <label for="availableFrom2">Available From:</label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean:property,field:'availableFrom','errors')}">
-                                    <input type="text" id="availableFrom2" name="EndDate" value="${listofDates[2]}"/>
-                                </td>
-                            </tr>
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
@@ -131,6 +113,15 @@
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean:property,field:'picture','errors')}">
                                     <input type="file" id="picture" name="picture" />
+                                </td>
+                            </tr> 
+                        
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="validated">Validated:</label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean:property,field:'validated','errors')}">
+                                    <g:checkBox name="validated" value="${property?.validated}" ></g:checkBox>
                                 </td>
                             </tr> 
                         

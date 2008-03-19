@@ -37,13 +37,6 @@
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name">Available From:</td>
-                            
-                            <td valign="top" class="value">${property.availableFrom}</td>
-                            
-                        </tr>
-                    
-                        <tr class="prop">
                             <td valign="top" class="name">Address:</td>
                             
                             <td valign="top" class="value">${property.address}</td>
@@ -123,6 +116,13 @@
                             <td valign="top" class="name">Picture:</td>
                             
                             <td valign="top" class="value">${property.picture}</td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
+                            <td valign="top" class="name">Validated:</td>
+                            
+                            <td valign="top" class="value">${property.validated}</td>
                             
                         </tr>
                     
