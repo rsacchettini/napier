@@ -35,6 +35,20 @@
                             <td valign="top" class="value">${property.referenceNo}</td>
                             
                         </tr>
+
+                        <tr class="prop">
+                            <td valign="top" class="name">Available From:</td>
+
+                            <td valign="top" class="value"><g:formatDate format="dd-MM-yyyy" date="${availableFrom1}"/></td>
+
+                        </tr>
+
+                        <tr class="prop">
+                            <td valign="top" class="name">To:</td>
+
+                            <td valign="top" class="value"><g:formatDate format="dd-MM-yyyy" date="${availableFrom2}"/></td>
+
+                        </tr>
                     
                         <tr class="prop">
                             <td valign="top" class="name">Address:</td>

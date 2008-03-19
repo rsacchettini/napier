@@ -1,5 +1,4 @@
-
-
+<resource:dateChooser/>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
@@ -35,7 +34,25 @@
                                 <td valign="top" class="value ${hasErrors(bean:property,field:'referenceNo','errors')}">
                                     <input type="text" id="referenceNo" name="referenceNo" value="${fieldValue(bean:property,field:'referenceNo')}"/>
                                 </td>
-                            </tr> 
+                            </tr>
+
+                             <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="availableFrom1">Available From:</label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean:property,field:'availableFrom','errors')}">
+                                    <richui:dateChooser id="availableFrom1" name="availableFrom1" format="dd.MM.yyyy" value="${availableFrom1}" />
+                                </td>
+                            </tr>
+
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="availableFrom2">To:</label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean:property,field:'availableFrom','errors')}">
+                                    <richui:dateChooser id="availableFrom2" name="availableFrom2" format="dd.MM.yyyy" value="${availableFrom2}" />
+                                </td>
+                            </tr>
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
