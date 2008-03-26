@@ -14,6 +14,8 @@ class Property
 	String description
 	int bedroomNumber
 	byte[] picture
+    String pictureType
+
 
 	static constraints = {
         referenceNo(blank:false, minLength:1, unique:true)
@@ -22,6 +24,9 @@ class Property
         minPrice(min:1.0f)
         description(blank:false, maxLength:1000)
         bedroomNumber(min:1)
+        picture(nullable:true)
+        pictureType(nullable:true)
+
     }
 
 
