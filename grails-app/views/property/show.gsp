@@ -135,10 +135,11 @@
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name">Picture:</td>
-                            
-                            <td valign="top" class="value">${property.picture}</td>
-                            
+                  
+                            <g:if test="${property.picture}">
+                              <img class="avatar" src="${createLink(controller:'property', action:'property_image', id:property.ident())}" />
+                            </g:if>
+
                         </tr>
                     
                         <tr class="prop">

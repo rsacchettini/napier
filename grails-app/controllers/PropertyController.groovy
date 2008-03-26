@@ -186,7 +186,22 @@ class PropertyController {
         dates <<  d1 <<  d2
 
         property.availableFrom = dates
+        // List of OK mime-types
+        def f = request.getFile('picture')
+          def okcontents = ['image/png', 'image/jpeg', 'image/gif']
+          if (! okcontents.contains(f.getContentType())) {
+            flash.message = "Avatar must be one of: ${okcontents}"
+            render(view:'select_avatar', model:[user:user])
+            return;
+          }
 
+
+
+          // Save the image and mime type
+          property.picture = f.getBytes()
+          property.pictureType = f.getContentType()
+          log.info("File uploaded: " + property.pictureType)
+        
         
         if(!property.hasErrors() && property.save()) {
             flash.message = "Property ${property.id} created"
@@ -196,4 +211,18 @@ class PropertyController {
             render(view:'create',model:[property:property])
         }
     }
+
+    def property_image = {
+      def property = Property.get( params.id )
+      if (!property.picture || !property.pictureType) {
+        response.sendError(404)
+        return;
+      }
+      response.setContentType(property.pictureType)
+      response.setContentLength(property.picture.size())
+      OutputStream out = response.getOutputStream();
+      out.write(property.picture);
+      out.close();
+    }
+
 }
