@@ -1,12 +1,12 @@
-
-
+ <resource:dateChooser/>
+ <g:javascript src="datesManagement.js"/>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <meta name="layout" content="main" />
         <title>Create Property</title>         
     </head>
-    <body>
+    <body onload="init()">
         <div class="nav">
             <span class="menuButton"><a class="home" href="${createLinkTo(dir:'')}">Home</a></span>
             <span class="menuButton"><g:link class="list" action="list">Property List</g:link></span>
@@ -36,23 +36,38 @@
                             </tr> 
 
                            <tr class="prop">
-                                <td valign="top" class="name">
-                                    <label for="availableFrom1">Available From:</label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean:property,field:'availableFrom','errors')}">
-                                    <richui:dateChooser name="availableFrom1" format="dd/MM/yyyy" value="${availableFrom1}" />
+                                 <td valign="top" class="name">
+                                   <label>Visit period:</label>
+                                 <td id="period">
+                                    <table>
+                                        <tbody>
+                                              <tr>
+                                                <td valign="top" class="name">
+                                                  <label>Available From:</label>
+                                                </td>
+                                                <td valign="top" class="name ${hasErrors(bean:property,field:'availableFrom','errors')}">
+                                                  <richui:dateChooser name="availableFrom1" format="dd/MM/yyyy" value="${availableFrom1}" />
+                                                </td>
+                                                 <td valign="top" class="name">
+                                                    <label for="availableFrom2">To:</label>
+                                                 </td>
+                                                 <td valign="top" class="name ${hasErrors(bean:property,field:'availableFrom','errors')}">
+                                                    <richui:dateChooser name="availableFrom2" format="dd/MM/yyyy" value="${availableFrom2}" />
+                                                 </td>
+                                                 <td><a href="#" onclick="delLigne(this); return false;">Del</a></td>
+                                              </tr>
+                                        </tbody>
+                                        <tfoot>
+                                            <tr>
+                                                <th>
+                                                    <a onclick="addLigne(this); return false;" href="#">Ajouter une ligne</a>
+                                                </th>
+                                            </tr>
+                                        </tfoot>
+                                    </table>
                                 </td>
                             </tr>
 
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                    <label for="availableFrom2">To:</label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean:property,field:'availableFrom','errors')}">
-                                    <richui:dateChooser name="availableFrom2" format="dd/MM/yyyy" value="${availableFrom2}" />
-                                </td>
-                            </tr>
-                        
                             <tr class="prop">
                                 <td valign="top" class="name">
                                     <label for="address">Address:</label>

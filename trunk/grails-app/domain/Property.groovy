@@ -34,6 +34,7 @@ class Property
      String toString() { "reference number $referenceNo" }
 
       boolean equals(other) {
+          
           if(other?.is(this))return true
           if(!(other instanceof Property)) return false
           if(!id || !other?.id || id!=other?.id) return false

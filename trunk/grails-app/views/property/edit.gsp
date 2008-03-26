@@ -1,11 +1,12 @@
-<resource:dateChooser/>
+ <resource:dateChooser/>
+ <g:javascript src="datesManagement.js"/>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <meta name="layout" content="main" />
         <title>Edit Property</title>
     </head>
-    <body>
+    <body onload="init()">
         <div class="nav">
             <span class="menuButton"><a class="home" href="${createLinkTo(dir:'')}">Home</a></span>
             <span class="menuButton"><g:link class="list" action="list">Property List</g:link></span>
@@ -23,10 +24,10 @@
             </g:hasErrors>
             <g:form method="post"  enctype="multipart/form-data">
                 <input type="hidden" name="id" value="${property?.id}" />
+                <input type="hidden" id="visitTimeCount" name="visitTimeCount" value="${visitTimeCount}"/>
                 <div class="dialog">
                     <table>
                         <tbody>
-                        
                             <tr class="prop">
                                 <td valign="top" class="name">
                                     <label for="referenceNo">Reference No:</label>
@@ -36,24 +37,43 @@
                                 </td>
                             </tr>
 
-                             <tr class="prop">
-                                <td valign="top" class="name">
-                                    <label for="availableFrom1">Available From:</label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean:property,field:'availableFrom','errors')}">
-                                    <richui:dateChooser id="availableFrom1" name="availableFrom1" format="dd.MM.yyyy" value="${availableFrom1}" />
-                                </td>
-                            </tr>
-
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                    <label for="availableFrom2">To:</label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean:property,field:'availableFrom','errors')}">
-                                    <richui:dateChooser id="availableFrom2" name="availableFrom2" format="dd.MM.yyyy" value="${availableFrom2}" />
-                                </td>
-                            </tr>
-                        
+                                  <label>Visit period:</label>
+                                <td id="visits">
+                                   <table>
+                                       <tbody>
+                                             <tr>
+                                                 <g:each var="a" in="${availableFrom1}">
+                                                    <td valign="top" class="name">
+                                                      <label>Available From:</label>
+                                                   </td>
+                                                    <td valign="top" class="name ${hasErrors(bean:property,field:'availableFrom','errors')}">
+                                                        <richui:dateChooser name="availableFrom1" format="dd/MM/yyyy" value="${(Date)a}" />
+                                                    </td>
+                                                </g:each>
+                                                 <g:each var="b" in="${availableFrom2}">
+                                                      <td valign="top" class="name">
+                                                        <label>To:</label>
+                                                      </td>
+                                                      <td valign="top" class="name ${hasErrors(bean:property,field:'availableFrom','errors')}">
+                                                        <richui:dateChooser name="availableFrom2" format="dd/MM/yyyy" value="${(Date)b}" />
+                                                    </td>
+                                                     <td><a href="#" onclick="delLigne(this); return false;">Del</a></td>
+                                                </g:each>
+                                             </tr>
+                                       </tbody>
+                                       <tfoot>
+                                           <tr>
+                                               <th>
+                                                   <a onclick="addLigne(this); return false;" href="#">Ajouter une ligne</a>
+                                               </th>
+                                           </tr>
+                                       </tfoot>
+                                   </table>
+                               </td>
+                           </tr>
+
                             <tr class="prop">
                                 <td valign="top" class="name">
                                     <label for="address">Address:</label>
