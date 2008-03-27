@@ -38,17 +38,19 @@
                         <tr class="prop">
                             <td valign="top" class="name">View Times : </td>
                             <td  valign="top" style="text-align:left;" class="value">
-                                <ul>
-                                <g:each var="a" in="${availableFrom1}">
-                                    <li><g:formatDate format="dd-MM-yyyy" date="${(Date)a}"/>
-                                </g:each>
-                                <g:each var="b" in="${availableFrom2}">
-                                    <g:formatDate format="dd-MM-yyyy" date="${(Date)b}"/></li>
-                                </g:each>
-                                </ul>
+                                 <table>
+									<g:each var="it" status="i" in="${availableFrom}">
+											<g:if test="${(i % 2) == 0}">
+											  <tr>
+											  <td>From:</td><td><g:formatDate format="dd-MM-yyyy" date="${(Date)it}"/></td>
+											</g:if>
+											<g:else>
+												<td>To:</td><td><g:formatDate format="dd-MM-yyyy" date="${(Date)it}"/></td>
+											 </tr>
+											</g:else>
+									</g:each>
+                                </table>
                             </td>
-                           
-
                         </tr>
 
                         <tr class="prop">
