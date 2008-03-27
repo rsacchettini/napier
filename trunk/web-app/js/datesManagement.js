@@ -26,7 +26,7 @@ function init()
         init();
         compteur ++;
         document.getElementById("visitTimeCount").setAttribute("value", compteur);
-        ids = new Array(5);
+		ids = new Array(5);
         ids[idscompteur] = compteur;
         idscompteur++
 

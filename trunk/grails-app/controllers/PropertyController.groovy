@@ -15,37 +15,19 @@ class PropertyController {
 
     def show = {
         def property = Property.get( params.id )
-        def date1 = []
-        def date2 = []
-        
-
+        def date = []
         if (property.availableFrom != null)
         {
               for (i in 0..(property.availableFrom.length-1))
               {
-                    if(i % 2 == 0)
-                    {
-                     date1 << property.availableFrom[i]
-                    }
-                    else
-                    {
-                     date2 << property.availableFrom[i]
-                    }
-
+                  date << property.availableFrom[i]
               }
          }
-           /* if(property.availableFrom.getAt(0) != null )
-                date1 = (Date)property.availableFrom[0]
-
-            if(property.availableFrom[1] != null)
-                date2 = (Date)property.availableFrom[1]    */
-
-
         if(!property) {
             flash.message = "Property not found with id ${params.id}"
             redirect(action:list)
         }
-        else { return ['property':property, 'availableFrom1':date1, 'availableFrom2':date2] }
+        else { return ['property':property, 'availableFrom':date] }
     }
 
     def delete = {
@@ -63,45 +45,24 @@ class PropertyController {
 
     def edit = {
         def property = Property.get( params.id )
-        /*
-        def date1 = new Date()
-        def date2 = new Date()
-
-         if (property.availableFrom != null)
-        {
-            if(property.availableFrom[0] != null )
-                date1 = (Date)property.availableFrom[0]
-
-            if(property.availableFrom[1] != null)
-                date2 = (Date)property.availableFrom[1]
-        }
-        */
-        def date1 = []
-        def date2 = []
+        def date = []
         def visitTimeCount = 0
        if (property.availableFrom != null)
        {
-              visitTimeCount = (property.availableFrom.length / 2)
+		  visitTimeCount = (property.availableFrom.length / 2)
 
-              for (i in 0..(property.availableFrom.length-1))
-              {
-                    if(i % 2 == 0)
-                    {
-                     date1 << property.availableFrom[i]
-                    }
-                    else
-                    {
-                     date2 << property.availableFrom[i]
-                    }
-              }
-         }
+		  for (i in 0..(property.availableFrom.length-1))
+		  {
+			 date << property.availableFrom[i]
+          }
+        }
 
         if(!property) {
             flash.message = "Property not found with id ${params.id}"
             redirect(action:list)
         }
         else {
-            return ['property':property, 'availableFrom1':date1, 'availableFrom2':date2, 'visitTimeCount':visitTimeCount]
+            return ['property':property, 'availableFrom':date, 'visitTimeCount':visitTimeCount]
         }
     }
 
@@ -131,11 +92,6 @@ class PropertyController {
 
             }
         }
-
-
-
-
-
         property.availableFrom = dates
 
         if(property) {
@@ -145,8 +101,9 @@ class PropertyController {
                 redirect(action:show,id:property.id)
             }
             else {
-                render(view:'edit',model:[property:property])
-            }
+                //render(view:'edit',model:[property:property])
+            	redirect(action:"edit", id:property.id, params:['availableFrom':dates, 'visitTimeCount':visitTimeCount])
+			}
         }
         else {
             flash.message = "Property not found with id ${params.id}"
@@ -158,12 +115,7 @@ class PropertyController {
         def property = new Property()
         def date1 = new Date()
         def date2 = new Date()
-        def visitTimeCount = 0
-
-         if (property.availableFrom != null)
-        {
-              visitTimeCount = (property.availableFrom.length / 2)
-        }
+        def visitTimeCount = 1
 
         property.properties = params
         return ['property':property, 'availableFrom1':date1, 'availableFrom2':date2, 'visitTimeCount':visitTimeCount]
@@ -171,20 +123,25 @@ class PropertyController {
 
     def save = {
         def property = new Property(params)
-        def d1
-        def d2
-        def sdf = new SimpleDateFormat("dd/MM/yyyy")
-       if(params.availableFrom1 != null )
-           d1 = sdf.parse("${params.availableFrom1_day}/${params.availableFrom1_month}/${params.availableFrom1_year}")
-
-       if(params.availableFrom2 != null )
-            d2 = sdf.parse("${params.availableFrom2_day}/${params.availableFrom2_month}/${params.availableFrom2_year}")
-
-
+         def d1
+         def d2
         def dates = []
-
+        def vis = params.visitTimeCount
+         def visitTimeCount = Integer.parseInt(vis)
+        def sdf = new SimpleDateFormat("dd/MM/yyyy")
+        if(params.availableFrom1 != null )
+            d1 = sdf.parse("${params.availableFrom1_day}/${params.availableFrom1_month}/${params.availableFrom1_year}")
+        if(params.availableFrom2 != null )
+             d2 = sdf.parse("${params.availableFrom2_day}/${params.availableFrom2_month}/${params.availableFrom2_year}")
         dates <<  d1 <<  d2
-
+        if(visitTimeCount > 1)
+        {
+            for(i in 2..visitTimeCount)
+            {
+            dates << sdf.parse("${params.getAt("availableFrom1_${i}_day")}/${params.getAt("availableFrom1_${i}_month")}/${params.getAt("availableFrom1_${i}_year")}")
+            dates << sdf.parse("${params.getAt("availableFrom2_${i}_day")}/${params.getAt("availableFrom2_${i}_month")}/${params.getAt("availableFrom2_${i}_year")}")
+            }
+        }
         property.availableFrom = dates
         // List of OK mime-types
         def f = request.getFile('picture')

@@ -22,7 +22,8 @@
             </div>
             </g:hasErrors>
             <g:form action="save" method="post"  enctype="multipart/form-data">
-                <div class="dialog">
+				<input type="hidden" id="visitTimeCount" name="visitTimeCount" value="${visitTimeCount}"/>
+				<div class="dialog">
                     <table>
                         <tbody>
                         
