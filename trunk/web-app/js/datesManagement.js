@@ -9,7 +9,19 @@ function init()
    if (initialized == 0)
     {
          compteur = document.getElementById("visitTimeCount").getAttribute("value");
-         initialized = 1;
+		if (compteur == "")
+		{
+			var i = 2;
+			compteur = 0;
+			while(document.getElementById("availableFrom1_" + i))
+			{
+				compteur++;
+				i++;
+			}
+			compteur = (document.getElementById("availableFrom1") != null ? (compteur+1) : compteur);
+			
+		}
+		 initialized = 1;
     }
 
 }

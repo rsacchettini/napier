@@ -1,4 +1,4 @@
-
+ <g:javascript library="prototype" />
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
@@ -20,7 +20,6 @@
                 <table>
                     <tbody>
 
-                    
                         <tr class="prop">
                             <td valign="top" class="name">Id:</td>
                             
@@ -53,12 +52,7 @@
                             </td>
                         </tr>
 
-                        <tr class="prop">
-                            <td valign="top" class="name">To:</td>
-
-
-
-                        </tr>
+                       
                     
                         <tr class="prop">
                             <td valign="top" class="name">Address:</td>
@@ -130,19 +124,24 @@
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name">Max Price:</td>
+                            <td valign="top" class="name">Max Price:
                             
                             <td valign="top" class="value">${property.maxPrice}</td>
                             
                         </tr>
                     
                         <tr class="prop">
-                  
-                            <g:if test="${property.picture}">
-                              <img class="avatar" src="${createLink(controller:'property', action:'property_image', id:property.ident())}" />
-                            </g:if>
-
-                        </tr>
+                             <td valign="top" class="name">
+								 Images :
+							</td>
+								<td valign="top" class="value">
+									<table>
+										<tr>
+										<g:imageDisp id="imgDisp" mode="view" beanid="${property.id}" />
+										</tr>
+									</table>
+								</td>
+							</tr>
                     
                         <tr class="prop">
                             <td valign="top" class="name">Validated:</td>
