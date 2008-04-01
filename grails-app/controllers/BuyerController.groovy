@@ -78,6 +78,7 @@ class BuyerController {
         }
         else {
             render(view:'create',model:[buyer:buyer])
-        }
+			//chain(action:create, model:[buyer:buyer])
+		}
     }
 }

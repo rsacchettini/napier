@@ -13,8 +13,8 @@ class Property
 	float maxPrice
 	String description
 	int bedroomNumber
-	byte[] picture
-    String pictureType
+	String[] picture
+    String[] pictureType
 
 
 	static constraints = {
@@ -47,8 +47,8 @@ class Property
       }
 
       int hashCode() {
-          int hashCode = 0
-          hashCode = 29 * (hashCode + ( !id ? 0 : id ^ (id >>> 32)))
+          int hashCode = 0		  
+		  hashCode = 29 * (hashCode + ( !id ? 0 : id ^ (id >>> 32)))
       }
 
       float myMinPrice()

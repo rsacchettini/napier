@@ -1,5 +1,7 @@
- <resource:dateChooser/>
+<resource:dateChooser/>
  <g:javascript src="datesManagement.js"/>
+ <g:javascript src="multifile.js"/>
+ 
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
@@ -43,7 +45,7 @@
                                 <td id="visits">
                                     <table>
 									   <tbody>
-										  <g:each var="a" status="i" in="${availableFrom}">
+										  <g:each var="a" status="i" in="${property.availableFrom}">
 											<g:if test="${(i % 2) == 0}">
 												<tr>
 												<td valign="top" class="name">
@@ -126,13 +128,12 @@
                                     <label for="appointements">Appointements:</label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean:property,field:'appointements','errors')}">
-                                    
-<ul>
-<g:each var="a" in="${property?.appointements?}">
-    <li><g:link controller="appointment" action="show" id="${a.id}">${a}</g:link></li>
-</g:each>
-</ul>
-<g:link controller="appointment" params="["property.id":property?.id]" action="create">Add Appointment</g:link>
+									<ul>
+										<g:each var="a" in="${property?.appointements?}">
+											<li><g:link controller="appointment" action="show" id="${a.id}">${a}</g:link></li>
+										</g:each>
+									</ul>
+									<g:link controller="appointment" params="['property.id':property?.id]" action="create">Add Appointment</g:link>
 
                                 </td>
                             </tr> 
@@ -143,12 +144,12 @@
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean:property,field:'interestedBuyers','errors')}">
                                     
-<ul>
-<g:each var="i" in="${property?.interestedBuyers?}">
-    <li><g:link controller="buyer" action="show" id="${i.id}">${i}</g:link></li>
-</g:each>
-</ul>
-<g:link controller="buyer" params="["property.id":property?.id]" action="create">Add Buyer</g:link>
+									<ul>
+									<g:each var="i" in="${property?.interestedBuyers?}">
+										<li><g:link controller="buyer" action="show" id="${i.id}">${i}</g:link></li>
+									</g:each>
+									</ul>
+									<g:link controller="buyer" params="['property.id':property?.id]" action="create">Add Buyer</g:link>
 
                                 </td>
                             </tr> 
@@ -182,14 +183,28 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                    <label for="picture">Picture:</label>
+                                    <label for="picture">Add Image:</label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean:property,field:'picture','errors')}">
-                                    <input type="file" id="picture" name="picture" />
-                                </td>
-                            </tr> 
-                        
-                            <tr class="prop">
+                                     <input id='picture' type='file' name='picture_0' onChange="addElement()"/>
+									<div id="fileList" style=" background: rgb(255, 255, 255) none repeat scroll 0%; font-size: x-small;"/>
+								</td>
+                            </tr>
+
+							 <tr class="prop">
+                             <td valign="top" class="name">
+								 Images added :
+							</td>
+								<td valign="top" class="value">
+									<table>
+										<tr>
+											<g:imageDisp id="imgDisp" mode="edit" beanid="${property.id}" />
+										</tr>
+									</table>
+								</td>
+							</tr>
+
+							<tr class="prop">
                                 <td valign="top" class="name">
                                     <label for="validated">Validated:</label>
                                 </td>
@@ -202,7 +217,7 @@
                     </table>
                 </div>
                 <div class="buttons">
-                    <span class="button"><g:actionSubmit class="save" value="Update" /></span>
+                    <span class="button"><g:actionSubmit class="save" value="Update" onclick="init()" /></span>
                     <span class="button"><g:actionSubmit class="delete" onclick="return confirm('Are you sure?');" value="Delete" /></span>
                 </div>
             </g:form>
