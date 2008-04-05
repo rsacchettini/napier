@@ -1,4 +1,4 @@
-<project name="napierestate" default="test">
+<project name="sourceproject" default="test">
 
     <condition property="grails" value="grails.bat">
         <os family="windows"/>
