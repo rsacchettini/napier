@@ -3406,24 +3406,20 @@ For example we can change the phone number of a client (Buyer and Seller).</XPD:
 <XPD:REF name="Views[3]">xR3sacSSlk+KpoK6kHg02wAA</XPD:REF>
 <XPD:ATTR name="#Generalizations" type="integer">1</XPD:ATTR>
 <XPD:REF name="Generalizations[0]">QoYVUuL14kSbdz3vXF1ewwAA</XPD:REF>
-<XPD:ATTR name="#Operations" type="integer">5</XPD:ATTR>
-<XPD:OBJ name="Operations[0]" type="UMLOperation" guid="Fxkw55P6Tk2qKCg0O5zbOwAA">
-<XPD:ATTR name="Name" type="string">editPersonalDetails</XPD:ATTR>
-<XPD:REF name="Owner">uQv038JliESqUrApkN1yzAAA</XPD:REF>
-</XPD:OBJ>
-<XPD:OBJ name="Operations[1]" type="UMLOperation" guid="g9gcnANFIEyreZ1TFh89bQAA">
+<XPD:ATTR name="#Operations" type="integer">4</XPD:ATTR>
+<XPD:OBJ name="Operations[0]" type="UMLOperation" guid="g9gcnANFIEyreZ1TFh89bQAA">
 <XPD:ATTR name="Name" type="string">addInterestedProperty</XPD:ATTR>
 <XPD:REF name="Owner">uQv038JliESqUrApkN1yzAAA</XPD:REF>
 </XPD:OBJ>
-<XPD:OBJ name="Operations[2]" type="UMLOperation" guid="IB49r7JUR06hppt46GVXLwAA">
+<XPD:OBJ name="Operations[1]" type="UMLOperation" guid="IB49r7JUR06hppt46GVXLwAA">
 <XPD:ATTR name="Name" type="string">removeInterestedProperty</XPD:ATTR>
 <XPD:REF name="Owner">uQv038JliESqUrApkN1yzAAA</XPD:REF>
 </XPD:OBJ>
-<XPD:OBJ name="Operations[3]" type="UMLOperation" guid="gUSWRkDAS0GK4m36qW+CJwAA">
+<XPD:OBJ name="Operations[2]" type="UMLOperation" guid="gUSWRkDAS0GK4m36qW+CJwAA">
 <XPD:ATTR name="Name" type="string">searchProperty</XPD:ATTR>
 <XPD:REF name="Owner">uQv038JliESqUrApkN1yzAAA</XPD:REF>
 </XPD:OBJ>
-<XPD:OBJ name="Operations[4]" type="UMLOperation" guid="3F9JLaAFSUepiOvr/t89xQAA">
+<XPD:OBJ name="Operations[3]" type="UMLOperation" guid="3F9JLaAFSUepiOvr/t89xQAA">
 <XPD:ATTR name="Name" type="string">makeOffer</XPD:ATTR>
 <XPD:REF name="Owner">uQv038JliESqUrApkN1yzAAA</XPD:REF>
 </XPD:OBJ>
@@ -3446,25 +3442,13 @@ For example we can change the phone number of a client (Buyer and Seller).</XPD:
 <XPD:REF name="Generalizations[1]">GcvlvWPrdEG7t4WCgT7O1wAA</XPD:REF>
 <XPD:ATTR name="#Specializations" type="integer">1</XPD:ATTR>
 <XPD:REF name="Specializations[0]">BPrI8LCrnkelAAE4vpmPSAAA</XPD:REF>
-<XPD:ATTR name="#Operations" type="integer">5</XPD:ATTR>
+<XPD:ATTR name="#Operations" type="integer">2</XPD:ATTR>
 <XPD:OBJ name="Operations[0]" type="UMLOperation" guid="/A37HAiNQ02U2Gsrnhaf+AAA">
 <XPD:ATTR name="Name" type="string">addProperty</XPD:ATTR>
 <XPD:REF name="Owner">eVap0uIckEm7P5YfsqCsowAA</XPD:REF>
 </XPD:OBJ>
-<XPD:OBJ name="Operations[1]" type="UMLOperation" guid="gNL1RYOf0E6QL6Da0hrz4QAA">
-<XPD:ATTR name="Name" type="string">editProperty</XPD:ATTR>
-<XPD:REF name="Owner">eVap0uIckEm7P5YfsqCsowAA</XPD:REF>
-</XPD:OBJ>
-<XPD:OBJ name="Operations[2]" type="UMLOperation" guid="GMJAn8JnWkOdH2Gyy0Wl/QAA">
-<XPD:ATTR name="Name" type="string">removeProperty</XPD:ATTR>
-<XPD:REF name="Owner">eVap0uIckEm7P5YfsqCsowAA</XPD:REF>
-</XPD:OBJ>
-<XPD:OBJ name="Operations[3]" type="UMLOperation" guid="woyzCyCuF0O9zow2N5v3VwAA">
+<XPD:OBJ name="Operations[1]" type="UMLOperation" guid="woyzCyCuF0O9zow2N5v3VwAA">
 <XPD:ATTR name="Name" type="string">listInterestedBuyers</XPD:ATTR>
-<XPD:REF name="Owner">eVap0uIckEm7P5YfsqCsowAA</XPD:REF>
-</XPD:OBJ>
-<XPD:OBJ name="Operations[4]" type="UMLOperation" guid="KU5kx+dTrUKv6oBQtxBYHgAA">
-<XPD:ATTR name="Name" type="string">editPersonalDetails</XPD:ATTR>
 <XPD:REF name="Owner">eVap0uIckEm7P5YfsqCsowAA</XPD:REF>
 </XPD:OBJ>
 <XPD:ATTR name="#Associations" type="integer">1</XPD:ATTR>
