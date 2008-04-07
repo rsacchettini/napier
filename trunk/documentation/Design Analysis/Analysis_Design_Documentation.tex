@@ -1,4 +1,5 @@
 \documentclass[a4paper,12pt]{article}
+\usepackage[left=2cm,top=2cm,right=2cm]{geometry}
 \usepackage{fancyhdr}
 \usepackage{graphicx}
 \usepackage[utf8]{inputenc}
@@ -6,7 +7,7 @@
 
 \title{Design Analysis}
 \author{Group Project 3 - Group 2}
-\date{March 14 2008}
+\date{March 21 2008}
 
 \begin{document}
 \maketitle
@@ -17,17 +18,82 @@
 
 
 \section{Introduction}
-\subsection{Objectives}
-The Napier Estate Agency is a company which deals in the selling of property within the UK. At the moment all sales are made either in person at the branch, or by telephone. The company has both buyers and sellers. Sellers list their properties with the agency who then advertise them on the front window of the branch. Buyers can then see these properties and enter the branch to find out more information or arrange to view the property.
-The client feels that by advertising the properties only on the window of the branch, they are limiting the number of buyers attracted. They wish to reach out to more potential buyers, and make ?nding out information and arranging visits to properties easier for them. The client also wishes to allow sellers to list properties themselves. The group has decided that in order to achieve these goals an online estate agency site should be created.
-The website needs to have several functions. It must allow anyone who wants to buy or sell a property to register on the website and get an account.
-With this account, the user will be able to add properties, browse and search all the properties ordered, ?nd out more detailed information about each property, and arrange visits to properties.
-The system will also be used by employees of the estate agency. It must allow the estate agents to view all the properties. They will be able to verify properties added by users before they go online, they will then be able to edit and remove a property at any time. The estate agent should be able to see a list of potential buyers for each property and have some method to contact each one.
-The website must be consistent throughout each page. As the majority of people using the site are likely to not be technical people the site has to be easy to navigate and intuitive. It is important that searching the properties is easy to do and e?ective.
-The website will be created using groovy java. This is a relatively new programming language based on java. Its syntax is similar to that of java, but simpler. There are far fewer rules which will make coding the site relatively easy.
+This class diagram highlights the classes discovered during the analysis,
+and some additional classes discovered during the design of our application.
+You will notice than there is no methods in our classes related to the reading,the creation, the deletion or tu updating.
+There is no such method because we assume that thoses features are handled from the roots by the GRails Framework.
 
-\subsection{Overall description}
-This document describes all the functional needs and indirectely also the non-functional needs.
+\section{Class diagram}
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=\linewidth]{pics/classDiagram.jpg}
+\end{center}
+\caption{\footnotesize Class Diagram of Napier Estate Agency}
+\end{figure}
+\subsection {Classes description}
+
+\subsubsection{EstateAgent class}
+An estate agent inherits from an User.
+He can :
+\begin{itemize}
+\item List his properties
+\item List the buyers interested by his properties
+\item Search a property
+\item Validate (or not) a property in order to make it available on the website.
+\item Edit the details of a property
+\item Set up an appointment
+\item Edit an appointment
+\item Remove a property
+\end{itemize}
+
+\subsubsection{Buyer class}
+A buyer inherits from an User.
+He can :
+\begin{itemize}
+\item Add a property to his list of interests
+\item Remove a property from this list
+\item Search for a property
+\item Make an offer to a property
+\end{itemize}
+
+\subsubsection{Seller class}
+A seller inherits from an User.
+He can :
+\begin{itemize}
+\item Add his property to the website (which is going to be validated by an estate agent)
+\item See the list of buyers interested by his properties
+\end{itemize}
+
+\subsubsection{User class}
+The Seller class, the Buyer class and the EstateAgent class have some common attributes and behaviors,
+that's why a parent class, User, as been created to generalize theses attributes and behaviors.
+An user is characterized by :
+\begin{itemize}
+\item His surname
+\item His forename
+\item A password
+\item An email
+\item His telephone number (should be formatted like an UK number)
+\end{itemize}
+This class handles also the login and the logout of an user.
+
+\subsubsection{Property class}
+This class describe a property. A property is characterized by : 
+\begin{itemize}
+\item A reference number (Unique identifier for a property)
+\item A set of availability dates
+\item A postcode (constrained by the UK Postcode format)
+\item A minimum price
+\item A maximum price
+\item A short description of the property
+\item The number of bedrooms
+\item A set of pictures
+\end{itemize}
+
+\subsubsection{Appointment class}
+This class describes an appointment, set at a particular date and a particular time.
+Constraint : A estate agent or a buyer can't have more than one appointment same date.
+
 
 
 \section{Use-Case Diagram}
@@ -41,27 +107,12 @@ This document describes all the functional needs and indirectely also the non-fu
 \end{figure}
 
 
-\section{Actor Specification}
-
-\subsection{Buyer}
-\subsubsection{Description}
-People who want to buy properties.
-
-\subsection{Estate agent}
-\subsubsection{Description}
-People who manage the whole exchanges of the website.
-
-\subsection{Seller}
-\subsubsection{Description}
-People who want to sell their properties.
-
-
 \section{Use-Case Specification}
 
 \subsection{Authenticate}
-\subsubsection{Description}
+
 The user logs on to the website to benefit of its services which are provided by the website.
-\subsubsection{Flow of Events}
+
 \paragraph{Basic Flow}
 \begin{enumerate}
 \item The system prompts the user to log on.
@@ -76,15 +127,15 @@ The user logs on to the website to benefit of its services which are provided by
 \item The system does not recognize user's logon information.
 \item Go to step 1 (Basic Flow).
 \end{enumerate}
-\subsubsection{Pre-Conditions}
+\paragraph{Pre-Conditions}
 The user has to want to use a service other than "browse properties", "create an account".
-\subsubsection{Post-Conditions}
+\paragraph{Post-Conditions}
 The user will enjoy all the services whose he is allowed to use.
 
 \subsection{Browse/Search properties}
-\subsubsection{Description}
+
 The buyer can search properties by location or postcode and concequentely browse all the referenced properties in the website's database.
-\subsubsection{Flow of Events}
+
 \paragraph{Basic Flow}
 \begin{enumerate}
 \item The system shows the list of all properties available.
@@ -96,13 +147,13 @@ The buyer can search properties by location or postcode and concequentely browse
 \item The system shows the list of all properties available.
 \item The user can switch the part's list of properties in clicking on directional arrows.
 \end{enumerate}
-\subsubsection{Post-Conditions}
+\paragraph{Post-Conditions}
 The buyer finds porperties which match to his searches.
 
 \subsection{Create an account}
-\subsubsection{Description}
+
 To create a new account object with personal details, including name, contact number and address.
-\subsubsection{Flow of Events}
+
 \paragraph{Basic Flow}
 \begin{enumerate}
 \item The system prompts the user for his forename, surname, his contact number, and his address.
@@ -113,51 +164,41 @@ To create a new account object with personal details, including name, contact nu
 \begin{enumerate}
 \item
 \end{enumerate}
-\subsubsection{Pre-Conditions}
-\subsubsection{Post-Conditions}
 
 \subsection{Edit / Remove property}
-\subsubsection{Description}
+
 The seller can update properties information if he did some mistakes. He can also remove its properties if the Napier Agency's contract allows him to use this use case.
-\subsubsection{Flow of Events}
+
 \paragraph{Basic Flow}
 \begin{enumerate}
 \item The seller changes any information about his property.
 \item The system verifies the data's type entered.
 \item The system processes the modifications on the database.
 \end{enumerate}
-\paragraph{Alternative Flow}
-\begin{enumerate}
-\item
-\end{enumerate}
-\subsubsection{Pre-Conditions}
+\paragraph{Pre-Conditions}
 The seller must be log on the system.
-\subsubsection{Post-Conditions}
+\paragraph{Post-Conditions}
 The modifications wanted by the seller are done.
 
 \subsection{Maintain personal details}
-\subsubsection{Description}
+
 The seller and the buyer maintain their personal details online either edit or remove information.
-\subsubsection{Flow of Events}
+
 \paragraph{Basic Flow}
 \begin{enumerate}
 \item The seller or the buyer change any information about his personal details.
 \item The system verifies the data's type entered are allowed.
 \item The system processes the modifications on the database.
 \end{enumerate}
-\paragraph{Alternative Flow}
-\begin{enumerate}
-\item
-\end{enumerate}
-\subsubsection{Pre-Conditions}
+\paragraph{Pre-Conditions}
 The seller and the buyer must be log on the system.
-\subsubsection{Post-Conditions}
+\paragraph{Post-Conditions}
 The personal information are modified and saved in the system.
 
 \subsection{Manage added properties}
-\subsubsection{Description}
+
 The estate agent checks, confirms and refuses all the added properties by the sellers. By this way he still keeps the control in order to obtain consitent data.
-\subsubsection{Flow of Events}
+
 \paragraph{Basic Flow}
 \begin{enumerate}
 \item The system prompts a list of properties to be validated.
@@ -171,31 +212,26 @@ The estate agent checks, confirms and refuses all the added properties by the se
 \item The user chooses to not validate the property.
 \item The property is deleted.
 \end{enumerate}
-\subsubsection{Pre-Conditions}
-The estate agent must be log on the system.
-\subsubsection{Post-Conditions}
+\paragraph{Pre-Conditions}
+The estate agent must be logged on the system.
 
 
 \subsection{Manage any user information}
-\subsubsection{Description}
+
 Any user can change his credential, or delete his own account.
-\subsubsection{Flow of Events}
+
 \paragraph{Basic Flow}
 \begin{enumerate}
 \item
 \end{enumerate}
 \paragraph{Alternative Flow}
-\begin{enumerate}
-\item
-\end{enumerate}
-\subsubsection{Pre-Conditions}
+\paragraph{Pre-Conditions}
 The estate agent must be log on the system.
-\subsubsection{Post-Conditions}
 
 \subsection{Manage the appointments}
-\subsubsection{Description}
+
 The estate agent arranges the appointments for people who want visit properties.
-\subsubsection{Flow of Events}
+
 \paragraph{Basic Flow}
 \begin{enumerate}
 \item The estate agent asks the system to process a new appointment.
@@ -218,31 +254,26 @@ The estate agent arranges the appointments for people who want visit properties.
 \item The system does not recognize estate agent's logon information.
 \item Go to step 2 (Basic Flow).
 \end{enumerate}
-\subsubsection{Pre-Conditions}
+\paragraph{Pre-Conditions}
 The system is displaying the estate agent main menu.
-\subsubsection{Post-Conditions}
+\paragraph{Post-Conditions}
 The system is displaying the estate agent main menu.
 
 \subsection{Register interest in a property}
-\subsubsection{Description}
+
 To makes an offer online and wait for result/notice from agent after deadline.
-\subsubsection{Flow of Events}
+
 \paragraph{Basic Flow}
 \begin{enumerate}
 \item
 \end{enumerate}
-\paragraph{Alternative Flow}
-\begin{enumerate}
-\item
-\end{enumerate}
-\subsubsection{Pre-Conditions}
+\paragraph{Pre-Conditions}
 The buyer must be log on the system.
-\subsubsection{Post-Conditions}
 
 \subsection{Register property details}
-\subsubsection{Description}
+
 The seller adds a new property in gathering the key features, full description, tenure and in uploading pictures.
-\subsubsection{Flow of Events}
+
 \paragraph{Basic Flow}
 \begin{enumerate}
 \item The seller asks the system to process a new add property.
@@ -263,15 +294,15 @@ The seller adds a new property in gathering the key features, full description, 
 \item The system does not recognize seller's logon information.
 \item Go to step 2 (Basic Flow).
 \end{enumerate}
-\subsubsection{Pre-Conditions}
+\paragraph{Pre-Conditions}
 The system is displaying the seller main menu.
-\subsubsection{Post-Conditions}
+\paragraph{Post-Conditions}
 The system is displaying the seller main menu.
 
 \subsection{Remove property from list}
-\subsubsection{Description}
+
 The buyer removes a property from the basket if he is not interested by one added property.
-\subsubsection{Flow of Events}
+
 \paragraph{Basic Flow}
 \begin{enumerate}
 \item The buyer asks the system to remove a property.
@@ -285,64 +316,72 @@ The buyer removes a property from the basket if he is not interested by one adde
 \begin{enumerate}
 \item The system recognizes cookie on buyer's computer. 
 \item Go to step 4 (Basic Flow).
-\item The system does not recognize seller's logon information.
+\item The system does not recognize buyer's logon information.
 \item Go to step 2 (Basic Flow).
 \end{enumerate}
-\subsubsection{Pre-Conditions}
+\paragraph{Pre-Conditions}
 The system is displaying the buyer main menu.
-\subsubsection{Post-Conditions}
+\paragraph{Post-Conditions}
 The system is displaying the buyer basket.
 
 \subsection{Review interest list}
-\subsubsection{Description}
+
 The buyer see the interested properties in his basket in order to check back his favours next sign in.
-\subsubsection{Flow of Events}
+
 \paragraph{Basic Flow}
 \begin{enumerate}
-\item
+\item The buyer asks the system to list its interested properties.
+\item The system asks the buyer for identification.
+\item The buyer identifies himselve to the system.
+\item The system prints the list of properties which were added by the buyer in the basket.
 \end{enumerate}
 \paragraph{Alternative Flow}
 \begin{enumerate}
-\item
+\item The system recognizes cookie on buyer's computer. 
+\item Go to step 4 (Basic Flow).
+\item The system does not recognize buyer's logon information.
+\item Go to step 2 (Basic Flow).
 \end{enumerate}
-\subsubsection{Pre-Conditions}
+\paragraph{Pre-Conditions}
 The buyer must be log on the system.
-\subsubsection{Post-Conditions}
+
 
 \subsection{Review properties list}
-\subsubsection{Description}
+
 The seller see his added properties list.
-\subsubsection{Flow of Events}
+
 \paragraph{Basic Flow}
 \begin{enumerate}
-\item The system displayes the list of all properties belong to his owners.
+\item The seller asks the system to list its properties.
+\item The system asks the seller for identification.
+\item The seller identifies himselve to the system.
+\item The system displays the list of all properties belong to his owners.
 \end{enumerate}
 \paragraph{Alternative Flow}
 \begin{enumerate}
-\item
+\item The system recognizes cookie on seller's computer. 
+\item Go to step 4 (Basic Flow).
+\item The system does not recognize seller's logon information.
+\item Go to step 2 (Basic Flow).
 \end{enumerate}
-\subsubsection{Pre-Conditions}
+\paragraph{Pre-Conditions}
 The seller must be log on the system.
-\subsubsection{Post-Conditions}
-The seller see the inventorie of his properties.
+\paragraph{Post-Conditions}
+The seller see the inventory of his properties.
 
 \subsection{See status properties}
-\subsubsection{Description}
+
 The estate agent see who are interested by properties and also the name of its owners.
-\subsubsection{Flow of Events}
+
 \paragraph{Basic Flow}
 \begin{enumerate}
 \item The system displayes the list of all buyer who are interested by properties.
 \item The estate agent get more details in clicking on the properties.
 \item The system displayes all the details buyer, property, seller.
 \end{enumerate}
-\paragraph{Alternative Flow}
-\begin{enumerate}
-\item
-\end{enumerate}
-\subsubsection{Pre-Conditions}
+\paragraph{Pre-Conditions}
 The estate agent must be log on the system.
-\subsubsection{Post-Conditions}
+\paragraph{Post-Conditions}
 The estate agent see the dossier of each property which has been selected by buyers.
 
 
