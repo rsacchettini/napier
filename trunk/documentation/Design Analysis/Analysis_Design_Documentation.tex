@@ -110,9 +110,7 @@ Constraint : A estate agent or a buyer can't have more than one appointment same
 \section{Use-Case Specification}
 
 \subsection{Authenticate}
-
 The user logs on to the website to benefit of its services which are provided by the website.
-
 \paragraph{Basic Flow}
 \begin{enumerate}
 \item The system prompts the user to log on.
@@ -133,9 +131,7 @@ The user has to want to use a service other than "browse properties", "create an
 The user will enjoy all the services whose he is allowed to use.
 
 \subsection{Browse/Search properties}
-
 The buyer can search properties by location or postcode and concequentely browse all the referenced properties in the website's database.
-
 \paragraph{Basic Flow}
 \begin{enumerate}
 \item The system shows the list of all properties available.
@@ -151,24 +147,16 @@ The buyer can search properties by location or postcode and concequentely browse
 The buyer finds porperties which match to his searches.
 
 \subsection{Create an account}
-
 To create a new account object with personal details, including name, contact number and address.
-
 \paragraph{Basic Flow}
 \begin{enumerate}
 \item The system prompts the user for his forename, surname, his contact number, and his address.
 \item If the user does not exist previously in the database, and if the data is validated, the sytem add the new record.
 \item The user is logged-on directly on his new account.
 \end{enumerate}
-\paragraph{Alternative Flow}
-\begin{enumerate}
-\item
-\end{enumerate}
 
 \subsection{Edit / Remove property}
-
 The seller can update properties information if he did some mistakes. He can also remove its properties if the Napier Agency's contract allows him to use this use case.
-
 \paragraph{Basic Flow}
 \begin{enumerate}
 \item The seller changes any information about his property.
@@ -181,9 +169,7 @@ The seller must be log on the system.
 The modifications wanted by the seller are done.
 
 \subsection{Maintain personal details}
-
 The seller and the buyer maintain their personal details online either edit or remove information.
-
 \paragraph{Basic Flow}
 \begin{enumerate}
 \item The seller or the buyer change any information about his personal details.
@@ -196,9 +182,7 @@ The seller and the buyer must be log on the system.
 The personal information are modified and saved in the system.
 
 \subsection{Manage added properties}
-
 The estate agent checks, confirms and refuses all the added properties by the sellers. By this way he still keeps the control in order to obtain consitent data.
-
 \paragraph{Basic Flow}
 \begin{enumerate}
 \item The system prompts a list of properties to be validated.
@@ -217,19 +201,28 @@ The estate agent must be logged on the system.
 
 
 \subsection{Manage any user information}
-
 Any user can change his credential, or delete his own account.
-
 \paragraph{Basic Flow}
 \begin{enumerate}
-\item
+\item The estate agent asks the system to admin the website.
+\item The system asks the estate agent for identification.
+\item The estate agent identifies himselve to the system.
+\item The system displays an interface which allows him to change any data.
+\item The estate agent does his modification and saves his work.
+\item The system analyses the estate agent's request.
+\item The system updates the database.
 \end{enumerate}
 \paragraph{Alternative Flow}
+\begin{enumerate}
+\item The system recognizes cookie on estate agent's machine. 
+\item Go to step 4 (Basic Flow).
+\item The system does not recognize estate agent's logon information.
+\item Go to step 2 (Basic Flow).
+\end{enumerate}
 \paragraph{Pre-Conditions}
 The estate agent must be log on the system.
 
 \subsection{Manage the appointments}
-
 The estate agent arranges the appointments for people who want visit properties.
 
 \paragraph{Basic Flow}
@@ -244,7 +237,7 @@ The estate agent arranges the appointments for people who want visit properties.
 \item The system displays the appointment's description created by the estate agent.
 \item The estate agent valids his appointment.
 \item The system records the appointment.
-\item The system removes the choosen date for the appointment from date available.
+\item The system removes the choosen date for the appointment from available dates.
 \item The system displays the main menu to the estate agent.
 \end{enumerate}
 \paragraph{Alternative Flow}
@@ -260,20 +253,50 @@ The system is displaying the estate agent main menu.
 The system is displaying the estate agent main menu.
 
 \subsection{Register interest in a property}
-
-To makes an offer online and wait for result/notice from agent after deadline.
-
+The buyer can be interested by a propety and has to add the property in his basket. Then he will be conatacted by an estate agent in order to visit the property.
 \paragraph{Basic Flow}
 \begin{enumerate}
-\item
+\item The buyer asks the system to make an offer for a property.
+\item The system asks the buyer for identification.
+\item The buyer identifies himselve to the system.
+\item The system displays all the details of the property and asks to the buyer to confirm his interest.
+\item The buyer confirms his choice.
+\item The system displays the basket of the buyer.
+\end{enumerate}
+\paragraph{Alternative Flow}
+\begin{enumerate}
+\item The system recognizes cookie on buyer's machine. 
+\item Go to step 4 (Basic Flow).
+\item The system does not recognize buyer's logon information.
+\item Go to step 2 (Basic Flow).
+\end{enumerate}
+\paragraph{Pre-Conditions}
+The buyer must be log on the system.
+
+\subsection{Make an offer}
+The buyer can make an offer online and wait for result on a property already visited.
+\paragraph{Basic Flow}
+\begin{enumerate}
+\item The buyer asks the system to make an offer for a property.
+\item The system asks the buyer for identification.
+\item The buyer identifies himselve to the system.
+\item The system displays all the details of the property and asks to the buyer to make an offer.
+\item The buyer types an offer and sends his request to the system.
+\item The system records the buyer's offer and send a message to the estate agent.
+\item The system displays the basket of the buyer.
+\end{enumerate}
+\paragraph{Alternative Flow}
+\begin{enumerate}
+\item The system recognizes cookie on buyer's machine. 
+\item Go to step 4 (Basic Flow).
+\item The system does not recognize buyer's logon information.
+\item Go to step 2 (Basic Flow).
 \end{enumerate}
 \paragraph{Pre-Conditions}
 The buyer must be log on the system.
 
 \subsection{Register property details}
-
 The seller adds a new property in gathering the key features, full description, tenure and in uploading pictures.
-
 \paragraph{Basic Flow}
 \begin{enumerate}
 \item The seller asks the system to process a new add property.
@@ -300,9 +323,7 @@ The system is displaying the seller main menu.
 The system is displaying the seller main menu.
 
 \subsection{Remove property from list}
-
 The buyer removes a property from the basket if he is not interested by one added property.
-
 \paragraph{Basic Flow}
 \begin{enumerate}
 \item The buyer asks the system to remove a property.
@@ -325,9 +346,7 @@ The system is displaying the buyer main menu.
 The system is displaying the buyer basket.
 
 \subsection{Review interest list}
-
 The buyer see the interested properties in his basket in order to check back his favours next sign in.
-
 \paragraph{Basic Flow}
 \begin{enumerate}
 \item The buyer asks the system to list its interested properties.
@@ -345,11 +364,8 @@ The buyer see the interested properties in his basket in order to check back his
 \paragraph{Pre-Conditions}
 The buyer must be log on the system.
 
-
 \subsection{Review properties list}
-
 The seller see his added properties list.
-
 \paragraph{Basic Flow}
 \begin{enumerate}
 \item The seller asks the system to list its properties.
@@ -370,9 +386,7 @@ The seller must be log on the system.
 The seller see the inventory of his properties.
 
 \subsection{See status properties}
-
 The estate agent see who are interested by properties and also the name of its owners.
-
 \paragraph{Basic Flow}
 \begin{enumerate}
 \item The system displayes the list of all buyer who are interested by properties.
