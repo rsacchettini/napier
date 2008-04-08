@@ -1,5 +1,5 @@
 \documentclass[a4paper,12pt]{article}
-\usepackage[left=2cm,top=2cm,right=2cm]{geometry}
+\usepackage[left=2cm,top=1.7cm,bottom=2cm,right=2cm]{geometry}
 \usepackage{fancyhdr}
 \usepackage{graphicx}
 \usepackage[utf8]{inputenc}
@@ -20,8 +20,8 @@
 \section{Introduction}
 This class diagram highlights the classes discovered during the analysis,
 and some additional classes discovered during the design of our application.
-You will notice than there is no methods in our classes related to the reading,the creation, the deletion or tu updating.
-There is no such method because we assume that thoses features are handled from the roots by the GRails Framework.
+You will notice than there are no methods in our classes related to the reading, the creation, the deletion nor the updating.
+There is no such method because we assume that these features are handled from the roots by the GRails Framework.
 
 \section{Class diagram}
 \begin{figure}[htbp]
@@ -78,7 +78,7 @@ An user is characterized by :
 This class handles also the login and the logout of an user.
 
 \subsubsection{Property class}
-This class describe a property. A property is characterized by : 
+This class describes a property. A property is characterized by: 
 \begin{itemize}
 \item A reference number (Unique identifier for a property)
 \item A set of availability dates
@@ -92,7 +92,7 @@ This class describe a property. A property is characterized by :
 
 \subsubsection{Appointment class}
 This class describes an appointment, set at a particular date and a particular time.
-Constraint : A estate agent or a buyer can't have more than one appointment same date.
+Constraint: A estate agent or a buyer can't have more than one appointment same date.
 
 
 
@@ -131,11 +131,11 @@ The user has to want to use a service other than "browse properties", "create an
 The user will enjoy all the services whose he is allowed to use.
 
 \subsection{Browse/Search properties}
-The buyer can search properties by location or postcode and concequentely browse all the referenced properties in the website's database.
+The buyer can search properties by location or postcode and then browse all the referenced properties in the website's database.
 \paragraph{Basic Flow}
 \begin{enumerate}
 \item The system shows the list of all properties available.
-\item The buyer enteres in the engine search some filters such as the postcode.
+\item The buyer enters in the engine search some filters such as the postcode.
 \item The system provides an reply from the buyer's request in displaying a new list.
 \end{enumerate}
 \paragraph{Alternative Flow}
@@ -144,14 +144,14 @@ The buyer can search properties by location or postcode and concequentely browse
 \item The user can switch the part's list of properties in clicking on directional arrows.
 \end{enumerate}
 \paragraph{Post-Conditions}
-The buyer finds porperties which match to his searches.
+The buyer finds properties which match to his searches.
 
 \subsection{Create an account}
 To create a new account object with personal details, including name, contact number and address.
 \paragraph{Basic Flow}
 \begin{enumerate}
 \item The system prompts the user for his forename, surname, his contact number, and his address.
-\item If the user does not exist previously in the database, and if the data is validated, the sytem add the new record.
+\item If the user does not exist previously in the database, and if the data is validated, the system adds the new record.
 \item The user is logged-on directly on his new account.
 \end{enumerate}
 
@@ -182,14 +182,14 @@ The seller and the buyer must be log on the system.
 The personal information are modified and saved in the system.
 
 \subsection{Manage added properties}
-The estate agent checks, confirms and refuses all the added properties by the sellers. By this way he still keeps the control in order to obtain consitent data.
+The estate agent checks, confirms or refuses all the added properties by the sellers. By this way he keeps the control in order to obtain consistent data.
 \paragraph{Basic Flow}
 \begin{enumerate}
 \item The system prompts a list of properties to be validated.
 \item The estate agent chooses a property to validate.
 \item The system prompts the property details and ask for a confirmation.
 \item The estate agent chooses to validate the property.
-\item The system markes the property as validated.
+\item The system marks the property as validated.
 \end{enumerate}
 \paragraph{Alternative Flow}
 \begin{enumerate}
@@ -206,7 +206,7 @@ Any user can change his credential, or delete his own account.
 \begin{enumerate}
 \item The estate agent asks the system to admin the website.
 \item The system asks the estate agent for identification.
-\item The estate agent identifies himselve to the system.
+\item The estate agent identifies himself to the system.
 \item The system displays an interface which allows him to change any data.
 \item The estate agent does his modification and saves his work.
 \item The system analyses the estate agent's request.
@@ -223,21 +223,21 @@ Any user can change his credential, or delete his own account.
 The estate agent must be log on the system.
 
 \subsection{Manage the appointments}
-The estate agent arranges the appointments for people who want visit properties.
+The estate agent set up appointments for people who want to visit properties.
 
 \paragraph{Basic Flow}
 \begin{enumerate}
 \item The estate agent asks the system to process a new appointment.
 \item The system asks the estate agent for identification.
-\item The estate agent identifies himselve to the system.
+\item The estate agent identifies himself to the system.
 \item The system displays a list of buyers interested by properties to the estate agent.
 \item The estate agent selects the buyer and his interested property into the system.
 \item The system displays the diary with the date available for a visit to the sales assistant.
 \item The estate agent chooses a date.
 \item The system displays the appointment's description created by the estate agent.
-\item The estate agent valids his appointment.
+\item The estate agent validates his appointment.
 \item The system records the appointment.
-\item The system removes the choosen date for the appointment from available dates.
+\item The system removes the chosen date for the appointment from available dates.
 \item The system displays the main menu to the estate agent.
 \end{enumerate}
 \paragraph{Alternative Flow}
@@ -253,12 +253,12 @@ The system is displaying the estate agent main menu.
 The system is displaying the estate agent main menu.
 
 \subsection{Register interest in a property}
-The buyer can be interested by a propety and has to add the property in his basket. Then he will be conatacted by an estate agent in order to visit the property.
+The buyer can be interested by a property and has to add the property in his basket. Then he will be contacted by an estate agent in order to visit the property.
 \paragraph{Basic Flow}
 \begin{enumerate}
 \item The buyer asks the system to make an offer for a property.
 \item The system asks the buyer for identification.
-\item The buyer identifies himselve to the system.
+\item The buyer identifies himself to the system.
 \item The system displays all the details of the property and asks to the buyer to confirm his interest.
 \item The buyer confirms his choice.
 \item The system displays the basket of the buyer.
@@ -279,7 +279,7 @@ The buyer can make an offer online and wait for result on a property already vis
 \begin{enumerate}
 \item The buyer asks the system to make an offer for a property.
 \item The system asks the buyer for identification.
-\item The buyer identifies himselve to the system.
+\item The buyer identifies himself to the system.
 \item The system displays all the details of the property and asks to the buyer to make an offer.
 \item The buyer types an offer and sends his request to the system.
 \item The system records the buyer's offer and send a message to the estate agent.
@@ -301,11 +301,11 @@ The seller adds a new property in gathering the key features, full description, 
 \begin{enumerate}
 \item The seller asks the system to process a new add property.
 \item The system asks the seller for identification.
-\item The seller identifies himselve to the system.
+\item The seller identifies himself to the system.
 \item The system displays a blank dossier of add property to the seller.
 \item The seller fills all the required fields with the features of his property and uploads pictures of his property into the system.
 \item The system displays the description of request's seller to the seller.
-\item The seller valids his add.
+\item The seller validate his add.
 \item The system records the property details.
 \item The system signals to an estate agent that a property of the seller has been added and has to be confirmed.
 \item The system displays the seller main menu to the seller.
@@ -328,7 +328,7 @@ The buyer removes a property from the basket if he is not interested by one adde
 \begin{enumerate}
 \item The buyer asks the system to remove a property.
 \item The system asks the buyer for identification.
-\item The seller identifies himselve to the system.
+\item The seller identifies himself to the system.
 \item The system checks if an appointment is arranged between the buyer and an estate agent.
 \item The system remove the property from the buyer's basket.
 \item The system prints the basket without the property which was just removed to the buyer.
@@ -340,18 +340,16 @@ The buyer removes a property from the basket if he is not interested by one adde
 \item The system does not recognize buyer's logon information.
 \item Go to step 2 (Basic Flow).
 \end{enumerate}
-\paragraph{Pre-Conditions}
-The system is displaying the buyer main menu.
 \paragraph{Post-Conditions}
 The system is displaying the buyer basket.
 
 \subsection{Review interest list}
-The buyer see the interested properties in his basket in order to check back his favours next sign in.
+The can manage a list of property which is interested in.
 \paragraph{Basic Flow}
 \begin{enumerate}
 \item The buyer asks the system to list its interested properties.
 \item The system asks the buyer for identification.
-\item The buyer identifies himselve to the system.
+\item The buyer identifies himself to the system.
 \item The system prints the list of properties which were added by the buyer in the basket.
 \end{enumerate}
 \paragraph{Alternative Flow}
@@ -362,15 +360,15 @@ The buyer see the interested properties in his basket in order to check back his
 \item Go to step 2 (Basic Flow).
 \end{enumerate}
 \paragraph{Pre-Conditions}
-The buyer must be log on the system.
+The buyer must be logged on the system.
 
 \subsection{Review properties list}
-The seller see his added properties list.
+The seller sees his added properties list.
 \paragraph{Basic Flow}
 \begin{enumerate}
 \item The seller asks the system to list its properties.
 \item The system asks the seller for identification.
-\item The seller identifies himselve to the system.
+\item The seller identifies himself to the system.
 \item The system displays the list of all properties belong to his owners.
 \end{enumerate}
 \paragraph{Alternative Flow}
@@ -382,21 +380,16 @@ The seller see his added properties list.
 \end{enumerate}
 \paragraph{Pre-Conditions}
 The seller must be log on the system.
-\paragraph{Post-Conditions}
-The seller see the inventory of his properties.
 
 \subsection{See status properties}
-The estate agent see who are interested by properties and also the name of its owners.
+The estate agent sees who are interested by properties and also the name of its owners.
 \paragraph{Basic Flow}
 \begin{enumerate}
-\item The system displayes the list of all buyer who are interested by properties.
+\item The system displays the list of all buyer who are interested by properties.
 \item The estate agent get more details in clicking on the properties.
-\item The system displayes all the details buyer, property, seller.
+\item The system displays all the details buyer, property, seller.
 \end{enumerate}
 \paragraph{Pre-Conditions}
-The estate agent must be log on the system.
-\paragraph{Post-Conditions}
-The estate agent see the dossier of each property which has been selected by buyers.
-
+The estate agent must be logged on the system.
 
 \end{document}
