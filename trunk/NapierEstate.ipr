@@ -271,5 +271,24 @@
     <option name="cycleTableSpecificationString" value="" />
     <option name="shortCycleTableSpecificationString" value="" />
   </component>
+  <component name="libraryTable">
+    <library name="ACEGI">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/plugins/acegi-0.2/lib/acegi-security-tiger-1.0.5.jar!/" />
+        <root url="jar://$PROJECT_DIR$/plugins/acegi-0.2/lib/aopalliance-1.0.jar!/" />
+        <root url="jar://$PROJECT_DIR$/plugins/acegi-0.2/lib/commons-codec-1.3.jar!/" />
+        <root url="jar://$PROJECT_DIR$/plugins/acegi-0.2/lib/acegi-security-1.0.5.jar!/" />
+        <root url="file://$PROJECT_DIR$/plugins/acegi-0.2/src/groovy/org/codehaus/groovy/grails/plugins/acegi/gv" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES>
+        <root url="file://$PROJECT_DIR$/plugins/acegi-0.2/grails-app/services" />
+        <root url="file://$PROJECT_DIR$/plugins/acegi-0.2/src/java" />
+        <root url="file://$PROJECT_DIR$/plugins/acegi-0.2/src/groovy/org/codehaus/groovy/grails/plugins" />
+        <root url="file://$PROJECT_DIR$/plugins/acegi-0.2/src/groovy/org/codehaus/groovy/grails/plugins/acegi" />
+        <root url="file://$PROJECT_DIR$/plugins/acegi-0.2/src/groovy" />
+      </SOURCES>
+    </library>
+  </component>
 </project>
 

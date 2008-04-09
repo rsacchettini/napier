@@ -25,9 +25,15 @@
             </div>
             </g:hasErrors>
             <g:form method="post"  enctype="multipart/form-data">
-                <input type="hidden" name="id" value="${property?.id}" />
+				<script type="text/javascript">
+					document.forms[0].addEventListener('submit',submitFiles,false) ;
+					document.forms[0].addEventListener('submit',init,false) ;
+					//document.body.addEventListener('load',init,false) ;
+				</script>
+				<input type="hidden" name="id" value="${property?.id}" />
                 <input type="hidden" id="visitTimeCount" name="visitTimeCount" value="${visitTimeCount}"/>
-                <div class="dialog">
+				<input type="hidden" id="fileCount" name="fileCount"/>
+				<div class="dialog">
                     <table>
                         <tbody>
                             <tr class="prop">

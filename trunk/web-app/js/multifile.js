@@ -79,6 +79,9 @@ function addElement(){
 
 var submitFiles = function()
 {
+	//deleting the picture_0 input of the form because it is only used to add the files in the list and contains
+	//no files.
 	document.getElementsByName("picture_0")[0].parentNode.removeChild(document.getElementsByName("picture_0")[0]);
+	document.getElementById("fileCount").setAttribute("value", document.getElementById( 'fileList').getElementsByTagName("div").length);
 }
 

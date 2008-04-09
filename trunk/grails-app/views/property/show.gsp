@@ -144,7 +144,7 @@
 							</tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name">Validated:</td>
+                            <td valign="top" class="name">Validated: <div id="elm"></div></td>
                             
                             <td valign="top" class="value">${property.validated}</td>
                             
