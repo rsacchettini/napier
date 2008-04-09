@@ -1,9 +1,20 @@
 import java.util.*
 import java.text.SimpleDateFormat
 import javax.imageio.*
+import grails.converters.*
 
 class PropertyController {
-    
+	/*
+	def beforeInterceptor = [action:this.&checkUser,except:['index','list','show']]
+
+	// if the user in not present in the session, he is redericted to the login page
+	def checkUser() {
+		if(!session.user) {
+			redirect(controller:'user',action:'login')
+			return false
+		}
+	}
+	*/
     def index = { redirect(action:list,params:params) }
 
     // the delete, save and update actions only accept POST requests
@@ -34,11 +45,15 @@ class PropertyController {
     def delete = {
         def property = Property.get( params.id )
         if(property) {
-            property.delete()
+
 			//deleting of the pictures associated
-			def dirToDelete = new File("web-app/images/${property.id}")
+			
+			def dirToDelete = new File("web-app/images/properties/${property.id}")
+			//def dirToDelete = new File(new File(new File(new File("web-app"),"images"),"properties"),"${property.id}")
 			if(dirToDelete != null)
 				deleteDirectory(dirToDelete)
+
+			property.delete()
 
 			flash.message = "Property ${params.id} deleted"
             redirect(action:list)
@@ -46,7 +61,7 @@ class PropertyController {
         else {
             flash.message = "Property not found with id ${params.id}"
             redirect(action:list)
-        }
+		}
     }
 
     def edit = {
@@ -69,8 +84,8 @@ class PropertyController {
     def update = {
         def property = Property.get( params.id )
         def properties = params.getProperties()
-         def d1
-         def d2
+        def d1
+        def d2
         def dates = []
 		def visitTimeCount
 		def vis = params.visitTimeCount
@@ -114,7 +129,7 @@ class PropertyController {
         property.availableFrom = dates
 		if(!property.hasErrors() && property.save())
 		{
-		  imageAdd(property)
+		  imageAdd(property.id)
 		}
 
         if(property) {
@@ -149,7 +164,137 @@ class PropertyController {
 		return ['property':property, 'visitTimeCount':visitTimeCount]
     }
 
-    def save = {
+		// action called in edit action by an ajax request, to delete the pictures
+	def deleteImage =
+	{
+	  def pictures = []; def picturesType = []
+	  def property = Property.get( Long.parseLong(params.id) )
+	  if(property.picture != null)
+			pictures = (List)property.picture
+	  if(property.pictureType != null)
+			picturesType = (List)property.pictureType
+	  def imageToDelete = (String)params?.imageId
+	  def imageURL = "web-app/images/properties/${imageToDelete}"
+	  def imageFile = new File(imageURL)
+	  if(imageFile != null)
+	  {
+		  if(imageFile.delete())
+		  { // the file has been successfully deleted
+			  //removing the pictures attribute from the property
+			  int indexOfPic = pictures.findIndexOf {it == imageToDelete}
+			  pictures.remove(indexOfPic)
+			  property.picture = (String[])pictures
+			  picturesType.remove(indexOfPic)
+			  property.pictureType = (String[])picturesType
+			  redirect(action:edit,id:property.id)
+			 // def response = (String)"The file ${(imageToDelete).substring(imageToDelete.lastIndexOf("/")+1)} has been successfully deleted"
+			  //render response
+		  }
+		  else
+		  	render = "Problem, impossible to delete the file"
+	  }
+	  else
+	  	render = "A Problem has occured"
+
+	}
+
+	  def genererContenu = {
+    	render "Salut !"
+  		}
+
+	// Add images to a property with the multipartfiles passed in the HTTPrequest
+	private void imageAdd(Long propertyId)
+	{
+		def property = Property.get(propertyId)
+		def properties = params.getProperties()
+		def f
+		def pictures = [] //list of pictures file names
+		if(property.picture != null)
+			pictures = (List)property.picture
+		else
+			property.picture = []
+
+		def fileCount =  params.fileCount
+		if(fileCount != null && fileCount != "")
+			fileCount = Integer.parseInt(fileCount)
+		else
+			fileCount = 0
+
+		def picturesType = [] //list of picure file content types
+
+		if(property.pictureType != null)
+			picturesType = (List)property.pictureType
+		else
+			property.pictureType = []
+
+		def okcontents = ['image/png', 'image/jpeg', 'image/gif'] // content types that are suitable
+		//map of the content type with the corresponding extension to add to the file name, regarding the content type
+		def okextensions = ['image/png':'png', 'image/jpeg':'jpg', 'image/gif':'gif' ]
+
+		if(fileCount != 0)
+		{
+			for(i in 1..fileCount)
+			{
+				  f = (org.springframework.web.multipart.commons.CommonsMultipartFile)request.getFile("picture_${i}")
+				  if (f.getSize() > 0)
+				  {
+						if (! okcontents.contains(f.getContentType()))
+						{
+							flash.message = "Avatar must be one of: ${okcontents}"
+							//render(view:'select_avatar', model:[user:user])
+							//return;
+						}
+						else
+						{
+
+						   //if no null and suitable, then storing it to the images/properties directory
+							  //def srcDir = new File(new File(new File(new File("web-app"),"images"),"properties"),"${property.id}")
+							  def srcDir = new File("web-app/images/properties/${property.id}")
+
+							   //= new File("web-app/images/properties/${property.id}")
+							  srcDir.mkdirs()//directory creation if needed (eg properties dir)
+							  def imageId = "img_${pictures.size()+1}"
+							  def fileExtension = "${okextensions[((String)f.getContentType())]}"
+							  def filename = "${imageId}.${fileExtension}"
+							  String chemin = "web-app/images/properties/${property.id}"
+
+							  def out = new DataOutputStream(new FileOutputStream(new File(srcDir,filename)))
+							  out.write(f.getBytes())
+							  out.close()
+							  //f.transferTo( new File(srcDir,filename) )
+							  picturesType.add((String)f.getContentType())
+							  pictures.add((String)"${property.id}/${filename}")
+							  log.info("File ${filename} uploaded: ")
+						}
+				   }
+				
+			}
+			//storage of the new images info in the property domain object
+
+			  property.picture = (String[])pictures
+			  property.pictureType = (String[])picturesType
+			  property.save()
+		}
+	}
+	//recursive method to delete a whole directory even if not empty
+	static public boolean deleteDirectory(File path) {
+        boolean resultat = true;
+        if( path.exists() ) {
+                File[] files = path.listFiles()
+                for(int i=0; i<files.length; i++) {
+                        if(files[i].isDirectory()) {
+                                resultat &= deleteDirectory(files[i])
+                        }
+                        else {
+                        resultat &= files[i].delete()
+                        }
+                }
+        }
+        resultat &= path.delete()
+        return( resultat )
+	}
+
+	def save = {
         def property = new Property(params)
         def d1 //Date
         def d2 //Date
@@ -200,7 +345,7 @@ class PropertyController {
         property.availableFrom = dates
 	   if(!property.hasErrors() && property.save())
 		{
-		  imageAdd(property)
+		  imageAdd(property.id)
 		}
 
 		if(!property.hasErrors() && property.save()) {
@@ -214,99 +359,6 @@ class PropertyController {
     }
 
 	
-	// action called in edit action by an ajax request, to delete the pictures
-	def deleteImage =
-	{
-	  def property = Property.get( Long.parseLong(params.id) )
-	  def imageToDelete = (String)params?.imageId
-	  def imageURL = "web-app/images/properties/${imageToDelete}"
-	  def imageFile = new File(imageURL)
-	  if(imageFile != null)
-	  {
-		  if(imageFile.delete())
-		  { // the file has been successfully deleted
-			  //removing the pictures attribute from the property
-			  int indexOfPic = ((String[])property.picture).findIndexOf {it == imageToDelete}
-			  def pics = []
-			  pics = property.picture
-			  pics.remove(indexOfPic)
-			  property.picture = pics
 
-			  def picsType = []
-			  picsType = property.pictureType
-			  picsType.remove(indexOfPic)
-			  render("The file ${(imageToDelete).substring(imageToDelete.lastIndexOf("/")+1)}has been successfully deleted")
-		  }
-		  else
-		  	render ("Problem, impossible to delete the file", view:'show')
-	  }
-	  else
-	  	render("A Problem has occured")
-
-	}
-
-	// Add images to a property with the multipartfiles passed in the HTTPrequest
-	def imageAdd =
-	{Property property ->
-		def f//image file
-		def pictures = [] //list of pictures file names
-		if(property.picture != null) pictures = property.picture
-		def picturesType = [] //list of picure file content types
-		if(property.pictureType != null) picturesType = property.pictureType
-		def okcontents = ['image/png', 'image/jpeg', 'image/gif'] // content types that are suitable
-		//map of the content type with the corresponding extension to add to the file name, regarding the content type
-		def okextensions = ['image/png':'png', 'image/jpeg':'jpg', 'image/gif':'gif' ]
-		def i = 1
-
-			while(params.getAt("picture_$i") != null)
-			{
-				   f = request.getFile("picture_${i}")//retreiving the file
-
-					if (! okcontents.contains(f.getContentType()))
-					{
-						flash.message = "Avatar must be one of: ${okcontents}"
-						//render(view:'select_avatar', model:[user:user])
-						//return;
-					}
-					else
-					{     //if no null and suitable, then storing it to the images/properties directory
-						  def srcDir = new File(new File(new File(new File("web-app"),"images"),"properties"),"${property.id}")
-						   //= new File("web-app/images/properties/${property.id}")
-						  srcDir.mkdirs()//directory creation if needed (eg properties dir)
-						  def imageId = "img_${pictures.size()+1+Math.random()}" 
-						  def filename = "${imageId}.${okextensions[((String)f.getContentType())]}"
-						  f = f.getAbsoluteFile()
-						  f.transferTo( new File(srcDir,filename) )
-						  //response.sendError(200,'Done');
-
-						  //pictures << "images/${property.id}/${filename}"
-						  pictures << "${property.id}/${filename}"
-						  picturesType << f.getContentType()
-						//storage of the new images info in the property domain object
-						property.picture = pictures
-						property.pictureType = picturesType
-						  log.info("File ${filename} uploaded: ")
-					}
-				i++
-			}
-			return ['pictures':pictures, 'picturesType':picturesType ]
-	}
-	//recursive method to delete a whole directory even if not empty
-	static public boolean deleteDirectory(File path) {
-        boolean resultat = true;
-        if( path.exists() ) {
-                File[] files = path.listFiles()
-                for(int i=0; i<files.length; i++) {
-                        if(files[i].isDirectory()) {
-                                resultat &= deleteDirectory(files[i])
-                        }
-                        else {
-                        resultat &= files[i].delete()
-                        }
-                }
-        }
-        resultat &= path.delete()
-        return( resultat ) 
-	}
 
 }

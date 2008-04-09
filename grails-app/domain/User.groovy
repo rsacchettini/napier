@@ -12,13 +12,13 @@ class User {
        forename(blank:false)
        surname(blank:false)
        username(blank:false, unique:true, length:2..15)
-       password(blank:false, matches:/[\w\d]+/)
+       password(blank:false, password:true)
        email(email:true, blank:false)
        telephoneNo(blank:false)
     }
 
     //This string will be returned by default in lists views when the selection of an User is required.
-    String toString() { "$forename $surname" }
+    String toString() { "$username" }
 
     int hashCode() {
           int hashCode = 0

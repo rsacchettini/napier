@@ -7,7 +7,8 @@
 		<div>
 			<g:remoteLink action="deleteImage"
               update="[success:'message',failure:'error']"
-			  params="[imageId:image[0], id:image[2]]">Delete
+			  params="[imageId:image[0], id:image[2]]" onLoading="showProgress()"
+              onComplete="hideProgress()">Delete
 					<img alt="img" id="delete" class="avatar" src="${createLinkTo(dir:'images',file:'delete.gif')}"/>
 				</g:remoteLink>
 
