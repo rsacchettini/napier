@@ -5,19 +5,91 @@ margin: 0;
 padding: 0;
 
 }
-#header {
-height: 228px;
-background-color: #99CCCC;
-background-image:url('../images/motifHeader1x228.png');
-background-repeat:repeat-x;
+#container {
+	position: relative;
+	margin: 0px auto;
+	width: 800px;
+	border:  #CC0000 solid 1px;
+	height:auto;
 }
-#headerLogo {
-height: 228px;
-width:1024px;
-background-color: #99CCCC;
-background-image:url('../images/header1024x228.png');
-background-repeat:repeat-y;
+#header{
+	background:url(../images/header.png) no-repeat;
+	width:100%;
+	height:143px;;
+	
 }
+#content{
+	margin-left: 192px;
+	background-color: #fff;
+	width: 608px;
+	height: 500px;
+}
+#leftFrame{
+	position:absolute;
+	left:0px;
+	margin: 0px;
+	height: 500px;
+	width: 192px;
+	background: #E3E3E3 url(../images/frame.png) no-repeat top left;
+}
+#footer{
+	width:100%;
+	height:30px;
+	background-color: #CACACA;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: dashed;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+	border-top-color: #990000;
+	border-right-color: #990000;
+	border-bottom-color: #990000;
+	border-left-color: #990000;
+}
+
+/* navigation Menu */
+.indentmenu{
+	font: bold 13px Arial;
+	width: 380px; /*leave this value as is in most cases*/
+	position: relative;
+	top: 100px;
+	right: 0px;
+	left: 310px;
+}
+
+.indentmenu ul{
+margin: 0;
+padding: 0;
+float: left;
+width: 80%;
+}
+
+.indentmenu ul li{
+display: inline;
+}
+
+.indentmenu ul li a{
+float: left;
+color: white; /*text color*/
+padding: 5px 11px;
+text-decoration: none;
+border-right: 0px solid  #800000; /*#564c66dark purple divider between menu items*/
+}
+
+.indentmenu ul li a:visited{
+color: white;
+}
+
+.indentmenu ul li a:hover, .indentmenu ul li .current{
+color: white !important; /*text color of selected and active item*/
+padding-top: 6px; /*shift text down 1px for selected and active item*/
+padding-bottom: 4px; /*shift text down 1px for selected and active item*/
+background: url(../images/indentbg2.png) center center repeat-x;
+}
+
 #searchField {
 position:absolute;
 height: 30px;
@@ -30,36 +102,11 @@ font-size:20pt;
 
 
 
-#conteneur {
-position: absolute;
-width: 100%;
-background-color:#FFFFFF;
-background-image:url('../images/motifBack.png');
-color:#171717;
-}
-
-
-* html #centre {
+html #centre {
 height:500px;
 }
 
-#centre {
-background-color:#FFFFFF;
-margin-left: 192px;
-padding-left:20px;
-margin-top:-80px;
-min-height:500px;
-}
-#gauche {
-position: absolute;
-left:0;
-width: 192px;
-background-image:url('../images/motifMenu192x1.png');
-}
-#pied {
-height: 30px;
-background-color: #b7b7b7;
-}
+
 
 p {
 padding:0;
