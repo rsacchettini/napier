@@ -7,7 +7,7 @@ html * {
 
 .spinner {
     padding: 5px;
-/*    position: absolute; */
+    position: absolute;
     right: 0;
 }
 
@@ -27,7 +27,7 @@ h1 {
     color: #990000;
     font-weight: normal;
     font-size: 16px;
-    margin: 2 20 2 0;
+    padding: 2px 20px 2px 0;
 }
 
 ul {
@@ -60,7 +60,74 @@ input:focus, select:focus, textarea:focus {
 }*/
 
 /* NAVIGATION MENU */
+.indentmenu{
+	font: bold 13px Arial;
+	width: 380px; /*leave this value as is in most cases*/
+	position: relative;
+	top: 100px;
+	right: 0px;
+	left: 310px;
+}
 
+.indentmenu ul{
+margin: 0;
+padding: 0;
+float: left;
+width: 80%;
+}
+
+.indentmenu ul li{
+display: inline;
+}
+
+.indentmenu ul li a{
+float: left;
+color: white; /*text color*/
+padding: 5px 11px;
+text-decoration: none;
+border-right: 0px solid  #800000; /*#564c66dark purple divider between menu items*/
+}
+
+.indentmenu ul li a:visited{
+color: white;
+}
+
+.indentmenu ul li a:hover, .indentmenu ul li .current{
+color: white !important; /*text color of selected and active item*/
+padding-top: 6px; /*shift text down 1px for selected and active item*/
+padding-bottom: 4px; /*shift text down 1px for selected and active item*/
+background: url(../images/indentbg2.png) center center repeat-x;
+}
+
+.navLeft {
+	list-style-type: none;
+	margin: 45px 4px 10px 4px;
+	padding:0;
+	width:160px;
+}
+.navLeft li {
+	margin: 0;
+	width:auto;
+	height:30px;
+	border-bottom:  #CCCCCC dotted 3px;
+}
+.navLeft a {
+	display:block;
+	text-decoration: none;
+	padding-left: 10px;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color: #FFFFFF;
+	font-weight:bold;
+}
+.navLeft a:hover {
+	text-decoration: none;
+	background-color: #FFFFFF;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color: #000000;
+	font-weight:bold;
+}
 .nav {
     background: #fff url(../images/skin/shadow.jpg) bottom repeat-x;
     border: 1px solid #ccc;
@@ -176,6 +243,7 @@ th.desc a {
 .even {
     background: #fff;
 }
+
 
 /* LIST */
 

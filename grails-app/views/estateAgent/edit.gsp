@@ -7,11 +7,12 @@
         <title>Edit EstateAgent</title>
     </head>
     <body>
-        <div class="nav">
-            <span class="menuButton"><a class="home" href="${createLinkTo(dir:'')}">Home</a></span>
-            <span class="menuButton"><g:link class="list" action="list">EstateAgent List</g:link></span>
-            <span class="menuButton"><g:link class="create" action="create">New EstateAgent</g:link></span>
-        </div>
+        <div id="leftFrame">
+	   		<ul class="navLeft">
+				<li><span class="menuButton"><g:link class="list" action="list">EstateAgent List</g:link></span></li>
+				<li><span class="menuButton"><g:link class="create" action="create">New EstateAgent</g:link></span></li>
+	        </ul>
+	    </div>
         <div class="body">
             <h1>Edit EstateAgent</h1>
             <g:if test="${flash.message}">

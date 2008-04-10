@@ -25,17 +25,12 @@
     </div>
   </div>
     <div id="content">
-    <div id="leftFrame">
-   		 <ul class="menugauche">
-              <g:each var="c" in="${grailsApplication.controllerClasses}">
-                    <li class="controller"><g:link controller="${c.logicalPropertyName}">${c.fullName}</g:link></li>
-              </g:each>
-            </ul>
-    </div>
-			<img src="${createLinkTo(dir: 'images', file: 'spinner.gif')}" alt="Spinner"/>
+	<div id="spinner" class="spinner" style="display:none;">
+    		<img src="${createLinkTo(dir: 'images', file: 'spinner.gif')}" alt="Spinner"/>
+			</div>
           <g:layoutBody/>  
     </div>
-  <div id="footer">GP 2</div>
+  <div id="footer">GP 2 - Edinburgh Napier University</div>
 </div>
 
 
