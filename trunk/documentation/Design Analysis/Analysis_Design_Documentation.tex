@@ -41,7 +41,6 @@ He can :
 \item Search for a property
 \item Validate (or not) a property in order to make it available on the website.
 \item Edit the details of a property
-\item Set up an appointment
 \item Edit an appointment
 \item Remove a property
 \end{itemize}
@@ -53,6 +52,7 @@ He can :
 \item Add a property to his interested list
 \item Remove a property from this list
 \item Search for a property
+\item Set up an appointment
 \item Make an offer for a property
 \end{itemize}
 
@@ -222,35 +222,7 @@ Any user can change his credentials, or delete his own account.
 \paragraph{Pre-Conditions}
 The estate agent must be logged-on to the system.
 
-\subsection{Manage the appointments}
-The estate agent sets up appointments for people who want to visit properties.
 
-\paragraph{Basic Flow}
-\begin{enumerate}
-\item The estate agent asks the system to process a new appointment.
-\item The system asks the estate agent for identification.
-\item The estate agent identifies himself to the system.
-\item The system displays a list of buyers interested in properties to the estate agent.
-\item The estate agent selects the buyer and his interested property into the system.
-\item The system displays the diary with the date available for a visit to the sales assistant.
-\item The estate agent chooses a date.
-\item The system displays the appointment description created by the estate agent.
-\item The estate agent validates the appointment.
-\item The system records the appointment.
-\item The system removes the chosen date for the appointment from available dates.
-\item The system displays the main menu to the estate agent.
-\end{enumerate}
-\paragraph{Alternative Flow}
-\begin{enumerate}
-\item The system recognises cookie on estate agent's machine.
-\item Go to step 4 (Basic Flow).
-\item The system does not recognise estate agent's logon information.
-\item Go to step 2 (Basic Flow).
-\end{enumerate}
-\paragraph{Pre-Conditions}
-The system is displaying the estate agent main menu.
-\paragraph{Post-Conditions}
-The system is displaying the estate agent main menu.
 
 \subsection{Register interest in a property}
 The buyer can be interested in a property and has to add the property into his basket. Then he will be contacted by an estate agent in order to arrange a viewing of the property.
@@ -272,6 +244,26 @@ The buyer can be interested in a property and has to add the property into his b
 \end{enumerate}
 \paragraph{Pre-Conditions}
 The buyer must be logged-on to the system.
+
+\subsection{Manage the appointments}
+The buyer and the estate agent set up appointments to visit a property.
+
+\paragraph{Basic Flow}
+\begin{enumerate}
+\item The buyer agent asks the system to process a new appointment.
+\item The system asks the buyer for identification.
+\item The buyer agent identifies himself to the system.
+\item The system displays the list of properties to the buyer.
+\item The buyer selects a property.
+\item The system displays a diary with the available dates.
+\item The buyer choose a date.
+\item The system displays the appointment description created by the buyer.
+\item The buyer validates the appointment.
+\item The system records the appointment.
+\item The system removes the chosen date for the appointment from available dates.
+\item The system displays the main menu to the buyer.
+\end{enumerate}
+
 
 \subsection{Make an offer}
 The buyer can make an offer for a property online.
