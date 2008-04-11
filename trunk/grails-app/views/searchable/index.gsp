@@ -1,117 +1,41 @@
 <%@ page import="org.springframework.util.ClassUtils" %>
 <%@ page import="org.codehaus.groovy.grails.plugins.searchable.SearchableUtils" %>
 <%@ page import="org.codehaus.groovy.grails.plugins.searchable.lucene.LuceneUtils" %>
+
 <html>
-  <head>
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <title><g:if test="${params.q && params.q?.trim() != ''}">${params.q} - </g:if>Grails Searchable Plugin</title>
-    <style type="text/css">
-      * {
-        font-family: Arial, sans-serif;
-        padding: 0;
-        margin: 0;
-      }
-
-      body {
-        font-size: 0.9em;
-        padding: .5em;
-      }
-
-      #header form input {
-        padding: .1em;
-      }
-
-      #header .hint {
-        color: gray;
-      }
-
-      #header h1 a {
-        text-decoration: none;
-        font-family: Georgia, serif;
-          color: dimgray;
-      }
-
-      #header h1 {
-          letter-spacing: -0.1em;
-          float: left;
-      }
-
-      #header h1 span {
-          font-family: Georgia, serif;
-          color: #424242;
-      }
-
-      #header form {
-          margin-left: 22em;
-          padding-top: .1em;
-      }
-
-      .title {
-        margin: 1em 0;
-        padding: .3em .5em;
-        text-align: right;
-        background-color: seashell;
-        border-top: 1px solid lightblue;
-      }
-
-      .result {
-        margin-bottom: 1em;
-      }
-
-      .result .displayLink {
-        color: green;
-      }
-
-      .result .name {
-        font-size: larger;
-      }
-
-      .paging a.step {
-        padding: 0 .3em;
-      }
-
-      .paging span.currentStep {
-          font-weight: bold;
-      }
-
-      ul {
-        margin: 1em 2em;
-      }
-
-      li, p {
-        margin-bottom: 1em;
-      }
-    </style>
-    <script type="text/javascript">
-        var focusQueryInput = function() {
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta name="layout" content="main" />
+        <title>Property List</title>
+        <script type="text/javascript">
+            var focusQueryInput = function() {
             document.getElementById("q").focus();
         }
-    </script>
-  </head>
-  <body onload="focusQueryInput();">
-  <div id="header">
-    <h1><a href="http://grails.org/Searchable+Plugin" target="_blank">Grails <span>Searchable</span> Plugin</a></h1>
-    <g:form url='[controller: "searchable", action: "index"]' id="searchableForm" name="searchableForm" method="get">
-        <g:textField name="q" value="${params.q}" size="50"/> <input type="submit" value="Search" />
-    </g:form>
-    <div style="clear: both; display: none;" class="hint">See <a href="http://lucene.apache.org/java/docs/queryparsersyntax.html">Lucene query syntax</a> for advanced queries</div>
-  </div>
-  <div id="main">
-    <g:set var="haveQuery" value="${params.q?.trim()}" />
-    <g:set var="haveResults" value="${searchResult?.results}" />
-    <div class="title">
-      <span>
-        <g:if test="${haveQuery && haveResults}">
+        </script>
+    </head>
+    <body onload="focusQueryInput();">
+		<div id="leftFrame">
+	   		<ul class="navLeft">
+				<li><span class="menuButton"><g:link class="create" action="create">New Property</g:link></span></li>
+            </ul>
+            <g:form url='[controller: "searchable", action: "index"]' id="searchableForm" name="searchableForm" method="get">
+                <g:textField name="q" value="${params.q}" size="50"/> <input type="submit" value="Search" />
+            </g:form>
+        </div>
+
+        <div class="body">
+            <g:set var="haveQuery" value="${params.q?.trim()}" />
+            <g:set var="haveResults" value="${searchResult?.results}" />
+            <g:if test="${haveQuery && haveResults}">
           Showing <strong>${searchResult.offset + 1}</strong> - <strong>${searchResult.results.size() + searchResult.offset}</strong> of <strong>${searchResult.total}</strong>
           results for <strong>${params.q}</strong>
         </g:if>
         <g:else>
         &nbsp;
         </g:else>
-      </span>
-    </div>
+            <h1>Property List</h1>
 
-    <g:if test="${parseException}">
+            <g:if test="${parseException}">
       <p>Your query - <strong>${params.q}</strong> - is not valid.</p>
       <p>Suggestions:</p>
       <ul>
@@ -131,47 +55,41 @@
       <p>Nothing matched your query - <strong>${params.q}</strong></p>
     </g:elseif>
     <g:elseif test="${haveResults}">
-      <div class="results">
-        <g:each var="result" in="${searchResult.results}" status="index">
-          <div class="result">
-            <g:set var="className" value="${ClassUtils.getShortName(result.getClass())}" />
-            <g:set var="link" value="${createLink(controller: className[0].toLowerCase() + className[1..-1], action: 'show', id: result.id)}" />
-            <div class="name"><a href="${link}">${className} #${result.id}</a></div>
-            <g:set var="desc" value="${result.toString()}" />
-            <g:if test="${desc.size() > 120}"><g:set var="desc" value="${desc[0..120] + '...'}" /></g:if>
-            <div class="desc">${desc.encodeAsHTML()}</div>
-            <div class="displayLink">${link}</div>
-          </div>
 
-          <table width="100%">
+            <div class="list">
+				<g:each var="result" in="${searchResult.results}" status="index">
+                <g:set var="className" value="${ClassUtils.getShortName(result.getClass())}" />
+                <g:set var="link" value="${createLink(controller: className[0].toLowerCase() + className[1..-1], action: 'show', id: result.id)}" />
+                <table width="100%">
 				 <tr>
-				    <td width="21%">Ref: ${property.referenceNo?.encodeAsHTML()}</td>
-				    <td width="79%">${property.address?.encodeAsHTML()}, ${property.postCode?.encodeAsHTML()}</td>
+				    <td width="21%">Ref: ${result.id}</td>
+				    <td width="79%">${result.address}, ${result.postCode}</td>
 				  </tr>
 				  <tr>
 				    <td width="21%" rowspan="3"><img src="/sourceProject/images/properties/27/img_1.jpg" width="200" height="203" /></td>
-				    <td>Offers Over ${property.minPrice?.encodeAsHTML()}</td>
+				    <td>Offers Over ${result.minPrice}</td>
+				  </tr>
+                  <g:set var="desc" value="${result.description}" />
+                  <g:if test="${desc.size() > 120}"><g:set var="desc" value="${desc[0..120] + '...'}" /></g:if>
+                  <tr>
+				    <td>${desc.encodeAsHTML()}</td>
 				  </tr>
 				  <tr>
-				    <td>${property.description?.encodeAsHTML()}</td>
-				  </tr>
-				  <tr>
-				    <td>+ PLUS</td>
+				    <td>${link}</td>
 				  </tr>
 				</table>
-      </div>
+				</g:each>
+			</div>
 
-      <div>
-        <div class="paging">
-          <g:if test="${haveResults}">
+            <div class="paginateButtons">
+                <g:if test="${haveResults}">
               Page:
               <g:set var="totalPages" value="${Math.ceil(searchResult.total / searchResult.max)}" />
               <g:if test="${totalPages == 1}"><span class="currentStep">1</span></g:if>
               <g:else><g:paginate controller="searchable" action="index" params="[q: params.q]" total="${searchResult.total}" prev="&lt; previous" next="next &gt;"/></g:else>
-          </g:if>
+                </g:if>
+            </div>
+            </g:elseif>
         </div>
-      </div>
-    </g:elseif>
-  </div>
-  </body>
+    </body>
 </html>
