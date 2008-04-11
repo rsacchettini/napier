@@ -1,4 +1,5 @@
- <g:javascript library="prototype" />
+
+
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
@@ -20,6 +21,7 @@
                 <table>
                     <tbody>
 
+                    
                         <tr class="prop">
                             <td valign="top" class="name">Id:</td>
                             
@@ -33,31 +35,18 @@
                             <td valign="top" class="value">${property.referenceNo}</td>
                             
                         </tr>
-
-                        <tr class="prop">
-                            <td valign="top" class="name">View Times : </td>
-                            <td  valign="top" style="text-align:left;" class="value">
-                                 <table>
-									<g:each var="it" status="i" in="${availableFrom}">
-											<g:if test="${(i % 2) == 0}">
-											  <tr>
-											  <td>From:</td><td><g:formatDate format="dd-MM-yyyy" date="${(Date)it}"/></td>
-											</g:if>
-											<g:else>
-												<td>To:</td><td><g:formatDate format="dd-MM-yyyy" date="${(Date)it}"/></td>
-											 </tr>
-											</g:else>
-									</g:each>
-                                </table>
-                            </td>
-                        </tr>
-
-                       
                     
                         <tr class="prop">
                             <td valign="top" class="name">Address:</td>
                             
                             <td valign="top" class="value">${property.address}</td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
+                            <td valign="top" class="name">City:</td>
+                            
+                            <td valign="top" class="value">${property.city}</td>
                             
                         </tr>
                     
@@ -90,6 +79,20 @@
                         </tr>
                     
                         <tr class="prop">
+                            <td valign="top" class="name">Picture:</td>
+                            
+                            <td valign="top" class="value">${property.picture}</td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
+                            <td valign="top" class="name">Picture Type:</td>
+                            
+                            <td valign="top" class="value">${property.pictureType}</td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
                             <td valign="top" class="name">Appointements:</td>
                             
                             <td  valign="top" style="text-align:left;" class="value">
@@ -99,6 +102,13 @@
                                 </g:each>
                                 </ul>
                             </td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
+                            <td valign="top" class="name">Available From:</td>
+                            
+                            <td valign="top" class="value">${property.availableFrom}</td>
                             
                         </tr>
                     
@@ -124,27 +134,14 @@
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name">Max Price:
+                            <td valign="top" class="name">Max Price:</td>
                             
                             <td valign="top" class="value">${property.maxPrice}</td>
                             
                         </tr>
                     
                         <tr class="prop">
-                             <td valign="top" class="name">
-								 Images :
-							</td>
-								<td valign="top" class="value">
-									<table>
-										<tr>
-										<g:imageDisp id="imgDisp" mode="view" beanid="${property.id}" />
-										</tr>
-									</table>
-								</td>
-							</tr>
-                    
-                        <tr class="prop">
-                            <td valign="top" class="name">Validated: <div id="elm"></div></td>
+                            <td valign="top" class="name">Validated:</td>
                             
                             <td valign="top" class="value">${property.validated}</td>
                             
