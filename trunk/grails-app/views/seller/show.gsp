@@ -7,10 +7,11 @@
         <title>Show Seller</title>
     </head>
     <body>
-		<div id="leftFrame">
+        <div id="leftFrame">
 	   		<ul class="navLeft">
 				<li><span class="menuButton"><g:link class="list" action="list">Seller List</g:link></span></li>
 				<li><span class="menuButton"><g:link class="create" action="create">New Seller</g:link></span></li>
+				<li><span class="menuButton"><a href="/sourceProject/property/create">New Property</a></span></li>
 	        </ul>
 	    </div>
         <div class="body">
@@ -76,6 +77,20 @@
                             <td valign="top" class="name">Address:</td>
                             
                             <td valign="top" class="value">${seller.address}</td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
+                            <td valign="top" class="name">City:</td>
+                            
+                            <td valign="top" class="value">${seller.city}</td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
+                            <td valign="top" class="name">Post Code:</td>
+                            
+                            <td valign="top" class="value">${seller.postCode}</td>
                             
                         </tr>
                     

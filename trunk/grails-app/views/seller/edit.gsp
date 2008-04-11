@@ -7,7 +7,7 @@
         <title>Edit Seller</title>
     </head>
     <body>
-		<div id="leftFrame">
+        <div id="leftFrame">
 	   		<ul class="navLeft">
 				<li><span class="menuButton"><g:link class="list" action="list">Seller List</g:link></span></li>
 				<li><span class="menuButton"><g:link class="create" action="create">New Seller</g:link></span></li>
@@ -61,7 +61,7 @@
                                     <label for="password">Password:</label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean:seller,field:'password','errors')}">
-                                    <input type="text" id="password" name="password" value="${fieldValue(bean:seller,field:'password')}"/>
+                                    <input type="password" id="password" name="password" value="${fieldValue(bean:seller,field:'password')}"/>
                                 </td>
                             </tr> 
                         
@@ -89,6 +89,24 @@
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean:seller,field:'address','errors')}">
                                     <input type="text" id="address" name="address" value="${fieldValue(bean:seller,field:'address')}"/>
+                                </td>
+                            </tr> 
+                        
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="city">City:</label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean:seller,field:'city','errors')}">
+                                    <input type="text" id="city" name="city" value="${fieldValue(bean:seller,field:'city')}"/>
+                                </td>
+                            </tr> 
+                        
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="postCode">Post Code:</label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean:seller,field:'postCode','errors')}">
+                                    <input type="text" id="postCode" name="postCode" value="${fieldValue(bean:seller,field:'postCode')}"/>
                                 </td>
                             </tr> 
                         

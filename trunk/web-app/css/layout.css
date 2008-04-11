@@ -10,6 +10,7 @@ padding: 0;
 	width: 800px;
 	border:  #CC0000 solid 1px;
 	height:auto;
+	background: #E3E3E3;
 }
 #header{
 	background:url(../images/header.png) no-repeat;
@@ -22,6 +23,7 @@ padding: 0;
 	background-color: #fff;
 	width: 608px;
 	min-height:500px;
+	height:auto;
 }
 #leftFrame{
 	position:absolute;

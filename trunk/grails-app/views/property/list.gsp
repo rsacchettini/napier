@@ -7,55 +7,38 @@
         <title>Property List</title>
     </head>
     <body>
-        <div class="nav">
-            <span class="menuButton"><a class="home" href="${createLinkTo(dir:'')}">Home</a></span>
-            <span class="menuButton"><g:link class="create" action="create">New Property</g:link></span>
-        </div>
+		<div id="leftFrame">
+	   		<ul class="navLeft">
+				<li><span class="menuButton"><g:link class="create" action="create">New Property</g:link></span></li>
+	        </ul>
+	    </div>
         <div class="body">
             <h1>Property List</h1>
             <g:if test="${flash.message}">
             <div class="message">${flash.message}</div>
             </g:if>
-            <div class="list">
-                <table>
-                    <thead>
-                        <tr>
-                        
-                   	        <g:sortableColumn property="id" title="Id" />
-                        
-                   	        <g:sortableColumn property="referenceNo" title="Reference No" />
-                        
-                   	        <g:sortableColumn property="address" title="Address" />
-                        
-                   	        <g:sortableColumn property="postCode" title="Post Code" />
-                        
-                   	        <g:sortableColumn property="minPrice" title="Min Price" />
-                        
-                   	        <g:sortableColumn property="description" title="Description" />
-                        
-                        </tr>
-                    </thead>
-                    <tbody>
-                    <g:each in="${propertyList}" status="i" var="property">
-                        <tr class="${(i % 2) == 0 ? 'odd' : 'even'}">
-                        
-                            <td><g:link action="show" id="${property.id}">${property.id?.encodeAsHTML()}</g:link></td>
-                        
-                            <td>${property.referenceNo?.encodeAsHTML()}</td>
-                        
-                            <td>${property.address?.encodeAsHTML()}</td>
-                        
-                            <td>${property.postCode?.encodeAsHTML()}</td>
-                        
-                            <td>${property.minPrice?.encodeAsHTML()}</td>
-                        
-                            <td>${property.description?.encodeAsHTML()}</td>
-                        
-                        </tr>
-                    </g:each>
-                    </tbody>
-                </table>
-            </div>
+            
+			<div class="list">
+				<g:each in="${propertyList}" status="i" var="property">
+				<table width="100%">
+				 <tr>
+				    <td width="21%">Ref: ${property.referenceNo?.encodeAsHTML()}</td>
+				    <td width="79%">${property.address?.encodeAsHTML()}, ${property.postCode?.encodeAsHTML()}</td>
+				  </tr>
+				  <tr>
+				    <td width="21%" rowspan="3"><img src="/sourceProject/images/properties/27/img_1.jpg" width="200" height="203" /></td>
+				    <td>Offers Over ${property.minPrice?.encodeAsHTML()}</td>
+				  </tr>
+				  <tr>
+				    <td>${property.description?.encodeAsHTML()}</td>
+				  </tr>
+				  <tr>
+				    <td>+ PLUS</td>
+				  </tr>
+				</table>
+				</g:each>
+			</div>	
+            
             <div class="paginateButtons">
                 <g:paginate total="${Property.count()}" />
             </div>
