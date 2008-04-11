@@ -1,6 +1,6 @@
 class Property
 {
-    
+    static searchable = true
     Seller isSoldBy
     EstateAgent isManagedBy
 

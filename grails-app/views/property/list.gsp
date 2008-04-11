@@ -10,7 +10,7 @@
 		<div id="leftFrame">
 	   		<ul class="navLeft">
 				<li><span class="menuButton"><g:link class="create" action="create">New Property</g:link></span></li>
-	        </ul>
+            </ul>
 	    </div>
         <div class="body">
             <h1>Property List</h1>

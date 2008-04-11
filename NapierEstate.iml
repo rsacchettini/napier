@@ -24,6 +24,18 @@
         <webroots>
           <root url="file://$MODULE_DIR$/src/templates/war" relative="/WEB-INF" />
         </webroots>
+        <sourceRoots>
+          <root url="file://$MODULE_DIR$/grails-app/conf" />
+          <root url="file://$MODULE_DIR$/grails-app/controllers" />
+          <root url="file://$MODULE_DIR$/grails-app/domain" />
+          <root url="file://$MODULE_DIR$/grails-app/services" />
+          <root url="file://$MODULE_DIR$/grails-app/taglib" />
+          <root url="file://$MODULE_DIR$/grails-app/views" />
+          <root url="file://$MODULE_DIR$/src/groovy" />
+          <root url="file://$MODULE_DIR$/src/java" />
+          <root url="file://$MODULE_DIR$/test/integration" />
+          <root url="file://$MODULE_DIR$/test/unit" />
+        </sourceRoots>
         <building>
           <setting name="EXPLODED_URL" value="file://" />
           <setting name="EXPLODED_ENABLED" value="false" />
@@ -53,6 +65,18 @@
       <sourceFolder url="file://$MODULE_DIR$/grails-app/services" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/grails-app/taglib" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/grails-app/views" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/plugins/richUI-0.3/grails-app/conf" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/plugins/richUI-0.3/grails-app/controllers" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/plugins/richUI-0.3/grails-app/services" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/plugins/richUI-0.3/grails-app/taglib" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/plugins/richUI-0.3/src/groovy" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/plugins/richUI-0.3/test/integration" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/plugins/searchable-0.4.1-SNAPSHOT/grails-app/conf" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/plugins/searchable-0.4.1-SNAPSHOT/grails-app/controllers" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/plugins/searchable-0.4.1-SNAPSHOT/grails-app/services" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/plugins/searchable-0.4.1-SNAPSHOT/grails-app/views" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/plugins/searchable-0.4.1-SNAPSHOT/src/groovy" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/plugins/searchable-0.4.1-SNAPSHOT/src/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/groovy" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/test/integration" isTestSource="true" />
@@ -72,6 +96,18 @@
       </library>
     </orderEntry>
     <orderEntry type="library" name="ACEGI" level="project" />
+    <orderEntry type="module-library">
+      <library name="Grails User Library">
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/plugins/searchable-0.4.1-SNAPSHOT/lib" />
+          <root url="file://$MODULE_DIR$/plugins/richUI-0.3/lib" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+        <jarDirectory url="file://$MODULE_DIR$/plugins/richUI-0.3/lib" recursive="false" />
+        <jarDirectory url="file://$MODULE_DIR$/plugins/searchable-0.4.1-SNAPSHOT/lib" recursive="false" />
+      </library>
+    </orderEntry>
     <orderEntryProperties />
   </component>
 </module>

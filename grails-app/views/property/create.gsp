@@ -76,7 +76,7 @@
 									   <tfoot>
 										   <tr>
 											   <th>
-												   <a onclick="addLigne(this); return false;" href="#">Ajouter une ligne</a>
+												   <a onclick="addLigne(this); return false;" href="#">Add a line</a>
 											   </th>
 										   </tr>
 									   </tfoot>
@@ -92,7 +92,16 @@
                                     <input type="text" id="address" name="address" value="${fieldValue(bean:property,field:'address')}"/>
                                 </td>
                             </tr> 
-                        
+
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="city">City:</label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean:property,field:'city','errors')}">
+                                    <input type="text" id="city" name="city" value="${fieldValue(bean:property,field:'city')}"/>
+                                </td>
+                            </tr>
+
                             <tr class="prop">
                                 <td valign="top" class="name">
                                     <label for="postCode">Post Code:</label>
