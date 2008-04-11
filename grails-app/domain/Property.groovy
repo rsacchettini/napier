@@ -8,7 +8,8 @@ class Property
 	Date[] availableFrom
 	Boolean validated
 	String address
-	String postCode
+    String city
+    String postCode
 	float minPrice
 	float maxPrice
 	String description
@@ -20,6 +21,7 @@ class Property
 	static constraints = {
         referenceNo(blank:false, minLength:1, unique:true)
         address(blank:false, minLength:5)
+        city(blank:false)
         postCode(blank:false, matches:/^(GIR 0AA)|([A-PR-UWYZ]((\d(\d|[A-HJKSTUW])?)|([A-HK-Y]\d(\d|[ABEHMNPRV-Y])?)) \d[ABD-HJLNP-UW-Z]{2})$/)
         minPrice(min:1.0f)
         description(blank:false, maxLength:1000)

@@ -7,7 +7,7 @@
         <title>Seller List</title>
     </head>
     <body>
-		<div id="leftFrame">
+        <div id="leftFrame">
 	   		<ul class="navLeft">
 				<li><span class="menuButton"><g:link class="create" action="create">New Seller</g:link></span></li>
 	        </ul>
