@@ -1,3 +1,4 @@
+<resource:carousel />
 
 
 <html>
@@ -18,6 +19,31 @@
             <div class="message">${flash.message}</div>
             </g:if>
             <div class="dialog">
+                <table>
+                    <tr>
+
+                        <richui:carousel direction="vertical" carouselStyle="height: 100px;" itemsStyle="height: 60px;">
+
+                            <richui:carouselItem>
+                                <img src="http://localhost:8080/sourceProject/images/properties/1/img_1.jpg" alt="One"/><br/>One
+                            </richui:carouselItem>
+
+                            <richui:carouselItem>
+                                <img src="http://localhost:8080/sourceProject/images/properties/1/img_1.jpg" alt="Two"/><br/>Two
+                            </richui:carouselItem>
+
+                            <richui:carouselItem>
+                                <img src="http://localhost:8080/sourceProject/images/properties/1/img_1.jpg" alt="Three"/><br/>Three
+                            </richui:carouselItem>
+
+                            <richui:carouselItem>
+                                <img src="http://localhost:8080/sourceProject/images/properties/1/img_1.jpg" alt="Four"/><br/>Four
+                            </richui:carouselItem>
+
+                        </richui:carousel>
+
+                    </tr>
+                </table>
                 <table>
                     <tbody>
 
