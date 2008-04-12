@@ -251,12 +251,22 @@ th.desc a {
 
 .list table {
     border-collapse: collapse;
+    background: #fff url(../images/skin/shadow2.jpg) bottom repeat-x;
+    margin: 4px 0 4px 0;
 }
 .list th, .list td {
     border-left: 1px solid #ddd;
 }
 .list th:hover, .list tr:hover {
-    background: #FF3333; /* #b2d1ff;*/
+   /* background: #FF3333;  #b2d1ff;*/
+}
+.fullAddress {
+    font-size:14px;
+    font-weight: bold;
+}
+.price {
+    color: #b2d1ff;
+    font-size:12px;
 }
 
 /* PAGINATION */
