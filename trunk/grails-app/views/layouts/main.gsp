@@ -16,10 +16,10 @@
   <div id="header">
     <div class="indentmenu">
             <ul>
-            <li><a href="/sourceProject" >Home</a></li>
-            <li><a href="/sourceProject/buyer">Buyer</a></li>
-            <li><a href="/sourceProject/seller">Seller</a></li>
-            <li><a href="/sourceProject/estateAgent">Estate Agent</a></li>
+            <li><a href="${createLinkTo(dir:'')}" >Home</a></li>
+            <li><a href="${createLinkTo(dir:'')}/buyer">Buyer</a></li>
+            <li><a href="${createLinkTo(dir:'')}/seller">Seller</a></li>
+            <li><a href="${createLinkTo(dir:'')}/estateAgent">Estate Agent</a></li>
         </ul>
         <br style="clear: left" />
     </div>

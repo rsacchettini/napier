@@ -4,14 +4,12 @@ class Property
     Seller isSoldBy
     EstateAgent isManagedBy
 
-    String referenceNo
-	Date[] availableFrom
+    Date[] availableFrom
 	Boolean validated
 	String address
     String city
     String postCode
-	float minPrice
-	float maxPrice
+	int minPrice
 	String description
 	int bedroomNumber
 	String[] picture
@@ -19,13 +17,12 @@ class Property
 
 
 	static constraints = {
-        referenceNo(blank:false, minLength:1, unique:true)
         address(blank:false, minLength:5)
         city(blank:false)
         postCode(blank:false, matches:/^(GIR 0AA)|([A-PR-UWYZ]((\d(\d|[A-HJKSTUW])?)|([A-HK-Y]\d(\d|[ABEHMNPRV-Y])?)) \d[ABD-HJLNP-UW-Z]{2})$/)
-        minPrice(min:1.0f)
+        minPrice(min:1)
         description(blank:false, maxLength:1000)
-        bedroomNumber(min:1)
+        bedroomNumber(min:0)
         picture(nullable:true)
         pictureType(nullable:true)
 
@@ -38,7 +35,7 @@ class Property
     //associations. relatesToMany used to require that but is now deprecated so only hasMany must be used
     static hasMany = [interestedBuyers:Buyer, appointements:Appointment]
 
-     String toString() { "reference number $referenceNo" }
+     String toString() { "Description $description" }
 
       boolean equals(other) {
           

@@ -7,38 +7,56 @@
         <title>Property List</title>
     </head>
     <body>
-		<div id="leftFrame">
+        <div id="leftFrame">
 	   		<ul class="navLeft">
 				<li><span class="menuButton"><g:link class="create" action="create">New Property</g:link></span></li>
             </ul>
-	    </div>
+        </div>
         <div class="body">
             <h1>Property List</h1>
             <g:if test="${flash.message}">
             <div class="message">${flash.message}</div>
             </g:if>
-            
-			<div class="list">
-				<g:each in="${propertyList}" status="i" var="property">
-				<table width="100%">
-				 <tr>
-				    <td width="21%">Ref: ${property.referenceNo?.encodeAsHTML()}</td>
-				    <td width="79%">${property.address?.encodeAsHTML()}, ${property.postCode?.encodeAsHTML()}</td>
-				  </tr>
-				  <tr>
-				    <td width="21%" rowspan="3"><img src="/sourceProject/images/properties/27/img_1.jpg" width="200" height="203" /></td>
-				    <td>Offers Over ${property.minPrice?.encodeAsHTML()}</td>
-				  </tr>
-				  <tr>
-				    <td>${property.description?.encodeAsHTML()}</td>
-				  </tr>
-				  <tr>
-				    <td>+ PLUS</td>
-				  </tr>
-				</table>
-				</g:each>
-			</div>	
-            
+            <div class="list">
+                <table>
+                    <tr>
+                        
+                        <g:sortableColumn property="id" title="Id" />
+
+                        <g:sortableColumn property="address" title="Address" />
+
+                        <g:sortableColumn property="city" title="City" />
+
+                        <g:sortableColumn property="postCode" title="Post Code" />
+
+                        <g:sortableColumn property="minPrice" title="Price" />
+
+                        <g:sortableColumn property="description" title="Description" />
+
+                    </tr>
+                </table>
+                <g:each in="${propertyList}" status="i" var="property">
+                    <table width="100%">
+                        <tr>
+                            <td width="21%">Ref: ${property.id?.encodeAsHTML()}</td>
+                            <td width="79%" class="fullAddress">${property.address?.encodeAsHTML()}, ${property.city?.encodeAsHTML()}, ${property.postCode?.encodeAsHTML()}</td>
+                        </tr>
+                        <tr>
+                            <td width="21%" rowspan="2"><img src="${createLinkTo(dir:'')}/images/properties/${property.picture[0]}" width="150" height="100" /></td>
+                            <td class="price">Offers Over &pound;${property.minPrice?.encodeAsHTML()}</td>
+                        </tr>
+                        <g:set var="desc" value="${property.description?.encodeAsHTML()}" />
+                        <g:if test="${desc.size() > 300}"><g:set var="desc" value="${desc[0..300] + '...'}" /></g:if>
+                        <tr>
+                            <td>${desc.encodeAsHTML()}</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td class="info"><g:link action="show" id="${property.id}"> more details</g:link></td>
+                        </tr>
+                    </table>
+                </g:each>
+            </div>
             <div class="paginateButtons">
                 <g:paginate total="${Property.count()}" />
             </div>

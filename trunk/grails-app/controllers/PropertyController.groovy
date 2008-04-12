@@ -47,7 +47,7 @@ class PropertyController {
         if(property) {
 
 			//deleting of the pictures associated
-			
+
 			def dirToDelete = new File("web-app/images/properties/${property.id}")
 			//def dirToDelete = new File(new File(new File(new File("web-app"),"images"),"properties"),"${property.id}")
 			if(dirToDelete != null)
@@ -140,7 +140,7 @@ class PropertyController {
             }
             else {
                 //render(view:'edit',model:[property:property])
-				
+
 				chain(action:"edit", id:params.id, params:['visitTimeCount':visitTimeCount])
 			}
         }
@@ -267,7 +267,7 @@ class PropertyController {
 							  log.info("File ${filename} uploaded: ")
 						}
 				   }
-				
+
 			}
 			//storage of the new images info in the property domain object
 
@@ -358,7 +358,7 @@ class PropertyController {
 		}
     }
 
-	
+
 
 
 }

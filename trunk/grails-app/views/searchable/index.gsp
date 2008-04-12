@@ -18,9 +18,11 @@
 	   		<ul class="navLeft">
 				<li><span class="menuButton"><g:link class="create" action="create">New Property</g:link></span></li>
             </ul>
+            <div id="searchField">
             <g:form url='[controller: "searchable", action: "index"]' id="searchableForm" name="searchableForm" method="get">
-                <g:textField name="q" value="${params.q}" size="50"/> <input type="submit" value="Search" />
+                <g:textField name="q" value="${params.q}" size="20"/> <input type="submit" value="Search" />
             </g:form>
+            </div>
         </div>
 
         <div class="body">
@@ -63,19 +65,20 @@
                 <table width="100%">
 				 <tr>
 				    <td width="21%">Ref: ${result.id}</td>
-				    <td width="79%">${result.address}, ${result.postCode}</td>
+				    <td width="79%" class="fullAddress">${result.address}, ${result.city}, ${result.postCode}</td>
 				  </tr>
 				  <tr>
-				    <td width="21%" rowspan="3"><img src="/sourceProject/images/properties/27/img_1.jpg" width="200" height="203" /></td>
-				    <td>Offers Over ${result.minPrice}</td>
+				    <td width="21%" rowspan="2"><img src="${createLinkTo(dir:'')}/images/properties/${result.picture[0]}" width="150" height="100" /></td>
+				    <td class="price">Offers Over &pound;${result.minPrice}</td>
 				  </tr>
                   <g:set var="desc" value="${result.description}" />
-                  <g:if test="${desc.size() > 120}"><g:set var="desc" value="${desc[0..120] + '...'}" /></g:if>
+                  <g:if test="${desc.size() > 300}"><g:set var="desc" value="${desc[0..300] + '...'}" /></g:if>
                   <tr>
 				    <td>${desc.encodeAsHTML()}</td>
 				  </tr>
 				  <tr>
-				    <td>${link}</td>
+                    <td></td>
+                    <td class="info"><a href="${link}"> more details</a></td>
 				  </tr>
 				</table>
 				</g:each>

@@ -30,15 +30,6 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                    <label for="referenceNo">Reference No:</label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean:property,field:'referenceNo','errors')}">
-                                    <input type="text" id="referenceNo" name="referenceNo" value="${fieldValue(bean:property,field:'referenceNo')}"/>
-                                </td>
-                            </tr> 
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
                                     <label for="address">Address:</label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean:property,field:'address','errors')}">
@@ -165,15 +156,6 @@
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean:property,field:'isSoldBy','errors')}">
                                     <g:select optionKey="id" from="${Seller.list()}" name="isSoldBy.id" value="${property?.isSoldBy?.id}" ></g:select>
-                                </td>
-                            </tr> 
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                    <label for="maxPrice">Max Price:</label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean:property,field:'maxPrice','errors')}">
-                                    <input type="text" id="maxPrice" name="maxPrice" value="${fieldValue(bean:property,field:'maxPrice')}" />
                                 </td>
                             </tr> 
                         
