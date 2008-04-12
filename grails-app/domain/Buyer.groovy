@@ -1,5 +1,4 @@
 class Buyer extends User {
-    static searchable = true
     def beforeInterceptor = [action:this.&checkUser,except:['index','list','show']]
 
 	// if the user in not present in the session, he is redericted to the login page

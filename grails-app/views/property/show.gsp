@@ -30,13 +30,6 @@
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name">Reference No:</td>
-                            
-                            <td valign="top" class="value">${property.referenceNo}</td>
-                            
-                        </tr>
-                    
-                        <tr class="prop">
                             <td valign="top" class="name">Address:</td>
                             
                             <td valign="top" class="value">${property.address}</td>
@@ -130,13 +123,6 @@
                             <td valign="top" class="name">Is Sold By:</td>
                             
                             <td valign="top" class="value"><g:link controller="seller" action="show" id="${property?.isSoldBy?.id}">${property?.isSoldBy}</g:link></td>
-                            
-                        </tr>
-                    
-                        <tr class="prop">
-                            <td valign="top" class="name">Max Price:</td>
-                            
-                            <td valign="top" class="value">${property.maxPrice}</td>
                             
                         </tr>
                     
