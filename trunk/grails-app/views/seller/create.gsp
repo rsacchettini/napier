@@ -10,7 +10,11 @@
         <div id="leftFrame">
 	   		<ul class="navLeft">
 				<li><span class="menuButton"><g:link class="list" action="list">(*)Seller List</g:link></span></li>
-	        </ul>
+                <li><span class="menuButton"><a href="${createLinkTo(dir:'')}/seller/edit/1" class="edit">Edit my profil</a></span></li>
+                <li><span class="menuButton"><a href="${createLinkTo(dir:'')}/property/create" class="create">Add a property</a></span></li>
+                <li><span class="menuButton"><a href="${createLinkTo(dir:'')}/property/edit/1" class="edit">Edit a property</a></span></li>
+                <li><span class="menuButton"><a href="${createLinkTo(dir:'')}/property/list" class="list">List my properties</a></span></li>
+            </ul>
 	    </div>
         <div class="body">
             <h1>Create Seller</h1>
