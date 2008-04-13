@@ -1,4 +1,6 @@
-
+<resource:dateChooser/>
+ <g:javascript src="datesManagement.js"/>
+ <g:javascript src="multifile.js"/>
 
 <html>
     <head>
@@ -23,8 +25,15 @@
             </div>
             </g:hasErrors>
             <g:form method="post" >
-                <input type="hidden" name="id" value="${property?.id}" />
-                <div class="dialog">
+                <script type="text/javascript">
+					document.forms[0].addEventListener('submit',submitFiles,false) ;
+					document.forms[0].addEventListener('submit',init,false) ;
+					//document.body.addEventListener('load',init,false) ;
+				</script>
+				<input type="hidden" name="id" value="${property?.id}" />
+                <input type="hidden" id="visitTimeCount" name="visitTimeCount" value="${visitTimeCount}"/>
+				<input type="hidden" id="fileCount" name="fileCount"/>
+				<div class="dialog">
                     <table>
                         <tbody>
                         
@@ -87,7 +96,7 @@
                                     <label for="picture">Picture:</label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean:property,field:'picture','errors')}">
-                                    
+
                                 </td>
                             </tr> 
                         
@@ -121,7 +130,7 @@
                                     <label for="availableFrom">Available From:</label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean:property,field:'availableFrom','errors')}">
-                                    
+                                   <g:datesEdit beanid="${property.id}"/> 
                                 </td>
                             </tr> 
                         

@@ -1,14 +1,89 @@
 <%@ page import="org.springframework.util.ClassUtils" %>
 <%@ page import="org.codehaus.groovy.grails.plugins.searchable.SearchableUtils" %>
 <%@ page import="org.codehaus.groovy.grails.plugins.searchable.lucene.LuceneUtils" %>
-
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-        <meta name="layout" content="main" />
-        <title>Property List</title>
-        <script type="text/javascript">
-            var focusQueryInput = function() {
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title><g:if test="${params.q && params.q?.trim() != ''}">${params.q} - </g:if>Grails Searchable Plugin</title>
+    <style type="text/css">
+      * {
+        font-family: Arial, sans-serif;
+        padding: 0;
+        margin: 0;
+      }
+
+      body {
+        font-size: 0.9em;
+        padding: .5em;
+      }
+
+      #header form input {
+        padding: .1em;
+      }
+
+      #header .hint {
+        color: gray;
+      }
+
+      #header h1 a {
+        text-decoration: none;
+        font-family: Georgia, serif;
+          color: dimgray;
+      }
+
+      #header h1 {
+          letter-spacing: -0.1em;
+          float: left;
+      }
+
+      #header h1 span {
+          font-family: Georgia, serif;
+          color: #424242;
+      }
+
+      #header form {
+          margin-left: 22em;
+          padding-top: .1em;
+      }
+
+      .title {
+        margin: 1em 0;
+        padding: .3em .5em;
+        text-align: right;
+        background-color: seashell;
+        border-top: 1px solid lightblue;
+      }
+
+      .result {
+        margin-bottom: 1em;
+      }
+
+      .result .displayLink {
+        color: green;
+      }
+
+      .result .name {
+        font-size: larger;
+      }
+
+      .paging a.step {
+        padding: 0 .3em;
+      }
+
+      .paging span.currentStep {
+          font-weight: bold;
+      }
+
+      ul {
+        margin: 1em 2em;
+      }
+
+      li, p {
+        margin-bottom: 1em;
+      }
+    </style>
+    <script type="text/javascript">
+        var focusQueryInput = function() {
             document.getElementById("q").focus();
         }
         </script>
@@ -35,9 +110,10 @@
         <g:else>
         &nbsp;
         </g:else>
-            <h1>Property List</h1>
+      </span>
+    </div>
 
-            <g:if test="${parseException}">
+    <g:if test="${parseException}">
       <p>Your query - <strong>${params.q}</strong> - is not valid.</p>
       <p>Suggestions:</p>
       <ul>
@@ -57,6 +133,19 @@
       <p>Nothing matched your query - <strong>${params.q}</strong></p>
     </g:elseif>
     <g:elseif test="${haveResults}">
+      <div class="results">
+        <g:each var="result" in="${searchResult.results}" status="index">
+          <div class="result">
+            <g:set var="className" value="${ClassUtils.getShortName(result.getClass())}" />
+            <g:set var="link" value="${createLink(controller: className[0].toLowerCase() + className[1..-1], action: 'show', id: result.id)}" />
+            <div class="name"><a href="${link}">${className} #${result.id}</a></div>
+            <g:set var="desc" value="${result.toString()}" />
+            <g:if test="${desc.size() > 120}"><g:set var="desc" value="${desc[0..120] + '...'}" /></g:if>
+            <div class="desc">${desc.encodeAsHTML()}</div>
+            <div class="displayLink">${link}</div>
+          </div>
+        </g:each>
+      </div>
 
             <div class="list">
 				<g:each var="result" in="${searchResult.results}" status="index">
@@ -90,9 +179,10 @@
               <g:set var="totalPages" value="${Math.ceil(searchResult.total / searchResult.max)}" />
               <g:if test="${totalPages == 1}"><span class="currentStep">1</span></g:if>
               <g:else><g:paginate controller="searchable" action="index" params="[q: params.q]" total="${searchResult.total}" prev="&lt; previous" next="next &gt;"/></g:else>
-                </g:if>
-            </div>
-            </g:elseif>
+          </g:if>
         </div>
-    </body>
+      </div>
+    </g:elseif>
+  </div>
+  </body>
 </html>

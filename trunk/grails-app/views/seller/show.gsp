@@ -1,5 +1,4 @@
 
-
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
@@ -9,17 +8,16 @@
     <body>
         <div id="leftFrame">
 	   		<ul class="navLeft">
-                <li><span class="menuButton"><a href="${createLinkTo(dir:'')}/seller/edit/${seller.id}" class="edit">Edit my profil</a></span></li>
-                <li></li>
-                <li><span class="menuButton"><a href="${createLinkTo(dir:'')}/property/create" class="create">Add a property</a></span></li>
-                <li><span class="menuButton"><a href="${createLinkTo(dir:'')}/property/edit/1" class="edit">Edit a property</a></span></li>
-                <li><span class="menuButton"><a href="${createLinkTo(dir:'')}/property/list" class="list">My properties</a></span></li>
+                <li><span class="menuButton"><g:link class="edit" action="edit" controller="seller" id="${seller.id}">Edit my profile</g:link></span></li>
+                <li><span class="menuButton"><g:link class="create" action="create" controller="property">Add a property</g:link></span></li>
+                <li><span class="menuButton"><g:link class="list" action="edit" controller="property" id="1">Edit a property</g:link></span></li>
+                <li><span class="menuButton"><g:link class="list" action="list" controller="property">My properties</g:link></span></li>
             </ul>
 	    </div>
 
         <div class="body">
             <div><p> >> Hello ${seller.forename} ${seller.surname},</p><p></p><p>Welcome in your space of management.</p></div>
-            <h1>My profil</h1>
+            <h1>My profile</h1>
             <g:if test="${flash.message}">
             <div class="message">${flash.message}</div>
             </g:if>
