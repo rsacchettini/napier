@@ -101,6 +101,12 @@ padding-bottom: 4px; /*shift text down 1px for selected and active item*/
 background: url(../images/indentbg2.png) center center repeat-x;
 }
 
+.indentmenu a.home {
+    background: url(../images/skin/house.png) center left no-repeat;
+    color: #333;
+    padding-left: 25px;
+}
+
 .navLeft {
 	list-style-type: none;
 	margin: 45px 4px 10px 4px;
@@ -159,6 +165,11 @@ background: url(../images/indentbg2.png) center center repeat-x;
 }
 .menuButton a.create {
     background: url(../images/skin/database_add.png) center left no-repeat;
+    color: #333;
+    padding-left: 25px;
+}
+.menuButton a.edit {
+	background: url(../images/skin/database_edit.png) center left no-repeat;
     color: #333;
     padding-left: 25px;
 }

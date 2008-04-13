@@ -1,6 +1,4 @@
 <resource:carousel />
-
-
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
@@ -125,9 +123,9 @@
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name">Available From:</td>
+                            <td valign="top" class="name">Visit periods:</td>
                             
-                            <td valign="top" class="value">${property.availableFrom}</td>
+                            <td valign="top" class="value"><g:datesDisp beanid="${property.id}"/></td>
                             
                         </tr>
                     

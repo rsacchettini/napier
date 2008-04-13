@@ -15,7 +15,16 @@ class NapierTagLib {
 
 	  }
 
+	def datesEdit = {attrs, body ->
+		def property = Property.get( attrs.beanid )
+
+		out << render(template:"/property/datesEdit",bean:property)
+	}
+
+	def datesDisp = {attrs, body ->
+		def property = Property.get( attrs.beanid )
+
+		out << render(template:"/property/datesDisp",bean:property)
+	}
 
 }
-
-

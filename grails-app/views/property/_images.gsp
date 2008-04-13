@@ -11,8 +11,6 @@
               onComplete="hideProgress()">Delete
 					<img alt="img" id="delete" class="avatar" src="${createLinkTo(dir:'images',file:'delete.gif')}"/>
 				</g:remoteLink>
-
-
 		</div>
 	</g:if>
 </td>

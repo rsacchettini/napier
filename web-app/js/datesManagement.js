@@ -1,9 +1,8 @@
 var compteur = 0;
 var ids;
 var idscompteur = 0;
-var cal2;
 var initialized = 0;
-
+var dateChooser2;
 function init()
 {
    if (initialized == 0)
@@ -82,7 +81,7 @@ function init()
 
                    if(newTr.id)
                    {
-                         if ((newTr.className == "calendar yui-skin-sam yui-calcontainer single" && newTr.nodeName == "DIV")||
+                         if ((newTr.className == "datechooser yui-skin-sam yui-calcontainer single" && newTr.nodeName == "DIV")||
                               (newTr.nodeName == "INPUT" && newTr.type != "hidden"))
                          {
                            ids[idscompteur] = newTr.id;
@@ -138,21 +137,21 @@ function init()
 
     function initCal()
     {
-         cal2 = new Calendar();
-         cal2.setDisplayContainer(ids[2] + "_" + compteur);
-         cal2.setInputId(ids[1] + "_" + compteur);
-         cal2.setStructId("availableFrom1" + "_" + compteur);
-         cal2.setFormat("dd.MM.yyyy");
-         cal2.setLocale("fr");
-         cal2.init();
+		dateChooser2 = new DateChooser();
+		dateChooser2.setDisplayContainer(ids[2] + "_" + compteur);
+		dateChooser2.setInputId(ids[1] + "_" + compteur);
+		dateChooser2.setStructId("availableFrom1" + "_" + compteur);
+		dateChooser2.setFormat("dd.MM.yyyy");
+		dateChooser2.setLocale("fr");
+		dateChooser2.init();
 
-         cal2 = new Calendar();
-         cal2.setDisplayContainer(ids[4] + "_" + compteur);
-         cal2.setInputId(ids[3] + "_" + compteur);
-         cal2.setStructId("availableFrom2" + "_" + compteur);
-         cal2.setFormat("dd.MM.yyyy");
-         cal2.setLocale("fr");
-         cal2.init();
+		dateChooser2 = new DateChooser();
+		dateChooser2.setDisplayContainer(ids[4] + "_" + compteur);
+		dateChooser2.setInputId(ids[3] + "_" + compteur);
+		dateChooser2.setStructId("availableFrom2" + "_" + compteur);
+		dateChooser2.setFormat("dd.MM.yyyy");
+		dateChooser2.setLocale("fr");
+		dateChooser2.init();
     }
        
 

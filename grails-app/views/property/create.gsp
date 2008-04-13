@@ -1,9 +1,7 @@
-<resource:dateChooser/>
-<g:javascript src="datesManagement.js"/>
-<g:javascript src="multifile.js"/>
-
-
-
+ <resource:dateChooser/>
+ <g:javascript src="datesManagement.js"/>
+ <g:javascript src="multifile.js"/>
+ 
    <html>
    <head>
        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
@@ -26,13 +24,14 @@
            </div>
            </g:hasErrors>
            <g:form action="save" method="post"  enctype="multipart/form-data">
-               <script type="text/javascript">
-                   document.forms[0].addEventListener('submit',submitFiles,false) ;
-                   document.forms[0].addEventListener('submit',init,false) ;
-
-               </script>
-               <input type="hidden" id="visitTimeCount" name="visitTimeCount" value="${visitTimeCount}"/>
-               <input type="hidden" id="fileCount" name="fileCount"/>
+			   <script type="text/javascript">
+					document.forms[0].addEventListener('submit',submitFiles,false) ;
+					document.forms[0].addEventListener('submit',init,false) ;
+					//document.body.addEventListener('load',init,false) ;
+				</script>
+				<input type="hidden" name="id" value="${property?.id}" />
+                <input type="hidden" id="visitTimeCount" name="visitTimeCount" value="${visitTimeCount}"/>
+				<input type="hidden" id="fileCount" name="fileCount"/>
                <div class="dialog">
                    <table>
                        <tbody>
@@ -40,38 +39,7 @@
                                <td valign="top" class="name">
                                  <label>Visit period:</label>
                                <td id="visits">
-                                   <table>
-                                      <tbody>
-                                         <g:each var="a" status="i" in="${property.availableFrom}">
-                                           <g:if test="${(i % 2) == 0}">
-                                               <tr>
-                                               <td valign="top" class="name">
-                                                 <label>Available From:</label>
-                                              </td>
-                                               <td valign="top" class="value ${hasErrors(bean:property,field:'availableFrom','errors')}">
-                                                   <richui:dateChooser name="${i <2 ? 'availableFrom1' : 'availableFrom1'+'_'+((i/2)+1) }" format="dd/MM/yyyy" value="${(Date)a}" />
-                                               </td>
-                                           </g:if>
-                                           <g:else>
-                                               <td valign="top" class="name">
-                                                   <label>To:</label>
-                                               </td>
-                                               <td valign="top" class="value ${hasErrors(bean:property,field:'availableFrom','errors')}">
-                                                   <richui:dateChooser name="${i <2 ? 'availableFrom2' : 'availableFrom2'+'_'+((i-1)/2+1) }" format="dd/MM/yyyy" value="${(Date)a}" />
-                                               </td>
-                                               <td><a href="#" onclick="delLigne(this); return false;">Del</a></td>
-                                            </tr>
-                                           </g:else>
-                                        </g:each>
-                                      </tbody>
-                                      <tfoot>
-                                          <tr>
-                                              <th>
-                                                  <a onclick="addLigne(this); return false;" href="#">Add a line</a>
-                                              </th>
-                                          </tr>
-                                      </tfoot>
-                                  </table>
+                                   <g:datesEdit beanid="${property.id}"/>
                               </td>
                           </tr>
 
