@@ -24,7 +24,7 @@
                 <g:renderErrors bean="${property}" as="list" />
             </div>
             </g:hasErrors>
-            <g:form method="post" >
+            <g:form method="post" enctype="multipart/form-data">
                 <script type="text/javascript">
 					document.forms[0].addEventListener('submit',submitFiles,false) ;
 					document.forms[0].addEventListener('submit',init,false) ;
@@ -105,7 +105,8 @@
                                     <label for="pictureType">Picture Type:</label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean:property,field:'pictureType','errors')}">
-                                    
+                                    <input id='picture' type='file' name='picture_0' onChange="addElement()"/>
+									<div id="fileList" style=" background: rgb(255, 255, 255) none repeat scroll 0%; font-size: x-small;"/>
                                 </td>
                             </tr> 
                         
