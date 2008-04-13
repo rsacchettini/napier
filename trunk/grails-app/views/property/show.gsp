@@ -17,70 +17,55 @@
             <div class="message">${flash.message}</div>
             </g:if>
             <div class="dialog">
-			   <table>
-				<tr>
-			   <richui:carousel direction="vertical" carouselStyle="height: 410px;" itemsStyle="height: 400px;"">
-			   		<g:imageDisp2 id="imgDisp" mode="view" beanid="${property.id}" />
-			   </richui:carousel>
-				</tr>
-			</table>
 				<table>
                     <tbody>
-
-                    
                         <tr class="prop">
                             <td valign="top" class="name">Id:</td>
-                            
                             <td valign="top" class="value">${property.id}</td>
-                            
                         </tr>
                     
                         <tr class="prop">
                             <td valign="top" class="name">Address:</td>
-                            
                             <td valign="top" class="value">${property.address}</td>
-                            
                         </tr>
                     
                         <tr class="prop">
                             <td valign="top" class="name">City:</td>
-                            
                             <td valign="top" class="value">${property.city}</td>
                             
                         </tr>
                     
                         <tr class="prop">
                             <td valign="top" class="name">Post Code:</td>
-                            
                             <td valign="top" class="value">${property.postCode}</td>
-                            
                         </tr>
                     
                         <tr class="prop">
                             <td valign="top" class="name">Min Price:</td>
-                            
                             <td valign="top" class="value">${property.minPrice}</td>
-                            
                         </tr>
                     
                         <tr class="prop">
                             <td valign="top" class="name">Description:</td>
-                            
                             <td valign="top" class="value">${property.description}</td>
-                            
                         </tr>
                     
                         <tr class="prop">
                             <td valign="top" class="name">Bedroom Number:</td>
-                            
                             <td valign="top" class="value">${property.bedroomNumber}</td>
-                            
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name">Picture:</td>
-                            
-                            <td valign="top" class="value">${property.picture}</td>
+                            <td valign="top" class="name">Pictures:</td>
+                            <td valign="top" class="value">
+							   <table>
+									<tr>
+									   <richui:carousel direction="horizontal" carouselStyle="height: 210px;" itemsStyle="height: 200px;">
+											<g:imageDisp2 id="imgDisp" mode="view" beanid="${property.id}" />
+									   </richui:carousel>
+									</tr>
+								</table>
+							</td>
                             
                         </tr>
                     

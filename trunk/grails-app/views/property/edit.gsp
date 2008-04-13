@@ -1,4 +1,5 @@
 <resource:dateChooser/>
+<resource:richTextEditor />
  <g:javascript src="datesManagement.js"/>
  <g:javascript src="multifile.js"/>
 
@@ -78,8 +79,9 @@
                                     <label for="description">Description:</label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean:property,field:'description','errors')}">
-                                    <input type="text" id="description" name="description" value="${fieldValue(bean:property,field:'description')}"/>
-                                </td>
+                                    <!--<input type="text" id="description" name="description" value="${fieldValue(bean:property,field:'description')}"/>-->
+									<richui:richTextEditor type="advanced" name="description" value="${fieldValue(bean:property,field:'description')}" width="525" />
+								</td>
                             </tr> 
                         
                             <tr class="prop">
