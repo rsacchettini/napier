@@ -1,4 +1,4 @@
-<resource:carousel />
+<resource:carousel/>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
@@ -17,32 +17,14 @@
             <div class="message">${flash.message}</div>
             </g:if>
             <div class="dialog">
-                <table>
-                    <tr>
-
-                        <richui:carousel direction="vertical" carouselStyle="height: 100px;" itemsStyle="height: 60px;">
-
-                            <richui:carouselItem>
-                                <img src="http://localhost:8080/sourceProject/images/properties/1/img_1.jpg" alt="One"/><br/>One
-                            </richui:carouselItem>
-
-                            <richui:carouselItem>
-                                <img src="http://localhost:8080/sourceProject/images/properties/1/img_1.jpg" alt="Two"/><br/>Two
-                            </richui:carouselItem>
-
-                            <richui:carouselItem>
-                                <img src="http://localhost:8080/sourceProject/images/properties/1/img_1.jpg" alt="Three"/><br/>Three
-                            </richui:carouselItem>
-
-                            <richui:carouselItem>
-                                <img src="http://localhost:8080/sourceProject/images/properties/1/img_1.jpg" alt="Four"/><br/>Four
-                            </richui:carouselItem>
-
-                        </richui:carousel>
-
-                    </tr>
-                </table>
-                <table>
+			   <table>
+				<tr>
+			   <richui:carousel direction="vertical" carouselStyle="height: 410px;" itemsStyle="height: 400px;"">
+			   		<g:imageDisp2 id="imgDisp" mode="view" beanid="${property.id}" />
+			   </richui:carousel>
+				</tr>
+			</table>
+				<table>
                     <tbody>
 
                     

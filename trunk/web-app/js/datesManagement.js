@@ -154,7 +154,6 @@ function init()
 		dateChooser2.init();
     }
        
-
     /* supprimer une ligne */
     function delLigne(link) {
         init();
