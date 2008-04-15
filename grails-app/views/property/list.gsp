@@ -7,10 +7,8 @@
         <title>Property List</title>
     </head>
     <body>
-        <div id="leftFrame">
-	   		<ul class="navLeft">
-				<li><span class="menuButton"><g:link class="create" action="create">New Property</g:link></span></li>
-            </ul>
+        <div class="nav">
+		    <span class="menuButton"><g:link class="create" action="create">New Property</g:link></span>
         </div>
         <div class="body">
             <h1>Property List</h1>
@@ -45,10 +43,10 @@
                             <td width="21%" rowspan="2"><img src="${createLinkTo(dir:'')}/images/properties/${property.picture[0]}" width="150" height="100" /></td>
                             <td class="price">Offers Over &pound;${property.minPrice?.encodeAsHTML()}</td>
                         </tr>
-                        <g:set var="desc" value="${property.description?.encodeAsHTML()}" />
+                        <g:set var="desc" value="${property.description}" />
                         <g:if test="${desc.size() > 300}"><g:set var="desc" value="${desc[0..300] + '...'}" /></g:if>
                         <tr>
-                            <td>${desc.encodeAsHTML()}</td>
+                            <td>${desc}</td>
                         </tr>
                         <tr>
                             <td></td>

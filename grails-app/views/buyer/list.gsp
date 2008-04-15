@@ -7,10 +7,8 @@
         <title>Buyer List</title>
     </head>
     <body>
-		<div id="leftFrame">
-	   		<ul class="navLeft">
-				<li><span class="menuButton"><g:link class="create" action="create">New Buyer</g:link></span></li>
-	        </ul>
+		<div class="nav">
+				<span class="menuButton"><g:link class="create" action="create">New Buyer</g:link></span>
 	    </div>
         <div class="body">
             <h1>Buyer List</h1>

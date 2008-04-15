@@ -67,7 +67,7 @@
 									   <tfoot>
 										   <tr>
 											   <th>
-												   <a onclick="addLigne(this); return false;" href="#">Ajouter une ligne</a>
+												   <a onclick="addLigne(this); return false;" href="#">Add a time slot</a>
 											   </th>
 										   </tr>
 									   </tfoot>
