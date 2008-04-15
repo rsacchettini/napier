@@ -7,12 +7,10 @@
         <title>Edit Buyer</title>
     </head>
     <body>
-		<div id="leftFrame">
-	   		<ul class="navLeft">
-				<li><span class="menuButton"><g:link class="list" action="list">Buyer List</g:link></span></li>
-				<li><span class="menuButton"><g:link class="create" action="create">New Buyer</g:link></span></li>
-	        </ul>
-	    </div>
+        <div class="nav">
+		    <span class="menuButton"><g:link class="list" action="list">Buyer List</g:link></span>
+		    <span class="menuButton"><g:link class="create" action="create">New Buyer</g:link></span>
+        </div>
         <div class="body">
             <h1>Edit Buyer</h1>
             <g:if test="${flash.message}">
@@ -85,12 +83,12 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                    <label for="appointements">Appointements:</label>
+                                    <label for="Appointments">Appointments:</label>
                                 </td>
-                                <td valign="top" class="value ${hasErrors(bean:buyer,field:'appointements','errors')}">
+                                <td valign="top" class="value ${hasErrors(bean:buyer,field:'Appointments','errors')}">
                                     
 <ul>
-<g:each var="a" in="${buyer?.appointements?}">
+<g:each var="a" in="${buyer?.Appointments?}">
     <li><g:link controller="appointment" action="show" id="${a.id}">${a}</g:link></li>
 </g:each>
 </ul>

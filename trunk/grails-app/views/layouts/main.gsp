@@ -16,10 +16,11 @@
   <div id="header">
     <div class="indentmenu">
             <ul>
-            <li><a class="home" href="${createLinkTo(dir:'')}" >Home</a></li>
-            <li><g:link controller="buyer" action="index">Buyer</g:link></li>
-            <li><g:link controller="seller" action="index">Seller</g:link></li>
-            <li><g:link controller="estateAgent" action="index">Estate Agent</g:link></li>
+            <li><g:link controller="property" action="index">Properties</g:link></li>
+            <li><g:link controller="buyer" action="index">Buyers</g:link></li>
+            <li><g:link controller="seller" action="index">Sellers</g:link></li>
+            <li><g:link controller="estateAgent" action="index">Estate Agents</g:link></li>
+            <li><g:link controller="appointment" action="index">Appointments</g:link></li>
         </ul>
         <br style="clear: left" />
     </div>

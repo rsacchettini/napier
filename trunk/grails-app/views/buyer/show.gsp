@@ -9,11 +9,9 @@
     <body>
 	
 	
-	    <div id="leftFrame">
-	   		<ul class="navLeft">
-				<li><span class="menuButton"><g:link class="list" action="list">Buyer List</g:link></span></li>
-				<li><span class="menuButton"><g:link class="create" action="create">New Buyer</g:link></span></li>
-	        </ul>
+	    <div class="nav">
+				<span class="menuButton"><g:link class="list" action="list">Buyer List</g:link></span>
+				<span class="menuButton"><g:link class="create" action="create">New Buyer</g:link></span>
 	    </div>
 		
 		<div class="body">
@@ -76,11 +74,11 @@
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name">Appointements:</td>
+                            <td valign="top" class="name">Appointments:</td>
                             
                             <td  valign="top" style="text-align:left;" class="value">
                                 <ul>
-                                <g:each var="a" in="${buyer.appointements}">
+                                <g:each var="a" in="${buyer.Appointments}">
                                     <li><g:link controller="appointment" action="show" id="${a.id}">${a}</g:link></li>
                                 </g:each>
                                 </ul>

@@ -7,7 +7,7 @@
         <title>Create Buyer</title>         
     </head>
     <body>
-		<div id="leftFrame">
+		<div class="nav">
 	   		<ul class="navLeft">
 				<li><span class="menuButton"><g:link class="list" action="list">Buyer List</g:link></span></li>
 	        </ul>

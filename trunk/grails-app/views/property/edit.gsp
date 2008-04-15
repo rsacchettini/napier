@@ -114,12 +114,12 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                    <label for="appointements">Appointements:</label>
+                                    <label for="Appointments">Appointments:</label>
                                 </td>
-                                <td valign="top" class="value ${hasErrors(bean:property,field:'appointements','errors')}">
+                                <td valign="top" class="value ${hasErrors(bean:property,field:'Appointments','errors')}">
                                     
 <ul>
-<g:each var="a" in="${property?.appointements?}">
+<g:each var="a" in="${property?.Appointments?}">
     <li><g:link controller="appointment" action="show" id="${a.id}">${a}</g:link></li>
 </g:each>
 </ul>

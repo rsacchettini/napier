@@ -70,18 +70,11 @@
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name">Picture Type:</td>
-                            
-                            <td valign="top" class="value">${property.pictureType}</td>
-                            
-                        </tr>
-                    
-                        <tr class="prop">
-                            <td valign="top" class="name">Appointements:</td>
+                            <td valign="top" class="name">Appointments:</td>
                             
                             <td  valign="top" style="text-align:left;" class="value">
                                 <ul>
-                                <g:each var="a" in="${property.appointements}">
+                                <g:each var="a" in="${property.appointments}">
                                     <li><g:link controller="appointment" action="show" id="${a.id}">${a}</g:link></li>
                                 </g:each>
                                 </ul>
@@ -92,7 +85,7 @@
                         <tr class="prop">
                             <td valign="top" class="name">Visit periods:</td>
                             
-                            <td valign="top" class="value"><g:datesDisp beanid="${property.id}"/></td>
+                            <td valign="top" class="value"><g:datesDisp mode="view" beanid="${property.id}"/></td>
                             
                         </tr>
                     
