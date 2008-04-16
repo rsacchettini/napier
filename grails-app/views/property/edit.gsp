@@ -119,7 +119,7 @@
                                 <td valign="top" class="value ${hasErrors(bean:property,field:'Appointments','errors')}">
                                     
 <ul>
-<g:each var="a" in="${property?.Appointments?}">
+<g:each var="a" in="${property?.appointments?}">
     <li><g:link controller="appointment" action="show" id="${a.id}">${a}</g:link></li>
 </g:each>
 </ul>
