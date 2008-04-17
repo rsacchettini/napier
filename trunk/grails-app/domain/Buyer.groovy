@@ -1,4 +1,4 @@
-class Buyer extends User {
+class Buyer extends AuthUser {
     def beforeInterceptor = [action:this.&checkUser,except:['index','list','show']]
 
 	// if the user in not present in the session, he is redericted to the login page

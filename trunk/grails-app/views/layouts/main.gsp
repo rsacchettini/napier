@@ -14,13 +14,35 @@
  <body>
 <div id="container">
   <div id="header">
-    <div class="indentmenu">
+	<div class="loginmenu">
+		<ul>
+			<g:isLoggedIn>
+  				<li><g:link controller="logout" action="index">[>log out]</g:link></li>
+				<li><g:link controller="register" action="show" id="${authenticateService?.userDomain()?.id}">[>my account]</g:link></li>
+			</g:isLoggedIn>
+			<g:isNotLoggedIn>
+			   <li><g:link controller="login">[>log in]</g:link></li>
+			   <li><g:link controller="register">[>register]</g:link></li>
+			</g:isNotLoggedIn>
+		</ul>
+	</div>
+	<div class="indentmenu">
             <ul>
             <li><g:link controller="property" action="index">Properties</g:link></li>
-            <li><g:link controller="buyer" action="index">Buyers</g:link></li>
-            <li><g:link controller="seller" action="index">Sellers</g:link></li>
-            <li><g:link controller="estateAgent" action="index">Estate Agents</g:link></li>
-            <li><g:link controller="appointment" action="index">Appointments</g:link></li>
+			<g:ifAnyGranted role="ROLE_ESTATEAGENT">
+				<li><g:link controller="buyer" action="index">Buyers</g:link></li>
+				<li><g:link controller="seller" action="index">Sellers</g:link></li>
+				<li><g:link controller="estateAgent" action="index">Estate Agent</g:link></li>
+				<li><g:link controller="user" action="index">Admin Users</g:link></li>
+
+			</g:ifAnyGranted>
+			<g:ifAnyGranted role="ROLE_SELLER">
+			  <li><g:link controller="property" action="list">My properties</g:link></li>
+			</g:ifAnyGranted>
+			<g:ifAnyGranted role="ROLE_BUYER">
+			  <li><g:link controller="property" action="list">My interest list</g:link></li>
+			  <li><g:link controller="appointment" action="list">My appointements</g:link></li>
+			</g:ifAnyGranted>
         </ul>
         <br style="clear: left" />
     </div>

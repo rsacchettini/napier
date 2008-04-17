@@ -66,3 +66,6 @@ log4j {
     }
     additivity.StackTrace = false
 }
+
+
+log4j.logger.org.acegisecurity="off,stdout"
