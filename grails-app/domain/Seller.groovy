@@ -1,4 +1,4 @@
-class Seller extends User {
+class Seller extends AuthUser {
     /* ---------- Attributes ---------- */
 	String address
     String city

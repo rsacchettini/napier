@@ -45,7 +45,7 @@ class SearchableConfiguration {
      * This does not apply for classes using "searchable = [only/except: [...]]"
      * mapping by closure
      */
-    List defaultExcludedProperties = ["password"]
+    List defaultExcludedProperties = ["password","passwd"]
 
     /**
      * Default property formats

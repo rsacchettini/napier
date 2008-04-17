@@ -17,6 +17,19 @@
   <component name="CompilerConfiguration">
     <option name="DEFAULT_COMPILER" value="Javac" />
     <option name="DEPLOY_AFTER_MAKE" value="0" />
+    <excludeFromCompile>
+      <file url="file://$PROJECT_DIR$/grails-app/controllers/LoginController.groovy" />
+      <file url="file://$PROJECT_DIR$/grails-app/controllers/LogoutController.groovy" />
+      <file url="file://$PROJECT_DIR$/grails-app/controllers/RegisterController.groovy" />
+      <file url="file://$PROJECT_DIR$/grails-app/controllers/UserController.groovy" />
+      <directory url="file://$PROJECT_DIR$/plugins/acegi-0.2/grails-app/conf" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/acegi-0.2/grails-app/controllers" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/acegi-0.2/grails-app/services" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/acegi-0.2/grails-app/taglib" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/acegi-0.2/src/groovy" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/acegi-0.2/src/java" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/acegi-0.2/test/unit" includeSubdirectories="true" />
+    </excludeFromCompile>
     <resourceExtensions>
       <entry name=".+\.(properties|xml|html|dtd|tld)" />
       <entry name=".+\.(gif|png|jpeg|jpg)" />
@@ -87,7 +100,7 @@
     <option name="GENERATE_NO_WARNINGS" value="false" />
     <option name="DEPRECATION" value="true" />
     <option name="ADDITIONAL_OPTIONS_STRING" value="" />
-    <option name="MAXIMUM_HEAP_SIZE" value="128" />
+    <option name="MAXIMUM_HEAP_SIZE" value="256" />
   </component>
   <component name="JavadocGenerationManager">
     <option name="OUTPUT_DIRECTORY" />

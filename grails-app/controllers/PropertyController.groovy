@@ -4,17 +4,7 @@ import javax.imageio.*
 import grails.converters.*
 
 class PropertyController {
-	/*
-	def beforeInterceptor = [action:this.&checkUser,except:['index','list','show']]
 
-	// if the user in not present in the session, he is redericted to the login page
-	def checkUser() {
-		if(!session.user) {
-			redirect(controller:'user',action:'login')
-			return false
-		}
-	}
-	*/
     def index = { redirect(action:list,params:params) }
 
     // the delete, save and update actions only accept POST requests
@@ -357,8 +347,5 @@ class PropertyController {
 			//chain(action:"create", model:[property:property], id:params.id, params:['visitTimeCount':visitTimeCount])
 		}
     }
-
-
-
 
 }
