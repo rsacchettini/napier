@@ -80,12 +80,11 @@ class UserController {
         def pass = authenticateService.passwordEncoder(ps)
         person.passwd=pass
       }
-      Set paramsSet=params.keySet()
-      Iterator itt = paramsSet.iterator() 
       if(person.save()) {
         def au=Roles.findAll()
         au.each{it.removeFromPeople(person)}
-		def role = Roles.findByAuthority(params.role)
+		def roleauthority = (String)params.role
+		def role = Roles.findByAuthority(roleauthority)
 
 		/*
 		if(role.authority == "ROLE_BUYER")
@@ -143,11 +142,18 @@ class UserController {
 		person.city= params.city
 		person.postCode = params.postCode
 	}
+	else if(role.authority == "ROLE_ESTATEAGENT")
+	{
+		person = new EstateAgent()
+		person.properties = params
+	}
+	else
+	{
+		person = new AuthUser()
+	}
 	person.userRealName = "${person.forename} ${person.surname}"
 	def pass = authenticateService.passwordEncoder(params.passwd)
     person.passwd=pass
-    Set paramsSet=params.keySet()
-    Iterator itt = paramsSet.iterator()
    if(person.save()){
 		  if(role.authority != null && role.authority.contains("ROLE")){
 			 role.addToPeople(person)
