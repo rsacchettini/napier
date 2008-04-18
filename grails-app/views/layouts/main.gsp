@@ -21,29 +21,35 @@
 				<li><g:link controller="register" action="show" id="${authenticateService?.userDomain()?.id}">[>my account]</g:link></li>
 			</g:isLoggedIn>
 			<g:isNotLoggedIn>
-			   <li><g:link controller="login">[>log in]</g:link></li>
-			   <li><g:link controller="register">[>register]</g:link></li>
+			   <li><g:link controller="login"><g:message code="main.login" /></g:link></li>
+			   <li><g:link controller="register"><g:message code="main.register" /></g:link></li>
 			</g:isNotLoggedIn>
 		</ul>
 	</div>
 	<div class="indentmenu">
             <ul>
-            <li><g:link controller="property" action="index">Properties</g:link></li>
-			<g:ifAnyGranted role="ROLE_ESTATEAGENT">
-				<li><g:link controller="buyer" action="index">Buyers</g:link></li>
-				<li><g:link controller="seller" action="index">Sellers</g:link></li>
-				<li><g:link controller="estateAgent" action="index">Estate Agent</g:link></li>
-				<li><g:link controller="user" action="index">Admin Users</g:link></li>
 
-			</g:ifAnyGranted>
-			<g:ifAnyGranted role="ROLE_SELLER">
-			  <li><g:link controller="property" action="list">My properties</g:link></li>
-			</g:ifAnyGranted>
-			<g:ifAnyGranted role="ROLE_BUYER">
-			  <li><g:link controller="property" action="list">My interest list</g:link></li>
-			  <li><g:link controller="appointment" action="list">My appointements</g:link></li>
-			</g:ifAnyGranted>
-        </ul>
+					<li><g:link controller="property" action="index"><g:message code="main.properties" /></g:link></li>
+				<g:isNotLoggedIn>
+					 <li><g:link class="create" action="index" controller="register">
+					  	<g:message code="main.registerWhenNotLogged" /></g:link></li>
+				</g:isNotLoggedIn>
+
+				<g:ifAnyGranted role="ROLE_ESTATEAGENT">
+					<li><g:link controller="buyer" action="index"><g:message code="main.buyer" /></g:link></li>
+					<li><g:link controller="seller" action="index"><g:message code="main.seller" /></g:link></li>
+					<li><g:link controller="estateAgent" action="index"><g:message code="main.estateagent" /></g:link></li>
+					<li><g:link controller="user" action="index"><g:message code="main.adminUsers" /></g:link></li>
+
+				</g:ifAnyGranted>
+				<g:ifAnyGranted role="ROLE_SELLER">
+				  <li><g:link controller="property" action="list"><g:message code="main.toSellproperties" /><g:sellerPropertiesNum /></g:link></li>
+				</g:ifAnyGranted>
+				<g:ifAnyGranted role="ROLE_BUYER">
+				  <li><g:link controller="property" action="list"><g:message code="main.interest" /></g:link></li>
+				  <li><g:link controller="appointment" action="list"><g:message code="main.appointements" /></g:link></li>
+				</g:ifAnyGranted>
+        	</ul>
         <br style="clear: left" />
     </div>
   </div>

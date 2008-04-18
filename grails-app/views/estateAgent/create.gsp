@@ -4,16 +4,16 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <meta name="layout" content="main" />
-        <title>Create EstateAgent</title>         
+        <title><g:message code="estateagent.createTitle"/></title>         
     </head>
     <body>
 		<div id="leftFrame">
 	   		<ul class="navLeft">
-				<li><span class="menuButton"><g:link class="list" action="list">EstateAgent List</g:link></span></li>
+				<li><span class="menuButton"><g:link class="list" action="list"><g:message code="estateagent.list"/></g:link></span></li>
 	        </ul>
 	    </div>
         <div class="body">
-            <h1>Create EstateAgent</h1>
+            <h1><g:message code="estateagent.createTitle"/></h1>
             <g:if test="${flash.message}">
             <div class="message">${flash.message}</div>
             </g:if>
@@ -85,7 +85,7 @@
                     </table>
                 </div>
                 <div class="buttons">
-                    <span class="button"><input class="save" type="submit" value="Create" /></span>
+                    <span class="button"><input class="save" type="submit"><g:message code="estateagent.createbutton"/></input></span>
                 </div>
             </g:form>
         </div>

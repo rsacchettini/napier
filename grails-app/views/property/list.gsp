@@ -4,14 +4,16 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <meta name="layout" content="main" />
-        <title>Property List</title>
+        <title><g:message code="property.listTitle"/></title>
     </head>
     <body>
         <div class="nav">
-		    <span class="menuButton"><g:link class="create" action="create">New Property</g:link></span>
-        </div>
+			<g:ifAnyGranted role="ROLE_SELLER,ROLE_ESTATEAGENT">
+				<span class="menuButton"><g:link class="create" action="create"><g:message code="property.create"/></g:link></span>
+			</g:ifAnyGranted>	
+		</div>
         <div class="body">
-            <h1>Property List</h1>
+            <h1><g:message code="property.listTitle"/></h1>
             <g:if test="${flash.message}">
             <div class="message">${flash.message}</div>
             </g:if>
@@ -50,7 +52,7 @@
                         </tr>
                         <tr>
                             <td></td>
-                            <td class="info"><g:link action="show" id="${property.id}"> more details</g:link></td>
+                            <td class="info"><g:link action="show" id="${property.id}"><g:message code="property.details"/></g:link></td>
                         </tr>
                     </table>
                 </g:each>

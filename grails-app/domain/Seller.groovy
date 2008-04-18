@@ -7,8 +7,10 @@ class Seller extends AuthUser {
     //Note: Since the O.6 version of grails there is no need to specify any collection or Set for the hasMany
     //associations. relatesToMany used to require that but is now deprecated so only hasMany must be used
     static hasMany = [sellProperties:Property]
+	//the properties will be loaded in memory when the user will be loaded
+	static fetchMode = [sellProperties:"eager"]
 
-    static constraints =
+	static constraints =
     {
         address(blank:false, minLength:5)
         city(blank:false)

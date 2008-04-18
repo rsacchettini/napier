@@ -7,7 +7,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <meta name="layout" content="main" />
-        <title>Edit Property</title>
+        <title><g:message code="property.edit"/></title>
     </head>
     <body>
         <div class="nav">
@@ -16,7 +16,7 @@
             <span class="menuButton"><g:link class="create" action="create">New Property</g:link></span>
         </div>
         <div class="body">
-            <h1>Edit Property</h1>
+            <h1><g:message code="property.edit"/></h1>
             <g:if test="${flash.message}">
             <div class="message">${flash.message}</div>
             </g:if>
@@ -184,8 +184,8 @@
                     </table>
                 </div>
                 <div class="buttons">
-                    <span class="button"><g:actionSubmit class="save" value="Update" /></span>
-                    <span class="button"><g:actionSubmit class="delete" onclick="return confirm('Are you sure?');" value="Delete" /></span>
+                    <span class="button"><g:actionSubmit class="save" action="update" value="${message(code:'property.update')}"/></span>
+                    <span class="button"><g:actionSubmit class="delete" onclick="return confirm('Are you sure?');" action="Delete" value="${message(code:'property.delete')}" /></span>
                 </div>
             </g:form>
         </div>

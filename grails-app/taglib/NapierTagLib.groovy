@@ -44,4 +44,13 @@ class NapierTagLib {
 		out << render(template:"/property/datesDisp",bean:property)
 	}
 
+	def sellerPropertiesNum =
+	{
+		AuthenticateService authenticateService = new AuthenticateService()
+  		def principal = authenticateService.principal()
+		//def seller =  Seller.findByUsername(principal.getUsername())
+		//Seller.findByUsername(principal.getUsername()).sellProperties.collect{it}
+		out << "(${Seller.findByUsername(principal.getUsername())?.sellProperties?.size()})"
+	}
+
 }
