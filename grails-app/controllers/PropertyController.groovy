@@ -11,11 +11,30 @@ class PropertyController {
     def allowedMethods = [delete:'POST', save:'POST', update:'POST']
 
     def list = {
-        if(!params.max) params.max = 10
-        [ propertyList: Property.list( params ) ]
+		 if(params.isSellerList != null && params.isSellerList == "true")
+		 {
+			 def principal = PrincipalService.getPrincipal()
+			 if(principal!= null)
+			 {
+				 def seller = Seller.findByUsername(principal.getUsername())
+				 if(seller != null)
+				 {
+					def sellerProperties = Seller.findByUsername(principal.getUsername())?.sellProperties
+					if(sellerProperties != null)
+					{// if the logged user is a seller then retrieve his properties.
+						return [propertyList: Seller.findByUsername(principal.getUsername())?.sellProperties]
+					}
+				 }
+			 }
+		 }
+		else
+		{
+			if(!params.max) params.max = 10
+        	return [ propertyList: Property.list( params ) ]
+		}	
     }
 
-    def show = {
+	def show = {
         def property = Property.get( params.id )
         def date = []
         if (property.availableFrom != null)
