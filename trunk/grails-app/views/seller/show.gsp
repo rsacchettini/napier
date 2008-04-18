@@ -47,13 +47,6 @@
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name">Password:</td>
-                            
-                            <td valign="top" class="value">${seller.password}</td>
-                            
-                        </tr>
-                    
-                        <tr class="prop">
                             <td valign="top" class="name">Email:</td>
                             
                             <td valign="top" class="value">${seller.email}</td>
