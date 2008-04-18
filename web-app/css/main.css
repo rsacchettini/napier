@@ -61,53 +61,12 @@ input:focus, select:focus, textarea:focus {
 	width:578px;
 }
 
-/*LOGIN MENU*/
-.loginmenu{
-	font: bold 11px Arial;
-	width: 380px; /*leave this value as is in most cases*/
-	position: relative;
-	top: 129px;
-	right: 0px;
-	left: 50px;
-}
-
-.loginmenu ul{
-	margin: 0;
-	padding: 0;
-	float: left;
-	width: 80%;
-}
-
-.loginmenu ul li{
-	display: inline;
-}
-
-.loginmenu ul li a{
-	float: left;
-	color: white; /*text color*/
-	padding-left: 3px;
-	padding-right: 3px;
-	padding-bottom: 0px;
-	padding-top: 0px;
-	text-decoration: none;
-	/*border-right: 0px solid  #800000; /*#564c66dark purple divider between menu items*/
-	border: none;
-}
-
-.loginmenu ul li a:hover, .indentmenu ul li .current{
-	background: white;
-	color: red;
-	padding-left: 3px;
-	padding-right: 3px;
-	padding-top: 0px;
-}
-
 /* NAVIGATION MENU */
 .indentmenu{
 	font: bold 13px Arial;
 	width: 550px; /*leave this value as is in most cases*/
 	position: relative;
-	top: 88px;
+	top: 105px;
 	right: 0px;
 	left: 230px;
 }
@@ -116,7 +75,7 @@ input:focus, select:focus, textarea:focus {
 margin: 0;
 padding: 0;
 float: left;
-width: 100%;
+width: 80%;
 }
 
 .indentmenu ul li{
@@ -126,7 +85,7 @@ display: inline;
 .indentmenu ul li a{
 float: left;
 color: white; /*text color*/
-padding: 2px 10px;
+padding: 5px 11px;
 text-decoration: none;
 border-right: 0px solid  #800000; /*#564c66dark purple divider between menu items*/
 }
@@ -137,7 +96,7 @@ color: white;
 
 .indentmenu ul li a:hover, .indentmenu ul li .current{
 color: white !important; /*text color of selected and active item*/
-padding-top: 0px; /*shift text down 1px for selected and active item*/
+padding-top: 6px; /*shift text down 1px for selected and active item*/
 padding-bottom: 4px; /*shift text down 1px for selected and active item*/
 }
 
@@ -317,6 +276,16 @@ th.desc a {
     color: #b2d1ff;
     font-size:12px;
 }
+
+.price2 {
+    font-size:14px;
+    font-weight: bold;
+}
+
+.description {
+    font-size:12px;
+}
+
 .info{
     text-align:right;
 }
