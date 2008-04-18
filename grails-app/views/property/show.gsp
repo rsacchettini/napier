@@ -20,44 +20,13 @@
 				<table>
                     <tbody>
                         <tr class="prop">
-                            <td valign="top" class="name">Id:</td>
-                            <td valign="top" class="value">${property.id}</td>
+                            <td valign="top" class="name">Id: ${property.id}</td>
+                            <td valign="top" class="fullAddress">${property.address}, ${property.city}, ${property.postCode}</td>
                         </tr>
-                    
-                        <tr class="prop">
-                            <td valign="top" class="name">Address:</td>
-                            <td valign="top" class="value">${property.address}</td>
-                        </tr>
-                    
-                        <tr class="prop">
-                            <td valign="top" class="name">City:</td>
-                            <td valign="top" class="value">${property.city}</td>
-                            
-                        </tr>
-                    
-                        <tr class="prop">
-                            <td valign="top" class="name">Post Code:</td>
-                            <td valign="top" class="value">${property.postCode}</td>
-                        </tr>
-                    
-                        <tr class="prop">
-                            <td valign="top" class="name">Min Price:</td>
-                            <td valign="top" class="value">${property.minPrice}</td>
-                        </tr>
-                    
-                        <tr class="prop">
-                            <td valign="top" class="name">Description:</td>
-                            <td valign="top" class="value">${property.description}</td>
-                        </tr>
-                    
-                        <tr class="prop">
-                            <td valign="top" class="name">Bedroom Number:</td>
-                            <td valign="top" class="value">${property.bedroomNumber}</td>
-                        </tr>
-                    
-                        <tr class="prop">
-                            <td valign="top" class="name">Pictures:</td>
-                            <td valign="top" class="value">
+
+                         <tr class="prop">
+                            <td valign="top" class="name">Pictures :</td> 
+                            <td valign="top" align="middle" class="value">
 							   <table>
 									<tr>
 									   <richui:carousel direction="horizontal" carouselStyle="height: 210px;" itemsStyle="height: 200px;">
@@ -65,14 +34,28 @@
 									   </richui:carousel>
 									</tr>
 								</table>
-							</td>
-                            
+							</td>              
+                        </tr>
+                    
+                        <tr class="prop">
+                            <td valign="top" class="name">Asking Price:</td>
+                            <td valign="top" class="price2">Offers Over &pound;${property.minPrice}</td>
+                        </tr>
+                    
+                        <tr class="prop">
+                            <td valign="top" class="name">Description:</td>
+                            <td valign="top" class="description">${property.description}</td>
+                        </tr>
+                    
+                        <tr class="prop">
+                            <td valign="top" class="name">Bedrooms:</td>
+                            <td valign="top" class="description">${property.bedroomNumber}</td>
                         </tr>
                     
                         <tr class="prop">
                             <td valign="top" class="name">Appointments:</td>
                             
-                            <td  valign="top" style="text-align:left;" class="value">
+                            <td  valign="top" style="text-align:left;" class="description">
                                 <ul>
                                 <g:each var="a" in="${property.appointments}">
                                     <li><g:link controller="appointment" action="show" id="${a.id}">${a}</g:link></li>
@@ -85,37 +68,11 @@
                         <tr class="prop">
                             <td valign="top" class="name">Visit periods:</td>
                             
-                            <td valign="top" class="value"><g:datesDisp mode="view" beanid="${property.id}"/></td>
+                            <td valign="top" class="description"><g:datesDisp mode="view" beanid="${property.id}"/></td>
                             
                         </tr>
                     
-                        <tr class="prop">
-                            <td valign="top" class="name">Interested Buyers:</td>
-                            
-                            <td valign="top" class="value">${property.interestedBuyers}</td>
-                            
-                        </tr>
-                    
-                        <tr class="prop">
-                            <td valign="top" class="name">Is Managed By:</td>
-                            
-                            <td valign="top" class="value"><g:link controller="estateAgent" action="show" id="${property?.isManagedBy?.id}">${property?.isManagedBy}</g:link></td>
-                            
-                        </tr>
-                    
-                        <tr class="prop">
-                            <td valign="top" class="name">Is Sold By:</td>
-                            
-                            <td valign="top" class="value"><g:link controller="seller" action="show" id="${property?.isSoldBy?.id}">${property?.isSoldBy}</g:link></td>
-                            
-                        </tr>
-                    
-                        <tr class="prop">
-                            <td valign="top" class="name">Validated:</td>
-                            
-                            <td valign="top" class="value">${property.validated}</td>
-                            
-                        </tr>
+                        
                     
                     </tbody>
                 </table>
