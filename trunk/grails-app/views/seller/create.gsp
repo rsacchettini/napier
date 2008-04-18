@@ -60,10 +60,10 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                    <label for="password">Password:</label>
+                                    <label for="passwd">Password:</label>
                                 </td>
-                                <td valign="top" class="value ${hasErrors(bean:seller,field:'password','errors')}">
-                                    <input type="password" id="password" name="password" value="${fieldValue(bean:seller,field:'password')}"/>
+                                <td valign="top" class="value ${hasErrors(bean:seller,field:'passwd','errors')}">
+                                    <input type="passwd" id="passwd" name="passwd" value="${fieldValue(bean:seller,field:'passwd')}"/>
                                 </td>
                             </tr> 
                         
