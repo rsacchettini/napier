@@ -88,7 +88,7 @@
                                 <td valign="top" class="value ${hasErrors(bean:buyer,field:'Appointments','errors')}">
                                     
 <ul>
-<g:each var="a" in="${buyer?.Appointments?}">
+<g:each var="a" in="${buyer?.appointments?}">
     <li><g:link controller="appointment" action="show" id="${a.id}">${a}</g:link></li>
 </g:each>
 </ul>
