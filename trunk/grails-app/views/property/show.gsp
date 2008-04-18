@@ -3,16 +3,18 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <meta name="layout" content="main" />
-        <title>Show Property</title>
+        <title><g:message code="property.showTitle"/></title>
     </head>
     <body>
         <div class="nav">
             <span class="menuButton"><a class="home" href="${createLinkTo(dir:'')}">Home</a></span>
             <span class="menuButton"><g:link class="list" action="list">Property List</g:link></span>
-            <span class="menuButton"><g:link class="create" action="create">New Property</g:link></span>
-        </div>
+			<g:ifAnyGranted role="ROLE_SELLER,ROLE_ESTATEAGENT">
+				<span class="menuButton"><g:link class="create" action="create">New Property</g:link></span>
+			</g:ifAnyGranted>
+		</div>
         <div class="body">
-            <h1>Show Property</h1>
+            <h1><g:message code="property.showTitle"/></h1>
             <g:if test="${flash.message}">
             <div class="message">${flash.message}</div>
             </g:if>
@@ -80,8 +82,8 @@
             <div class="buttons">
                 <g:form>
                     <input type="hidden" name="id" value="${property?.id}" />
-                    <span class="button"><g:actionSubmit class="edit" value="Edit" /></span>
-                    <span class="button"><g:actionSubmit class="delete" onclick="return confirm('Are you sure?');" value="Delete" /></span>
+                    <span class="button"><g:actionSubmit class="edit" action="edit" value="${message(code:'property.edit')}"/></span>
+                    <span class="button"><g:actionSubmit class="delete" action="delete" onclick="return confirm('Are you sure?');" value="${message(code:'property.delete')}"/></span>
                 </g:form>
             </div>
         </div>
