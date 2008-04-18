@@ -55,15 +55,7 @@
                                     <input type="text" id="username" name="username" value="${fieldValue(bean:estateAgent,field:'username')}"/>
                                 </td>
                             </tr> 
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                    <label for="password">Password:</label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean:estateAgent,field:'password','errors')}">
-                                    <input type="text" id="password" name="password" value="${fieldValue(bean:estateAgent,field:'password')}"/>
-                                </td>
-                            </tr> 
+                         
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
@@ -122,6 +114,8 @@
                     <span class="button"><g:actionSubmit class="save" value="Update" /></span>
                     <span class="button"><g:actionSubmit class="delete" onclick="return confirm('Are you sure?');" value="Delete" /></span>
                 </div>
+                <input type="hidden" id="passwd" name="passwd" value="${fieldValue(bean:estateAgent,field:'passwd')}"/>
+
             </g:form>
         </div>
     </body>

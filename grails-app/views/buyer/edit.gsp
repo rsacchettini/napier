@@ -54,14 +54,9 @@
                                 </td>
                             </tr> 
                         
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                    <label for="password">Password:</label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean:buyer,field:'password','errors')}">
-                                    <input type="text" id="password" name="password" value="${fieldValue(bean:buyer,field:'password')}"/>
-                                </td>
-                            </tr> 
+
+
+
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
@@ -120,6 +115,7 @@
                     <span class="button"><g:actionSubmit class="save" value="Update" /></span>
                     <span class="button"><g:actionSubmit class="delete" onclick="return confirm('Are you sure?');" value="Delete" /></span>
                 </div>
+                <input type="hidden" id="passwd" name="passwd" value="${fieldValue(bean:buyer,field:'passwd')}"/>
             </g:form>
         </div>
     </body>

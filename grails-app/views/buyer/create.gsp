@@ -59,8 +59,8 @@
                                 <td valign="top" class="name">
                                     <label for="password">Password:</label>
                                 </td>
-                                <td valign="top" class="value ${hasErrors(bean:buyer,field:'password','errors')}">
-                                    <input type="text" id="password" name="password" value="${fieldValue(bean:buyer,field:'password')}"/>
+                                <td valign="top" class="value ${hasErrors(bean:buyer,field:'passwd','errors')}">
+                                    <input type="text" id="passwd" name="passwd" value="${fieldValue(bean:buyer,field:'passwd')}"/>
                                 </td>
                             </tr> 
                         

@@ -27,17 +27,15 @@
                    	        <g:sortableColumn property="surname" title="Surname" />
                         
                    	        <g:sortableColumn property="username" title="Username" />
-                        
-                   	        <g:sortableColumn property="password" title="Password" />
-                        
+
                    	        <g:sortableColumn property="email" title="Email" />
-                        
+
                         </tr>
                     </thead>
                     <tbody>
                     <g:each in="${buyerList}" status="i" var="buyer">
                         <tr class="${(i % 2) == 0 ? 'odd' : 'even'}">
-                        
+
                             <td><g:link action="show" id="${buyer.id}">${buyer.id?.encodeAsHTML()}</g:link></td>
                         
                             <td>${buyer.forename?.encodeAsHTML()}</td>
@@ -45,8 +43,6 @@
                             <td>${buyer.surname?.encodeAsHTML()}</td>
                         
                             <td>${buyer.username?.encodeAsHTML()}</td>
-                        
-                            <td>${buyer.password?.encodeAsHTML()}</td>
                         
                             <td>${buyer.email?.encodeAsHTML()}</td>
                         

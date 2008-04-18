@@ -30,8 +30,6 @@
                         
                    	        <g:sortableColumn property="username" title="Username" />
                         
-                   	        <g:sortableColumn property="password" title="Password" />
-                        
                    	        <g:sortableColumn property="email" title="Email" />
                         
                         </tr>
@@ -47,8 +45,6 @@
                             <td>${seller.surname?.encodeAsHTML()}</td>
                         
                             <td>${seller.username?.encodeAsHTML()}</td>
-                        
-                            <td>${seller.password?.encodeAsHTML()}</td>
                         
                             <td>${seller.email?.encodeAsHTML()}</td>
                         
