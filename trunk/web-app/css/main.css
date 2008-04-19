@@ -5,6 +5,13 @@ html * {
 
 /* GENERAL */
 
+.blend img {
+	opacity: 0;
+	-moz-opacity: 0;
+	-khtml-opacity:0;
+	filter: alpha(opacity=0);
+}
+
 .spinner {
     padding: 5px;
     position: absolute;

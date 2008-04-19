@@ -115,8 +115,8 @@
         <JAVADOC />
         <SOURCES />
         <jarDirectory url="file://$MODULE_DIR$/plugins/acegi-0.2/lib" recursive="false" />
-        <jarDirectory url="file://$MODULE_DIR$/plugins/richUI-0.3/lib" recursive="false" />
         <jarDirectory url="file://$MODULE_DIR$/plugins/richui-0.3/lib" recursive="false" />
+        <jarDirectory url="file://$MODULE_DIR$/plugins/richUI-0.3/lib" recursive="false" />
         <jarDirectory url="file://$MODULE_DIR$/plugins/searchable-0.4.1-SNAPSHOT/lib" recursive="false" />
       </library>
     </orderEntry>

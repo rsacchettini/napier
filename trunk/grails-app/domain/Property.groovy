@@ -35,7 +35,7 @@ class Property
     //associations. relatesToMany used to require that but is now deprecated so only hasMany must be used
     static hasMany = [interestedBuyers:Buyer, appointments:Appointment]
 
-     String toString() { "$address" }
+     String toString() {"$address" }
 
       boolean equals(other) {
           
