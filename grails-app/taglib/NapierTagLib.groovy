@@ -32,6 +32,50 @@ class NapierTagLib {
 
 	  }
 
+	def autoImageSlideshow = {  attrs, body ->
+		def property = Property.get( attrs.beanid )
+		if(property.picture != null && property.pictureType != null && property.picture.length > 0)
+		{
+			out << "<script type=\"text/javascript\"> \n"
+			out << "var counter${property.id} = 0;\n"
+			out << "var img${property.id};\n"
+			out << "if(document.getElementById('img${property.id}'))\n"
+			out << "{ \n"
+			out << "  img${property.id} = new Array("
+			for(i in 0..property.picture.length-1)
+			{
+				out << "'${createLinkTo(dir:'')}/images/properties/${property.picture[i]}'"
+				if(i<property.picture.length-1)
+					out << ","
+			}
+			out << "); \n"
+			//out << "defil${property.id}();\n"
+			out << " setTimeout('defil${property.id}()', (Math.random()*500));\n "
+			out << "}\n"
+			out << "function anim${property.id}()\n"
+			out << "  {\n   "
+
+
+			out << "      document.getElementById('img${property.id}').src = img${property.id}[counter${property.id}];\n"
+			out << "      counter${property.id}++; \n"
+			out << "       if (counter${property.id} == ${property.picture.length-1})\n"
+			out << "	      counter${property.id} = 0;\n"
+			out << "  }  \n  "
+
+			out << "function defil${property.id}()  \n"
+			out << "  {   \n          "
+			out << "    temp = 1,5; \n "
+			out << "    if (temp != NaN) \n "
+			out << "	  duree = temp * 1000;\n   "
+			out << "    else       \n "
+			out << "	  duree = 4000; \n     "
+			
+			out << "	  var timer = setInterval('anim${property.id}()', duree);\n "
+			out << "  }    \n  "
+			out << "</script>"
+		}
+	}
+
 	def datesEdit = {attrs, body ->
 		def property = Property.get( attrs.beanid )
 

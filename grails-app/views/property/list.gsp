@@ -1,5 +1,4 @@
 
-
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
@@ -36,13 +35,14 @@
                     </tr>
                 </table>
                 <g:each in="${propertyList}" status="i" var="property">
-                    <table width="100%">
+
+					<table width="100%">
                         <tr>
                             <td width="21%">Ref: ${property.id?.encodeAsHTML()}</td>
                             <td width="79%" class="fullAddress">${property.address?.encodeAsHTML()}, ${property.city?.encodeAsHTML()}, ${property.postCode?.encodeAsHTML()}</td>
                         </tr>
                         <tr>
-                            <td width="21%" rowspan="2"><img src="${createLinkTo(dir:'')}/images/properties/${property.picture[0]}" width="150" height="100" /></td>
+                            <td width="21%" rowspan="2"><img id="img${property.id}" src="${createLinkTo(dir:'')}/images/properties/${property.picture[0]}" width="150" height="100" /></td>
                             <td class="price">Offers Over &pound;${property.minPrice?.encodeAsHTML()}</td>
                         </tr>
                         <g:set var="desc" value="${property.description}" />
@@ -55,7 +55,8 @@
                             <td class="info"><g:link action="show" id="${property.id}"><g:message code="property.details"/></g:link></td>
                         </tr>
                     </table>
-                </g:each>
+					<g:autoImageSlideshow beanid="${property.id}"/>
+				</g:each>
             </div>
             <div class="paginateButtons">
                 <g:paginate total="${Property.count()}" />
