@@ -90,11 +90,47 @@ class NapierTagLib {
 
 	def sellerPropertiesNum =
 	{
-		AuthenticateService authenticateService = new AuthenticateService()
-  		def principal = authenticateService.principal()
-		//def seller =  Seller.findByUsername(principal.getUsername())
-		//Seller.findByUsername(principal.getUsername()).sellProperties.collect{it}
-		out << "(${Seller.findByUsername(principal.getUsername())?.sellProperties?.size()})"
+  		def principal = PrincipalService.getPrincipal()
+		if(principal != null)
+		{
+			def seller = Seller.findByUsername(principal.getUsername())
+			if(seller != null)
+			{
+				def sellProperties = seller.sellProperties
+				if(sellProperties != null)
+					out << "(${sellProperties.size()})"
+			}
+		}
+	}
+
+	def buyerInterestListNum =
+	{
+		def principal = PrincipalService.getPrincipal()
+		if(principal != null)
+		{
+			def buyer = Buyer.findByUsername(principal.getUsername())
+			if(buyer != null)
+			{
+				def interestList = buyer.availableProperties
+				if(interestList != null)
+					out << "(${interestList.size()})"
+			}
+		}
+	}
+
+	def buyerAppointementsNum =
+	{
+		def principal = PrincipalService.getPrincipal()
+		if(principal != null)
+		{
+			def buyer = Buyer.findByUsername(principal.getUsername())
+			if(buyer != null)
+			{
+				def appointments = buyer.appointments
+				if(appointments != null)
+					out << "(${appointments.size()})"
+			}
+		}
 	}
 
 }

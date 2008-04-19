@@ -144,11 +144,14 @@
                                    <label for="isSoldBy">Is Sold By:</label>
                                </td>
                                <td valign="top" class="value ${hasErrors(bean:property,field:'isSoldBy','errors')}">
-                                   <g:select optionKey="id" from="${Seller.list()}" name="isSoldBy.id" value="${property?.isSoldBy?.id}" ></g:select>
+                                   <g:ifAnyGranted role="ROLE_SELLER">
+										<input type="hidden" id="isSoldBy.id" name="isSoldBy.id" value="${(Seller?.findByUsername(PrincipalService?.getPrincipal()?.getUsername()))?.id}" />
+		                                <input type="text" disabled="true" value="${(Seller?.findByUsername(PrincipalService?.getPrincipal()?.getUsername()))?.id}" />
+								   </g:ifAnyGranted>
                                </td>
                            </tr>
 
-                           <tr class="prop">
+						   <tr class="prop">
                                <td valign="top" class="name">
                                    <label for="picture">Picture:</label>
                                </td>
@@ -172,7 +175,7 @@
                    </table>
                </div>
                <div class="buttons">
-                   <span class="button"><input class="save" type="submit" value="${message(code:'property.save')}">/span>
+                   <span class="button"><input class="save" type="submit" value="${message(code:'property.save')}">
                </div>
            </g:form>
        </div>
