@@ -7,7 +7,7 @@
     </head>
     <body>
         <div class="nav">
-			<g:ifAnyGranted role="ROLE_SELLER,ROLE_ESTATEAGENT">
+			<g:ifAnyGranted role="ROLE_SELLER">
 				<span class="menuButton"><g:link class="create" action="create"><g:message code="property.create"/></g:link></span>
 			</g:ifAnyGranted>	
 		</div>

@@ -11,19 +11,34 @@ class PropertyController {
     def allowedMethods = [delete:'POST', save:'POST', update:'POST']
 
     def list = {
-		 if(params.isSellerList != null && params.isSellerList == "true")
+		 if(params.isPersonalList != null && params.isPersonalList == "true")
 		 {
 			 def principal = PrincipalService.getPrincipal()
 			 if(principal!= null)
 			 {
-				 def seller = Seller.findByUsername(principal.getUsername())
-				 if(seller != null)
+				 if(((String)principal.getAuthorities()[0]) == "ROLE_SELLER")
 				 {
-					def sellerProperties = Seller.findByUsername(principal.getUsername())?.sellProperties
-					if(sellerProperties != null)
-					{// if the logged user is a seller then retrieve his properties.
-						return [propertyList: Seller.findByUsername(principal.getUsername())?.sellProperties]
-					}
+					 def seller = Seller.findByUsername(principal.getUsername())
+					 if(seller != null)
+					 {
+						def sellerProperties = seller?.sellProperties
+						if(sellerProperties != null)
+						{// if the logged user is a seller then retrieve his properties.
+							return [propertyList: sellerProperties]
+						}
+					 }
+				 }
+				 else if(((String)principal.getAuthorities()[0]) == "ROLE_BUYER")
+				 {
+					 def buyer = (Buyer)Buyer.findByUsername(principal.getUsername())
+					 if(buyer != null)
+					 {
+						def buyerInterestList = buyer?.availableProperties;
+						if(buyerInterestList != null)
+						{// if the logged user is a seller then retrieve his properties.
+							return [propertyList: buyerInterestList]
+						}
+					 }
 				 }
 			 }
 		 }

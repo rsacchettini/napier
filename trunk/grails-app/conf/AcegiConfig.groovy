@@ -67,8 +67,8 @@ acegi {
 	/estateagent/edit/*=ROLE_ESTATEAGENT
 	/estateagent/delete/*=ROLE_ESTATEAGENT
 	/estateagent/save/*=ROLE_ESTATEAGENT
-	/appointment/list*=ROLE_ESTATEAGENT
-	/appointment/index*=ROLE_ESTATEAGENT
+	/appointment/list*=ROLE_ESTATEAGENT,ROLE_BUYER
+	/appointment/index*=ROLE_ESTATEAGENT,ROLE_BUYER
     /appointment/show/*=IS_AUTHENTICATED_REMEMBERED
 	/appointment/create*=IS_AUTHENTICATED_REMEMBERED
 	/appointment/update/*=IS_AUTHENTICATED_REMEMBERED

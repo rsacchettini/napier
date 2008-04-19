@@ -29,7 +29,7 @@
 	<div class="indentmenu">
             <ul>
 
-					<li><g:link controller="property" action="index"><g:message code="main.properties" /></g:link></li>
+					<li><g:link controller="property" action="index"><g:message code="main.properties" /> (${Property?.list()?.size()})</g:link></li>
 				<g:isNotLoggedIn>
 					 <li><g:link class="create" action="index" controller="register">
 					  	<g:message code="main.registerWhenNotLogged" /></g:link></li>
@@ -43,11 +43,11 @@
 
 				</g:ifAnyGranted>
 				<g:ifAnyGranted role="ROLE_SELLER">
-				  <li><g:link controller="property" action="list" params="['isSellerList':'true']"><g:message code="main.toSellproperties" /><g:sellerPropertiesNum /></g:link></li>
+				  <li><g:link controller="property" action="list" params="['isPersonalList':'true']"><g:message code="main.toSellproperties" /><g:sellerPropertiesNum /></g:link></li>
 				</g:ifAnyGranted>
 				<g:ifAnyGranted role="ROLE_BUYER">
-				  <li><g:link controller="property" action="list"><g:message code="main.interest" /></g:link></li>
-				  <li><g:link controller="appointment" action="list"><g:message code="main.appointements" /></g:link></li>
+				  <li><g:link controller="property" action="list" params="['isPersonalList':'true']"><g:message code="main.interest" /><g:buyerInterestListNum /></g:link></li>
+				  <li><g:link controller="appointment" action="list" params="['isPersonalList':'true']"><g:message code="main.appointements" /><g:buyerAppointementsNum /></g:link></li>
 				</g:ifAnyGranted>
         	</ul>
         <br style="clear: left" />

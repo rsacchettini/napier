@@ -1,28 +1,36 @@
             
 class AppointmentController {
-	/*
-	//Login management: only index, list and show actions allowed when not logged in.
-	def beforeInterceptor = [action:this.&checkUser,except:['index','list','show']]
-
-	// if the user in not present in the session, he is redericted to the login page
-	def checkUser() {
-		if(!session.user) {
-			redirect(controller:'user',action:'login')
-			return false
-		}
-	}
-    */
 	def index = { redirect(action:list,params:params) }
 
     // the delete, save and update actions only accept POST requests
     def allowedMethods = [delete:'POST', save:'POST', update:'POST']
 
     def list = {
-        if(!params.max) params.max = 10
-        [ appointmentList: Appointment.list( params ) ]
-    }
+		if(params.isPersonalList != null && params.isPersonalList == "true")
+		 {
+			 def principal = PrincipalService.getPrincipal()
+			 if(((String)principal.getAuthorities()[0]) =="ROLE_BUYER")
+			 {
+				 def buyer = (Buyer)Buyer.findByUsername(principal.getUsername())
+				 if(buyer != null)
+				 {
+					def buyerAppointements = buyer.appointments
+					if(buyerAppointements != null)
+					{// if the logged user is a seller then retrieve his properties.
+						return [appointmentList: buyerAppointements]
+					}
+				 }
+			 }
+			 else
+			 {
+				    if(!params.max) params.max = 10
+        			return [ appointmentList: Appointment.list( params ) ]
+			 }
 
-    def show = {
+    	}
+	}
+
+	def show = {
         def appointment = Appointment.get( params.id )
 
         if(!appointment) {
