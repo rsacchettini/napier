@@ -80,9 +80,9 @@
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name">Available Properties:</td>
+                            <td valign="top" class="name">Listed Properties:</td>
                             
-                            <td valign="top" class="value">${buyer.availableProperties}</td>
+                            <td valign="top" class="value">${buyer.listedProperties}</td>
                             
                         </tr>
                     

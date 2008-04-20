@@ -10,9 +10,9 @@ class Buyer extends AuthUser {
 	}
     //Note: Since the O.6 version of grails there is no need to specify any collection or Set for the hasMany
     //associations. relatesToMany used to require that but is now deprecated so only hasMany must be used
-    static hasMany = [availableProperties:Property, appointments:Appointment]
+    static hasMany = [listedProperties:Property, appointments:Appointment]
     static belongsTo = Property
-	static fetchMode = [appointments:"eager", availableProperties:"eager"]
+	static fetchMode = [appointments:"eager", listedProperties:"eager"]
 
 	  boolean equals(other) {
           if(other?.is(this))return true

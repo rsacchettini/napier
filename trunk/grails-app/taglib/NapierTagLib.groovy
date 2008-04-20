@@ -111,7 +111,7 @@ class NapierTagLib {
 			def buyer = Buyer.findByUsername(principal.getUsername())
 			if(buyer != null)
 			{
-				def interestList = buyer.availableProperties
+				def interestList = buyer.listedProperties
 				if(interestList != null)
 					out << "(${interestList.size()})"
 			}
