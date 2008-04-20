@@ -305,5 +305,8 @@
       </SOURCES>
     </library>
   </component>
+  <UsedPathMacros>
+    <macro name="GRAILS_HOME" />
+  </UsedPathMacros>
 </project>
 

@@ -81,6 +81,7 @@
                                     <label for="Appointments">Appointments:</label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean:buyer,field:'Appointments','errors')}">
+
                                     
 <ul>
 <g:each var="a" in="${buyer?.appointments?}">
@@ -96,10 +97,10 @@
                                 <td valign="top" class="name">
                                     <label for="availableProperties">Available Properties:</label>
                                 </td>
-                                <td valign="top" class="value ${hasErrors(bean:buyer,field:'availableProperties','errors')}">
-                                    
+                                <td valign="top" class="value ${hasErrors(bean:buyer,field:'listedProperties','errors')}">
+                                                         <g:select name="buyer.listedProperties.id" from="${Property.list()}" value="${buyer?.listedProperties.id}" optionKey="id" />               
 <ul>
-<g:each var="a" in="${buyer?.availableProperties?}">
+<g:each var="a" in="${buyer?.listedProperties?}">
     <li><g:link controller="property" action="show" id="${a.id}">${a}</g:link></li>
 </g:each>
 </ul>

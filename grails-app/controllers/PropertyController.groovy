@@ -33,7 +33,7 @@ class PropertyController {
 					 def buyer = (Buyer)Buyer.findByUsername(principal.getUsername())
 					 if(buyer != null)
 					 {
-						def buyerInterestList = buyer?.availableProperties;
+						def buyerInterestList = buyer?.listedProperties;
 						if(buyerInterestList != null)
 						{// if the logged user is a seller then retrieve his properties.
 							return [propertyList: buyerInterestList]
@@ -103,6 +103,23 @@ class PropertyController {
         else {
             return ['property':property, 'visitTimeCount':visitTimeCount]
         }
+    }
+
+      def addInterest = {
+        def property = Property.get( params.id )
+        def principal = PrincipalService.getPrincipal()
+			 if(principal!= null)
+			 {
+        if(((String)principal.getAuthorities()[0]) == "ROLE_BUYER")
+				 {
+					 def buyer = (Buyer)Buyer.findByUsername(principal.getUsername())
+					 if(buyer != null)
+					 {
+                        property.interestedBuyers.add(buyer)                                    
+					 }
+				 }
+             }
+           redirect(action:list)
     }
 
     def update = {
