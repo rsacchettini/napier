@@ -22,9 +22,13 @@
 				<table>
                     <tbody>
                         <tr class="prop">
-                            <td valign="top" class="name">Id: ${property.id}</td>
-                            <td valign="top" class="fullAddress">${property.address}, ${property.city}, ${property.postCode}</td>
+                            <td valign="top" class="name">Ref: ${property.id}</td>
+                            <td valign="top" class="fullAddress2">${property.address}, ${property.city}, ${property.postCode}</td>
                         </tr>
+
+				<tr class="prop">
+				<td></td>
+				</tr>
 
                          <tr class="prop">
                             <td valign="top" class="name">Pictures :</td> 
@@ -82,15 +86,14 @@
             <div class="buttons">
                 <g:form>
                     <input type="hidden" name="id" value="${property?.id}" />
-                    <g:ifAnyGranted role="ROLE_SELLER">
+			  <g:ifAnyGranted role="ROLE_SELLER">
                     <span class="button"><g:actionSubmit class="edit" action="edit" value="${message(code:'property.edit')}"/></span>
                     <span class="button"><g:actionSubmit class="delete" action="delete" onclick="return confirm('Are you sure?');" value="${message(code:'property.delete')}"/></span>
-                    </g:ifAnyGranted>
-                    <g:ifAnyGranted role="ROLE_BUYER">
-                    <span class="button"><g:actionSubmit class="edit" action="addInterest" value="${message(code:'buyer.addInterest')}"/></span>
-                    </g:ifAnyGranted>
-
-                </g:form>
+			  </g:ifAnyGranted>
+			  <g:ifAnyGranted role="ROLE_BUYER">
+			  <span class="button"><g:actionSubmit class="edit" action="addInterest" value="${message(code:'buyer.addInterest')}"/></span>
+			  </g:ifAnyGranted>
+		</g:form>
             </div>
         </div>
     </body>

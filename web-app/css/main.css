@@ -320,6 +320,12 @@ th.desc a {
     font-size:14px;
     font-weight: bold;
 }
+
+.fullAddress2 {
+    font-size:20px;
+    font-weight: bold;
+}
+
 .price {
     color: #b2d1ff;
     font-size:12px;
