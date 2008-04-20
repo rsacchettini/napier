@@ -38,7 +38,7 @@
 				<g:ifAnyGranted role="ROLE_ESTATEAGENT">
 					<li><g:link controller="buyer" action="index"><g:message code="main.buyer" /></g:link></li>
 					<li><g:link controller="seller" action="index"><g:message code="main.seller" /></g:link></li>
-					<li><g:link controller="estateAgent" action="index"><g:message code="main.estateagent" /></g:link></li>
+					<li><g:link controller="estateAgent" action="index"><g:message code="main.estateAgent" /></g:link></li>
 					<li><g:link controller="user" action="index"><g:message code="main.adminUsers" /></g:link></li>
 
 				</g:ifAnyGranted>
