@@ -1,4 +1,5 @@
 <resource:carousel/>
+<resource:googlemaps key="ABQIAAAAPV8yFSv3BrLOmXDSgOZToBSZdinvBdzatcCUIyBeKyYBtjjO1RTYrMLX9IGAE-tlgH2Br-wU1D-D6g" />
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
@@ -77,9 +78,14 @@
                             <td valign="top" class="description"><g:datesDisp mode="view" beanid="${property.id}"/></td>
                             
                         </tr>
-                    
-                        
-                    
+                        <tr class="prop">
+
+                            <td valign="top" class="name">Map:</td>
+
+                            <td valign="top" class="description"><richui:googlemaps lat="${resultLat}" lng="${resultLng}" /></td>
+
+                        </tr>
+
                     </tbody>
                 </table>
             </div>
