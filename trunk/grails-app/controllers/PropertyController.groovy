@@ -4,7 +4,6 @@ import javax.imageio.*
 import grails.converters.*
 
 class PropertyController {
-
     def index = { redirect(action:list,params:params) }
 
     // the delete, save and update actions only accept POST requests
@@ -50,7 +49,15 @@ class PropertyController {
     }
 
 	def show = {
-        def property = Property.get( params.id )
+		def postCodeService
+		// test on EH10 5JD
+        def lat = 55.9248083579924
+		def lng = -3.21747024891147
+        
+		def property = Property.get( params.id )
+        //println (String)postCodeService.getPostCodeCentre(property.postCode).centre.lat
+       // lat = postCodeService.getPostCodeCentre(property.postCode).centre.lat resultLat:lat
+         
         def date = []
         if (property.availableFrom != null)
         {
@@ -63,7 +70,8 @@ class PropertyController {
             flash.message = "Property not found with id ${params.id}"
             redirect(action:list)
         }
-        else { return ['property':property, 'availableFrom':date] }
+        else {
+            return ['property':property, 'availableFrom':date, 'resultLat':lat, 'resultLng':lng] }
     }
 
     def delete = {
