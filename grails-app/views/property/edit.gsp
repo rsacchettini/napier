@@ -1,5 +1,5 @@
 <resource:dateChooser/>
-<resource:richTextEditor />
+ <!--<resource:richTextEditor />-->
  <g:javascript src="datesManagement.js"/>
  <g:javascript src="multifile.js"/>
 
@@ -12,8 +12,8 @@
     <body>
         <div class="nav">
             <span class="menuButton"><a class="home" href="${createLinkTo(dir:'')}">Home</a></span>
-            <span class="menuButton"><g:link class="list" action="list"><g:message code="property.list"/></g:link></span>
-            <span class="menuButton"><g:link class="create" action="create"><g:message code="property.list"/></g:link></span>
+            <span class="menuButton"><g:link class="list" action="list">Property List</g:link></span>
+            <span class="menuButton"><g:link class="create" action="create">New Property</g:link></span>
         </div>
         <div class="body">
             <h1><g:message code="property.edit"/></h1>
@@ -67,20 +67,29 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                    <label for="minPrice">Min Price:</label>
+                                    <label for="minPrice">Offers Over:</label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean:property,field:'minPrice','errors')}">
                                     <input type="text" id="minPrice" name="minPrice" value="${fieldValue(bean:property,field:'minPrice')}" />
                                 </td>
-                            </tr> 
-                        
+                            </tr>
+							
+							<tr class="prop">
+                               <td valign="top" class="name">
+                                   <label for="category">Category:</label>
+                               </td>
+                               <td valign="top" class="value ${hasErrors(bean:property,field:'category','errors')}">
+                                   <input type="text" id="category" name="category" value="${fieldValue(bean:property,field:'category')}" />
+                               </td>
+                           </tr>
+						   
                             <tr class="prop">
                                 <td valign="top" class="name">
                                     <label for="description">Description:</label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean:property,field:'description','errors')}">
-                                    <!--<input type="text" id="description" name="description" value="${fieldValue(bean:property,field:'description')}"/>-->
-									<richui:richTextEditor type="advanced" name="description" value="${fieldValue(bean:property,field:'description')}" width="525" />
+                                    <input type="text" id="description" name="description" value="${fieldValue(bean:property,field:'description')}"/>
+									<!--<richui:richTextEditor type="advanced" name="description" value="${fieldValue(bean:property,field:'description')}" width="525" />-->
 								</td>
                             </tr> 
                         
@@ -95,23 +104,16 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                    <label for="picture">Edit current pictures:</label>
+                                    <label for="picture">Picture:</label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean:property,field:'picture','errors')}">
 
-								  <table>
-									<tr>
-
-											<g:imageDisp id="imgDisp" mode="edit" beanid="${property.id}" />
-									   
-									</tr>
-								</table>
-								</td>
+                                </td>
                             </tr> 
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                    <label for="pictureType">Add pictures:</label>
+                                    <label for="pictureType">Picture Type:</label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean:property,field:'pictureType','errors')}">
                                     <input id='picture' type='file' name='picture_0' onChange="addElement()"/>
@@ -160,17 +162,23 @@
                                 </td>
                             </tr> 
                         
-                             <tr class="prop">
-                               <td valign="top" class="name">
-                                   <label for="isManagedBy">Is Managed By:</label>
-                               </td>
-                               <td valign="top" class="value ${hasErrors(bean:property,field:'isManagedBy','errors')}">
-
-								   <input type="hidden" id="isManagedBy.id" name="isManagedBy.id" value="${EstateAgent?.findByUsername('estate').id}" />
-		                           <b>${EstateAgent?.findByUsername('estate').userRealName}</b>
-							   </td>
-                           </tr>
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="isManagedBy">Is Managed By:</label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean:property,field:'isManagedBy','errors')}">
+                                    <g:select optionKey="id" from="${EstateAgent.list()}" name="isManagedBy.id" value="${property?.isManagedBy?.id}" ></g:select>
+                                </td>
+                            </tr> 
                         
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="isSoldBy">Is Sold By:</label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean:property,field:'isSoldBy','errors')}">
+                                    <g:select optionKey="id" from="${Seller.list()}" name="isSoldBy.id" value="${property?.isSoldBy?.id}" ></g:select>
+                                </td>
+                            </tr> 
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
