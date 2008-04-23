@@ -49,10 +49,8 @@ padding: 0;
 
 #searchField {
 position:relative;
-height: 30px;
-width:180px;
-top:59px;
-left:0px;
+height: auto;
+width:auto;
 text-align:center;
 
 }
