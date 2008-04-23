@@ -2,14 +2,18 @@ import java.util.*
 import java.text.SimpleDateFormat
 import javax.imageio.*
 import grails.converters.*
+import org.compass.core.engine.SearchEngineQueryParseException
 
 class PropertyController {
-    def index = { redirect(action:list,params:params) }
+	def searchableService
+	def postCodeService
+	
+    def index = { redirect(action:listAll,params:params) }
 
     // the delete, save and update actions only accept POST requests
     def allowedMethods = [delete:'POST', save:'POST', update:'POST']
 
-    def list = {
+    def listAll = {
 		 if(params.isPersonalList != null && params.isPersonalList == "true")
 		 {
 			 def principal = PrincipalService.getPrincipal()
@@ -49,7 +53,6 @@ class PropertyController {
     }
 
 	def show = {
-		def postCodeService
 		// test on EH10 5JD
         def lat = 55.9248083579924
 		def lng = -3.21747024891147
@@ -405,6 +408,38 @@ class PropertyController {
             render(view:'create',model:[property:property])
 			//chain(action:"create", model:[property:property], id:params.id, params:['visitTimeCount':visitTimeCount])
 		}
+    }
+	
+	 /**
+     * Index page with search form and results
+     */
+	def list = {
+        if (!params.q?.trim()) {
+            return [:]
+        }
+        try {
+         //   return [searchResult: searchableService.search(params.q, params)]
+			return [searchResult: searchableService.search(params.q, params)]
+        } catch (SearchEngineQueryParseException ex) {
+            return [parseException: true]
+        }
+    }
+    /**
+     * Perform a bulk index of every searchable object in the database
+     */
+    def indexAllSearch = {
+        Thread.start {
+            searchableService.indexAll()
+        }
+        render("bulk index started in a background thread")
+    }
+
+    /**
+     * Perform a bulk index of every searchable object in the database
+     */
+    def unindexAllSearch = {
+        searchableService.unindexAll()
+        render("unindexAll done")
     }
 
 }
