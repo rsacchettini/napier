@@ -95,16 +95,23 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                    <label for="picture">Picture:</label>
+                                    <label for="picture">Edit current pictures:</label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean:property,field:'picture','errors')}">
 
-                                </td>
+								  <table>
+									<tr>
+
+											<g:imageDisp id="imgDisp" mode="edit" beanid="${property.id}" />
+									   
+									</tr>
+								</table>
+								</td>
                             </tr> 
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                    <label for="pictureType">Picture Type:</label>
+                                    <label for="pictureType">Add pictures:</label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean:property,field:'pictureType','errors')}">
                                     <input id='picture' type='file' name='picture_0' onChange="addElement()"/>
@@ -153,23 +160,17 @@
                                 </td>
                             </tr> 
                         
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                    <label for="isManagedBy">Is Managed By:</label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean:property,field:'isManagedBy','errors')}">
-                                    <g:select optionKey="id" from="${EstateAgent.list()}" name="isManagedBy.id" value="${property?.isManagedBy?.id}" ></g:select>
-                                </td>
-                            </tr> 
+                             <tr class="prop">
+                               <td valign="top" class="name">
+                                   <label for="isManagedBy">Is Managed By:</label>
+                               </td>
+                               <td valign="top" class="value ${hasErrors(bean:property,field:'isManagedBy','errors')}">
+
+								   <input type="hidden" id="isManagedBy.id" name="isManagedBy.id" value="${EstateAgent?.findByUsername('estate').id}" />
+		                           <b>${EstateAgent?.findByUsername('estate').userRealName}</b>
+							   </td>
+                           </tr>
                         
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                    <label for="isSoldBy">Is Sold By:</label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean:property,field:'isSoldBy','errors')}">
-                                    <g:select optionKey="id" from="${Seller.list()}" name="isSoldBy.id" value="${property?.isSoldBy?.id}" ></g:select>
-                                </td>
-                            </tr> 
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
