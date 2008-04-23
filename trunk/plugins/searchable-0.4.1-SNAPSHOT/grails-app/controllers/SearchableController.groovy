@@ -32,7 +32,8 @@ class SearchableController {
             return [:]
         }
         try {
-            return [searchResult: searchableService.search(params.q, params)]
+         //   return [searchResult: searchableService.search(params.q, params)]
+			return ['property':property , searchResult: searchableService.search(params.q, params)]
         } catch (SearchEngineQueryParseException ex) {
             return [parseException: true]
         }
