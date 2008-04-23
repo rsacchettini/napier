@@ -56,14 +56,18 @@ class PropertyController {
 
 	def show = {
 		// test on EH10 5JD
-        def lat = 55.9248083579924
-		def lng = -3.21747024891147
+       // def lat = 55.9248083579924
+		//def lng = -3.21747024891147
         
 		def property = Property.get( params.id )
         //println (String)postCodeService.getPostCodeCentre(property.postCode).centre.lat
-       // lat = postCodeService.getPostCodeCentre(property.postCode).centre.lat resultLat:lat
-         
-        def date = []
+	  def PostCodeService postCodeService = new PostCodeService()
+		postCodeService.afterPropertiesSet()
+	   def latLong = ((PostCodeLatLong)postCodeService.getPostCodeCentre((String)property.postCode))
+	   def lat = latLong.centre.lat
+	   def lng = latLong.centre.lon
+
+		def date = []
         if (property.availableFrom != null)
         {
               for (i in 0..(property.availableFrom.length-1))
@@ -75,8 +79,10 @@ class PropertyController {
             flash.message = "Property not found with id ${params.id}"
             redirect(action:list)
         }
-        else {
-            return ['property':property, 'availableFrom':date, 'resultLat':lat, 'resultLng':lng] }
+        else 
+		{
+            return ['property':property, 'availableFrom':date, 'resultLat':lat, 'resultLng':lng]
+		}
     }
 
     def delete = {
@@ -118,14 +124,14 @@ class PropertyController {
         }
     }
 
-      def addInterest = {
+    def addInterest = {
         def property = Property.get( params.id )
         def principal = PrincipalService.getPrincipal()
 			 if(principal!= null)
 			 {
         if(((String)principal.getAuthorities()[0]) == "ROLE_BUYER")
 				 {
-					 def buyer = (Buyer)Buyer.findByUsername(principal.getUsername())
+					 def buyer = Buyer.findByUsername(principal.getUsername())
 					 if(buyer != null)
                      {
                          buyer.addToListedProperties(property)
@@ -137,8 +143,7 @@ class PropertyController {
            redirect(action:list)
     }
 
-
-            def removeInterest = {
+    def removeInterest = {
         def property = Property.get( params.id )
         def principal = PrincipalService.getPrincipal()
 			 if(principal!= null)
@@ -272,10 +277,6 @@ class PropertyController {
 	  	render = "A Problem has occured"
 
 	}
-
-	  def genererContenu = {
-    	render "Salut !"
-  		}
 
 	// Add images to a property with the multipartfiles passed in the HTTPrequest
 	private void imageAdd(Long propertyId)

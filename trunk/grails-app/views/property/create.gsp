@@ -135,21 +135,17 @@
                                    <label for="isManagedBy">Is Managed By:</label>
                                </td>
                                <td valign="top" class="value ${hasErrors(bean:property,field:'isManagedBy','errors')}">
-                                   <g:select optionKey="id" from="${EstateAgent.list()}" name="isManagedBy.id" value="${property?.isManagedBy?.id}" ></g:select>
-                               </td>
+                                   
+								   <input type="hidden" id="isManagedBy.id" name="isManagedBy.id" value="${EstateAgent?.findByUsername('estate').id}" />
+		                           <b>${EstateAgent?.findByUsername('estate').userRealName}</b> 
+							   </td>
                            </tr>
 
-                           <tr class="prop">
-                               <td valign="top" class="name">
-                                   <label for="isSoldBy">Is Sold By:</label>
-                               </td>
-                               <td valign="top" class="value ${hasErrors(bean:property,field:'isSoldBy','errors')}">
+
                                    <g:ifAnyGranted role="ROLE_SELLER">
 										<input type="hidden" id="isSoldBy.id" name="isSoldBy.id" value="${(Seller?.findByUsername(PrincipalService?.getPrincipal()?.getUsername()))?.id}" />
-		                                <input type="text" disabled="true" value="${(Seller?.findByUsername(PrincipalService?.getPrincipal()?.getUsername()))?.id}" />
+		                               <!-- <input type="text" disabled="true" value="${(Seller?.findByUsername(PrincipalService?.getPrincipal()?.getUsername()))?.id}" />  -->
 								   </g:ifAnyGranted>
-                               </td>
-                           </tr>
 
 						   <tr class="prop">
                                <td valign="top" class="name">

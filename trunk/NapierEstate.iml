@@ -72,6 +72,10 @@
       <sourceFolder url="file://$MODULE_DIR$/plugins/acegi-0.2/src/groovy" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/plugins/acegi-0.2/src/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/plugins/acegi-0.2/test/unit" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/plugins/post-code-1.0/grails-app/conf" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/plugins/post-code-1.0/grails-app/services" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/plugins/post-code-1.0/grails-app/views" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/plugins/post-code-1.0/test/integration" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/plugins/richui-0.3/grails-app/conf" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/plugins/richui-0.3/grails-app/controllers" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/plugins/richui-0.3/grails-app/services" isTestSource="false" />
@@ -115,8 +119,8 @@
         <JAVADOC />
         <SOURCES />
         <jarDirectory url="file://$MODULE_DIR$/plugins/acegi-0.2/lib" recursive="false" />
-        <jarDirectory url="file://$MODULE_DIR$/plugins/richUI-0.3/lib" recursive="false" />
         <jarDirectory url="file://$MODULE_DIR$/plugins/richui-0.3/lib" recursive="false" />
+        <jarDirectory url="file://$MODULE_DIR$/plugins/richUI-0.3/lib" recursive="false" />
         <jarDirectory url="file://$MODULE_DIR$/plugins/searchable-0.4.1-SNAPSHOT/lib" recursive="false" />
       </library>
     </orderEntry>
