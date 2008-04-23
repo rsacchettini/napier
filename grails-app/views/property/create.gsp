@@ -12,7 +12,7 @@
    <body onload="init()">
        <div class="nav">
            <span class="menuButton"><a class="home" href="${createLinkTo(dir:'')}">Home</a></span>
-           <span class="menuButton"><g:link class="list" action="list">Property List</g:link></span>
+           <span class="menuButton"><g:link class="list" action="list"><g:message code="property.list"/></g:link></span>
        </div>
        <div class="body">
            <h1><g:message code="property.create"/></h1>

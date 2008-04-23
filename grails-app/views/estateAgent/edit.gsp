@@ -4,17 +4,17 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <meta name="layout" content="main" />
-        <title>Edit EstateAgent</title>
+        <title><g:message code="estateagent.editTitle"/></title>
     </head>
     <body>
         <div id="leftFrame">
 	   		<ul class="navLeft">
-				<li><span class="menuButton"><g:link class="list" action="list">EstateAgent List</g:link></span></li>
-				<li><span class="menuButton"><g:link class="create" action="create">New EstateAgent</g:link></span></li>
+				<li><span class="menuButton"><g:link class="list" action="list"><g:message code="estateagent.list"/></g:link></span></li>
+                <li><span class="menuButton"><g:link class="create" action="create"><g:message code="estateagent.new"/></g:link></span></li>
 	        </ul>
 	    </div>
         <div class="body">
-            <h1>Edit EstateAgent</h1>
+            <h1><g:message code="estateagent.editTitle"/></h1>
             <g:if test="${flash.message}">
             <div class="message">${flash.message}</div>
             </g:if>

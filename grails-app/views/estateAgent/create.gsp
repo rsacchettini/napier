@@ -85,7 +85,7 @@
                     </table>
                 </div>
                 <div class="buttons">
-                    <span class="button"><input class="save" type="submit"><g:message code="estateagent.createbutton"/></input></span>
+                    <span class="button"><input class="save" type="submit">value="${message(code:'estateagent.createbutton')}"/></span>
                 </div>
             </g:form>
         </div>
