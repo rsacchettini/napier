@@ -1,4 +1,5 @@
 class Buyer extends AuthUser {
+
     def beforeInterceptor = [action:this.&checkUser,except:['index','list','show']]
 
 	// if the user in not present in the session, he is redericted to the login page
@@ -10,8 +11,8 @@ class Buyer extends AuthUser {
 	}
     //Note: Since the O.6 version of grails there is no need to specify any collection or Set for the hasMany
     //associations. relatesToMany used to require that but is now deprecated so only hasMany must be used
+
     static hasMany = [listedProperties:Property, appointments:Appointment]
-    static belongsTo = Property
 	static fetchMode = [appointments:"eager", listedProperties:"eager"]
 
 	  boolean equals(other) {

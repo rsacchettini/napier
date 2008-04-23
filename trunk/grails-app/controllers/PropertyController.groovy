@@ -36,11 +36,13 @@ class PropertyController {
 					 def buyer = (Buyer)Buyer.findByUsername(principal.getUsername())
 					 if(buyer != null)
 					 {
-						def buyerInterestList = buyer?.listedProperties;
+						def buyerInterestList = buyer.listedProperties;
 						if(buyerInterestList != null)
 						{// if the logged user is a seller then retrieve his properties.
-							return [propertyList: buyerInterestList]
-						}
+                            println(buyer.listedProperties)
+                            return [propertyList: buyerInterestList]
+
+                        }
 					 }
 				 }
 			 }
@@ -125,9 +127,30 @@ class PropertyController {
 				 {
 					 def buyer = (Buyer)Buyer.findByUsername(principal.getUsername())
 					 if(buyer != null)
+                     {
+                         buyer.addToListedProperties(property)
+                         buyer.save(flush:true)
+                         println(buyer?.listedProperties)
+                     }
+				 }
+             }
+           redirect(action:list)
+    }
+
+
+            def removeInterest = {
+        def property = Property.get( params.id )
+        def principal = PrincipalService.getPrincipal()
+			 if(principal!= null)
+			 {
+        if(((String)principal.getAuthorities()[0]) == "ROLE_BUYER")
+				 {
+					 def buyer = (Buyer)Buyer.findByUsername(principal.getUsername())
+					 if(buyer != null)
 					 {
-                        property.interestedBuyers.add(buyer)                                    
-					 }
+                         buyer.removeFromListedProperties(property)
+                         buyer.save(flush:true)
+                     }
 				 }
              }
            redirect(action:list)
