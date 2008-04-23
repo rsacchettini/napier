@@ -48,7 +48,12 @@
                             <td valign="top" class="name">Asking Price:</td>
                             <td valign="top" class="price2">Offers Over &pound;${property.minPrice}</td>
                         </tr>
-                    
+						
+						<tr class="prop">
+                            <td valign="top" class="name">Category:</td>
+                            <td valign="top" class="category">${property.category}</td>
+                        </tr>
+						
                         <tr class="prop">
                             <td valign="top" class="name">Description:</td>
                             <td valign="top" class="description">${property.description}</td>
@@ -98,12 +103,9 @@
 			  </g:ifAnyGranted>
 			  <g:ifAnyGranted role="ROLE_BUYER">
 			  <span class="button"><g:actionSubmit class="edit" action="addInterest" value="${message(code:'buyer.addInterest')}"/></span>
-              <span class="button"><g:actionSubmit class="edit" action="removeInterest" value="${message(code:'buyer.removeInterest')}"/></span>
-
-              </g:ifAnyGranted>
+			  </g:ifAnyGranted>
 		</g:form>
             </div>
         </div>
     </body>
 </html>
->>>>>>> .r145

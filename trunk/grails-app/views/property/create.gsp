@@ -1,5 +1,5 @@
  <resource:dateChooser/>
- <resource:richTextEditor />
+ <!--<resource:richTextEditor />-->
  <g:javascript src="datesManagement.js"/>
  <g:javascript src="multifile.js"/>
  
@@ -12,7 +12,7 @@
    <body onload="init()">
        <div class="nav">
            <span class="menuButton"><a class="home" href="${createLinkTo(dir:'')}">Home</a></span>
-           <span class="menuButton"><g:link class="list" action="list"><g:message code="property.list"/></g:link></span>
+           <span class="menuButton"><g:link class="list" action="list">Property List</g:link></span>
        </div>
        <div class="body">
            <h1><g:message code="property.create"/></h1>
@@ -104,20 +104,28 @@
 
                            <tr class="prop">
                                <td valign="top" class="name">
-                                   <label for="minPrice">Min Price:</label>
+                                   <label for="minPrice">Offers Over:</label>
                                </td>
                                <td valign="top" class="value ${hasErrors(bean:property,field:'minPrice','errors')}">
                                    <input type="text" id="minPrice" name="minPrice" value="${fieldValue(bean:property,field:'minPrice')}" />
                                </td>
                            </tr>
-
+							<tr class="prop">
+                               <td valign="top" class="name">
+                                   <label for="category">Type of property:</label>
+                               </td>
+                               <td valign="top" class="value ${hasErrors(bean:property,field:'category','errors')}">
+									<g:select name="category" from="${['House', 'Flat']}" value="${fieldValue(bean:property,field:'category')} />
+                                   <!--<input type="text" id="category" name="category" value="${fieldValue(bean:property,field:'category')}" />-->
+                               </td>
+                           </tr>
                            <tr class="prop">
                                <td valign="top" class="name">
                                    <label for="description">Description:</label>
                                </td>
                                <td valign="top" class="value ${hasErrors(bean:property,field:'description','errors')}">
-                                   <!--<textarea id="description" name="description" rows="6" cols="50">${fieldValue(bean:property,field:'description')}</TEXTAREA>-->
-								   <richui:richTextEditor name="description" type="advanced" value="${fieldValue(bean:property,field:'description')}" width="525" />
+                                   <textarea id="description" name="description" rows="6" cols="100">${fieldValue(bean:property,field:'description')}</TEXTAREA>
+								   <!--<richui:richTextEditor name="description" type="advanced" value="${fieldValue(bean:property,field:'description')}" width="525" />-->
 							   </td>
                            </tr>
 
@@ -135,17 +143,21 @@
                                    <label for="isManagedBy">Is Managed By:</label>
                                </td>
                                <td valign="top" class="value ${hasErrors(bean:property,field:'isManagedBy','errors')}">
-                                   
-								   <input type="hidden" id="isManagedBy.id" name="isManagedBy.id" value="${EstateAgent?.findByUsername('estate').id}" />
-		                           <b>${EstateAgent?.findByUsername('estate').userRealName}</b> 
-							   </td>
+                                   <g:select optionKey="id" from="${EstateAgent.list()}" name="isManagedBy.id" value="${property?.isManagedBy?.id}" ></g:select>
+                               </td>
                            </tr>
 
-
+                           <tr class="prop">
+                               <td valign="top" class="name">
+                                   <label for="isSoldBy">Is Sold By:</label>
+                               </td>
+                               <td valign="top" class="value ${hasErrors(bean:property,field:'isSoldBy','errors')}">
                                    <g:ifAnyGranted role="ROLE_SELLER">
 										<input type="hidden" id="isSoldBy.id" name="isSoldBy.id" value="${(Seller?.findByUsername(PrincipalService?.getPrincipal()?.getUsername()))?.id}" />
-		                               <!-- <input type="text" disabled="true" value="${(Seller?.findByUsername(PrincipalService?.getPrincipal()?.getUsername()))?.id}" />  -->
+		                                <input type="text" disabled="true" value="${(Seller?.findByUsername(PrincipalService?.getPrincipal()?.getUsername()))?.id}" />
 								   </g:ifAnyGranted>
+                               </td>
+                           </tr>
 
 						   <tr class="prop">
                                <td valign="top" class="name">
