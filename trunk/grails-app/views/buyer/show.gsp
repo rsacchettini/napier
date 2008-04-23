@@ -4,18 +4,18 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <meta name="layout" content="main" />
-        <title>Show Buyer</title>
+        <title><g:message code="buyer.showTitle"/></title>
     </head>
     <body>
 	
 	
 	    <div class="nav">
-				<span class="menuButton"><g:link class="list" action="list">Buyer List</g:link></span>
-				<span class="menuButton"><g:link class="create" action="create">New Buyer</g:link></span>
+				<span class="menuButton"><g:link class="list" action="list"><g:message code="buyer.list"/></g:link></span>
+				<span class="menuButton"><g:link class="create" action="create"><g:message code="buyer.create"/></g:link></span>
 	    </div>
 		
 		<div class="body">
-            <h1>Show Buyer</h1>
+            <h1><g:message code="buyer.showTitle"/></h1>
             <g:if test="${flash.message}">
             <div class="message">${flash.message}</div>
             </g:if>
@@ -92,8 +92,8 @@
             <div class="buttons">
                 <g:form>
                     <input type="hidden" name="id" value="${buyer?.id}" />
-                    <span class="button"><g:actionSubmit class="edit" value="Edit" /></span>
-                    <span class="button"><g:actionSubmit class="delete" onclick="return confirm('Are you sure?');" value="Delete" /></span>
+                    <span class="button"><g:actionSubmit class="edit" action="Edit" value="${message(code:'buyer.edit')}" /></span>
+                    <span class="button"><g:actionSubmit class="delete" onclick="return confirm('Are you sure?');" action="Delete" value="${message(code:'buyer.delete')}" /></span>
                 </g:form>
             </div>
         </div>

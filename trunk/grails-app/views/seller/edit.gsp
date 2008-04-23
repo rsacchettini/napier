@@ -4,17 +4,17 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <meta name="layout" content="main" />
-        <title>Edit Seller</title>
+        <title><g:message code="seller.edit"/></title>
     </head>
     <body>
         <div id="leftFrame">
 	   		<ul class="navLeft">
-				<li><span class="menuButton"><g:link class="list" action="list">Seller List</g:link></span></li>
-				<li><span class="menuButton"><g:link class="create" action="create">New Seller</g:link></span></li>
+				<li><span class="menuButton"><g:link class="list" action="list"><g:message code="seller.list"/></g:link></span></li>
+				<li><span class="menuButton"><g:link class="create" action="create"><g:message code="seller.new"/></g:link></span></li>
 	        </ul>
 	    </div>
         <div class="body">
-            <h1>Edit Seller</h1>
+            <h1><g:message code="seller.edit"/></h1>
             <g:if test="${flash.message}">
             <div class="message">${flash.message}</div>
             </g:if>
@@ -113,7 +113,7 @@
     <li><g:link controller="property" action="show" id="${s.id}">${s}</g:link></li>
 </g:each>
 </ul>
-<g:link controller="property" params="["seller.id":seller?.id]" action="create">Add Property</g:link>
+<g:link controller="property" params="["seller.id":seller?.id]" action="create"><g:message code="property.add"/></g:link>
 
                                 </td>
                             </tr> 
@@ -122,11 +122,12 @@
                     </table>
                 </div>
                 <div class="buttons">
-                    <span class="button"><g:actionSubmit class="save" value="Update" /></span>
-                    <span class="button"><g:actionSubmit class="delete" onclick="return confirm('Are you sure?');" value="Delete" /></span>
+                    <span class="button"><g:actionSubmit class="save" value="${message(code:'seller.update')}" /></span>
+                    <span class="button"><g:actionSubmit class="delete" onclick="return confirm('Are you sure?');" value="${message(code:'seller.delete')}" /></span>
                 </div>
                 <input type="hidden" id="passwd" name="passwd" value="${fieldValue(bean:seller,field:'passwd')}"/>
             </g:form>
         </div>
     </body>
+
 </html>

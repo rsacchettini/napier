@@ -4,16 +4,16 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <meta name="layout" content="main" />
-        <title>EstateAgent List</title>
+        <title><g:message code="buyer.listTitle"/></title>
     </head>
     <body>
 		<div id="leftFrame">
 	   		<ul class="navLeft">
-				<li><span class="menuButton"><g:link class="create" action="create">New EstateAgent</g:link></span></li>
+				<li><span class="menuButton"><g:link class="create" action="create"><g:message code="estateagent.new"/></g:link></span></li>
 	        </ul>
 	    </div>
         <div class="body">
-            <h1>EstateAgent List</h1>
+            <h1><g:message code="buyer.listTitle"/></h1>
             <g:if test="${flash.message}">
             <div class="message">${flash.message}</div>
             </g:if>

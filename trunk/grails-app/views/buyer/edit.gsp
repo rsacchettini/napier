@@ -4,15 +4,15 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <meta name="layout" content="main" />
-        <title>Edit Buyer</title>
+        <title><g:message code="buyer.editTitle"/></title>
     </head>
     <body>
         <div class="nav">
-		    <span class="menuButton"><g:link class="list" action="list">Buyer List</g:link></span>
-		    <span class="menuButton"><g:link class="create" action="create">New Buyer</g:link></span>
+		    <span class="menuButton"><g:link class="list" action="list"><g:message code="buyer.list></g:link></span>
+		    <span class="menuButton"><g:link class="create" action="create"><g:message code="buyer.new></g:link></span>
         </div>
         <div class="body">
-            <h1>Edit Buyer</h1>
+            <h1><g:message code="buyer.editTitle"/></h1>
             <g:if test="${flash.message}">
             <div class="message">${flash.message}</div>
             </g:if>
@@ -88,7 +88,7 @@
     <li><g:link controller="appointment" action="show" id="${a.id}">${a}</g:link></li>
 </g:each>
 </ul>
-<g:link controller="appointment" params="["buyer.id":buyer?.id]" action="create">Add Appointment</g:link>
+<g:link controller="appointment" params="["buyer.id":buyer?.]" action="create">Add Appointment</g:link>
 
                                 </td>
                             </tr> 
@@ -113,8 +113,8 @@
                     </table>
                 </div>
                 <div class="buttons">
-                    <span class="button"><g:actionSubmit class="save" value="Update" /></span>
-                    <span class="button"><g:actionSubmit class="delete" onclick="return confirm('Are you sure?');" value="Delete" /></span>
+                    <span class="button"><g:actionSubmit class="save" action="Update" value="${message(code:'buyer.update')}" /></span>
+                    <span class="button"><g:actionSubmit class="delete" onclick="return confirm('Are you sure?');" action="Delete" value="${message(code:'buyer.delete')}" /></span>
                 </div>
                 <input type="hidden" id="passwd" name="passwd" value="${fieldValue(bean:buyer,field:'passwd')}"/>
             </g:form>

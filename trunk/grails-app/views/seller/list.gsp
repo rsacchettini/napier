@@ -4,16 +4,16 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <meta name="layout" content="main" />
-        <title>Seller List</title>
+         <title><g:message code="seller.list"/></title>
     </head>
     <body>
         <div id="leftFrame">
 	   		<ul class="navLeft">
-				<li><span class="menuButton"><g:link class="create" action="create">New Seller</g:link></span></li>
+				<li><span class="menuButton"><g:link class="create" action="create"><g:message code="seller.new"/></g:link></span></li>
 	        </ul>
 	    </div>
         <div class="body">
-            <h1>Seller List</h1>
+            <h1><g:message code="seller.list"/></h1>
             <g:if test="${flash.message}">
             <div class="message">${flash.message}</div>
             </g:if>
