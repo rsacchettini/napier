@@ -98,7 +98,9 @@
 			  </g:ifAnyGranted>
 			  <g:ifAnyGranted role="ROLE_BUYER">
 			  <span class="button"><g:actionSubmit class="edit" action="addInterest" value="${message(code:'buyer.addInterest')}"/></span>
-			  </g:ifAnyGranted>
+              <span class="button"><g:actionSubmit class="edit" action="removeInterest" value="${message(code:'buyer.removeInterest')}"/></span>
+
+              </g:ifAnyGranted>
 		</g:form>
             </div>
         </div>
