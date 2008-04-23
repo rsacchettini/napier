@@ -14,10 +14,7 @@
         </script>
     </head>
     <body onload="focusQueryInput();">
-		<div id="leftFrame">
-	   		<ul class="navLeft">
-				<li><span class="menuButton"><g:link class="create" action="create">New Property</g:link></span></li>
-            </ul>
+		
             <div id="searchField">
             <g:form url='[controller: "searchable", action: "index"]' id="searchableForm" name="searchableForm" method="get">
                 <g:textField name="q" value="${params.q}" size="20"/> <input type="submit" value="Search" />

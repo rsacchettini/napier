@@ -30,6 +30,7 @@
             <ul>
 
 					<li><g:link controller="property" action="index"><g:message code="main.properties" /> (${Property?.list()?.size()})</g:link></li>
+					<li><g:link controller="searchable" action="index" params=><g:message code="main.search" /></g:link></li>
 				<g:isNotLoggedIn>
 					 <li><g:link class="create" action="index" controller="register">
 					  	<g:message code="main.registerWhenNotLogged" /></g:link></li>
