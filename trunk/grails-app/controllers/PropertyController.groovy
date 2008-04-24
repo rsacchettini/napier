@@ -53,17 +53,10 @@ class PropertyController {
     }
 
 	def show = {
-		
-	 def property = Property.get( params.id )
-	  def PostCodeService postCodeService = new PostCodeService()
-		postCodeService.afterPropertiesSet()
-	   def latLong = ((PostCodeLatLong)postCodeService.getPostCodeCentre((String)property.postCode))
-	   def lat = latLong.centre.lat
-	   def lng = latLong.centre.lon
-        
-
-        //println (String)postCodeService.getPostCodeCentre(property.postCode).centre.lat
-       // lat = postCodeService.getPostCodeCentre(property.postCode).centre.lat resultLat:lat
+		def property = Property.get( params.id )
+		def latLong = ((PostCodeLatLong)postCodeService.getPostCodeCentre((String)property.postCode))
+		def lat = latLong.centre.lat
+		def lng = latLong.centre.lon
          
         def date = []
         if (property.availableFrom != null)

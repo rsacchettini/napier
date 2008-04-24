@@ -50,7 +50,7 @@
                         </tr>
 						
 						<tr class="prop">
-                            <td valign="top" class="name">Category:</td>
+                            <td valign="top" class="name">Type of property:</td>
                             <td valign="top" class="category">${property.category}</td>
                         </tr>
 						
