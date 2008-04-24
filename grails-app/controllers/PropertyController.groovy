@@ -54,8 +54,11 @@ class PropertyController {
 
 	def show = {
 		def property = Property.get( params.id )
+		// Call postcode service
 		def latLong = ((PostCodeLatLong)postCodeService.getPostCodeCentre((String)property.postCode))
+		// Get latitude
 		def lat = latLong.centre.lat
+		// Get longitude
 		def lng = latLong.centre.lon
          
         def date = []
@@ -415,7 +418,8 @@ class PropertyController {
             return [:]
         }
         try {
-         //   return [searchResult: searchableService.search(params.q, params)]
+        //    render(view:'/searchable/index', searchResult: searchableService.search(params.q, params))
+			// Call searchable service
 			return [searchResult: searchableService.search(params.q, params)]
         } catch (SearchEngineQueryParseException ex) {
             return [parseException: true]
