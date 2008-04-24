@@ -116,7 +116,6 @@
                                </td>
                                <td valign="top" class="value ${hasErrors(bean:property,field:'category','errors')}">
 									<g:select name="category" from="${['House', 'Flat']}" value="${fieldValue(bean:property,field:'category')} />
-                                   <!--<input type="text" id="category" name="category" value="${fieldValue(bean:property,field:'category')}" />-->
                                </td>
                            </tr>
                            <tr class="prop">
