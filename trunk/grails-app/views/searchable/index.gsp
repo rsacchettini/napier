@@ -137,7 +137,7 @@
             <g:set var="className" value="${ClassUtils.getShortName(result.getClass())}" />
             <g:set var="link" value="${createLink(controller: className[0].toLowerCase() + className[1..-1], action: 'show', id: result.id)}" />
             <div class="name"><a href="${link}">${className} #${result.id}</a></div>
-            <g:set var="desc" value="${result.toString()}" />
+            <g:set var="desc" value="${(String)result.minPrice}" />
             <g:if test="${desc.size() > 120}"><g:set var="desc" value="${desc[0..120] + '...'}" /></g:if>
             <div class="desc">${desc.encodeAsHTML()}</div>
             <div class="displayLink">${link}</div>
