@@ -21,12 +21,12 @@
  */
 class SearchableUrlMappings {
 	static mappings = {
-        "/searchable" {
-            controller = "searchable"
-            action = "index"
+        "/property" {
+            controller = "property"
+            action = "list"
         }
-        "/searchable/$action?" {
-            controller = "searchable"
+        "/property/$action?" {
+            controller = "property"
         }
 	}	
 }

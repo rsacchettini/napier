@@ -414,13 +414,28 @@ class PropertyController {
      * Index page with search form and results
      */
 	def list = {
-        if (!params.q?.trim()) {
+        if (!params.qPostCode?.trim() && !params.qCategory?.trim() && !params.qnbBedR?.trim()) {
             return [:]
         }
         try {
         //    render(view:'/searchable/index', searchResult: searchableService.search(params.q, params))
+			def q
+			if (!params.qCategory.equals(""))
+				q = "category:"+params.qCategory
+				
+			if(!params.qPostCode.equals("") && params.qCategory.equals(""))
+				q ="postCode:"+params.qPostCode
+			else if (!params.qPostCode.equals(""))
+				q =q+" AND postCode:"+params.qPostCode
+				
+			if (!params.qnbBedR.equals("") && params.qPostCode.equals("") && params.qCategory.equals(""))
+				q = "bedroomNumber:"+params.qnbBedR
+			else if (!params.qnbBedR.equals(""))
+				q =q+" AND bedroomNumber:"+params.qnbBedR
+			
+			//println q
 			// Call searchable service
-			return [searchResult: searchableService.search(params.q, params)]
+			return [searchResult: searchableService.search(q, params)]
         } catch (SearchEngineQueryParseException ex) {
             return [parseException: true]
         }
