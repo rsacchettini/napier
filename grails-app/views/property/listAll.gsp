@@ -11,10 +11,36 @@
 				<span class="menuButton"><g:link class="create" action="create"><g:message code="property.create"/></g:link></span>
 			</g:ifAnyGranted>	
 		</div>
-		<div id="searchField">
+		 <div id="searchField">
             <g:form url='[controller: "property", action: "list"]' id="searchableForm" name="searchableForm" method="get">
-                <g:textField name="q" value="${params.q}" size="20"/> <input type="submit" value="Search" />
-            </g:form>
+			<table width="100%" border="0">
+			  <tr>
+			    <td>
+					<label>Type of property
+				        <g:select name="qCategory" from="${['','House', 'Flat']}" value="${params.qCategory}"/>
+				    </label>
+			    </td>
+			    <!--<td>
+				    <label>*Offer
+				        <g:select name="qOffer" from="${['','100000', '200000']}"/>
+				    </label>
+			    </td>-->
+				<td>
+					<label>Number of bedroom
+						<input type="text" name="qnbBedR" value="${params.qnbBedR}" size="2" />
+			        </label>
+				</td>
+			    <td>
+					<label>Post code
+						<input type="text" name="qPostCode" value="${params.qPostCode}" size="8" />
+			        </label>
+				</td>
+				<td>
+					<input type="submit" value="Search" />
+				</td>
+			  </tr>
+			</table>
+			</g:form>
         </div>
         <div class="body">
             <h1><g:message code="property.listTitle"/></h1>

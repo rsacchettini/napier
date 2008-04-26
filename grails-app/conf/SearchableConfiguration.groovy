@@ -75,7 +75,7 @@ class SearchableConfiguration {
      *               works by using an offset + max combo for a specific page
      * @param max    the page size, for paged search results
      */
-    Map defaultSearchOptions = [reload: false, escape: false, offset: 0, max: 10]
+    Map defaultSearchOptions = [reload: true, escape: false, offset: 0, max: 10]
 
     /**
      * Should changes made through GORM/Hibernate be mirrored to the index

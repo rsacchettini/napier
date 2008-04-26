@@ -5,10 +5,10 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <meta name="layout" content="main" />
-        <title><g:if test="${params.q && params.q?.trim() != ''}">${params.q} - </g:if>Property List</title>
+        <title><g:if test="${params.qPostCode && params.qPostCode?.trim() != ''}">${params.qPostCode} - </g:if>Property List</title>
         <script type="text/javascript">
         var focusQueryInput = function() {
-            document.getElementById("q").focus();
+            document.getElementById("qPostCode").focus();
         }
     </script>
     </head>
@@ -20,18 +20,44 @@
 		</div>
         <div id="searchField">
             <g:form url='[controller: "property", action: "list"]' id="searchableForm" name="searchableForm" method="get">
-        <g:select name="category" from="${['','House', 'Flat']}"/>
-		<g:textField name="q" value="${params.q}" size="30"/> <input type="submit" value="Search" />
-    </g:form>
+			<table width="100%" border="0">
+			  <tr>
+			    <td>
+					<label>Type of property
+				        <g:select name="qCategory" from="${['','House', 'Flat']}" value="${params.qCategory}"/>
+				    </label>
+			    </td>
+			    <!--<td>
+				    <label>*Offer
+				        <g:select name="qOffer" from="${['','100000', '200000']}"/>
+				    </label>
+			    </td>-->
+				<td>
+					<label>Number of bedroom
+						<input type="text" name="qnbBedR" value="${params.qnbBedR}" size="2" />
+			        </label>
+				</td>
+			    <td>
+					<label>Post code
+						<input type="text" name="qPostCode" value="${params.qPostCode}" size="8" />
+			        </label>
+				</td>
+				<td>
+					<input type="submit" value="Search" />
+				</td>
+			  </tr>
+			</table>
+			</g:form>
         </div>
 
         <div class="body">
-            <g:set var="haveQuery" value="${params.q?.trim()}" />
+            <g:set var="haveQuery" value="${params.qPostCode?.trim()}" />
 			<g:set var="haveResults" value="${searchResult?.results}" />
+			<g:set var="query" value="${params.qCategory} +"-"+ ${params.qOffer} +"-"+ ${params.qnbBedR} +"-"+ ${params.qPostCode}" />
 			<span>
 		        <g:if test="${haveQuery && haveResults}">
 		          Showing <strong>${searchResult.offset + 1}</strong> - <strong>${searchResult.results.size() + searchResult.offset}</strong> of <strong>${searchResult.total}</strong>
-		          results for <strong>${params.q}</strong>
+		          results for <strong>${query}</strong>
 		        </g:if>
 		        <g:else>
 		        &nbsp;
@@ -41,7 +67,7 @@
             <h1>Property List</h1>
 
             <g:if test="${parseException}">
-		      <p>Your query - <strong>${params.q}</strong> - is not valid.</p>
+		      <p>Your query - <strong>${query}</strong> - is not valid.</p>
 		      <p>Suggestions:</p>
 		      <ul>
 		        <li>Fix the query: see <a href="http://lucene.apache.org/java/docs/queryparsersyntax.html">Lucene query syntax</a> for examples</li>
@@ -57,34 +83,33 @@
 		      </ul>
 		    </g:if>
 		    <g:elseif test="${haveQuery && !haveResults}">
-		      <p>Nothing matched your query - <strong>${params.q}</strong></p>
+		      <p>Nothing matched your query - <strong>${query}</strong></p>
 		    </g:elseif>
 		    <g:elseif test="${haveResults}">
 
             <div class="list">
 				<g:each var="result" in="${searchResult.results}" status="index">
-                <g:set var="className" value="${ClassUtils.getShortName(result.getClass())}" />
-                <g:set var="link" value="${createLink(controller: className[0].toLowerCase() + className[1..-1], action: 'show', id: result.id)}" />
-                <table width="100%">
-				 <tr>
-				    <td width="21%">Reference: ${result.id}</td>
-				    <td width="79%" class="fullAddress">${result.address}, ${result.city}, ${result.postCode}</td>
-				  </tr>
-				  <tr>
-				    <td width="21%" rowspan="2"><img src="${createLinkTo(dir:'')}/images/properties/${result.picture[0]}" width="150" height="100" /></td>
-				    <td class="price">Offers Over &pound;${result.minPrice}</td>
-				  </tr>
-                  <g:set var="desc" value="${result.description}" />
-                  <g:if test="${desc.size() > 300}"><g:set var="desc" value="${desc[0..300] + '...'}" /></g:if>
-                  <tr>
-				    <td>${desc.encodeAsHTML()}</td>
-				  </tr>
-				  <tr>
-                    <td></td>
-                    <td class="info"><a href="${link}"> more details</a></td>
-				  </tr>
-				</table>
-				
+	                <g:set var="className" value="${ClassUtils.getShortName(result.getClass())}" />
+	                <g:set var="link" value="${createLink(controller: className[0].toLowerCase() + className[1..-1], action: 'show', id: result.id)}" />
+	                <table width="100%">
+					 <tr>
+					    <td width="21%">Reference: ${result.id}</td>
+					    <td width="79%" class="fullAddress">${result.address}, ${result.city}, ${result.postCode}</td>
+					  </tr>
+					  <tr>
+					    <td width="21%" rowspan="2"><img src="${createLinkTo(dir:'')}/images/properties/${result.picture[0]}" width="150" height="100" /></td>
+					    <td class="price">Offers Over &pound;${result.minPrice}</td>
+					  </tr>
+	                  <g:set var="desc" value="${result.description}" />
+	                  <g:if test="${desc.size() > 300}"><g:set var="desc" value="${desc[0..300] + '...'}" /></g:if>
+	                  <tr>
+					    <td>${desc}</td>
+					  </tr>
+					  <tr>
+	                    <td></td>
+	                    <td class="info"><a href="${link}"> more details</a></td>
+					  </tr>
+					</table>
 				</g:each>
 			</div>
 
@@ -93,7 +118,7 @@
 	              Page:
 	              <g:set var="totalPages" value="${Math.ceil(searchResult.total / searchResult.max)}" />
 	              <g:if test="${totalPages == 1}"><span class="currentStep">1</span></g:if>
-	              <g:else><g:paginate controller="searchable" action="index" params="[q: params.q]" total="${searchResult.total}" prev="&lt; previous" next="next &gt;"/></g:else>
+	              <g:else><g:paginate controller="property" action="list" params="[q: params.q]" total="${searchResult.total}" prev="&lt; previous" next="next &gt;"/></g:else>
 				</g:if>
             </div>
             </g:elseif>
