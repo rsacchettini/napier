@@ -115,7 +115,7 @@
                                    <label for="category">Type of property:</label>
                                </td>
                                <td valign="top" class="value ${hasErrors(bean:property,field:'category','errors')}">
-									<g:select name="category" from="${['House', 'Flat']}" value="${fieldValue(bean:property,field:'category')} />
+                                    <g:select id="category" name="category" from="${property.constraints.category.inList.collect{it.encodeAsHTML()}}" value="${fieldValue(bean:property,field:'category')}" ></g:select>
                                </td>
                            </tr>
                            <tr class="prop">
@@ -123,7 +123,7 @@
                                    <label for="description">Description:</label>
                                </td>
                                <td valign="top" class="value ${hasErrors(bean:property,field:'description','errors')}">
-                                   <textarea id="description" name="description" rows="6" cols="100">${fieldValue(bean:property,field:'description')}</TEXTAREA>
+                                   <textarea id="description" name="description" rows="6" cols="300">${fieldValue(bean:property,field:'description')}</TEXTAREA>
 								   <!--<richui:richTextEditor name="description" type="advanced" value="${fieldValue(bean:property,field:'description')}" width="525" />-->
 							   </td>
                            </tr>
@@ -139,7 +139,7 @@
 
                            <tr class="prop">
                                <td valign="top" class="name">
-                                   <label for="isManagedBy">Is Managed By:</label>
+                                   <label for="isManagedBy">This property will be Managed By:</label>
                                </td>
                                <td valign="top" class="value ${hasErrors(bean:property,field:'isManagedBy','errors')}">
                                    <g:select optionKey="id" from="${EstateAgent.list()}" name="isManagedBy.id" value="${property?.isManagedBy?.id}" ></g:select>

@@ -1,6 +1,6 @@
 class Property
 {
-    static searchable = True //[only: ['category', 'postCode','minPrice','bedroomNumber']]
+    static searchable = [only: ['category', 'postCode','minPrice','bedroomNumber']]
     Seller isSoldBy
     EstateAgent isManagedBy
 
@@ -22,11 +22,12 @@ class Property
         city(blank:false)
         postCode(blank:false, matches:/^(GIR 0AA)|([A-PR-UWYZ]((\d(\d|[A-HJKSTUW])?)|([A-HK-Y]\d(\d|[ABEHMNPRV-Y])?)) \d[ABD-HJLNP-UW-Z]{2})$/)
         minPrice(min:1)
-		category(blank:false)
+		category(blank:false, inList:['', 'Flat','Detached house','Semi-det. house','Terraced','Conversion','Bungalow','Cottage','Mews','Townhouse','Plot'])
         description(blank:false, maxLength:1000)
         bedroomNumber(min:0)
         picture(nullable:true)
         pictureType(nullable:true)
+		validated(nullable:true)
 
     }
 
