@@ -24,7 +24,8 @@
 			  <tr>
 			    <td>
 					<label>Type of property
-				        <g:select name="qCategory" from="${['','House', 'Flat']}" value="${params.qCategory}"/>
+						<g:select id="category" name="qCategory" from="${property.constraints.category.inList.collect{it.encodeAsHTML()}}" value="${params.qCategory}" ></g:select>
+				        
 				    </label>
 			    </td>
 			    <!--<td>

@@ -79,7 +79,7 @@
                                    <label for="category">Type of property:</label>
                                </td>
                                <td valign="top" class="value ${hasErrors(bean:property,field:'category','errors')}">
-                                   <input type="text" id="category" name="category" value="${fieldValue(bean:property,field:'category')}" />
+                                    <g:select id="category" name="category" from="${property.constraints.category.inList.collect{it.encodeAsHTML()}}" value="${fieldValue(bean:property,field:'category')}" ></g:select>
                                </td>
                            </tr>
 						   

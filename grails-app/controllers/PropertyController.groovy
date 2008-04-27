@@ -14,6 +14,11 @@ class PropertyController {
     def allowedMethods = [delete:'POST', save:'POST', update:'POST']
 
     def listAll = {
+		// To get the list of type of property from the model class
+			// I don't know if it exists a solution without instancing a class Property???
+			def property = new Property()
+	        property.properties = params
+		
 		 if(params.isPersonalList != null && params.isPersonalList == "true")
 		 {
 			 def principal = PrincipalService.getPrincipal()
@@ -27,7 +32,7 @@ class PropertyController {
 						def sellerProperties = seller?.sellProperties
 						if(sellerProperties != null)
 						{// if the logged user is a seller then retrieve his properties.
-							return [propertyList: sellerProperties]
+							return ['property':property, propertyList: sellerProperties]
 						}
 					 }
 				 }
@@ -39,7 +44,7 @@ class PropertyController {
 						def buyerInterestList = buyer?.listedProperties;
 						if(buyerInterestList != null)
 						{// if the logged user is a seller then retrieve his properties.
-							return [propertyList: buyerInterestList]
+							return ['property':property, propertyList: buyerInterestList]
 						}
 					 }
 				 }
@@ -48,7 +53,7 @@ class PropertyController {
 		else
 		{
 			if(!params.max) params.max = 10
-        	return [ propertyList: Property.list( params ) ]
+        	return [ 'property':property, propertyList: Property.list( params ) ]
 		}	
     }
 
@@ -414,14 +419,21 @@ class PropertyController {
      * Index page with search form and results
      */
 	def list = {
-        if (!params.qPostCode?.trim() && !params.qCategory?.trim() && !params.qnbBedR?.trim()) {
-            return [:]
+		// To get the list of type of property from the model class
+		// I don't know if it exists a solution without instancing a class Property???
+		def property = new Property()
+        property.properties = params
+       
+        if (!params.qPostCode?.trim() && params.qCategory.equals("") && !params.qnbBedR?.trim()) {
+		
+			redirect(action:listAll)
+            //return ['property':property]
         }
         try {
         //    render(view:'/searchable/index', searchResult: searchableService.search(params.q, params))
 			def q
 			if (!params.qCategory.equals(""))
-				q = "category:"+params.qCategory
+				q = "category:\""+params.qCategory+"\""
 				
 			if(!params.qPostCode.equals("") && params.qCategory.equals(""))
 				q ="postCode:"+params.qPostCode
@@ -435,7 +447,7 @@ class PropertyController {
 			
 			//println q
 			// Call searchable service
-			return [searchResult: searchableService.search(q, params)]
+			return ['property':property, searchResult: searchableService.search(q, params)]
         } catch (SearchEngineQueryParseException ex) {
             return [parseException: true]
         }
