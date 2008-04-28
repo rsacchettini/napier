@@ -29,9 +29,9 @@
 				    </label>
 			    </td>
 			    <td>
-				    <label>Offer min
-				        <g:select name="qOffer" from="${['','10000','50000','100000','500000','700000','1000000']}"/>
-				    </label>
+				    <label>Offer
+						<input type="text" name="qOfferMin" value="${params.qOfferMin}" size="5" /> to <input type="text" name="qOfferMax" value="${params.qOfferMax}" size="5" />
+					</label>
 			    </td>
 				<td>
 					<label>Number of bedroom

@@ -3,6 +3,7 @@ import java.text.SimpleDateFormat
 import javax.imageio.*
 import grails.converters.*
 import org.compass.core.engine.SearchEngineQueryParseException
+import org.compass.core.engine.SearchEngineQueryFilter
 
 class PropertyController {
 	def searchableService
@@ -14,10 +15,6 @@ class PropertyController {
     def allowedMethods = [delete:'POST', save:'POST', update:'POST']
 
     def listAll = {
-		// To get the list of type of property from the model class
-			// I don't know if it exists a solution without instancing a class Property???
-			/*def property = new Property()
-	        property.properties = params */
 		
 		 if(params.isPersonalList != null && params.isPersonalList == "true")
 		 {
@@ -440,8 +437,10 @@ class PropertyController {
 				q = "bedroomNumber:"+params.qnbBedR
 			else if (!params.qnbBedR.equals(""))
 				q =q+" AND bedroomNumber:"+params.qnbBedR
-			
-			//println q
+
+            //q = q + "AND minPrice:["+params.qOfferMin+" TO "+params.qOfferMax+"]"
+			//q = q + " AND minPrice:[ 0 TO 10000000 ]"
+            //println q
 			// Call searchable service
 			return [searchResult: searchableService.search(q, params)]
         } catch (SearchEngineQueryParseException ex) {

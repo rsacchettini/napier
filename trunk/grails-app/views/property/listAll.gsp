@@ -20,11 +20,11 @@
                         <g:select id="category" name="qCategory" from="${Property.constraints.category.inList.collect{it.encodeAsHTML()}}" value="${params.qCategory}" ></g:select>
 				    </label>
 			    </td>
-			    <!--<td>
-				    <label>*Offer
-				        <g:select name="qOffer" from="${['','100000', '200000']}"/>
-				    </label>
-			    </td>-->
+				<td>
+					<label>Offer
+						<input type="text" name="qOfferMin" value="${params.qOfferMin}" size="5" /> To <input type="text" name="qOfferMax" value="${params.qOfferMax}" size="5" />
+					</label>
+				</td>
 				<td>
 					<label>Number of bedroom
 						<input type="text" name="qnbBedR" value="${params.qnbBedR}" size="2" />
