@@ -24,15 +24,15 @@
 			  <tr>
 			    <td>
 					<label>Type of property
-						<g:select id="category" name="qCategory" from="${property.constraints.category.inList.collect{it.encodeAsHTML()}}" value="${params.qCategory}" ></g:select>
+						<g:select id="category" name="qCategory" from="${Property.constraints.category.inList.collect{it.encodeAsHTML()}}" value="${params.qCategory}" ></g:select>
 				        
 				    </label>
 			    </td>
-			    <!--<td>
-				    <label>*Offer
-				        <g:select name="qOffer" from="${['','100000', '200000']}"/>
+			    <td>
+				    <label>Offer min
+				        <g:select name="qOffer" from="${['','10000','50000','100000','500000','700000','1000000']}"/>
 				    </label>
-			    </td>-->
+			    </td>
 				<td>
 					<label>Number of bedroom
 						<input type="text" name="qnbBedR" value="${params.qnbBedR}" size="2" />
