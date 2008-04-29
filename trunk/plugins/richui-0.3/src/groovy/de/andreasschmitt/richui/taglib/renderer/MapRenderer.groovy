@@ -22,10 +22,10 @@ class MapRenderer extends AbstractRenderer {
 			builder.yieldUnescaped "//<![CDATA[\n"
 			builder.yieldUnescaped "var $attrs.mapIntegrationVar;\n"
 			
-			if(!(attrs?.immediate && attrs.immediate == "true")){
-				builder.yieldUnescaped "addEvent(window, \"load\", \n"
-				builder.yieldUnescaped "function () {\n"	
-			}	
+			//if(!(attrs?.immediate && attrs.immediate == "true")){
+				//builder.yieldUnescaped "addEvent(window, \"load\", \n"
+				builder.yieldUnescaped "showMap = function() {\n"
+			//}
 			
 			builder.yieldUnescaped "	" + attrs.mapIntegrationVar + " = new GoogleMapIntegration();\n"
 			builder.yieldUnescaped "	" + attrs.mapIntegrationVar + ".setDirectionsId(\"${dirId}\");\n"
@@ -66,10 +66,10 @@ class MapRenderer extends AbstractRenderer {
 				builder.yieldUnescaped "	" + attrs.mapIntegrationVar + ".load(new GLatLng($attrs.lat, $attrs.lng));\n"				
 			}
 			
-			if(!(attrs?.immediate && attrs.immediate == "true")){
+			//if(!(attrs?.immediate && attrs.immediate == "true")){
 				builder.yieldUnescaped "}\n"
-				builder.yieldUnescaped ", false);\n"
-			}
+				//builder.yieldUnescaped ", false);\n"
+			//}
 			
 			builder.yieldUnescaped "window.onunload = function () {\n"
 			builder.yieldUnescaped "	GUnload();\n"

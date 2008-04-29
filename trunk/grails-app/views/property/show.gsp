@@ -1,12 +1,14 @@
 <resource:carousel/>
 <resource:googlemaps key="ABQIAAAAPV8yFSv3BrLOmXDSgOZToBSZdinvBdzatcCUIyBeKyYBtjjO1RTYrMLX9IGAE-tlgH2Br-wU1D-D6g" />
+<g:javascript src="mapManagement.js"/>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <meta name="layout" content="main" />
         <title><g:message code="property.showTitle"/></title>
-    </head>
-    <body>
+		<g:javascript library="prototype" />
+	</head>
+    <body onload="document.getElementById('mapForm').submit();">
         <div class="nav">
             <span class="menuButton"><a class="home" href="${createLinkTo(dir:'')}">Home</a></span>
             <span class="menuButton"><g:link class="list" action="list">Property List</g:link></span>
@@ -93,7 +95,25 @@
                         </tr>
 
                         <tr class="prop">
-                            <td valign="top" class="value"><richui:googlemaps lat="${resultLat}" lng="${resultLng}" /></td>
+
+                            <td valign="top" class="name">Map:</td>
+
+                            <td valign="top" class="description">
+
+									<div id="map"></div>
+									<g:remoteLink action="showMap" id="1" onComplete ="executeMap(e);" update="[success:'map',failure:'error']" params="[lat:resultLat, lng:resultLng]">Show google map</g:remoteLink>
+								    <g:formRemote name="mapForm" on404="alert('not found!')" onComplete="executeMap(e);" update="map" action="showMap" url="${[action:'showMap']}">
+									 	<input type="hidden" name="lat" value="${resultLat}" />
+										<input type="hidden" name="lng" value="${resultLng}" />
+										<input type="submit" id="buttonMap" value="ok" />
+									</g:formRemote>
+								
+
+								<div id="error"></div>
+
+								
+							</td>
+
                         </tr>
 
                     </tbody>
