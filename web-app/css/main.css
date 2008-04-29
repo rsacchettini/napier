@@ -36,6 +36,7 @@ h1 {
     font-weight: bold;
     font-size: 16px;
 	text-align:right;
+	padding-right:10px;
 }
 
 ul {
@@ -45,7 +46,7 @@ ul {
 input, select, textarea {
     background-color: #fcfcfc;
     border: 1px solid #ccc;
-    font: 11px verdana, arial, helvetica, sans-serif;
+    font: 12px verdana, arial, helvetica, sans-serif;
     margin: 2px 0;
     padding: 2px 4px;
 }
@@ -53,7 +54,7 @@ select {
    padding: 2px 2px 2px 0;
 }
 textarea {
-	width: 250px;
+	width: 300px;
 	height: 150px;
 	vertical-align: top;
 }
@@ -270,7 +271,8 @@ td, th {
     vertical-align: top;
 }
 th {
-    background: #fff url(../images/skin/shadow2.jpg);
+   /* background: #fff url(../images/skin/shadow2.jpg);*/
+   background: #E4E4E4;
     color: #666;
     font-size: 11px;
     font-weight: bold;
@@ -370,6 +372,7 @@ th.desc a {
 
 .dialog table {
     padding: 5px 0;
+	
 }
 
 .prop {
@@ -377,12 +380,14 @@ th.desc a {
 }
 .prop .name {
     text-align: left;
-    width: 15%;
+    width: 30%;
     white-space: nowrap;
+	font-size:12px;
 }
 .prop .value {
     text-align: left;
-    width: 85%;
+    width: 70%;
+	font-style:italic;
 }
 
 /* ACTION BUTTONS */

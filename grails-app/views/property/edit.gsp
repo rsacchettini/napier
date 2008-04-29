@@ -161,7 +161,7 @@
 
                                 </td>
                             </tr> 
-                        
+							<g:ifAnyGranted role="ROLE_ESTATEAGENT">
                             <tr class="prop">
                                 <td valign="top" class="name">
                                     <label for="isManagedBy">Is Managed By:</label>
@@ -170,7 +170,7 @@
                                     <g:select optionKey="id" from="${EstateAgent.list()}" name="isManagedBy.id" value="${property?.isManagedBy?.id}" ></g:select>
                                 </td>
                             </tr> 
-                        
+							
                             <tr class="prop">
                                 <td valign="top" class="name">
                                     <label for="isSoldBy">Is Sold By:</label>
@@ -179,7 +179,7 @@
                                     <g:select optionKey="id" from="${Seller.list()}" name="isSoldBy.id" value="${property?.isSoldBy?.id}" ></g:select>
                                 </td>
                             </tr> 
-                        
+							
                             <tr class="prop">
                                 <td valign="top" class="name">
                                     <label for="validated">Validated:</label>
@@ -188,7 +188,7 @@
                                     <g:checkBox name="validated" value="${property?.validated}" ></g:checkBox>
                                 </td>
                             </tr> 
-                        
+							</g:ifAnyGranted>
                         </tbody>
                     </table>
                 </div>

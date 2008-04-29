@@ -6,38 +6,45 @@
         <title><g:message code="property.listTitle"/></title>
     </head>
     <body>
+		<g:ifAnyGranted role="ROLE_SELLER">
         <div class="nav">
-			<g:ifAnyGranted role="ROLE_SELLER">
 				<span class="menuButton"><g:link class="create" action="create"><g:message code="property.create"/></g:link></span>
-			</g:ifAnyGranted>	
+				
 		</div>
+		</g:ifAnyGranted>
 		 <div id="searchField">
             <g:form url='[controller: "property", action: "list"]' id="searchableForm" name="searchableForm" method="get">
-			<table width="100%" border="0">
+			<table width="100%">
 			  <tr>
 			    <td>
-					<label>Type of property
-                        <g:select id="category" name="qCategory" from="${Property.constraints.category.inList.collect{it.encodeAsHTML()}}" value="${params.qCategory}" ></g:select>
-				    </label>
+			    	<label>Type of property <g:select id="category" name="qCategory" from="${Property.constraints.category.inList.collect{it.encodeAsHTML()}}" value="${params.qCategory}" ></g:select>
+			        </label>
 			    </td>
-				<td>
-					<label>Offer
-						<input type="text" name="qOfferMin" value="${params.qOfferMin}" size="5" /> To <input type="text" name="qOfferMax" value="${params.qOfferMax}" size="5" />
-					</label>
-				</td>
-				<td>
-					<label>Number of bedroom
-						<input type="text" name="qnbBedR" value="${params.qnbBedR}" size="2" />
-			        </label>
-				</td>
 			    <td>
-					<label>Post code
-						<input type="text" name="qPostCode" value="${params.qPostCode}" size="8" />
-			        </label>
-				</td>
-				<td>
-					<input type="submit" value="Search" />
-				</td>
+			    	<!--<label>Offer <input type="text" name="qOfferMin" value="${params.qOfferMin}" size="5" /> to <input type="text" name="qOfferMax" value="${params.qOfferMax}" size="5" />
+					</label>-->
+			    </td>
+			    <td>
+			    	<label>Number of bedroom <input type="text" name="qnbBedR" value="${params.qnbBedR}" size="2" /></label>
+			    </td>
+			    <td>
+			    	<label>Post code <input type="text" name="qPostCode" value="${params.qPostCode}" size="8" /></label>
+			    </td>
+			    <td><input type="submit" value="Search" /></td>
+			  </tr>
+			  <tr>
+			    <td colspan="5">
+			        <table>
+			            <tr>
+			                <g:sortableColumn property="id" title="Reference" />
+			                <g:sortableColumn property="address" title="Address" />
+			                <g:sortableColumn property="city" title="City" />
+			                <g:sortableColumn property="postCode" title="Post Code" />
+			                <g:sortableColumn property="minPrice" title="Price" />
+			                <g:sortableColumn property="description" title="Description" />    
+			            </tr>
+			        </table>
+			    </td>
 			  </tr>
 			</table>
 			</g:form>
@@ -48,23 +55,6 @@
             <div class="message">${flash.message}</div>
             </g:if>
             <div class="list">
-                <table>
-                    <tr>
-                        
-                        <g:sortableColumn property="id" title="Reference" />
-
-                        <g:sortableColumn property="address" title="Address" />
-
-                        <g:sortableColumn property="city" title="City" />
-
-                        <g:sortableColumn property="postCode" title="Post Code" />
-
-                        <g:sortableColumn property="minPrice" title="Price" />
-
-                        <g:sortableColumn property="description" title="Description" />
-
-                    </tr>
-                </table>
                 <g:each in="${propertyList}" status="i" var="property">
 
 					<table width="100%">

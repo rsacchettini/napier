@@ -20,32 +20,28 @@
 		</div>
         <div id="searchField">
             <g:form url='[controller: "property", action: "list"]' id="searchableForm" name="searchableForm" method="get">
-			<table width="100%" border="0">
+			<table width="100%">
 			  <tr>
 			    <td>
-					<label>Type of property
-						<g:select id="category" name="qCategory" from="${Property.constraints.category.inList.collect{it.encodeAsHTML()}}" value="${params.qCategory}" ></g:select>
-				        
-				    </label>
+			    	<label>Type of property <g:select id="category" name="qCategory" from="${Property.constraints.category.inList.collect{it.encodeAsHTML()}}" value="${params.qCategory}" ></g:select>
+			        </label>
 			    </td>
 			    <td>
-				    <label>Offer
-						<input type="text" name="qOfferMin" value="${params.qOfferMin}" size="5" /> to <input type="text" name="qOfferMax" value="${params.qOfferMax}" size="5" />
-					</label>
+			    	<!--<label>Offer <input type="text" name="qOfferMin" value="${params.qOfferMin}" size="5" /> to <input type="text" name="qOfferMax" value="${params.qOfferMax}" size="5" />
+					</label>-->
 			    </td>
-				<td>
-					<label>Number of bedroom
-						<input type="text" name="qnbBedR" value="${params.qnbBedR}" size="2" />
-			        </label>
-				</td>
 			    <td>
-					<label>Post code
-						<input type="text" name="qPostCode" value="${params.qPostCode}" size="8" />
-			        </label>
-				</td>
-				<td>
-					<input type="submit" value="Search" />
-				</td>
+			    	<label>Number of bedroom <input type="text" name="qnbBedR" value="${params.qnbBedR}" size="2" /></label>
+			    </td>
+			    <td>
+			    	<label>Post code <input type="text" name="qPostCode" value="${params.qPostCode}" size="8" /></label>
+			    </td>
+			    <td><input type="submit" value="Search" /></td>
+			  </tr>
+			  <tr>
+			    <td colspan="5">
+			   
+			    </td>
 			  </tr>
 			</table>
 			</g:form>
