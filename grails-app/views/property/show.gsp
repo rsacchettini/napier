@@ -22,8 +22,7 @@
             <div class="dialog">
 				<table>
                     <tbody>
-                        <tr class="prop">
-                            <td valign="top" class="name">Ref: ${property.id}</td>
+                        <tr>
                             <td valign="top" class="fullAddress2">${property.address}, ${property.city}, ${property.postCode}</td>
                         </tr>
 
@@ -32,7 +31,6 @@
 				</tr>
 
                          <tr class="prop">
-                            <td valign="top" class="name">Pictures :</td> 
                             <td valign="top" align="middle" class="value">
 							   <table>
 									<tr>
@@ -41,54 +39,61 @@
 									   </richui:carousel>
 									</tr>
 								</table>
-							</td>              
+							</td>               
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name">Asking Price:</td>
                             <td valign="top" class="price2">Offers Over &pound;${property.minPrice}</td>
                         </tr>
-						
-						<tr class="prop">
-                            <td valign="top" class="name">Type of property:</td>
-                            <td valign="top" class="category">${property.category}</td>
-                        </tr>
+
+				<tr class="prop">
+				    <td valign="top" class="title">Description</td>
+				</tr>
 						
                         <tr class="prop">
-                            <td valign="top" class="name">Description:</td>
                             <td valign="top" class="description">${property.description}</td>
                         </tr>
+
+				<tr class="prop">
+				    <td valign="top" class="title">Property Type</td>
+				</tr>
+
+				<tr class="prop">
+                            <td valign="top" class="description">${property.category}</td>
+                        </tr>
+
+				<tr class="prop">
+				    <td valign="top" class="title">Number of Bedrooms</td>
+				</tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name">Bedrooms:</td>
                             <td valign="top" class="description">${property.bedroomNumber}</td>
                         </tr>
+
+				<tr class="prop">
+				    <td valign="top" class="title">Appointments</td>
+				</tr>
                     
-                        <tr class="prop">
-                            <td valign="top" class="name">Appointments:</td>
-                            
+                        <tr class="prop">               
                             <td  valign="top" style="text-align:left;" class="description">
                                 <ul>
                                 <g:each var="a" in="${property.appointments}">
                                     <li><g:link controller="appointment" action="show" id="${a.id}">${a}</g:link></li>
                                 </g:each>
                                 </ul>
-                            </td>
-                            
+                            </td>               
                         </tr>
+
+				<tr class="prop">
+				    <td valign="top" class="title">Available Viewing Slots</td>
+				</tr>
                     
-                        <tr class="prop">
-                            <td valign="top" class="name">Visit periods:</td>
-                            
-                            <td valign="top" class="description"><g:datesDisp mode="view" beanid="${property.id}"/></td>
-                            
+                        <tr class="prop">                         
+                            <td valign="top" class="description"><g:datesDisp mode="view" beanid="${property.id}"/></td>                        
                         </tr>
+
                         <tr class="prop">
-
-                            <td valign="top" class="name">Map:</td>
-
-                            <td valign="top" class="description"><richui:googlemaps lat="${resultLat}" lng="${resultLng}" /></td>
-
+                            <td valign="top" class="value"><richui:googlemaps lat="${resultLat}" lng="${resultLng}" /></td>
                         </tr>
 
                     </tbody>
