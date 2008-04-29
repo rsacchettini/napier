@@ -152,7 +152,7 @@
                                </td>
                            </tr>
 						   
-							<g:ifAnyGranted role="ROLE_ESTATEAGENT">
+							
 							<tr class="prop">
                                <td valign="top" class="name">
                                    <label for="isSoldBy">Is Sold By:</label>
@@ -163,7 +163,7 @@
 		                                <input type="text" disabled="true" value="${(Seller?.findByUsername(PrincipalService?.getPrincipal()?.getUsername()))?.id}" />
 								   </g:ifAnyGranted>
                                </td>
-                           </tr>
+                           </tr><g:ifAnyGranted role="ROLE_ESTATEAGENT">
                            <tr class="prop">
                                <td valign="top" class="name">
                                    <label for="validated">Validated:</label>
