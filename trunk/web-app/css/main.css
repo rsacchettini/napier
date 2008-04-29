@@ -399,6 +399,44 @@ th.desc a {
     width: 70%;
 	font-style:italic;
 }
+/* PROPERTY SHOW */
+.property table {
+	width:100%;
+	border: 1px solid #ccc;
+	
+}
+.property tr {
+	border: 1px solid #ccc;
+	
+}
+.property .fullAddress {
+    font-size:24px;
+    font-weight: bold;
+    text-align:center;
+	padding-bottom: 20px;
+}
+.property .price {
+	font-size:18px;
+	font-weight: normal;
+	text-align:center;
+	color: #006633;
+	padding-bottom: 20px;
+}
+
+.property .titleSection {
+	padding-left: 10px;
+    font-size:14px;
+    font-weight: bold;
+	color: #FFFFFF;
+	background-color: #CC0000;
+	
+}
+.property .valueSection {
+	padding: 5px 5px 20px 5px;
+    font-size:12px;
+	color: #000000;
+	text-align:justify;
+}
 
 /* ACTION BUTTONS */
 
