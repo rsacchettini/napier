@@ -524,11 +524,11 @@ class PropertyController {
         if (!params.qPostCode?.trim() && params.qCategory.equals("") && !params.qnbBedR?.trim()) {
 		
 			redirect(action:listAll)
-            return ['property':property]
+            //return ['property':property]
         }
         try {
         //    render(view:'/searchable/index', searchResult: searchableService.search(params.q, params))
-			def q
+			def q=""
 			if (!params.qCategory.equals(""))
 				q = "category:\""+params.qCategory+"\""
 				
