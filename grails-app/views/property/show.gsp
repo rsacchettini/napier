@@ -21,102 +21,79 @@
             <g:if test="${flash.message}">
             <div class="message">${flash.message}</div>
             </g:if>
-            <div class="dialog">
+			<div class="property">
 				<table>
-                    <tbody>
-                        <tr>
-                            <td valign="top" class="fullAddress2">${property.address}, ${property.city}, ${property.postCode}</td>
-                        </tr>
-
-				<tr class="prop">
-				<td></td>
-				</tr>
-
-                         <tr class="prop">
-                            <td valign="top" align="middle" class="value">
-							   <table>
-									<tr>
-									   <richui:carousel direction="horizontal" carouselStyle="height: 210px;" itemsStyle="height: 200px;">
-											<g:imageDisp2 id="imgDisp" mode="view" beanid="${property.id}" />
-									   </richui:carousel>
-									</tr>
-								</table>
-							</td>               
-                        </tr>
-                    
-                        <tr class="prop">
-                            <td valign="top" class="price2">Offers Over &pound;${property.minPrice}</td>
-                        </tr>
-
-				<tr class="prop">
-				    <td valign="top" class="title">Description</td>
-				</tr>
-						
-                        <tr class="prop">
-                            <td valign="top" class="description">${property.description}</td>
-                        </tr>
-
-				<tr class="prop">
-				    <td valign="top" class="title">Property Type</td>
-				</tr>
-
-				<tr class="prop">
-                            <td valign="top" class="description">${property.category}</td>
-                        </tr>
-
-				<tr class="prop">
-				    <td valign="top" class="title">Number of Bedrooms</td>
-				</tr>
-                    
-                        <tr class="prop">
-                            <td valign="top" class="description">${property.bedroomNumber}</td>
-                        </tr>
-
-				<tr class="prop">
-				    <td valign="top" class="title">Appointments</td>
-				</tr>
-                    
-                        <tr class="prop">               
-                            <td  valign="top" style="text-align:left;" class="description">
-                                <ul>
-                                <g:each var="a" in="${property.appointments}">
-                                    <li><g:link controller="appointment" action="show" id="${a.id}">${a}</g:link></li>
-                                </g:each>
-                                </ul>
-                            </td>               
-                        </tr>
-
-				<tr class="prop">
-				    <td valign="top" class="title">Available Viewing Slots</td>
-				</tr>
-                    
-                        <tr class="prop">                         
-                            <td valign="top" class="description"><g:datesDisp mode="view" beanid="${property.id}"/></td>                        
-                        </tr>
-
-                        <tr class="prop">
-
-                            <td valign="top" class="description">
-
-									<div id="map"></div>
-									<g:remoteLink action="showMap" id="1" onComplete ="executeMap(e);" update="[success:'map',failure:'error']" params="[lat:resultLat, lng:resultLng]">Show google map</g:remoteLink>
-								    <g:formRemote name="mapForm" on404="alert('not found!')" onComplete="executeMap(e);" update="map" action="showMap" url="${[action:'showMap']}">
-									 	<input type="hidden" name="lat" value="${resultLat}" />
-										<input type="hidden" name="lng" value="${resultLng}" />
-										<input type="submit" id="buttonMap" value="ok" />
-									</g:formRemote>
-								
-
-								<div id="error"></div>
-
-								
-							</td>
-
-                        </tr>
-
-                    </tbody>
-                </table>
-            </div>
+				  <tr>
+					<td class="fullAddress">${property.address}, ${property.city}, ${property.postCode}</td>
+				  </tr>
+				  <tr>
+					<td align="center">
+						<div>
+							<richui:carousel direction="horizontal" carouselStyle="height: 210px;" itemsStyle="height: 200px;">
+								<g:imageDisp2 id="imgDisp" mode="view" beanid="${property.id}" />
+						   </richui:carousel>
+					   </div>
+					</td>
+				  </tr>
+				  <tr>
+					<td class="price">Offers Over &pound;${property.minPrice}</td>
+				  </tr>
+				  <tr>
+					<td class="titleSection">Key features</td>
+				  </tr>
+				  <tr>
+					<td class="valueSection">
+						<ul>
+							<li>Property Type : ${property.category}</li>
+							<li>Number of Bedrooms : ${property.bedroomNumber}</li>
+						</ul>
+					</td>
+					</tr>
+				  <tr>
+					<td class="titleSection">Description</td>
+				  </tr>
+				  <tr>
+					<td class="valueSection">${property.description}</td>
+				  </tr>
+				   <tr>
+					<td class="titleSection">Apointments
+				  <tr class="valueSection">
+					<td>
+						<ul>
+							<g:each var="a" in="${property.appointments}">
+			                <li><g:link controller="appointment" action="show" id="${a.id}">${a}</g:link></li>
+			                </g:each>			
+						</ul>
+					</td>
+				  </tr>
+				  <tr>
+					<td class="titleSection">Available Viewing Slots</td>
+				  </tr>
+				  <tr>
+					<td class="valueSection"><g:datesDisp mode="view" beanid="${property.id}"/></td>
+				  </tr>
+				  <tr>
+					<td class="titleSection">Map</td>
+				  </tr>
+				  <tr>
+					<td align="center">
+						<div id="map"></div>
+						<g:remoteLink action="showMap" id="1" onComplete ="executeMap(e);" update="[success:'map',failure:'error']" params="[lat:resultLat, lng:resultLng]">Show google map</g:remoteLink>
+						<g:formRemote name="mapForm" on404="alert('not found!')" onComplete="executeMap(e);" update="map" action="showMap" url="${[action:'showMap']}">
+							<input type="hidden" name="lat" value="${resultLat}" />
+							<input type="hidden" name="lng" value="${resultLng}" />
+							<input type="submit" id="buttonMap" value="ok" />
+						</g:formRemote>
+						<div id="error"></div>
+					</td>
+				  </tr>
+				  <tr>
+				  <td>The indicator on the above map does not necessarily indicate the exact position of the property and should therefore only be taken as a proximity indicator. Positions outside of built up areas are likely to be less accurate then those in built up areas. Maps are provided by GoogleMaps.
+			We cannot plot positions outside of the UK
+				  </td>
+				  </tr>
+				</table>
+			</div>
             <div class="buttons">
                 <g:form>
                     <input type="hidden" name="id" value="${property?.id}" />
