@@ -323,26 +323,36 @@ th.desc a {
     font-weight: bold;
 }
 
-.fullAddress2 {
-    font-size:20px;
-    font-weight: bold;
-}
-
 .price {
     color: #b2d1ff;
     font-size:12px;
 }
 
+.info{
+    text-align:right;
+}
+
+/* PROPERTY SHOW */
+
 .price2 {
-    font-size:14px;
+    font-size:18px;
     font-weight: bold;
+    text-align:center;
 }
 
 .description {
     font-size:12px;
 }
-.info{
-    text-align:right;
+
+.fullAddress2 {
+    font-size:24px;
+    font-weight: bold;
+    text-align:center;
+}
+
+.title {
+    font-size:12px;
+    font-weight: bold;
 }
 
 /* PAGINATION */
