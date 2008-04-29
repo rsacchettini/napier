@@ -139,7 +139,8 @@ class PropertyController {
                      }
 				 }
              }
-           redirect(action:list)
+                 			redirect(action:listAll)
+            return ['property':property]
     }
 
     def update = {
@@ -524,7 +525,7 @@ class PropertyController {
         if (!params.qPostCode?.trim() && params.qCategory.equals("") && !params.qnbBedR?.trim()) {
 		
 			redirect(action:listAll)
-            //return ['property':property]
+            return ['property':property]
         }
         try {
         //    render(view:'/searchable/index', searchResult: searchableService.search(params.q, params))
@@ -548,6 +549,7 @@ class PropertyController {
 			// Call searchable service
 			return [searchResult: searchableService.search(q, params)]
         } catch (SearchEngineQueryParseException ex) {
+            
             return [parseException: true]
         }
     }
