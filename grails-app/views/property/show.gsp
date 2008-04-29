@@ -96,8 +96,6 @@
 
                         <tr class="prop">
 
-                            <td valign="top" class="name">Map:</td>
-
                             <td valign="top" class="description">
 
 									<div id="map"></div>
