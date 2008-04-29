@@ -43,7 +43,8 @@ class PropertyController {
 					 def buyer = (Buyer)Buyer.findByUsername(principal.getUsername())
 					 if(buyer != null)
 					 {
-						def buyerInterestList = buyer?.listedProperties;
+                         def b = new Interested(myBuyer:buyer)
+						def buyerInterestList = Interested.findAll(b)
 						if(buyerInterestList != null)
 						{// if the logged user is a seller then retrieve his properties.
 							return [propertyList: buyerInterestList]
@@ -133,8 +134,9 @@ class PropertyController {
 					 def buyer = (Buyer)Buyer.findByUsername(principal.getUsername())
 					 if(buyer != null)
 					 {
-                        property.interestedBuyers.add(buyer)                                    
-					 }
+                        def i = new Interested(myProp: property,myBuyer:buyer)
+                         i.save(flush:true)  
+                     }
 				 }
              }
            redirect(action:list)
@@ -522,7 +524,7 @@ class PropertyController {
         if (!params.qPostCode?.trim() && params.qCategory.equals("") && !params.qnbBedR?.trim()) {
 		
 			redirect(action:listAll)
-            //return ['property':property]
+            return ['property':property]
         }
         try {
         //    render(view:'/searchable/index', searchResult: searchableService.search(params.q, params))
