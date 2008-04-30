@@ -257,7 +257,7 @@
     </modules>
   </component>
   <component name="ProjectRootManager" version="2" assert-keyword="true" jdk-15="true" project-jdk-name="1.6" project-jdk-type="JavaSDK">
-    <output url="file://$PROJECT_DIR$/out" />
+    <output url="file://$PROJECT_DIR$" />
   </component>
   <component name="ResourceManagerContainer">
     <option name="myResourceBundles">
@@ -305,5 +305,8 @@
       </SOURCES>
     </library>
   </component>
+  <UsedPathMacros>
+    <macro name="GRAILS_HOME" />
+  </UsedPathMacros>
 </project>
 
