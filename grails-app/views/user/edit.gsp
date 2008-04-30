@@ -121,38 +121,8 @@
 			    </td>
 				<td valign='top' 
 				    class='value ${hasErrors(bean:person,field:'email_show','errors')}'>
-				  <g:checkBox name='email_show' value="${person?.email_show}" >
+				  <g:checkBox id='email_show' name='email_show' value="${person?.email_show}" >
 				  </g:checkBox>
-				</td>
-			  </tr>
-                  
-			  <tr class='prop'>
-				<td valign='top' class='name'>
-				  <label for='authorities'>Roles:</label>
-				</td>
-	    		<td valign='top' 
-	    			class='value ${hasErrors(bean:person,field:'authorities','errors')}'>
-				  <ul>
-
-
-					<g:set var="list" value="[]"/>
-					<g:each var='b' in="${authorityList.authority}">
-    				  <g:each var='a' in='${person?.authorities?}'>
-    			        <g:if test="${b==~ a.authority}">
-    					  <%if(!list.contains(b)){list.add(b);%>
-    					    <li>${a.authority?.substring(5)?.toLowerCase()?.encodeAsHTML()}
-    						  <g:radio id='role' name='role' value="${true}" ></g:radio>
-    						</li>
-    					  <%}%>
-    					</g:if>
-    				  </g:each>
-    				  <%if(!list.contains(b)){list.add(b);%>
-    				    <li>${b.substring(5)?.toLowerCase()?.encodeAsHTML()}
-    					  <g:radio id='role' name='role' value="${false}" ></g:radio>
-    					</li>
-    				  <%}%>
-    				</g:each>
-				  </ul>
 				</td>
 			  </tr>
                        

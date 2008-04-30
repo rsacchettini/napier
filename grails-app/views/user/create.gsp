@@ -32,7 +32,7 @@
                 </td>
                 <td valign='top' 
                 	class='value ${hasErrors(bean:person,field:'username','errors')}'>
-                  <input type="text" name='username' 
+                  <input type="text" id='username' name='username' 
                   		 value="${person?.username?.encodeAsHTML()}"/>
                 </td>
               </tr>

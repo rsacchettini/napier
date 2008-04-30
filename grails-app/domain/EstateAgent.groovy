@@ -11,8 +11,6 @@ class EstateAgent extends AuthUser {
           return true
       }
 
-
-
     void listSellerProperty() {
 
 	}
