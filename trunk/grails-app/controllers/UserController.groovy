@@ -80,11 +80,15 @@ class UserController {
         def pass = authenticateService.passwordEncoder(ps)
         person.passwd=pass
       }
-      if(person.save()) {
-        def au=Roles.findAll()
+      if(person.save() && !person.hasErrors()) {
+		  flash.message = "User ${params.id} updated"
+		  redirect(action:show,id:person.id)
+		/*
+		def au=Roles.findAll()
         au.each{it.removeFromPeople(person)}
 		def roleauthority = (String)params.role
 		def role = Roles.findByAuthority(roleauthority)
+		*/
 
 		/*
 		if(role.authority == "ROLE_BUYER")
@@ -100,12 +104,14 @@ class UserController {
 			person.city= params.city
 			person.postCode = params.postCode
 		}
-		*/
+
 		if(role.authority != null && role.authority.contains("ROLE")){
 			 role.addToPeople(person)
 		  	println "Role "+role.authority +" has been added"
         	redirect(action:show,id:person.id)
+
 		}
+		*/
 	  }
       else {
         render(view:'edit',model:[person:person])
@@ -128,33 +134,48 @@ class UserController {
   def save = {
     //println "Enter SAVE action in PersonController..."
     def person
-	def role = Roles.findByAuthority(params.role)
-	if(role.authority == "ROLE_BUYER")
+	def role
+	if(params.role != null && (params.role in (["ROLE_BUYER","ROLE_SELLER","ROLE_ESTATEAGENT"])))
+		role = Roles.findByAuthority(params.role)
+	if(role != null)
 	{
-		person = new Buyer()
-		person.properties = params
-	}
-	else if(role.authority == "ROLE_SELLER")
-	{
-		person = new Seller()
-		person.properties = params
-		person.address = params.address
-		person.city= params.city
-		person.postCode = params.postCode
-	}
-	else if(role.authority == "ROLE_ESTATEAGENT")
-	{
-		person = new EstateAgent()
-		person.properties = params
+		if(role.authority == "ROLE_BUYER")
+		{
+			person = new Buyer()
+			person.properties = params
+		}
+		else if(role.authority == "ROLE_SELLER")
+		{
+			person = new Seller()
+			person.properties = params
+			person.address = params.address
+			person.city= params.city
+			person.postCode = params.postCode
+		}
+		else if(role.authority == "ROLE_ESTATEAGENT")
+		{
+			person = new EstateAgent()
+			person.properties = params
+		}
+		else
+		{
+			person = new AuthUser()
+			person.properties = params
+		}
 	}
 	else
 	{
-		person = new AuthUser()
+		 def authorityList1= Roles.list(params)
+		 person = new AuthUser()
+		 person.properties = params
+		 render(view:'create',model:[authorityList:authorityList1,person:person])
+		 return
 	}
-	person.userRealName = "${person.forename} ${person.surname}"
-	def pass = authenticateService.passwordEncoder(params.passwd)
-    person.passwd=pass
-   if(person.save()){
+
+   if(!person.hasErrors() && person.save()){
+	   	  person.userRealName = "${person.forename} ${person.surname}"
+		def pass = authenticateService.passwordEncoder(params.passwd)
+    	person.passwd=pass
 		  if(role.authority != null && role.authority.contains("ROLE")){
 			 role.addToPeople(person)
 		  println "Role "+role.authority +" has been added"

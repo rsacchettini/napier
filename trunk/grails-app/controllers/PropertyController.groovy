@@ -124,7 +124,7 @@ class PropertyController {
         }
     }
 
-      def addInterest = {
+    def addInterest = {
         def property = Property.get( params.id )
         def principal = PrincipalService.getPrincipal()
 			 if(principal!= null)

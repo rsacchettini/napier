@@ -16,7 +16,6 @@ class Property
 	String[] picture
     String[] pictureType
 
-
 	static constraints = {
         address(blank:false, minLength:5)
         city(blank:false)
@@ -30,7 +29,6 @@ class Property
 		validated(nullable:true)
 
     }
-
 
     static belongsTo =  [Seller]
     
