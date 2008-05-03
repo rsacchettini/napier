@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite errors="0" failures="0" hostname="MacBook.local" name="PostCodeServiceTests" tests="4" time="1.436" timestamp="2008-03-26T14:48:06">
+  <properties />
+  <testcase classname="PostCodeServiceTests" name="testPostcodesLoad" time="0.519" />
+  <testcase classname="PostCodeServiceTests" name="testPostcodeLookup" time="0.267" />
+  <testcase classname="PostCodeServiceTests" name="testPointDistance" time="0.27" />
+  <testcase classname="PostCodeServiceTests" name="testSanitize" time="0.228" />
+  <system-out><![CDATA[--Output from testPostcodesLoad--
+Loaded 10337 postcode locations
+--Output from testPostcodeLookup--
+Loaded 10337 postcode locations
+--Output from testPointDistance--
+Loaded 10337 postcode locations
+Point A = <LatLong@c6c730 lat=51.7300056293138 lon=-2.20148797288198> 
+Point B = <LatLong@371acf lat=51.0727255979358 lon=-1.80809044341917>
+dist between codes is 78.01469128835528
+--Output from testSanitize--
+Loaded 10337 postcode locations
+]]></system-out>
+  <system-err><![CDATA[--Output from testPostcodesLoad--
+--Output from testPostcodeLookup--
+--Output from testPointDistance--
+--Output from testSanitize--
+]]></system-err>
+</testsuite>
