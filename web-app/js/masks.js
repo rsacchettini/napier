@@ -89,7 +89,7 @@ Mask.prototype.throwError = function (c, e, v)
 //	alert(e);
 //	une_variable = e;
 //	document.formulaire.inputhidden.value = e;
-	document.frmExample.erreur.value = e;
+	document.searchForm.erreur.value = e;
 	this.error[this.error.length] = e;
 	this.errorCodes[this.errorCodes.length] = c;
 	if( typeof v == "string" ) return v;

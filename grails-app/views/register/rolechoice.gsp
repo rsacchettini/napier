@@ -19,6 +19,15 @@
 		  </g:if>
 		   <g:form action="roleSaveToCredentials" method="post" >
 				<div class="dialog">
+				<table>
+				<tr>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td class="btnAccount"><a href="#">dqsdqs<img src="../images/btn_buyer.png" /></a></td>
+					<td><a href="#" class="btnAccount">sqdqsd<img src="../images/btn_seller.png" /></a></td>
+				</tr>
 				  <table>
 					<tbody>
 

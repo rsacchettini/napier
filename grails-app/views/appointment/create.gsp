@@ -37,10 +37,8 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                    <label for="buyer">Buyer:</label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean:appointment,field:'buyer','errors')}">
-                                    <g:select optionKey="id" from="${Buyer.list()}" name="buyer.id" value="${appointment?.buyer?.id}" ></g:select>
+                                    <input type="hidden" id="buyer.id" name="buyer.id" value="${(Buyer?.findByUsername(PrincipalService?.getPrincipal()?.getUsername()))?.id}" />
+                                    <input type="hidden" id="property.id" name="property.id" value="${id_property}" />
                                 </td>
                             </tr> 
                         
@@ -51,22 +49,12 @@
                                 <td valign="top" class="value ${hasErrors(bean:appointment,field:'isManagedBy','errors')}">
                                     <g:select optionKey="id" from="${EstateAgent.list()}" name="isManagedBy.id" value="${appointment?.isManagedBy?.id}" ></g:select>
                                 </td>
-                            </tr> 
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                    <label for="property">Property:</label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean:appointment,field:'property','errors')}">
-                                    <g:select optionKey="id" from="${Property.list()}" name="property.id" value="${appointment?.property?.id}" ></g:select>
-                                </td>
-                            </tr> 
-                        
+                            </tr>
                         </tbody>
                     </table>
                 </div>
                 <div class="buttons">
-                    <span class="button"><input class="save" type="submit" value="${message(appointment:'create')}" /></span>
+                    <span class="button"><input class="save" type="submit" value="${message(code:'appointment.save')}" /></span>
                 </div>
             </g:form>
         </div>

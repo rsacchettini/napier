@@ -109,6 +109,15 @@ input:focus, select:focus, textarea:focus {
 	padding-right: 3px;
 	padding-top: 0px;
 }
+/*CREATE ACCOUNT*/
+.btnAccount a {
+	border: 0px
+}
+.btnAccount a:hover {
+	border: 4px solid #00000;
+	background: url(../images/skin/house.png);
+	color:#fff;
+}
 
 /* NAVIGATION MENU */
 .indentmenu{
@@ -271,16 +280,16 @@ td, th {
     vertical-align: top;
 }
 th {
-   /* background: #fff url(../images/skin/shadow2.jpg);*/
-   background: #E4E4E4;
-    color: #666;
+   background: url(../images/bg_sort.png) repeat-x;
+  
+    color: #fff; /*#666;#333;*/
     font-size: 11px;
     font-weight: bold;
     line-height: 17px;
     padding: 2px 6px;
 }
 th a:link, th a:visited, th a:hover {
-    color: #333;
+    color: #fff;
     display: block;
     font-size: 10px;
     text-decoration: none;
@@ -304,6 +313,30 @@ th.desc a {
     background: #fff;
 }
 
+/* SEARCH */
+.search table {
+	margin: 10px 0 0 0;
+	border: 0;
+    border-collapse: collapse;
+}
+.search td {
+	text-align:center;
+}
+.search input, select, textarea {
+    background-color: #fcfcfc;
+    border: 1px solid #ccc;
+    font: 14px verdana, arial, helvetica, sans-serif;
+font-weight:bold;	
+}
+.search select {
+
+   padding: 2px 2px 2px 0;
+}
+.search label{
+	color:#fff;
+	font-size:12px;
+	font-weight:bold;
+}
 
 /* LIST */
 
@@ -330,52 +363,6 @@ th.desc a {
 
 .info{
     text-align:right;
-}
-
-/* PROPERTY SHOW */
-
-.price2 {
-    font-size:18px;
-    font-weight: bold;
-    text-align:center;
-}
-
-.description {
-    font-size:12px;
-}
-
-.fullAddress2 {
-    font-size:24px;
-    font-weight: bold;
-    text-align:center;
-}
-
-.title {
-    font-size:12px;
-    font-weight: bold;
-}
-
-/* PAGINATION */
-
-.paginateButtons {
-    /*background: #fff url(../images/skin/shadow2.jpg) bottom repeat-x;
-    border: 1px solid #ccc;*/
-    border-top: 0;
-    color: #666;
-    font-size: 10px;
-    overflow: hidden;
-    padding: 10px 3px;
-}
-.paginateButtons a {
-    background: #fff;
-    border: 1px solid #ccc;
-    border-color: #ccc #aaa #aaa #ccc;
-    color: #666;
-    margin: 0 3px;
-    padding: 2px 6px;
-}
-.paginateButtons span {
-    padding: 2px 3px;
 }
 
 /* DIALOG */
@@ -410,13 +397,13 @@ th.desc a {
 	
 }
 .property .fullAddress {
-    font-size:24px;
+    font-size:20px;
     font-weight: bold;
     text-align:center;
 	padding-bottom: 20px;
 }
 .property .price {
-	font-size:18px;
+	font-size:24px;
 	font-weight: normal;
 	text-align:center;
 	color: #006633;
@@ -437,6 +424,30 @@ th.desc a {
 	color: #000000;
 	text-align:justify;
 }
+
+/* PAGINATION */
+
+.paginateButtons {
+    /*background: #fff url(../images/skin/shadow2.jpg) bottom repeat-x;
+    border: 1px solid #ccc;*/
+    border-top: 0;
+    color: #666;
+    font-size: 10px;
+    overflow: hidden;
+    padding: 10px 3px;
+}
+.paginateButtons a {
+    background: #fff;
+    border: 1px solid #ccc;
+    border-color: #ccc #aaa #aaa #ccc;
+    color: #666;
+    margin: 0 3px;
+    padding: 2px 6px;
+}
+.paginateButtons span {
+    padding: 2px 3px;
+}
+
 
 /* ACTION BUTTONS */
 

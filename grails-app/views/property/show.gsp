@@ -10,10 +10,11 @@
 	</head>
     <body onload="document.getElementById('mapForm').submit();">
         <div class="nav">
-            <span class="menuButton"><a class="home" href="${createLinkTo(dir:'')}">Home</a></span>
-            <span class="menuButton"><g:link class="list" action="list">Property List</g:link></span>
 			<g:ifAnyGranted role="ROLE_SELLER,ROLE_ESTATEAGENT">
-				<span class="menuButton"><g:link class="create" action="create">New Property</g:link></span>
+				<span class="menuButton"><g:link class="create" action="create">${message(code:'property.create')}</g:link></span>
+			</g:ifAnyGranted>
+			<g:ifAnyGranted role="ROLE_BUYER,ROLE_ESTATEAGENT">
+				<span class="menuButton"><g:link class="create" action="create">${message(code:'buyer.addInterest')}</g:link></span>
 			</g:ifAnyGranted>
 		</div>
         <div class="body">
