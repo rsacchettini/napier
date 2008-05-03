@@ -25,7 +25,7 @@ class PropertyController {
                 if (params.qOfferMin!= "" && params.qOfferMax!= "")
                     between('minPrice',Integer.parseInt( params.qOfferMin),Integer.parseInt( params.qOfferMax))
                 if (params.qnbBedR != "")
-                    eq('bedroomNumber',Integer.parseInt( params.qnbBedR))
+					between('bedroomNumber',Integer.parseInt( params.qnbBedR),99)
                 if (params.qPostCode != "")
                     eq('postCode', params.qPostCode)
             }

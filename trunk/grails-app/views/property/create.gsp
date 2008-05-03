@@ -1,5 +1,4 @@
  <resource:dateChooser/>
- <!--<resource:richTextEditor />-->
  <g:javascript src="datesManagement.js"/>
  <g:javascript src="multifile.js"/>
  

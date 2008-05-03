@@ -12,29 +12,41 @@
 		</div>
 		</g:ifAnyGranted>
 		 <div id="searchField">
+			<div class="search">
             <g:form name="searchForm" action="search">
 			<table width="100%">
-			  <tr>
-			    <td>
-			    	<label>Type of property <g:select id="category" name="qCategory" from="${Property.constraints.category.inList.collect{it.encodeAsHTML()}}" value="${params.qCategory}" ></g:select>
-			        </label>
-			    </td>
-                <td>
-			    	<label>Offer <input type="text" name="qOfferMin" value="${params.qOfferMin}" size="5" /> to <input type="text" name="qOfferMax" value="${params.qOfferMax}" size="5" />
-					</label>
-			    </td>
-                <td>
-			    	<label>Min bedroom <input type="text" name="qnbBedR" value="${params.qnbBedR}" size="2" maxlength="2" /></label>
-			    </td>
-			    <td>
-			    	<label>Post code <input type="text" name="qPostCode" value="${params.qPostCode}" size="8" maxlength="8" /></label>
-			    </td>
-
-                <td><g:submitButton name="search" value="Search" /></td>
-			  </tr>
-			  <tr>
-				<td colspan="5">
-					<table>
+				<tr>
+				    <td><label>Type of property</label></td>
+	                <td><label>Offer</label></td>
+	                <td><label>Min bedroom</label></td>
+				    <td><label>Post code </label></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><g:select id="category" name="qCategory" from="${Property.constraints.category.inList.collect{it.encodeAsHTML()}}" value="${params.qCategory}" ></g:select></td>
+					<td><input type="text" name="qOfferMin" value="${params.qOfferMin}" size="10" /><label> to </label><input type="text" name="qOfferMax" value="${params.qOfferMax}" size="10" /></td>
+					<td><input type="text" name="qnbBedR" value="${params.qnbBedR}" size="2" maxlength="2" /></td>
+					<td><input type="text" name="qPostCode" value="${params.qPostCode}" size="8" maxlength="8" /></td>
+	                <td><g:submitButton name="search" value="Search" /></td>
+				</tr>
+			</table>
+			<script>
+	                numberMask = new Mask("#", "number");
+	                numberMask.attach(document.searchForm.qnbBedR);
+					priceMask = new Mask("#", "number")
+	                priceMask.attach(document.searchForm.qOfferMin);
+	                priceMask.attach(document.searchForm.qOfferMax);
+				</script>
+			</g:form>
+			</div>
+        </div>
+        <div class="body">
+            <h1><g:message code="property.listTitle"/></h1>
+            <g:if test="${flash.message}">
+            <div class="message">${flash.message}</div>
+            </g:if>
+            <div class="list">
+			<table>
 						<tr>
 							<g:sortableColumn property="id" title="Reference" />
 							<g:sortableColumn property="address" title="Address" />
@@ -44,24 +56,6 @@
 							<g:sortableColumn property="description" title="Description" />    
 						</tr>
 					</table>
-				</td>
-			  </tr>
-			  
-			</table>
-            <script>
-                numberMask = new Mask("#", "number");
-                numberMask.attach(document.searchForm.qnbBedR);
-                numberMask.attach(document.searchForm.qOfferMin);
-                numberMask.attach(document.searchForm.qOfferMax);
-            </script>
-            </g:form>
-        </div>
-        <div class="body">
-            <h1><g:message code="property.listTitle"/></h1>
-            <g:if test="${flash.message}">
-            <div class="message">${flash.message}</div>
-            </g:if>
-            <div class="list">
                 <g:each in="${propertyList}" status="i" var="property">
 
 					<table width="100%">
@@ -79,7 +73,7 @@
                             <td>${desc}</td>
                         </tr>
                         <tr>
-                            <td></td>
+                            <td><g:ifAnyGranted role="ROLE_BUYER"><g:link controller="appointment" action="create" id="${property.id}"><g:message code="property.appointment"/></g:link></g:ifAnyGranted></td>
                             <td class="info"><g:link action="show" id="${property.id}"><g:message code="property.details"/></g:link></td>
                         </tr>
                     </table>

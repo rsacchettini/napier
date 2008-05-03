@@ -114,7 +114,7 @@ class NapierTagLib {
 			if(seller != null)
 			{
 				def sellProperties = seller.sellProperties
-				if(sellProperties != null)
+                if(sellProperties != null)
 					out << "(${sellProperties.size()})"
 			}
 		}

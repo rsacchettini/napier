@@ -86,11 +86,11 @@ class AppointmentController {
     def create = {
         def appointment = new Appointment()
         appointment.properties = params
-        return ['appointment':appointment]
+        return ['appointment':appointment, 'id_property':params.id]
     }
 
     def save = {
-        def appointment = new Appointment(params)
+       def appointment = new Appointment(params)
         if(!appointment.hasErrors() && appointment.save()) {
             flash.message = "Appointment ${appointment.id} created"
             redirect(action:show,id:appointment.id)

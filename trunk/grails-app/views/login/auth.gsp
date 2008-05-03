@@ -5,20 +5,22 @@
 		<title>Login</title>
 <style type="text/css" media="screen">
 #login {
-	margin:15px 0px; padding:0px;
+	margin:120px 0px; padding:0px;
 	text-align:center;
+	color:#fff;
 }
 #login .inner {
+	
 	width:260px;
 	margin:0px auto;
 	text-align:left;
 	padding:10px;
 	border-top:1px dashed #499ede;
 	border-bottom:1px dashed #499ede;
-	background-color:#EEF;
+	background: url(../images/bg_login.png) repeat-x;
 }
 #login .inner .fheader {
-	padding:4px;margin:3px 0px 3px 0;color:#2e3741;font-size:14px;font-weight:bold;
+	padding:4px;margin:3px 0px 3px 0;color:#2e3741;font-size:14px;font-weight:bold;color:#fff;
 }
 #login .inner .cssform p{
 	clear: left;
