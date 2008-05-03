@@ -58,9 +58,13 @@ class PropertyController {
 					 {
                          def b = new Interested(myBuyer:buyer)
 						def buyerInterestList = Interested.findAll(b)
-						if(buyerInterestList != null)
+
+                         def plist = []
+
+                        buyerInterestList.each{ ob -> plist.add(ob.myProp) }
+                        if(buyerInterestList != null)
 						{// if the logged user is a seller then retrieve his properties.
-							return [propertyList: buyerInterestList]
+							return [propertyList: plist]
 						}
 					 }
 				 }
