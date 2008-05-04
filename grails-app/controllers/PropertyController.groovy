@@ -34,9 +34,9 @@ class PropertyController {
         if (params.isPersonalList != null && params.isPersonalList == "true")
         {
             def principal = PrincipalService.getPrincipal()
-            if (principal != null)
+            if (principal != null && principal!="anonymousUser")
             {
-                if (((String) principal.getAuthorities()[0]) == "ROLE_SELLER")
+                if (((String)(principal.getAuthorities()[0])) == "ROLE_SELLER")
                 {
                     def seller = Seller.findByUsername(principal.getUsername())
                     if (seller != null)
@@ -48,7 +48,7 @@ class PropertyController {
                         }
                     }
                 }
-                else if (((String) principal.getAuthorities()[0]) == "ROLE_BUYER")
+                else if (((String)(principal.getAuthorities())[0]) == "ROLE_BUYER")
                 {
                     def buyer = (Buyer) Buyer.findByUsername(principal.getUsername())
                     if (buyer != null)
@@ -65,7 +65,7 @@ class PropertyController {
                             return [propertyList: plist]
                         }
                     }
-                } else if (((String) principal.getAuthorities()[0]) == "ROLE_ESTATEAGENT")
+                } else if (((String) (principal.getAuthorities())[0]) == "ROLE_ESTATEAGENT")
                 {
                     def agent = (EstateAgent) EstateAgent.findByUsername(principal.getUsername())
                     if (agent != null)
@@ -100,9 +100,9 @@ class PropertyController {
         def isRemovable = false;
 
         def principal = PrincipalService.getPrincipal()
-        if (principal != null)
+        if (principal != null && principal!="anonymousUser")
         {
-            if (((String) principal.getAuthorities()[0]) == "ROLE_BUYER")
+            if (((String) (principal.getAuthorities())[0]) == "ROLE_BUYER")
             {
                 def buyer = (Buyer) Buyer.findByUsername(principal.getUsername())
                 if (buyer != null)

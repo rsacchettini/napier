@@ -123,7 +123,7 @@ class NapierTagLib {
     def buyerInterestListNum =
     {
         def principal = PrincipalService.getPrincipal()
-        if (principal != null)
+        if (principal != null && principal!="anonymousUser")
         {
 
             def buyer = (Buyer) Buyer.findByUsername(principal.getUsername())
@@ -146,8 +146,8 @@ class NapierTagLib {
     def buyerAppointementsNum =
     {
 
-        //def principal = PrincipalService.getPrincipal()
-        if (principal != null)
+        def principal = PrincipalService.getPrincipal()
+        if (principal != null && principal!="anonymousUser")
         {
             def buyer = Buyer.findByUsername(principal.getUsername())
             if (buyer != null)
@@ -163,7 +163,7 @@ class NapierTagLib {
     {attrs, body ->
         def property = Property.get(params.id)
         def principal = PrincipalService.getPrincipal()
-        if (principal != null)
+        if (principal != null && principal!="anonymousUser")
         {
             def seller = Seller.findByUsername(principal.getUsername())
             if (seller != null)
