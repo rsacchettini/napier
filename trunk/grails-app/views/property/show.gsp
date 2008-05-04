@@ -90,10 +90,14 @@
             <div class="buttons">
                 <g:form>
                     <input type="hidden" name="id" value="${property?.id}" />
-			  <g:ifAnyGranted role="ROLE_SELLER">
+			  <g:ifAnyGranted role="ROLE_SELLER,ROLE_ESTATEAGENT">
 				  <g:ifSellerProperty>
 					  <span class="button"><g:link class="edit" controller="property" action="edit" id="${property?.id}">${message(code:'property.edit')}</g:link></span>
-				  </g:ifSellerProperty>	
+				  </g:ifSellerProperty>
+                  <g:ifAnyGranted role="ROLE_ESTATEAGENT">
+                      <span class="button"><g:link class="edit" controller="property" action="edit" id="${property?.id}">${message(code:'property.edit')}</g:link></span>
+
+                       </g:ifAnyGranted>
                     <span class="button"><g:actionSubmit class="delete" action="delete" onclick="return confirm('Are you sure?');" value="${message(code:'property.delete')}"/></span>
 			  </g:ifAnyGranted>
 			  <g:ifAnyGranted role="ROLE_BUYER">
