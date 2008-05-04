@@ -107,8 +107,8 @@ class PropertyController {
                 def buyer = (Buyer) Buyer.findByUsername(principal.getUsername())
                 if (buyer != null)
                 {
-                    def b = new Interested(myBuyer: buyer)
-                    def buyerInterestList = Interested.findAll(b)
+                    def buyerInterestList = Interested.findAll("from Interested as i where i.myBuyer.id=?", buyer.id)
+
 
                     def plist = []
 

@@ -5,7 +5,11 @@ class Appointment {
     Buyer buyer
 
     Date dateAndTime
-
+            def beforeDelete = {
+      property.removeFromAppointments(this)
+                buyer.removeFromAppointments(this)
+                isManagedBy.removeFromAppointmentsToManage(this)
+   }
     static constraints =
     {
         dateAndTime(nullable:false)
