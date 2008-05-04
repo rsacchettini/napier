@@ -54,7 +54,7 @@
 					<td class="valueSection">${property.description}</td>
 				  </tr>
 				   <tr>
-					<td class="titleSection">Apointments
+					<td class="titleSection">Appointments
 				  <tr class="valueSection">
 					<td>
 						<ul>

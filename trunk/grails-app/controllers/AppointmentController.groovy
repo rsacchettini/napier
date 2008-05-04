@@ -43,7 +43,7 @@ class AppointmentController {
     def delete = {
         def appointment = Appointment.get( params.id )
         if(appointment) {
-            appointment.delete()
+            appointment.delete(flush:true)
             flash.message = "Appointment ${params.id} deleted"
             redirect(action:list)
         }
