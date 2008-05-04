@@ -65,6 +65,18 @@ class PropertyController {
                             return [propertyList: plist]
                         }
                     }
+                } else if (((String) principal.getAuthorities()[0]) == "ROLE_ESTATEAGENT")
+                {
+                    def agent = (EstateAgent) EstateAgent.findByUsername(principal.getUsername())
+                    if (agent != null)
+                    {
+
+                        def agentList = Property.findAll("from Property as i where i.isManagedBy.id=? and (i.validated=null or i.validated=false)", agent.id)
+                        if (agentList != null)
+                        {// if the logged user is a seller then retrieve his properties.
+                            return [propertyList: agentList] 
+                        }
+                    }
                 }
             }
         }
