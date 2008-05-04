@@ -71,7 +71,7 @@
                             
                             <td  valign="top" style="text-align:left;" class="value">
                                 <ul>
-                                <g:each var="a" in="${estateAgent.AppointmentsToManage}">
+                                <g:each var="a" in="${estateAgent.appointmentsToManage}">
                                     <li><g:link controller="appointment" action="show" id="${a.id}">${a}</g:link></li>
                                 </g:each>
                                 </ul>

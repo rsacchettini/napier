@@ -13,9 +13,6 @@
 			<g:ifAnyGranted role="ROLE_SELLER,ROLE_ESTATEAGENT">
 				<span class="menuButton"><g:link class="create" action="create">${message(code:'property.create')}</g:link></span>
 			</g:ifAnyGranted>
-			<g:ifAnyGranted role="ROLE_BUYER,ROLE_ESTATEAGENT">
-				<span class="menuButton"><g:link class="create" action="create">${message(code:'buyer.addInterest')}</g:link></span>
-			</g:ifAnyGranted>
 		</div>
         <div class="body">
             <h1><g:message code="property.showTitle"/></h1>
@@ -100,8 +97,15 @@
                     <span class="button"><g:actionSubmit class="delete" action="delete" onclick="return confirm('Are you sure?');" value="${message(code:'property.delete')}"/></span>
 			  </g:ifAnyGranted>
 			  <g:ifAnyGranted role="ROLE_BUYER">
-			  <span class="button"><g:actionSubmit class="edit" action="addInterest" value="${message(code:'buyer.addInterest')}"/></span>
-			  </g:ifAnyGranted>
+
+
+                   <g:if test="${isRemovable==true}">
+                                     <span class="button"><g:actionSubmit class="edit" action="removeInterest" value="${message(code:'buyer.removeInterest')}"/></span>
+			  </g:if>
+                   <g:if test="${isRemovable==false}">
+              <span class="button"><g:actionSubmit class="edit" action="addInterest" value="${message(code:'buyer.addInterest')}"/></span>
+			        </g:if>
+                   </g:ifAnyGranted>
 		</g:form>
             </div>
         </div>
