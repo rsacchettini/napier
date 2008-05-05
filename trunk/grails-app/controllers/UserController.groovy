@@ -74,43 +74,34 @@ class UserController {
     def oldpw = person.passwd
     if(person) {
       person.properties = params
-	  person.userRealName = "${person.forename} ${person.surname}"
-	  String ps = params.get("passwd")
-      if(!ps.equals(oldpw)){
-        def pass = authenticateService.passwordEncoder(ps)
-        person.passwd=pass
+      def role = person.authorities
+        if(role.authority == "ROLE_BUYER")
+        {
+            person.properties = params
+        }
+        else if(role.authority == "ROLE_SELLER")
+        {
+            person.properties = params
+            person.address = params.address
+            person.city= params.city
+            person.postCode = params.postCode
+        }
+        person.userRealName = "${params.forename} ${params.surname}"
+        if(person.save())
+        {
+                /*
+                def au=Roles.findAll()
+                au.each{it.removeFromPeople(person)}
+                def roleauthority = (String)params.role
+                def role = Roles.findByAuthority(roleauthority)
+                */
+                redirect(action:'list')
+         }
+        else
+        {
+            render(view:'edit',model:[person:person])
+        }
       }
-      if(person.save()) {
-        def au=Roles.findAll()
-        au.each{it.removeFromPeople(person)}
-		def roleauthority = (String)params.role
-		def role = Roles.findByAuthority(roleauthority)
-
-		/*
-		if(role.authority == "ROLE_BUYER")
-		{
-			person = new Buyer()
-			person.properties = params
-		}
-		else if(role.authority == "ROLE_SELLER")
-		{
-			person = new Seller()
-			person.properties = params
-			person.address = params.address
-			person.city= params.city
-			person.postCode = params.postCode
-		}
-		*/
-		if(role.authority != null && role.authority.contains("ROLE")){
-			 role.addToPeople(person)
-		  	println "Role "+role.authority +" has been added"
-        	redirect(action:show,id:person.id)
-		}
-	  }
-      else {
-        render(view:'edit',model:[person:person])
-      }
-    }
     else {
       flash.message = "AuthUser not found with id ${params.id}"
       redirect(action:edit,id:params.id)

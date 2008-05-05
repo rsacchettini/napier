@@ -73,7 +73,15 @@
                             <td>${desc}</td>
                         </tr>
                         <tr>
-                            <td><g:ifAnyGranted role="ROLE_BUYER"><g:link controller="appointment" action="create" id="${property.id}"><g:message code="property.appointment"/></g:link></g:ifAnyGranted></td>
+                            <td>
+                                <g:ifAnyGranted role="ROLE_BUYER">
+                                    <g:ifPropertyInBuyerInterest id="${property.id}">
+                                       <g:link controller="appointment" action="create" id="${property.id}">
+                                            <g:message code="property.appointment"/>
+                                       </g:link>
+                                    </g:ifPropertyInBuyerInterest>
+                                </g:ifAnyGranted>
+                            </td>
                             <td class="info"><g:link action="show" id="${property.id}"><g:message code="property.details"/></g:link></td>
                         </tr>
                     </table>
