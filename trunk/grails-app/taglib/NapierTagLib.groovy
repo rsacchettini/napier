@@ -110,7 +110,7 @@ class NapierTagLib {
         def principal = PrincipalService.getPrincipal()
         if (principal != null)
         {
-            def seller = Seller.findByUsername(principal.getUsername())
+            def seller = Seller.findById(principal.domainClass.id)
             if (seller != null)
             {
                 def sellProperties = seller.sellProperties
@@ -123,7 +123,7 @@ class NapierTagLib {
     def buyerInterestListNum =
     {
         def principal = PrincipalService.getPrincipal()
-        if (principal != null && principal!="anonymousUser")
+        if (principal != null && principal != "anonymousUser")
         {
 
             def buyer = (Buyer) Buyer.findByUsername(principal.getUsername())
@@ -147,7 +147,7 @@ class NapierTagLib {
     {
 
         def principal = PrincipalService.getPrincipal()
-        if (principal != null && principal!="anonymousUser")
+        if (principal != null && principal != "anonymousUser")
         {
             def buyer = Buyer.findByUsername(principal.getUsername())
             if (buyer != null)
@@ -163,7 +163,7 @@ class NapierTagLib {
     {attrs, body ->
         def property = Property.get(params.id)
         def principal = PrincipalService.getPrincipal()
-        if (principal != null && principal!="anonymousUser")
+        if (principal != null && principal != "anonymousUser")
         {
             def seller = Seller.findByUsername(principal.getUsername())
             if (seller != null)
@@ -183,7 +183,7 @@ class NapierTagLib {
         def test = attrs.id
         def property = Property.get(attrs.id)
         def principal = PrincipalService.getPrincipal()
-        if (principal != null && principal!="anonymousUser")
+        if (principal != null && principal != "anonymousUser")
         {
             def buyer = Buyer.findByUsername(principal.getUsername())
             if (buyer != null)
@@ -197,4 +197,56 @@ class NapierTagLib {
             }
         }
     }
+
+    def ifPropertyNotValidated =
+    {attrs, body ->
+        def test = attrs.id
+        def property = Property.get(attrs.id)
+        if (property != null)
+        {
+            if (!property.validated)
+            {
+                out << body()
+            }
+
+        }
+    }
+
+    def ifPropertyValidated =
+    {attrs, body ->
+        def property = Property.get(attrs.id)
+        def principal = PrincipalService.getPrincipal()
+        if (principal != null && principal != "anonymousUser" && ((String) (principal.getAuthorities()[0])) == "ROLE_ESTATEAGENT")
+        {
+                out << body()
+
+        } else {
+                if (property != null)
+                {
+                    if (property.validated)
+                    {
+                        out << body()
+                    }
+
+                }
+
+            }
+    }
+
+    def numbersOfProperties = {
+        def principal = PrincipalService.getPrincipal()
+        if (principal != null && principal != "anonymousUser" && ((String) (principal.getAuthorities()[0])) == "ROLE_ESTATEAGENT")
+        {
+                out << "(${Property.list.size()})"
+        } else {
+                def list = Property.findAll("from Property as i where i.validated=true")
+                if (list != null)
+                {
+                    out << "(${list.size()})"
+                }
+         }
+
+    }
+
+
 }

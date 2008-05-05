@@ -12,7 +12,7 @@ ALTER TABLE APPOINTMENT ADD CONSTRAINT FKA8155B9FC98440BA FOREIGN KEY(BUYER_ID) 
 ALTER TABLE APPOINTMENT ADD CONSTRAINT FKA8155B9FBD53EE07 FOREIGN KEY(IS_MANAGED_BY_ID) REFERENCES AUTH_USER(ID)
 ALTER TABLE INTERESTED ADD CONSTRAINT FKA0B291495A6879D9 FOREIGN KEY(MY_PROP_ID) REFERENCES PROPERTY(ID)
 ALTER TABLE APPOINTMENT ALTER COLUMN ID RESTART WITH 1
-ALTER TABLE AUTH_USER ALTER COLUMN ID RESTART WITH 3
+ALTER TABLE AUTH_USER ALTER COLUMN ID RESTART WITH 4
 ALTER TABLE INTERESTED ALTER COLUMN ID RESTART WITH 1
 ALTER TABLE PROPERTY ALTER COLUMN ID RESTART WITH 2
 ALTER TABLE REQUESTMAP ALTER COLUMN ID RESTART WITH 1
@@ -24,9 +24,11 @@ SET WRITE_DELAY 20
 SET SCHEMA PUBLIC
 INSERT INTO AUTH_USER VALUES(1,1,'','seller1@dd.ff',TRUE,TRUE,'seller1','95caed8e60e15871a6d12fe5505db2db','seller1','07514288781','seller1 seller1','seller1','Seller','18/1 Balcarres Street','Edinburgh','EH10 5JD')
 INSERT INTO AUTH_USER VALUES(2,1,'','estateagent@GM.COM',FALSE,TRUE,'estateagent','a6634b851f94efbb5647e967a15eea6e','estateagent','098765432','estateagent estateagent','estateagent','EstateAgent',NULL,NULL,NULL)
+INSERT INTO AUTH_USER VALUES(3,1,'','buyer1@hhh.jk',TRUE,TRUE,'buyer1','5cbd9d629096842872fdc665d2d03ba3','buyer1','07514288781','buyer1 buyer1','buyer1','Buyer',NULL,NULL,NULL)
 INSERT INTO PROPERTY VALUES(1,1,'18/1 Balcarres Street','aced0005757200115b4c6a6176612e7574696c2e446174653b431724a0300318e00200007870000000027372000e6a6176612e7574696c2e44617465686a81014b5974190300007870770800000119b629c180787371007e000277080000011a3c0f198078',2,'Flat','Edinburgh',' Impressive Victorian upper villa flat immaculately presented throughout, offering flexible accommodation.\u000d\u000a\u000d\u000a        Retaining several period features including high ceilings, traditional wooden floorboards and original cast iron fireplace.\u000d\u000a\u000d\u000a        Conveniently situated within quiet cul-de-sac setting near the River Esk and close to the well reputed local primary school.\u000d\u000a\u000d\u000a        Delightful bay windowed living room with stunning original cast iron fireplace.\u000d\u000a\u000d\u000a        Second living/dining room leading to modern fitted galley style kitchen with external door to rear.\u000d\u000a\u000d\u000a        Two large bright double bedrooms (one of which with box room off).\u000d\u000a\u000d\u000a        Refurbished family bathroom boasting traditional white three piece suite with electric shower.\u000d\u000a\u000d\u000a        Gas central heating complemented by double glazing.\u000d\u000a\u000d\u000a        Excellent storage facilities throughout including useful extensive attic space.\u000d\u000a\u000d\u000a        Large walled rear garden (shared between four properties) and ample unrestricted on street parking.\u000d\u000a\u000d\u000a        Ever popular historic coastal town with excellent local amenities and approximately six miles from Edinburgh City Centre.',2,1,155000,'aced0005757200135b4c6a6176612e6c616e672e537472696e673badd256e7e91d7b4702000078700000000474000b312f696d675f312e6a706774000b312f696d675f322e6a706774000b312f696d675f332e6a706774000b312f696d675f342e6a7067','aced0005757200135b4c6a6176612e6c616e672e537472696e673badd256e7e91d7b4702000078700000000474000a696d6167652f6a70656774000a696d6167652f6a70656774000a696d6167652f6a70656774000a696d6167652f6a706567','EH10 5JD',NULL)
 INSERT INTO ROLES VALUES(1,1,'ROLE_ESTATEAGENT','estateagent')
-INSERT INTO ROLES VALUES(2,0,'ROLE_BUYER','')
+INSERT INTO ROLES VALUES(2,1,'ROLE_BUYER','')
 INSERT INTO ROLES VALUES(3,1,'ROLE_SELLER','')
 INSERT INTO ROLES_AUTH_USER VALUES(1,2)
+INSERT INTO ROLES_AUTH_USER VALUES(2,3)
 INSERT INTO ROLES_AUTH_USER VALUES(3,1)

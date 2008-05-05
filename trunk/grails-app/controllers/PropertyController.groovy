@@ -38,7 +38,7 @@ class PropertyController {
             {
                 if (((String)(principal.getAuthorities()[0])) == "ROLE_SELLER")
                 {
-                    def seller = Seller.findByUsername(principal.getUsername())
+                    def seller = Seller.findById(principal.domainClass.id)
                     if (seller != null)
                     {
                         def sellerProperties = seller?.sellProperties
@@ -83,7 +83,8 @@ class PropertyController {
         else
         {
             if (!params.max) params.max = 10
-            return [propertyList: Property.list(params)]
+            def listed = Property.list(params)
+            return [propertyList: listed]
         }
     }
 
@@ -216,6 +217,17 @@ class PropertyController {
         redirect(action: list)
         return ['property': property]
     }
+    def validate = {
+        def property = Property.get(params.id)
+        if (property != null)
+        {
+            property.validated=true
+            property.save(flush:true)
+        }
+        redirect(action: list)
+        return ['property': property]
+    }
+
 
     def update = {
         def property = Property.get(params.id)
@@ -582,7 +594,7 @@ class PropertyController {
             imageAdd(property.id)
         }
 
-        if (!property.hasErrors() && property.save()) {
+        if (!property.hasErrors() && property.save(flush:true)) {
             flash.message = "Property ${property.id} created"
             redirect(action: show, id: property.id)
         }
