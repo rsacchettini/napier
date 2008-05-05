@@ -77,13 +77,13 @@ class NapierTagLib {
                 out << "  }    \n  "
                 out << "</script>"
             }
-            else if (property.picture.length > 1)
+            else if (property.picture.length == 1)
             {
                 out << "<script type=\"text/javascript\"> \n"
                 out << "document.getElementById('img${property.id}').src = ${createLinkTo(dir: '')}/images/properties/${property.picture[0]};\n"
                 out << "</script>"
             }
-            else
+            else if (property.picture.length == 0)
             {
                 out << "<script type=\"text/javascript\"> \n"
                 out << "document.getElementById('img${property.id}').alt = 'no picture available';\n"
