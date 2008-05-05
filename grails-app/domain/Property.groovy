@@ -1,6 +1,5 @@
 class Property
 {
-    static searchable = [only: ['category', 'postCode','minPrice','bedroomNumber']]
     Seller isSoldBy
     EstateAgent isManagedBy
 
