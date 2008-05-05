@@ -5,8 +5,9 @@
 class Roles {
 
 	static hasMany=[people:AuthUser]
+    static fetchMode = [people:"lazy"]
 
-	/** description */
+    /** description */
 	String description
 	/** ROLE String */
 	String authority="ROLE_"
