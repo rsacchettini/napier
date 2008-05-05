@@ -64,7 +64,7 @@
                             <td width="79%" class="fullAddress">${property.address?.encodeAsHTML()}, ${property.city?.encodeAsHTML()}, ${property.postCode?.encodeAsHTML()}</td>
                         </tr>
                         <tr>
-                            <td width="21%" rowspan="2"><img id="img${property.id}" src="${createLinkTo(dir:'')}/images/properties/${property.picture[0]}" width="150" height="100" /></td>
+                            <td width="21%" rowspan="2"><img id="img${property.id}" width="150" height="100" /></td>
                             <td class="price">Offers Over &pound;${property.minPrice?.encodeAsHTML()}</td>
                         </tr>
                         <g:set var="desc" value="${property.description}" />
