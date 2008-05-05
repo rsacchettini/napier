@@ -5,7 +5,7 @@
 		<title>Login</title>
 <style type="text/css" media="screen">
 #login {
-	margin:120px 0px; padding:0px;
+	padding:120px 0px;
 	text-align:center;
 	color:#fff;
 }
