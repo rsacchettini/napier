@@ -57,7 +57,7 @@
 						</tr>
 					</table>
                 <g:each in="${propertyList}" status="i" var="property">
-
+                          <g:ifPropertyValidated id="${property.id}">
 					<table width="100%">
                         <tr>
                             <td width="21%">Ref: ${property.id?.encodeAsHTML()}</td>
@@ -81,12 +81,20 @@
                                        </g:link>
                                     </g:ifPropertyInBuyerInterest>
                                 </g:ifAnyGranted>
+                                <g:ifAnyGranted role="ROLE_ESTATEAGENT">
+                                    <g:ifPropertyNotValidated id="${property.id}">
+                                       <g:link controller="property" action="validate" id="${property.id}">
+                                            <g:message code="property.validate"/>
+                                       </g:link>
+                                    </g:ifPropertyNotValidated>
+                                </g:ifAnyGranted>
                             </td>
                             <td class="info"><g:link action="show" id="${property.id}"><g:message code="property.details"/></g:link></td>
                         </tr>
                     </table>
 					<g:autoImageSlideshow beanid="${property.id}"/>
-				</g:each>
+                              </g:ifPropertyValidated>
+                </g:each>
             </div>
             <div class="paginateButtons">
                 <g:paginate total="${Property.count()}" />

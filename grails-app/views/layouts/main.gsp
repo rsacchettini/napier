@@ -29,7 +29,7 @@
 	<div class="indentmenu">
             <ul>
 
-					<li><g:link controller="property" action="index"><g:message code="main.properties" /> (${Property?.list()?.size()})</g:link></li>
+					<li><g:link controller="property" action="index"><g:message code="main.properties" /> <g:numbersOfProperties /></g:link></li>
 					
 				<g:isNotLoggedIn>
 					 <li><g:link class="create" action="index" controller="register">
