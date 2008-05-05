@@ -107,7 +107,15 @@
                                     <label for="picture">Picture:</label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean:property,field:'picture','errors')}">
-
+									<div id="propertyImgEdit">
+										<table>
+											<tr>
+												<g:imageDisp id="imgDispEdit" mode="edit" beanid="${property.id}" />
+											</tr>
+										</table>
+										
+									</div>
+									
                                 </td>
                             </tr> 
                         

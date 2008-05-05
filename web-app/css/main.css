@@ -492,3 +492,10 @@ font-weight:bold;
 	right: 0px;
 	left: 40px;
 }
+
+#propertyImgEdit
+{
+    width:500px;
+    height:230px;
+    overflow: auto
+}
