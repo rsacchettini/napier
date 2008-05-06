@@ -80,11 +80,11 @@
                         <tr>
                             <td>
                                 <g:ifAnyGranted role="ROLE_BUYER">
-                                    <g:ifPropertyInBuyerInterest id="${property.id}">
+
                                        <g:link controller="appointment" action="create" id="${property.id}">
                                             <g:message code="property.appointment"/>
                                        </g:link>
-                                    </g:ifPropertyInBuyerInterest>
+
                                 </g:ifAnyGranted>
                                 <g:ifAnyGranted role="ROLE_ESTATEAGENT">
                                     <g:ifPropertyNotValidated id="${property.id}">

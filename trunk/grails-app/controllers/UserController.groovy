@@ -18,7 +18,8 @@ class UserController {
   def list = {
     //println "Enter list action in PersonController"
     if(!params.max)params.max = 10
-    [ personList: AuthUser.list( params ) ]
+      def list= AuthUser.findAll("from AuthUser as a")
+    [ personList: list ]
   }
 
   def show = {
@@ -36,11 +37,20 @@ class UserController {
       //avoid self-delete if the logged-in user is an admin
       if(!(authPrincipal instanceof String) && authPrincipal.username!=person.username){
          def au=Roles.findAll()
-         if(Roles.findAll()!=null){
+          //Roles.executeQuery("from Roles as i where i.people.id=?",person.id)
+         /*if(au!=null){
           //firstly, delete this person from People_Authorities table.
           au.each{it.removeFromPeople(person)}
-         }
-        person.delete()
+         }*/
+
+           def list = Interested.findAll("from Interested as i where i.myBuyer.id=?",person.id)
+            list.each{i->i.delete(flush:true)}
+          def lista = Appointment.findAll("from Appointment as i where i.buyer.id=? or isManagedBy.id=?",person.id,person.id)
+            lista.each{i->i.delete(flush:true)}
+          def listp = Property.findAll("from Property as i where i.isSoldBy.id=?",person.id)
+            listp.each{i->i.delete(flush:true)}
+
+        person.delete(flush:true)
         flash.message = "AuthUser ${params.id} deleted."
         redirect(action:list)
       }else{
