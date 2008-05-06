@@ -8,7 +8,7 @@
         <title><g:message code="property.showTitle"/></title>
 		<g:javascript library="prototype" />
 	</head>
-    <body onload="document.getElementById('mapForm').submit();">
+    <body>
         <div class="nav">
 			<g:ifAnyGranted role="ROLE_SELLER,ROLE_ESTATEAGENT">
 				<span class="menuButton"><g:link class="create" action="create">${message(code:'property.create')}</g:link></span>
@@ -75,8 +75,10 @@
 				  </tr>
 				  <tr>
 					<td align="center">
-						<div id="map"></div>
-						<g:remoteLink action="showMap" id="1" onComplete ="executeMap(e);" update="[success:'map',failure:'error']" params="[lat:resultLat, lng:resultLng]">Show google map</g:remoteLink>
+                        <richui:googlemaps lat="${resultLat}" lng="${resultLng}" mapStyle="width: 750px; height: 300px;" style="width: 750px; background: #F1F1F1; border: 1px solid #F1F1F1;" />
+                        <div id="map"></div>
+
+                            <!--<g:remoteLink action="showMap" id="1" onComplete ="executeMap(e);" update="[success:'map',failure:'error']" params="[lat:resultLat, lng:resultLng]">Show google map</g:remoteLink>-->
 						<div id="error"></div>
 					</td>
 				  </tr>
