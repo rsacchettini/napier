@@ -11,10 +11,10 @@ class AppointmentController {
 			 def principal = PrincipalService.getPrincipal()
 			 if(((String)principal.getAuthorities()[0]) =="ROLE_BUYER")
 			 {
-				 def buyer = (Buyer)Buyer.findByUsername(principal.getUsername())
+				 def buyer = (Buyer)Buyer.findById(principal.domainClass.id)
 				 if(buyer != null)
 				 {
-					def buyerAppointements = buyer.appointments
+					def buyerAppointements = Appointment.findAll("from Appointment as i where i.buyer.id=?",buyer.id)
 					if(buyerAppointements != null)
 					{// if the logged user is a seller then retrieve his properties.
 						return [appointmentList: buyerAppointements]
@@ -45,11 +45,11 @@ class AppointmentController {
         if(appointment) {
             appointment.delete(flush:true)
             flash.message = "Appointment ${params.id} deleted"
-            redirect(action:list)
+            redirect(action:list, params:[isPersonalList:true])
         }
         else {
             flash.message = "Appointment not found with id ${params.id}"
-            redirect(action:list)
+            redirect(action:list, params:[isPersonalList:true])
         }
     }
 
@@ -91,7 +91,7 @@ class AppointmentController {
 
     def save = {
        def appointment = new Appointment(params)
-        if(!appointment.hasErrors() && appointment.save()) {
+        if(!appointment.hasErrors() && appointment.save(flush:true)) {
             flash.message = "Appointment ${appointment.id} created"
             redirect(action:show,id:appointment.id)
         }

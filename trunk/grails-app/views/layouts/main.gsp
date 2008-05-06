@@ -38,15 +38,16 @@
 
 				<g:ifAnyGranted role="ROLE_ESTATEAGENT">
                      <li><g:link controller="property" action="list" params="['isPersonalList':'true']"><g:message code="main.waitingProperties" /></g:link></li>
-					<li><g:link controller="user" action="index"><g:message code="main.adminUsers" /></g:link></li>
+                    <li><g:link controller="appointment" action="list" params="['isPersonalList':'true']"><g:message code="main.appointements" /> <g:appointmentsNum /></g:link></li>
+                    <li><g:link controller="user" action="index"><g:message code="main.adminUsers" /></g:link></li>
 
 				</g:ifAnyGranted>
 				<g:ifAnyGranted role="ROLE_SELLER">
-				  <li><g:link controller="property" action="list" params="['isPersonalList':'true']"><g:message code="main.toSellproperties" /><g:sellerPropertiesNum /></g:link></li>
+				  <li><g:link controller="property" action="list" params="['isPersonalList':'true']"><g:message code="main.toSellproperties" /> <g:sellerPropertiesNum /></g:link></li>
 				</g:ifAnyGranted>
 				<g:ifAnyGranted role="ROLE_BUYER">
-				  <li><g:link controller="property" action="list" params="['isPersonalList':'true']"><g:message code="main.interest" /><g:buyerInterestListNum /></g:link></li>
-				  <li><g:link controller="appointment" action="list" params="['isPersonalList':'true']"><g:message code="main.appointements" /><g:buyerAppointementsNum /></g:link></li>
+				  <li><g:link controller="property" action="list" params="['isPersonalList':'true']"><g:message code="main.interest" /> <g:buyerInterestListNum /></g:link></li>
+				  <li><g:link controller="appointment" action="list" params="['isPersonalList':'true']"><g:message code="main.appointements" /> <g:appointmentsNum /></g:link></li>
 				</g:ifAnyGranted>
         	</ul>
         <br style="clear: left" />

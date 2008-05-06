@@ -143,7 +143,7 @@ class NapierTagLib {
         }
     }
 
-    def buyerAppointementsNum =
+    def appointmentsNum =
     {
 
         def principal = PrincipalService.getPrincipal()
@@ -152,7 +152,7 @@ class NapierTagLib {
             def buyer = Buyer.findByUsername(principal.getUsername())
             if (buyer != null)
             {
-                def appointments = buyer.appointments
+                def appointments = Appointment.findAll("from Appointment as i where i.buyer.id=?",buyer.id)
                 if (appointments != null)
                     out << "(${appointments.size()})"
             }
