@@ -13,6 +13,31 @@ class PropertyController {
     // the delete, save and update actions only accept POST requests
     def allowedMethods = [delete: 'POST', save: 'POST', update: 'POST']
 
+    def beforeInterceptor = [action:this.&checkUser,except:['index','list','show']]
+
+	// if the user in not present in the session, he is redericted to the login page
+	def checkUser() {
+		def principal = PrincipalService.getPrincipal()
+        def p = params
+        def role
+        def belongsTo = AuthorizationService.isSellerProperty(Long.parseLong(p.id))
+        if(principal != null)
+        {
+               // if the user is a buyer or a seller and the property is not in his own so he must be authorized to edit,
+            // or delete it
+            if(principal != "anonymousUser")
+            {
+               role = principal.getAuthorities()[0]
+            }
+            if((role == "ROLE_SELLER" && !belongsTo )
+                 || role != "ROLE_SELLER" || principal == "anonymousUser")
+            {
+                 redirect(action:"index",controller:"login")
+                 return
+            }
+        }
+	}
+
     def search = {
         def criteria = Property.createCriteria()
         def properties
@@ -166,14 +191,15 @@ class PropertyController {
     def edit = {
         def property = Property.get(params.id)
         def visitTimeCount = 0
-        if (property.availableFrom != null)
+        if (property && property.availableFrom != null)
         {
             visitTimeCount = (property.availableFrom.length / 2)
         }
 
         if (!property) {
             flash.message = "Property not found with id ${params.id}"
-            redirect(action: list)
+
+            redirect(controller:"property", action: "list")
         }
         else {
             return ['property': property, 'visitTimeCount': visitTimeCount]

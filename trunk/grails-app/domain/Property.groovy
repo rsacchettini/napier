@@ -15,7 +15,7 @@ class Property
 	String[] picture
     String[] pictureType
 
-      def beforeDelete = {
+    def beforeDelete = {
         isSoldBy.removeFromSellProperties(this)
         isManagedBy.removeFromPropertiesToManage(this)
         def list = Interested.findAll("from Interested as i where i.myProp.id=?",this.id)
