@@ -3,23 +3,30 @@ class AuthorizationService {
     boolean transactional = true
     
     def static isSellerProperty = {propertyid ->
-        def property = Property.get(propertyid)
-        if(property)
+        if(propertyid != null)
         {
-            def principal = PrincipalService.getPrincipal()
-            if (principal != null && principal != "anonymousUser")
+            def property = Property.get(propertyid)
+            if(property)
             {
-                def seller = Seller.findById(principal.domainClass.id)
-                if (seller != null)
+                def principal = PrincipalService.getPrincipal()
+                if (principal != null && principal != "anonymousUser")
                 {
-                    def sellProperties = seller.sellProperties
-                    return (sellProperties != null && sellProperties.findIndexOf {property} != -1)
+                    def seller = Seller.findById(principal.domainClass.id)
+                    if (seller != null)
+                    {
+                        def sellProperties = seller.sellProperties
+                        return (sellProperties != null && sellProperties.findIndexOf {property} != -1)
+                    }
                 }
+            }
+            else
+            {
+                return true
             }
         }
         else
         {
-            return false
+            return true
         }
     }
 
