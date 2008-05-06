@@ -18,22 +18,6 @@
         </div>
       </g:if>
       <table>
-        <thead>
-          <tr>
-               
-            <g:sortableColumn property="id" title="Id" />
-                  
-            <g:sortableColumn property="username" title="Login Name" />
-                  
-            <g:sortableColumn property="userRealName" title="Full Name" />
-                  
-            <g:sortableColumn property="enabled" title="Enabled" />
-                  
-            <g:sortableColumn property="description" title="Description" />
-                  
-            <th></th>
-          </tr>
-        </thead>
         <tbody>
           <g:each in="${personList}">
             <tr>

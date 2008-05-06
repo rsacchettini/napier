@@ -178,25 +178,7 @@ class NapierTagLib {
         }
     }
 
-    def ifPropertyInBuyerInterest =
-    {attrs, body ->
-        def test = attrs.id
-        def property = Property.get(attrs.id)
-        def principal = PrincipalService.getPrincipal()
-        if (principal != null && principal != "anonymousUser")
-        {
-            def buyer = Buyer.findByUsername(principal.getUsername())
-            if (buyer != null)
-            {
-                def interestList = Interested.findAll("from Interested as i where i.myBuyer.id=?", buyer.id)
-                if (interestList != null && interestList.findIndexOf {property} != -1)
-                {
-                    out << body()
-                }
 
-            }
-        }
-    }
 
     def ifPropertyNotValidated =
     {attrs, body ->
