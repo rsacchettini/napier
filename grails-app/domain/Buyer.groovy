@@ -21,21 +21,6 @@ class Buyer extends AuthUser {
       }
 
 
-    /*
-    if(buyer.save()) 
-    {
-     println "Buyer  created!"
-    }
-    else
-    {
-        buyer.errors.allErrors.each
-        {
-            println "The buyer has not been created. Please check the credentials"
-        }
-    }
-    */
-
-
 
 }
 
