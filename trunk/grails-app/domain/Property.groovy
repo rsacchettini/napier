@@ -15,7 +15,14 @@ class Property
 	String[] picture
     String[] pictureType
 
-	static constraints = {
+      def beforeDelete = {
+        isSoldBy.removeFromSellProperties(this)
+        isManagedBy.removeFromPropertiesToManage(this)
+        def list = Interested.findAll("from Interested as i where i.myProp.id=?",this.id)
+        list.each{i->i.delete()}
+    }
+
+    static constraints = {
         address(blank:false, minLength:5)
         city(blank:false)
         postCode(blank:false, matches:/^(GIR 0AA)|([A-PR-UWYZ]((\d(\d|[A-HJKSTUW])?)|([A-HK-Y]\d(\d|[ABEHMNPRV-Y])?)) \d[ABD-HJLNP-UW-Z]{2})$/)

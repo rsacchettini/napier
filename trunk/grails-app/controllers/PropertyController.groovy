@@ -41,7 +41,7 @@ class PropertyController {
                     def seller = Seller.findById(principal.domainClass.id)
                     if (seller != null)
                     {
-                        def sellerProperties = seller?.sellProperties
+                        def sellerProperties = Property.findAll("from Property as i where i.isSoldBy.id=?", seller.id)
                         if (sellerProperties != null)
                         {// if the logged user is a seller then retrieve his properties.
                             return [propertyList: sellerProperties]
@@ -152,7 +152,7 @@ class PropertyController {
             if (dirToDelete != null)
                 deleteDirectory(dirToDelete)
 
-            property.delete()
+            property.delete(flush:true)
 
             flash.message = "Property ${params.id} deleted"
             redirect(action: list)
