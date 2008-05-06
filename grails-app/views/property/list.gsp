@@ -11,7 +11,8 @@
 				<span class="menuButton"><g:link class="create" action="create"><g:message code="property.create"/></g:link></span>
 		</div>
 		</g:ifAnyGranted>
-		 <div id="searchField">
+    <g:ifIsNotPersonalList>
+         <div id="searchField">
 			<div class="search">
             <g:form name="searchForm" action="search">
 			<table width="100%">
@@ -40,6 +41,8 @@
 			</g:form>
 			</div>
         </div>
+        </g:ifIsNotPersonalList>
+
         <div class="body">
             <h1><g:message code="property.listTitle"/></h1>
             <g:if test="${flash.message}">
@@ -47,7 +50,8 @@
             </g:if>
             <div class="list">
 			<table>
-						<tr>
+                <g:ifIsNotPersonalList>
+                        <tr>
 							<g:sortableColumn property="id" title="Reference" />
 							<g:sortableColumn property="address" title="Address" />
 							<g:sortableColumn property="city" title="City" />
@@ -55,7 +59,8 @@
 							<g:sortableColumn property="minPrice" title="Price" />
 							<g:sortableColumn property="description" title="Description" />    
 						</tr>
-					</table>
+                </g:ifIsNotPersonalList>
+                    </table>
                 <g:each in="${propertyList}" status="i" var="property">
                           <g:ifPropertyValidated id="${property.id}">
 					<table width="100%">

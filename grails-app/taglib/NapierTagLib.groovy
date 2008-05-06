@@ -113,7 +113,7 @@ class NapierTagLib {
             def seller = Seller.findById(principal.domainClass.id)
             if (seller != null)
             {
-                def sellProperties = seller.sellProperties
+                def sellProperties = Property.findAll("from Property as i where i.isSoldBy.id=?", seller.id)
                 if (sellProperties != null)
                     out << "(${sellProperties.size()})"
             }
@@ -216,7 +216,7 @@ class NapierTagLib {
     {attrs, body ->
         def property = Property.get(attrs.id)
         def principal = PrincipalService.getPrincipal()
-        if (principal != null && principal != "anonymousUser" && ((String) (principal.getAuthorities()[0])) == "ROLE_ESTATEAGENT")
+        if ((principal != null && principal != "anonymousUser" && ((String) (principal.getAuthorities()[0])) == "ROLE_ESTATEAGENT") || params.isPersonalList)
         {
                 out << body()
 
@@ -233,11 +233,21 @@ class NapierTagLib {
             }
     }
 
+      def ifIsNotPersonalList =
+    {attrs,body ->
+
+                    if (!params.isPersonalList || params.size()==0)
+                    {
+                        out << body()
+                    }
+
+    }
+
     def numbersOfProperties = {
         def principal = PrincipalService.getPrincipal()
         if (principal != null && principal != "anonymousUser" && ((String) (principal.getAuthorities()[0])) == "ROLE_ESTATEAGENT")
         {
-                out << "(${Property.list.size()})"
+                out << "(${Property.findAll().size()})"
         } else {
                 def list = Property.findAll("from Property as i where i.validated=true")
                 if (list != null)
