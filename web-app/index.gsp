@@ -1,10 +1,12 @@
+<g:javascript src="slideShow.js" />
+
 <html>
     <head>
         <title>Welcome</title>
 		<meta name="layout" content="main" />
     </head>
 <div class="body">
-	<body>
+	<body onload="init();">
 	<h1 style="margin-left:20px;">Welcome <g:loggedInUserInfo field="userRealName"/> to the Napier Estate Agency</h1>
 	<table class="index">
 		<tr>
@@ -19,7 +21,15 @@
 			available. So, what are you waiting for?</td>
 		</tr>
 		<tr>
-			<td rowspan="4"><img src="http://localhost:8080/SourceProject/images/napier_estate.gif" width="344" height="234" /></td>
+			<td rowspan="4">
+				<img src="../images/property.jpg" width="344" height="234" border="0" />
+				<!--<p align="center">
+					<!-- Premiere image id=defilement1 -->
+					<img src="../images/promo/1.jpg" name="defilement1" width="344" height="234" id="defilement1" style="-moz-opacity:0;filter:alpha(opacity=0);margin-bottom:10px;" />
+					<!-- Deuxieme image id=defilement2    /!\ positionnée RELATIVEMENT par rapport à la 1ère pour qu'elles se superposent /!\ -->
+					<img src="../images/promo/2.jpg" name="defilement2"  width="344" height="234" id="defilement2" style="-moz-opacity:1;filter:alpha(opacity=100);position:relative;top:-160px;left:2px;">
+				</p>-->			
+			</td>
 			<td valign="top" class="name">About Us</td>
 		</tr>
 		<tr>

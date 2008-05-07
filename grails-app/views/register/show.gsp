@@ -62,12 +62,12 @@
 
 				</tr>
 			</g:ifAnyGranted>
-			<tr class="prop">
+			<!--<tr class="prop">
               <td valign="top" class="name">Enabled:</td>
               <td valign="top" class="value">
                 ${person.enabled?.encodeAsHTML()}
               </td>
-            </tr>
+            </tr>-->
 
             <tr class="prop">
               <td valign="top" class="name">Email:</td>
@@ -76,7 +76,7 @@
               </td>
             </tr>
                    
-            <tr class="prop">
+            <!--<tr class="prop">
               <td valign="top" class="name">Show Email:</td>
               <td valign="top" class="value">
                 ${person.email_show?.encodeAsHTML()}
@@ -91,7 +91,7 @@
                 </g:collect>
                 </ul>
               </td>
-            </tr>
+            </tr>-->
                    
           </tbody>
         </table>

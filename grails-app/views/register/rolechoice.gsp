@@ -12,8 +12,9 @@
 	<meta name="layout" content="main" />
 	<title>User Registration</title>
 </head>
-  <body>
+  
   	  <div class="body">
+	  <body>
 		  <h1>User Registration : Step 1/2 : Choose your role</h1>
 		  <g:if test="${flash.message}">
 			<div class="message">${flash.message}</div>
