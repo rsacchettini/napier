@@ -6,58 +6,36 @@
   To change this template use File | Settings | File Templates.
 --%>
 
-<%@ page contentType="text/html;charset=UTF-8" %>
 <html>
-  <head>
-	   <meta name="layout" content="main" />
-	  <title>User Registration</title></head>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<meta name="layout" content="main" />
+	<title>User Registration</title>
+</head>
   <body>
   	  <div class="body">
 		  <h1>User Registration : Step 1/2 : Choose your role</h1>
 		  <g:if test="${flash.message}">
 			<div class="message">${flash.message}</div>
 		  </g:if>
-		   <g:form action="roleSaveToCredentials" method="post" >
-				<div class="dialog">
-				<table>
-				<tr>
-					<td></td>
-					<td>In order to register, you must first select the type of account you wish to have.</td>
-				</tr>
-				<tr>
-					<td><a class="btnAccountB" href="#">xcxwcxwcwxcwxcxwc</a></td>
-					<td><a class="btnAccountS" href="#">wxcwxcwxcwxcxcxwc</a></td>
-				</tr>
-				  <table>
-					<tbody>
 
-				   <tr class='prop'>
-					<td valign='top' class='name'>
-					  You want to register as a:
-					</td>
-					<g:each in="${authorityList}">
-						<g:if test="${it.authority?.substring(5)?.toLowerCase() != 'estateagent'}" >
-						  <tr>
-							<td valign='top' class='name' align="left">
-							  ${it.authority?.substring(5)?.toLowerCase()?.encodeAsHTML()}
-							</td>
-							<td align="left">
-							   <g:radio id='role' name='role' value="${it.authority}" ></g:radio>
-							</td>
-						  </tr>
-					</g:if>
-				  </g:each>
-		   </tbody>
-			  </table>
-			</div>
+		<div class="dialog">
+			<table width="100%" border="0" cellspacing="0">
+			  <tr>
+			    <td height="30" colspan="2"><div align="center"><span class="text">In order to register, you must first select the type of account you wish to have.</span></div></td>
+			  </tr>
+			  <tr>
+			    <td height="30" colspan="2">&nbsp;</td>
+			  </tr>
+			  <tr>
+			    <td><div align="center"><div class="btnAccountB"><a href="createBuyer.gsp"><img src="../images/motifBack.png" width="0" border="0" /></a></div></div></td>
+			    <td><div align="center"><div class="btnAccountS"><a href="createSeller.gsp"><img src="../images/motifBack.png" width="0" border="0" /></a></div></div></td>
+			  </tr>
+			  <tr>
+			    <td height="150" colspan="2">&nbsp;</td>
+			  </tr>
+		</div>
 
-			<div class="buttons">
-			  <span class="formButton">
-				<input type="submit" value="Continue to Step 2"/>
-			  </span>
-			</div>
-
-		  </g:form>
-
+	</div>
   </body>
 </html>
