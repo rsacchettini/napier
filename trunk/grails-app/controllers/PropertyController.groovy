@@ -16,6 +16,10 @@ class PropertyController {
     def search = {
         def criteria = Property.createCriteria()
         def properties
+		try {
+     
+
+
         properties = criteria.list {
             if (params.qCategory != "")
                 eq('category', params.qCategory)
@@ -26,8 +30,11 @@ class PropertyController {
             if (params.qPostCode != "")
                 eq('postCode', params.qPostCode)
         }
-
-        render(view: 'list', model: [propertyList: properties])
+		render(view: 'list', model: [propertyList: properties])
+		} catch (NumberFormatException e) {
+            def listed = Property.list(params)
+			render(view: 'list', model: [propertyList: listed])
+        }
     }
 
     def list = {
@@ -83,7 +90,6 @@ class PropertyController {
         }
         else
         {
-            if (!params.max) params.max = 10
             def listed = Property.list(params)
             return [propertyList: listed]
         }
