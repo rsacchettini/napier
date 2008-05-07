@@ -6,7 +6,7 @@
     </head>
     <body>
         <div class="body">
-            <h1>Register as a Buyer</h1>
+            <h1>User Registration : Step 2/2 : Register as a Buyer</h1>
             <g:if test="${flash.message}">
             <div class="message">${flash.message}</div>
             </g:if>
