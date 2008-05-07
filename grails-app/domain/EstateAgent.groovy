@@ -3,6 +3,10 @@ class EstateAgent extends AuthUser {
     //Note: Since the O.6 version of grails there is no need to specify any collection or Set for the hasMany
     //associations. relatesToMany used to require that but is now deprecated so only hasMany must be used
     static hasMany = [propertiesToManage:Property, appointmentsToManage:Appointment]
+      static mapping = {
+       propertiesToManage cascade:"all"
+          appointmentsToManage cascade:"all"
+   }
 
     boolean equals(other) {
           if(other?.is(this))return true
