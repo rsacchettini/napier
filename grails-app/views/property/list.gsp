@@ -101,9 +101,6 @@
                               </g:ifPropertyValidated>
                 </g:each>
             </div>
-            <div class="paginateButtons">
-                <g:paginate total="${Property.count()}" />
-            </div>
         </div>
     </body>
 </html>
