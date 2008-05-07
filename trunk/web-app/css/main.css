@@ -354,7 +354,7 @@ th.desc a {
 .search input, select, textarea {
     background-color: #fcfcfc;
     border: 1px solid #ccc;
-    font: 14px verdana, arial, helvetica, sans-serif;
+    font: 12px verdana, arial, helvetica, sans-serif;
 font-weight:bold;	
 }
 .search select {
