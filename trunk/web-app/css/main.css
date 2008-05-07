@@ -120,10 +120,13 @@ font: 12px verdana, arial, helvetica, sans-serif;
 	padding-top: 0px;
 }
 /*CREATE ACCOUNT*/
-
+.text{
+	font-size: 16px;
+	font-weight: bold;
+}
 .btnAccountB a{ /* definition of the "image" class in the <a> tag */
      display: block; /* a tag must be a block */
-     width: 181px; /* width of reactive image */
+     width: 190px; /* width of reactive image */
      height: 171px; /* height of reactive image */
      background-image: url(../images/btn_buyer.gif); /* source for start image */
      background-repeat: no-repeat;
@@ -133,9 +136,9 @@ font: 12px verdana, arial, helvetica, sans-serif;
      background-image: url(../images/btn_buyer2.gif); /* source for target image */
      }
 
-.btnAccountS a { /* definition of the "image" class in the <a> tag */
+.btnAccountS a{ /* definition of the "image" class in the <a> tag */
      display: block; /* a tag must be a block */
-     width: 181px; /* width of reactive image */
+     width: 190px; /* width of reactive image */
      height: 171px; /* height of reactive image */
      background-image: url(../images/btn_seller.gif); /* source for start image */
      background-repeat: no-repeat;
@@ -144,22 +147,6 @@ font: 12px verdana, arial, helvetica, sans-serif;
 .btnAccountS a:hover { /* definition of the "image" class for <a> tag when hovered onto */
      background-image: url(../images/btn_seller2.gif); /* source for target image */
      }
-/*ROLE CHOICE*/
-
-.rolechoice table {
-	width:100%;
-	border: 1px solid #ccc;
-	font-size:12px;
-}
-
-.rolechoice tr {
-	border: 1px solid #ccc;
-}
-
-.rolechoice td {
-    border: none;
-	font-size:14px;
-}
 
 /* NAVIGATION MENU */
 .indentmenu{
