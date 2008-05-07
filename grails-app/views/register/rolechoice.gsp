@@ -22,11 +22,11 @@
 				<table>
 				<tr>
 					<td></td>
-					<td></td>
+					<td>In order to register, you must first select the type of account you wish to have.</td>
 				</tr>
 				<tr>
-					<td class="btnAccount"><a href="#">dqsdqs<img src="../images/btn_buyer.png" /></a></td>
-					<td><a href="#" class="btnAccount">sqdqsd<img src="../images/btn_seller.png" /></a></td>
+					<td><a class="btnAccountB" href="#">xcxwcxwcwxcwxcxwc</a></td>
+					<td><a class="btnAccountS" href="#">wxcwxcwxcwxcxcxwc</a></td>
 				</tr>
 				  <table>
 					<tbody>

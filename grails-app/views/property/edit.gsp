@@ -88,7 +88,7 @@
                                     <label for="description">Description:</label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean:property,field:'description','errors')}">
-                                    <input type="text" id="description" name="description" value="${fieldValue(bean:property,field:'description')}"/>
+                                    <input type="text" id="description" name="description"  rows="6" cols="300" value="${fieldValue(bean:property,field:'description')}"/>
 									<!--<richui:richTextEditor type="advanced" name="description" value="${fieldValue(bean:property,field:'description')}" width="525" />-->
 								</td>
                             </tr> 
@@ -128,7 +128,7 @@
 									<div id="fileList" style=" background: rgb(255, 255, 255) none repeat scroll 0%; font-size: x-small;"/>
                                 </td>
                             </tr> 
-                        
+							<g:ifAnyGranted role="ROLE_ESTATEAGENT">
                             <tr class="prop">
                                 <td valign="top" class="name">
                                     <label for="Appointments">Appointments:</label>
@@ -144,7 +144,7 @@
 
                                 </td>
                             </tr> 
-                        
+							</g:ifAnyGranted>
                             <tr class="prop">
                                 <td valign="top" class="name">
                                     <label for="availableFrom">Available From:</label>

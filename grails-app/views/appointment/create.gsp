@@ -5,6 +5,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <meta name="layout" content="main" />
         <title><g:message code="appointment.createTitle"/></title>
+		<g:javascript library="prototype" /> 
     </head>
     <body>
         <div class="nav">
@@ -30,8 +31,15 @@
                                 <td valign="top" class="name">
                                     <label for="dateAndTime">Date And Time:</label>
                                 </td>
-                                <td valign="top" class="value ${hasErrors(bean:appointment,field:'dateAndTime','errors')}">
-                                    <g:datePicker name="dateAndTime" value="${appointment?.dateAndTime}" ></g:datePicker>
+								<td valign="top" class="value ${hasErrors(bean:appointment,field:'dateAndTime','errors')}">	
+									<g:select name="theAvailableDate" from="${availableDate}" />
+									<input type="button" value="test" onclick="${remoteFunction(
+																							  controller: 'appointment',
+																							  action: 'getFreeTimeList',
+																							  update: 'elm'
+																							  )}"/>
+								
+									<div id="elm"><g:select name="theAvailableTime" from="${availableTime}" /></div>
                                 </td>
                             </tr> 
                         
