@@ -26,6 +26,7 @@ class PropertyController {
             if (params.qPostCode != "")
                 eq('postCode', params.qPostCode)
         }
+
         render(view: 'list', model: [propertyList: properties])
     }
 

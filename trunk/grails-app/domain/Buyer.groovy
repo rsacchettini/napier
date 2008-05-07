@@ -12,8 +12,11 @@ class Buyer extends AuthUser {
     //associations. relatesToMany used to require that but is now deprecated so only hasMany must be used
     static hasMany = [appointments:Appointment]
 	static fetchMode = [appointments:"eager", listedProperties:"eager"]
+      static mapping = {
+       appointments cascade:"all"
+   }
 
-	  boolean equals(other) {
+      boolean equals(other) {
           if(other?.is(this))return true
           if(!(other instanceof Buyer)) return false
           if(!id || !other?.id || id!=other?.id) return false

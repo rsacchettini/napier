@@ -6,14 +6,11 @@ class AuthUser {
 	static transients = ["pass"]
 	static hasMany=[authorities:Roles]
 	static belongsTo = Roles
-     static mapping = {
-       authorities cascade:"all,delete-orphan"
-   }
 
-    /* def beforeDelete = {
-        def list = Roles.findAll("from Roles as i where i.people.id=?",this.id)
-        list.each{i->i.delete()}
-    } */
+
+    def beforeDelete = {
+        authorities.each{i->i.removeFromPeople(this)}
+    }
 
     /** Username */
 	String username

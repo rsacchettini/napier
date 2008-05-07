@@ -43,13 +43,17 @@ class UserController {
           au.each{it.removeFromPeople(person)}
          }*/
 
-           def list = Interested.findAll("from Interested as i where i.myBuyer.id=?",person.id)
+           /*def list = Interested.findAll("from Interested as i where i.myBuyer.id=?",person.id)
             list.each{i->i.delete(flush:true)}
           def lista = Appointment.findAll("from Appointment as i where i.buyer.id=? or isManagedBy.id=?",person.id,person.id)
             lista.each{i->i.delete(flush:true)}
-          def listp = Property.findAll("from Property as i where i.isSoldBy.id=?",person.id)
-            listp.each{i->i.delete(flush:true)}
-
+*/          
+		def listp = Property.findAll("from Property as i where i.isSoldBy.id=?",person.id)
+        listp.each{i->i.delete(flush:true)}
+		
+		Appointment.executeUpdate("delete Appointment where buyer.id = ${params.id}")
+		Property.executeUpdate("delete Property where isSoldBy.id = ${params.id}")
+			
         person.delete(flush:true)
         flash.message = "AuthUser ${params.id} deleted."
         redirect(action:list)

@@ -10,11 +10,15 @@ class Seller extends AuthUser {
 	//the properties will be loaded in memory when the user will be loaded
 	static fetchMode = [sellProperties:"eager"]
 
-	static constraints =
+      static mapping = {
+       sellProperties cascade:"all"
+   }
+
+    static constraints =
     {
-        address(blank:false, minLength:5)
-        city(blank:false)
-        postCode(blank:false, matches:/^(GIR 0AA)|([A-PR-UWYZ]((\d(\d|[A-HJKSTUW])?)|([A-HK-Y]\d(\d|[ABEHMNPRV-Y])?)) \d[ABD-HJLNP-UW-Z]{2})$/)
+        address(blank:true,nullable:true, minLength:5)
+        city(blank:true,nullable:true,)
+        postCode(blank:true,nullable:true, matches:/^(GIR 0AA)|([A-PR-UWYZ]((\d(\d|[A-HJKSTUW])?)|([A-HK-Y]\d(\d|[ABEHMNPRV-Y])?)) \d[ABD-HJLNP-UW-Z]{2})$/)
 
     }
 

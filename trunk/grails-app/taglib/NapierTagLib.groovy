@@ -221,6 +221,7 @@ class NapierTagLib {
                 principal != "anonymousUser" &&
                 ((String) (principal.getAuthorities()[0])) == "ROLE_ESTATEAGENT")
         {
+			if(Property.findAll()!=null)
                 out << "(${Property.findAll().size()})"
         }
         else
