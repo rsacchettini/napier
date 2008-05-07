@@ -18,6 +18,26 @@
         </div>
       </g:if>
       <table>
+        <thead>
+          <tr>
+               
+            <g:sortableColumn property="id" title="Id" />
+                  
+            <g:sortableColumn property="username" title="Login Name" />
+                  
+            <g:sortableColumn property="userRealName" title="Forename" />
+			
+			<g:sortableColumn property="userRealName" title="Surname" />
+			
+			<g:sortableColumn property="telephoneNo" title="Telephone Number" />
+                  
+            <g:sortableColumn property="enabled" title="Enabled" />
+                  
+            <g:sortableColumn property="description" title="Description" />
+                  
+            <th></th>
+          </tr>
+        </thead>
         <tbody>
           <g:each in="${personList}">
             <tr>
@@ -46,10 +66,7 @@
           </g:each>
         </tbody>
       </table>
-    
-      <div class="paginateButtons">
-        <g:paginate total="${AuthUser.count()}" />
-      </div>
+ 
       
     </div>
   </body>
