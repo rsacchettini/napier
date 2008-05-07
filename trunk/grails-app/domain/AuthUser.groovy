@@ -9,6 +9,8 @@ class AuthUser {
 
 
     def beforeDelete = {
+		def list = Interested.findAll("from Interested as i where i.myBuyer.id=?",this.id)
+        list.each{i->i.delete(flush:true)}
         authorities.each{i->i.removeFromPeople(this)}
     }
 

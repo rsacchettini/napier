@@ -130,6 +130,7 @@ font: 12px verdana, arial, helvetica, sans-serif;
      height: 171px; /* height of reactive image */
      background-image: url(../images/btn_buyer.gif); /* source for start image */
      background-repeat: no-repeat;
+	 z-index:1; 
      }
 	 
 .btnAccountB a:hover { /* definition of the "image" class for <a> tag when hovered onto */
@@ -142,6 +143,7 @@ font: 12px verdana, arial, helvetica, sans-serif;
      height: 171px; /* height of reactive image */
      background-image: url(../images/btn_seller.gif); /* source for start image */
      background-repeat: no-repeat;
+	 z-index:2; 
      }
 	 
 .btnAccountS a:hover { /* definition of the "image" class for <a> tag when hovered onto */
@@ -398,6 +400,7 @@ font-weight:bold;
 
 .dialog table {
     padding: 5px 0;
+	z-index:1;
 	
 }
 
