@@ -88,8 +88,8 @@
                                     <label for="description">Description:</label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean:property,field:'description','errors')}">
-                                    <input type="text" id="description" name="description"  rows="6" cols="300" value="${fieldValue(bean:property,field:'description')}"/>
-									<!--<richui:richTextEditor type="advanced" name="description" value="${fieldValue(bean:property,field:'description')}" width="525" />-->
+                                    <!--<input type="text" id="description" name="description"  rows="6" cols="300" value="${fieldValue(bean:property,field:'description')}"/>-->
+									<richui:richTextEditor type="advanced" name="description" value="${fieldValue(bean:property,field:'description')}" width="525" />
 								</td>
                             </tr> 
                         
