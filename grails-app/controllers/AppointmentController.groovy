@@ -95,26 +95,35 @@ class AppointmentController {
 		}
 		def toFormatClient = new java.text.SimpleDateFormat("EEEE dd MMMM yyyy HH:mm a")
 		
-		Property p = Property.get(params.id)
+		Property p = Property.get(params.propertyid)
 		def apList = p.appointments
 		String dref
 		//println params.theAvailableDate
-		String dtest
-		apList.each {
-			dref = toFormatClient.format(it.dateAndTime).toString()
-			// Fill the available time in function of the day and the appointment
-            for(int i=0; i<timetable.size();i++){
-				
-				dtest = "Tuesday 06 May 2008 "+timetable[i]
-				//println "dref : "+dref
-				//println "dtTest : "+dtest
-				if (!dref.equals(dtest)){
-					availableTime << timetable[i]
-				//	println timetable[i]
-				}
+		def dtest = params.theAvailableDate + " "
+        def availableTime = []
+        if(apList.size() > 0)
+        {
+            apList.each {
+                dref = toFormatClient.format(it.dateAndTime).toString()
+                // Fill the available time in function of the day and the appointment
+                for(int i=0; i<timetable.size();i++){
+
+                    dtest = dtest + timetable[i]
+                    //println "dref : "+dref
+                    //println "dtTest : "+dtest
+                    if (!dref.equals(dtest)){
+                        availableTime << timetable[i]
+                    //	println timetable[i]
+                    }
+                }
             }
         }
-		return ['availableTime':availableTime]
+        else
+        {
+            availableTime = timetable
+        }
+        
+        render(template: "/appointment/dateList", model:[theSelectedDate:params.theAvailableDate, timeList:availableTime])
 	}
 	
     def create = {
@@ -137,16 +146,20 @@ class AppointmentController {
 		
         def appointment = new Appointment()
         appointment.properties = params
-        return ['appointment':appointment, 'id_property':params.id, 'availableDate':availableDate]
+        return ['appointment':appointment, 'propertyid':params.id, 'availableDate':availableDate]
     }
 
     def save = {
 	
-       def appointment = new Appointment(params)
+       def appointment = new Appointment()
 	   // StringToDate
 	   def toFormat = new java.text.SimpleDateFormat("EEEE dd MMMM yyyy HH:mm a")
-	   Date d = (Date)toFormat.parse(params.theAvailableDate+" "+params.theAvailableTime)
+	   Date d = (Date)toFormat.parse(params.theSelectedDate+" "+params.theSelectedTime)
 	   appointment.dateAndTime =  d
+        appointment.isManagedBy = EstateAgent.get(params.isManagedBy.id)
+        appointment.property =  Property.get(params.property.id)
+        appointment.buyer = Buyer.get(params.buyer.id)
+        
         if(!appointment.hasErrors() && appointment.save()) {
             flash.message = "Appointment ${appointment.id} created"
             redirect(action:show,id:appointment.id)

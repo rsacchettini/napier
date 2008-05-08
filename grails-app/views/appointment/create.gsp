@@ -22,7 +22,7 @@
                 <g:renderErrors bean="${appointment}" as="list" />
             </div>
             </g:hasErrors>
-            <g:form action="save" method="post" >
+
                 <div class="dialog">
                     <table>
                         <tbody>
@@ -32,21 +32,21 @@
                                     <label for="dateAndTime">Date And Time:</label>
                                 </td>
 								<td valign="top" class="value ${hasErrors(bean:appointment,field:'dateAndTime','errors')}">	
-									<g:select name="theAvailableDate" from="${availableDate}" />
-									<input type="button" value="test" onclick="${remoteFunction(
-																							  controller: 'appointment',
-																							  action: 'getFreeTimeList',
-																							  update: 'elm'
-																							  )}"/>
-								
-									<div id="elm"><g:select name="theAvailableTime" from="${availableTime}" /></div>
+									<g:formRemote name="dateForm" on404="alert('not found!')" update="elm" action="getFreeTimeList" url="${[action:'getFreeTimeList']}">
+                                        <g:select id="theAvailableDate" name="theAvailableDate" from="${availableDate}" />
+                                        <input type="submit" id="dateButton" value="ok" />
+                                        <input type="hidden" name="propertyid" value="${propertyid}"/>
+                                    </g:formRemote>
+                                   <g:form action="save" method="post" >
+									<div id="elm"></div>
+                                    <div id="error"></div>
                                 </td>
                             </tr> 
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
                                     <input type="hidden" id="buyer.id" name="buyer.id" value="${(Buyer?.findByUsername(PrincipalService?.getPrincipal()?.getUsername()))?.id}" />
-                                    <input type="hidden" id="property.id" name="property.id" value="${id_property}" />
+                                    <input type="hidden" id="property.id" name="property.id" value="${propertyid}" />
                                 </td>
                             </tr> 
                         
