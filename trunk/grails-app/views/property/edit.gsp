@@ -128,23 +128,7 @@
 									<div id="fileList" style=" background: rgb(255, 255, 255) none repeat scroll 0%; font-size: x-small;"/>
                                 </td>
                             </tr> 
-							<g:ifAnyGranted role="ROLE_ESTATEAGENT">
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                    <label for="Appointments">Appointments:</label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean:property,field:'Appointments','errors')}">
-                                    
-<ul>
-<g:each var="a" in="${property?.appointments?}">
-    <li><g:link controller="appointment" action="show" id="${a.id}">${a}</g:link></li>
-</g:each>
-</ul>
-<g:link controller="appointment" params="["property.id":property?.id]" action="create">Add Appointment</g:link>
-
-                                </td>
-                            </tr> 
-							</g:ifAnyGranted>
+							
                             <tr class="prop">
                                 <td valign="top" class="name">
                                     <label for="availableFrom">Available From:</label>

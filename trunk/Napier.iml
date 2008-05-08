@@ -60,6 +60,7 @@
           <root url="file://$MODULE_DIR$/lib" />
           <root url="file://$MODULE_DIR$/plugins/acegi-0.2/lib" />
           <root url="file://$MODULE_DIR$/plugins/richui-0.3/lib" />
+          <root url="file://$MODULE_DIR$/plugins/richui-0.3/lib" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

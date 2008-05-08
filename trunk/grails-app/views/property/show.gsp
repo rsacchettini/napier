@@ -76,10 +76,7 @@
 				  <tr>
 					<td align="center">
                         <richui:googlemaps lat="${resultLat}" lng="${resultLng}" mapStyle="width: 750px; height: 300px;" style="width: 750px; background: #F1F1F1; border: 1px solid #F1F1F1;" />
-                        <div id="map"></div>
-
-                            <!--<g:remoteLink action="showMap" id="1" onComplete ="executeMap(e);" update="[success:'map',failure:'error']" params="[lat:resultLat, lng:resultLng]">Show google map</g:remoteLink>-->
-						<div id="error"></div>
+                        
 					</td>
 				  </tr>
 				  <tr>
